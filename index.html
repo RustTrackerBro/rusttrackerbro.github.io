@@ -62,6 +62,9 @@
   .btn.tg { background: var(--tg); box-shadow: 0 6px 18px rgba(42, 171, 238, .3); }
   .btn:hover { transform: translateY(-2px); filter: brightness(1.07); box-shadow: 0 0 0 2px var(--neon), 0 10px 26px rgba(168, 255, 62, .18); }
   .btn:focus-visible { outline: 3px solid var(--neon); outline-offset: 3px; }
+  .dm-hint { margin: 12px 0 0; font-size: 14px; color: var(--muted); text-align: center; }
+  .dm-hint a { color: var(--rust-hot); font-weight: 600; text-decoration: none; white-space: nowrap; }
+  .dm-hint a:hover, .dm-hint a:focus-visible { text-decoration: underline; }
 
   .features { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 18px; }
   .feat { display: flex; gap: 14px; align-items: flex-start; background: var(--steel-2); border: 1px solid var(--line);
@@ -136,6 +139,7 @@
         <span data-t="btn_tg"></span>
       </a>
     </div>
+    <p class="dm-hint" id="dm-hint" hidden><span data-t="dm_hint"></span> <a id="dm-link" href="#" data-t="dm_link"></a></p>
   </section>
 
   <section class="features">
@@ -190,6 +194,9 @@
   document.getElementById("btn-tg").href = tgUrl;
   if (cfg.DISCORD_APP_ID) {
     document.getElementById("btn-discord").href = "https://discord.com/oauth2/authorize?client_id=" + cfg.DISCORD_APP_ID;
+    // После добавления личка с ботом не появляется в списке сама — ведём в профиль бота (кнопка «Сообщение»).
+    document.getElementById("dm-link").href = "https://discord.com/users/" + cfg.DISCORD_APP_ID;
+    document.getElementById("dm-hint").hidden = false;
   }
 
   if (start) {
