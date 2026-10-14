@@ -3,5 +3,5 @@
 // приглашения бота). Пусто — кнопка Discord ведёт на страницу с подсказкой, а не на добавление бота.
 window.RTB = {
   TELEGRAM_BOT: "RustTrackerBroBot",
-  DISCORD_APP_ID: "",
+  DISCORD_APP_ID: "1559223160069562461",
 };
