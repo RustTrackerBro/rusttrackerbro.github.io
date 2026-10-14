@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rust Tracker Bro — Discord</title>
+<meta name="robots" content="noindex">
+<style>body{background:#14110f;color:#f1ece2;font:16px/1.5 system-ui,sans-serif;display:grid;place-items:center;min-height:100vh;margin:0;padding:16px;text-align:center}a{color:#f08a4b}</style>
+</head>
+<body>
+<p id="msg">…</p>
+<script src="../config.js"></script>
+<script>
+(function () {
+  var id = (window.RTB || {}).DISCORD_APP_ID;
+  if (id) { location.replace("https://discord.com/oauth2/authorize?client_id=" + id); return; }
+  document.getElementById("msg").innerHTML = '<a href="../">Rust Tracker Bro</a>';
+})();
+</script>
+</body>
+</html>
