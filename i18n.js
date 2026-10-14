@@ -26,7 +26,7 @@ window.RTB_TEXT = {
     name: "English",
     pulse: "online · servers · clans",
     tag: "Rust bot for Discord and Telegram",
-    f1_t: "Joins and leaves", f1: "Get pinged when a player joins a server, switches servers or leaves — even at night.",
+    f1_t: "Connects and disconnects", f1: "Get pinged when a player connects to a server, switches servers or disconnects — even at night.",
     f2_t: "Clan online", f2: "Your whole clan in one message: who's in game, who's offline.",
     f3_t: "Play and sleep times", f3: "When a player usually plays and sleeps — the best time to raid.",
     f4_t: "Rust+", f4: "Cargo, heli, smart alarms and your team — right in Discord and Telegram.",
