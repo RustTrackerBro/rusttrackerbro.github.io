@@ -3,72 +3,117 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rust Tracker Bro — Discord & Telegram bot for Rust</title>
-<meta name="description" content="Get pinged when Rust players join or leave a server, see your clan's online and wipe alerts — in Discord and Telegram.">
-<meta property="og:title" content="Rust Tracker Bro">
-<meta property="og:description" content="Rust player tracker bot — Discord & Telegram.">
-<meta name="theme-color" content="#14110f">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23e86c24'/%3E%3Ccircle cx='32' cy='32' r='14' fill='none' stroke='%2314110f' stroke-width='6'/%3E%3Ccircle cx='32' cy='32' r='4' fill='%2314110f'/%3E%3C/svg%3E">
+<title>Rust Tracker Bro — Rust bot for Discord & Telegram</title>
+<meta name="description" content="Alerts when Rust players join or leave a server, your clan's online, play and sleep times, Rust+ events — in Discord and Telegram.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rust Tracker Bro">
+<meta property="og:title" content="Rust Tracker Bro — Discord & Telegram">
+<meta property="og:description" content="Rust player alerts, clan online, play and sleep times, Rust+ events.">
+<meta property="og:image" content="https://rusttrackerbro.github.io/assets/og.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:url" content="https://rusttrackerbro.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#a8ff3e">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/avatar.png">
 <style>
+  @font-face { font-family: "Russo One"; src: url("assets/RussoOne-Regular.ttf") format("truetype"); font-display: swap; }
   :root {
-    --bg: #14110f; --card: #1e1a17; --line: #332c26; --text: #f1ece2; --muted: #a39b91;
-    --rust: #e86c24; --rust-2: #f08a4b; --discord: #5865f2; --tg: #2aabee; --radius: 16px;
+    --steel: #15191e; --steel-2: #1b2026; --steel-3: #232a31; --line: #2e363e;
+    --bone: #f1ece2; --muted: #9aa3ab; --rust: #d8692a; --rust-hot: #f08a4b; --neon: #a8ff3e;
+    --discord: #5865f2; --tg: #2aabee; --radius: 18px;
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; }
   body {
-    background: radial-gradient(1200px 600px at 50% -200px, #2a1a10 0%, var(--bg) 60%) fixed, var(--bg);
-    color: var(--text); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    min-height: 100vh; display: flex; justify-content: center; padding: 32px 16px 48px;
+    background:
+      radial-gradient(900px 520px at 18% -8%, rgba(216, 105, 42, .28), transparent 62%),
+      radial-gradient(700px 420px at 100% 0%, rgba(168, 255, 62, .07), transparent 60%),
+      var(--steel);
+    color: var(--bone); font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    min-height: 100vh; padding: 28px 16px 40px; display: flex; justify-content: center;
   }
-  main { width: 100%; max-width: 560px; }
-  .brand { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
-  .logo { width: 48px; height: 48px; border-radius: 12px; background: var(--rust); display: grid; place-items: center; flex: none; }
-  .logo svg { width: 28px; height: 28px; }
-  h1 { font-size: 26px; line-height: 1.2; margin: 0; letter-spacing: .2px; }
-  .tag { color: var(--muted); margin: 2px 0 0; font-size: 15px; }
-  .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; margin-top: 16px; }
-  ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
-  li { display: flex; gap: 10px; }
-  li span:first-child { flex: none; width: 24px; text-align: center; }
-  .btns { display: grid; gap: 12px; margin-top: 20px; }
+  main { width: 100%; max-width: 760px; }
+
+  /* Шапка — как баннер бота: аватар в неоновом кольце и надпись */
+  .hero { display: grid; grid-template-columns: auto 1fr; gap: 26px; align-items: center; padding: 8px 4px 22px; }
+  .avatar { width: 150px; height: 150px; border-radius: 50%; position: relative; flex: none;
+            box-shadow: 0 0 0 4px #0c0f12, 0 0 0 7px var(--neon), 0 0 38px 6px rgba(168, 255, 62, .28); }
+  .avatar img { width: 100%; height: 100%; border-radius: 50%; display: block; }
+  .word { font-family: "Russo One", system-ui, sans-serif; line-height: .95; margin: 0; }
+  .word .big { display: block; font-size: clamp(38px, 7.2vw, 62px); letter-spacing: .5px; color: var(--bone); }
+  .word .sub { display: block; font-size: clamp(20px, 3.4vw, 28px); letter-spacing: .42em; color: var(--rust); margin-top: 10px; }
+  .pulse { margin: 16px 0 0; color: var(--neon); font-weight: 700; font-size: 17px; display: flex; align-items: center; gap: 9px; }
+  .pulse::before { content: ""; width: 11px; height: 11px; border-radius: 50%; background: var(--neon);
+                   box-shadow: 0 0 0 0 rgba(168, 255, 62, .7); animation: ping 2s infinite; }
+  @keyframes ping { 70% { box-shadow: 0 0 0 10px rgba(168, 255, 62, 0); } 100% { box-shadow: 0 0 0 0 rgba(168, 255, 62, 0); } }
+  .lead { color: var(--muted); margin: 6px 0 0; font-size: 15px; }
+
+  .panel { background: linear-gradient(180deg, var(--steel-2), #171b20); border: 1px solid var(--line);
+           border-radius: var(--radius); padding: 22px; margin-top: 18px; }
+
+  .btns { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   .btn { display: flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; color: #fff;
-         font-weight: 600; font-size: 17px; padding: 15px 18px; border-radius: 12px; border: 0; cursor: pointer; }
+         font-weight: 700; font-size: 17px; padding: 16px 18px; border-radius: 14px; border: 0; cursor: pointer;
+         transition: transform .15s ease, box-shadow .15s ease, filter .15s ease; }
   .btn svg { width: 22px; height: 22px; flex: none; }
-  .btn.discord { background: var(--discord); }
-  .btn.tg { background: var(--tg); }
-  .btn:focus-visible { outline: 3px solid var(--rust-2); outline-offset: 2px; }
-  .btn:hover { filter: brightness(1.08); }
-  .invite { border-color: var(--rust); }
-  .invite h2 { font-size: 18px; margin: 0 0 6px; }
-  .invite p { margin: 6px 0; color: var(--muted); }
-  .code { display: flex; gap: 8px; align-items: stretch; margin-top: 8px; }
-  .code code { flex: 1; background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px;
-               font: 600 16px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--rust-2); overflow-x: auto; white-space: nowrap; }
-  .copy { background: var(--line); color: var(--text); border: 0; border-radius: 10px; padding: 0 14px; font-weight: 600; cursor: pointer; }
-  .steps { margin: 8px 0 0; padding-left: 20px; color: var(--muted); }
-  .steps li { display: list-item; }
-  .gift { color: var(--rust-2); font-weight: 600; }
-  footer { color: var(--muted); font-size: 13px; text-align: center; margin-top: 28px; }
-  .langs { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-top: 8px; }
-  .langs button { background: none; border: 1px solid var(--line); color: var(--muted); border-radius: 999px; padding: 3px 10px; cursor: pointer; font-size: 13px; }
-  .langs button[aria-pressed="true"] { color: var(--text); border-color: var(--rust); }
+  .btn.discord { background: var(--discord); box-shadow: 0 6px 18px rgba(88, 101, 242, .35); }
+  .btn.tg { background: var(--tg); box-shadow: 0 6px 18px rgba(42, 171, 238, .3); }
+  .btn:hover { transform: translateY(-2px); filter: brightness(1.07); box-shadow: 0 0 0 2px var(--neon), 0 10px 26px rgba(168, 255, 62, .18); }
+  .btn:focus-visible { outline: 3px solid var(--neon); outline-offset: 3px; }
+
+  .features { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 18px; }
+  .feat { display: flex; gap: 14px; align-items: flex-start; background: var(--steel-2); border: 1px solid var(--line);
+          border-radius: 14px; padding: 16px; }
+  .feat.wide { grid-column: 1 / -1; }
+  .ico { width: 42px; height: 42px; flex: none; border-radius: 12px; display: grid; place-items: center; font-size: 21px;
+         background: rgba(216, 105, 42, .12); border: 1px solid rgba(216, 105, 42, .45); }
+  .feat b { display: block; font-size: 15.5px; margin-bottom: 2px; }
+  .feat span { color: var(--muted); font-size: 14.5px; }
+
+  .invite { border-color: var(--rust); background:
+            linear-gradient(135deg, rgba(216, 105, 42, .16), rgba(216, 105, 42, .04) 60%), var(--steel-2); }
+  .invite h2 { font-family: "Russo One", system-ui, sans-serif; font-weight: 400; font-size: 21px; margin: 0 0 4px; }
+  .gift { color: var(--neon); font-weight: 700; margin: 0 0 12px; }
+  .invite p { margin: 8px 0; color: var(--muted); }
+  .steps { margin: 6px 0 0; padding-left: 20px; color: var(--bone); }
+  .code { display: flex; gap: 8px; margin: 12px 0 4px; }
+  .code code { flex: 1; min-width: 0; background: #0f1215; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px;
+               font: 700 17px/1.3 ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--rust-hot); overflow-x: auto; white-space: nowrap; }
+  .copy { background: var(--rust); color: #1a0f08; border: 0; border-radius: 12px; padding: 0 16px; font-weight: 800; cursor: pointer; }
+  .copy:hover { background: var(--rust-hot); }
+
+  footer { text-align: center; margin-top: 30px; }
+  .support { color: var(--bone); font-size: 14.5px; }
+  .support code { color: var(--rust-hot); font: 700 14px ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .legal { color: #6f7880; font-size: 12px; margin-top: 6px; }
+  .langs { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-top: 14px; }
+  .langs button { background: none; border: 1px solid var(--line); color: var(--muted); border-radius: 999px; padding: 4px 12px; cursor: pointer; font-size: 13px; }
+  .langs button[aria-pressed="true"] { color: var(--bone); border-color: var(--neon); }
   [hidden] { display: none !important; }
+
+  @media (max-width: 620px) {
+    .hero { grid-template-columns: 1fr; justify-items: center; text-align: center; gap: 22px; }
+    .avatar { width: 128px; height: 128px; }
+    .pulse { justify-content: center; }
+    .btns, .features { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) { .pulse::before { animation: none; } .btn { transition: none; } }
 </style>
 </head>
 <body>
 <main>
-  <div class="brand">
-    <div class="logo" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="none" stroke="#14110f" stroke-width="2.6"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="1.6" fill="#14110f"/><path d="M12 1.5v4M12 18.5v4M1.5 12h4M18.5 12h4"/></svg>
-    </div>
+  <header class="hero">
+    <div class="avatar"><img src="assets/avatar.png" alt="Rust Tracker Bro" width="256" height="256"></div>
     <div>
-      <h1>Rust Tracker Bro</h1>
-      <p class="tag" data-t="tag"></p>
+      <h1 class="word"><span class="big">RUST TRACKER</span><span class="sub">BROBOT</span></h1>
+      <p class="pulse" data-t="pulse"></p>
+      <p class="lead" data-t="tag"></p>
     </div>
-  </div>
+  </header>
 
-  <section class="card invite" id="invite" hidden>
+  <section class="panel invite" id="invite" hidden>
     <h2 data-t="invite_title"></h2>
     <p class="gift" data-t="invite_gift"></p>
     <p data-t="invite_dc"></p>
@@ -80,14 +125,7 @@
     <p data-t="invite_tg"></p>
   </section>
 
-  <section class="card">
-    <ul>
-      <li><span>🟢</span><span data-t="f1"></span></li>
-      <li><span>👥</span><span data-t="f2"></span></li>
-      <li><span>📊</span><span data-t="f3"></span></li>
-      <li><span>🔗</span><span data-t="f4"></span></li>
-      <li><span>🧹</span><span data-t="f5"></span></li>
-    </ul>
+  <section class="panel">
     <div class="btns">
       <a class="btn discord" id="btn-discord" href="discord/">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.6 1.3a18.3 18.3 0 0 0-5.6 0L8.6 3a19.7 19.7 0 0 0-4.9 1.4C.6 9 -.3 13.6.1 18.1A19.9 19.9 0 0 0 6.2 21l1.3-2a12.9 12.9 0 0 1-2-1l.5-.4a14.2 14.2 0 0 0 12 0l.5.4c-.6.4-1.3.7-2 1l1.3 2a19.8 19.8 0 0 0 6.1-2.9c.5-5.2-.8-9.7-3.6-13.7ZM8.3 15.3c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Zm7.4 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Z"/></svg>
@@ -100,8 +138,17 @@
     </div>
   </section>
 
+  <section class="features">
+    <div class="feat"><div class="ico">🔔</div><div><b data-t="f1_t"></b><span data-t="f1"></span></div></div>
+    <div class="feat"><div class="ico">🛡</div><div><b data-t="f2_t"></b><span data-t="f2"></span></div></div>
+    <div class="feat"><div class="ico">😴</div><div><b data-t="f3_t"></b><span data-t="f3"></span></div></div>
+    <div class="feat"><div class="ico">📡</div><div><b data-t="f4_t"></b><span data-t="f4"></span></div></div>
+    <div class="feat wide"><div class="ico">🧹</div><div><b data-t="f5_t"></b><span data-t="f5"></span></div></div>
+  </section>
+
   <footer>
-    <div data-t="footer"></div>
+    <div class="support" id="support"></div>
+    <div class="legal" data-t="legal"></div>
     <div class="langs" id="langs"></div>
   </footer>
 </main>
@@ -119,8 +166,7 @@
   function pickLang() {
     var saved = null;
     try { saved = localStorage.getItem("rtb_lang"); } catch (e) {}
-    var wanted = params.get("lang") || saved || (navigator.language || "en");
-    wanted = wanted.slice(0, 2).toLowerCase();
+    var wanted = (params.get("lang") || saved || navigator.language || "en").slice(0, 2).toLowerCase();
     return T[wanted] ? wanted : "en";
   }
 
@@ -131,12 +177,15 @@
       var key = el.getAttribute("data-t");
       if (t[key] !== undefined) el.textContent = t[key];
     });
+    // «Поддержка и новости — в боте: /support» — команда выделена
+    var sup = document.getElementById("support");
+    sup.textContent = t.support + " ";
+    var code = document.createElement("code"); code.textContent = "/support"; sup.appendChild(code);
     document.querySelectorAll("#langs button").forEach(function (b) {
       b.setAttribute("aria-pressed", String(b.dataset.lang === lang));
     });
   }
 
-  // Ссылки: Discord — добавление бота (или страница-подсказка), Telegram — бот с приглашением.
   var tgUrl = "https://t.me/" + cfg.TELEGRAM_BOT + (start ? "?start=" + encodeURIComponent(start) : "");
   document.getElementById("btn-tg").href = tgUrl;
   if (cfg.DISCORD_APP_ID) {
