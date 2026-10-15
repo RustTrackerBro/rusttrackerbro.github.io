@@ -1,4 +1,4 @@
-# rusttrackerbro.github.io
+# rusttrackerbro.com
 
 Визитка бота Rust Tracker Bro (Discord и Telegram) на GitHub Pages.
 
