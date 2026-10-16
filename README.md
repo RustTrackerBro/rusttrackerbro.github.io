@@ -8,7 +8,7 @@
   «Как купить» и вопросы. Оплата — в самом боте; про способ оплаты на сайте не пишем. Цены и лимиты — в `pricing/index.html`
   (`TIERS`), сверять с ботом (`core/usdt.py`, `core/tiers.py`); тексты — `pricing/texts.js`.
 - `/discord` — сразу добавление бота в Discord, `/telegram` — сразу бот в Telegram (`?ref=` сохраняется).
-- Настройки — `config.js` (имя бота в Telegram, Application ID Discord), тексты — `i18n.js` (ru, en, es, fr, uk).
+- Настройки — `config.js` (имя бота в Telegram, Application ID Discord), тексты — `i18n.js` и `pricing/texts.js` (en, ru, es, fr, uk, de, tr, pt).
 
 Оформление — в цветах бренда бота: аватар в неоновом кольце, надпись RUST TRACKER / BROBOT (шрифт Russo One,
 лицензия OFL — `assets/RussoOne-OFL.txt`), сталь / «кость» / ржавчина / неон. `assets/og.jpg` — картинка превью
