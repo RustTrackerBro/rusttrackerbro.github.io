@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pricing — Rust Tracker Bro</title>
+<meta name="description" content="Rust Tracker Bro tiers and prices: player alerts, clan online, sleep window, Rust+ events. One-time payment, no auto-renewal.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rust Tracker Bro">
+<meta property="og:title" content="Rust Tracker Bro — Pricing">
+<meta property="og:description" content="Free, Bronze, Silver, Gold, Platinum, Diamond and Clan. One-time payment, no auto-renewal.">
+<meta property="og:image" content="https://rusttrackerbro.com/assets/og.jpg">
+<meta property="og:url" content="https://rusttrackerbro.com/pricing/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#15191e">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/avatar.png">
+<style>
+  @font-face { font-family: "Russo One"; src: url("../assets/RussoOne-Regular.ttf") format("truetype"); font-display: swap; }
+  /* Бренд: сталь, «кость», ржавчина и неон — как у визитки и аватара бота. Сетка: шапка → герой с переключателем
+     срока → карточки уровней → «Как купить» → вопросы. */
+  :root {
+    --steel: #12161a; --steel-2: #1a1f25; --steel-3: #222930; --line: #2d353d; --line-2: #3a444e;
+    --bone: #f1ece2; --muted: #9aa3ab; --dim: #6f7880;
+    --rust: #d8692a; --rust-hot: #f08a4b; --neon: #a8ff3e; --discord: #5865f2;
+    --radius: 20px; --display: "Russo One", system-ui, sans-serif;
+    --body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body { background: var(--steel); color: var(--bone); font: 16px/1.55 var(--body); overflow-x: hidden;
+         padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+  /* Фон: медленно дрейфующее зарево ржавчины и неона */
+  .glow { position: fixed; inset: -20vh -20vw auto; height: 120vh; z-index: -1; pointer-events: none; filter: blur(60px); opacity: .9; }
+  .glow::before, .glow::after { content: ""; position: absolute; border-radius: 50%; }
+  .glow::before { width: 60vw; height: 50vh; left: 5vw; top: 0; background: radial-gradient(closest-side, rgba(216,105,42,.32), transparent); animation: drift 18s ease-in-out infinite alternate; }
+  .glow::after { width: 45vw; height: 40vh; right: 0; top: 10vh; background: radial-gradient(closest-side, rgba(168,255,62,.10), transparent); animation: drift 22s ease-in-out infinite alternate-reverse; }
+  @keyframes drift { to { transform: translate(6vw, 8vh) scale(1.15); } }
+  .grid-bg { position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .35;
+             background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+             background-size: 56px 56px; mask-image: radial-gradient(ellipse 80% 55% at 50% 0%, #000 30%, transparent 75%); }
+
+  .wrap { max-width: 1180px; margin: 0 auto; }
+  .top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 18px; flex-wrap: wrap; }
+  .brand { display: flex; align-items: center; gap: 12px; color: var(--bone); text-decoration: none; }
+  .brand img { width: 40px; height: 40px; border-radius: 50%; box-shadow: 0 0 0 2px #0c0f12, 0 0 0 4px var(--neon); }
+  .brand b { font-family: var(--display); font-weight: 400; letter-spacing: .5px; font-size: 18px; line-height: 1; }
+  .brand b span { color: var(--rust); letter-spacing: .3em; font-size: 12px; display: block; margin-top: 4px; }
+  .langs { display: flex; flex-wrap: wrap; gap: 6px; }
+  .langs button { background: rgba(26,31,37,.7); border: 1px solid var(--line); color: var(--muted); border-radius: 999px; padding: 4px 11px; cursor: pointer; font: 13px var(--body); }
+  .langs button[aria-pressed="true"] { color: var(--bone); border-color: var(--neon); }
+
+  .hero { text-align: center; padding-block: 26px 10px; display: grid; justify-items: center; gap: 12px; }
+  .kicker { color: var(--neon); font-weight: 700; font-size: 14px; letter-spacing: .14em; text-transform: uppercase; display: flex; align-items: center; gap: 9px; margin: 0; }
+  .kicker::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--neon); animation: ping 2s infinite; }
+  @keyframes ping { 0% { box-shadow: 0 0 0 0 rgba(168,255,62,.7); } 70%, 100% { box-shadow: 0 0 0 10px rgba(168,255,62,0); } }
+  h1 { font-family: var(--display); font-weight: 400; font-size: clamp(44px, 9vw, 92px); line-height: .95; margin: 0; letter-spacing: 1px;
+       background: linear-gradient(100deg, var(--bone) 30%, var(--rust-hot) 50%, var(--bone) 70%); background-size: 250% 100%;
+       -webkit-background-clip: text; background-clip: text; color: transparent; animation: sheen 6s ease-in-out infinite; }
+  @keyframes sheen { 0%, 60% { background-position: 100% 0; } 100% { background-position: -50% 0; } }
+  .lead { color: var(--muted); max-width: 62ch; margin: 0; font-size: 16.5px; text-wrap: pretty; }
+  .trial { margin-top: 6px; padding: 10px 16px; border-radius: 14px; border: 1px solid rgba(168,255,62,.45);
+           background: linear-gradient(90deg, rgba(168,255,62,.10), rgba(168,255,62,.03)); color: var(--bone); font-weight: 600; font-size: 15px; max-width: 70ch; }
+
+  /* Переключатель срока с бегущей подложкой */
+  .periods { position: relative; display: inline-grid; grid-auto-flow: column; grid-auto-columns: 1fr; margin-top: 16px;
+             background: var(--steel-2); border: 1px solid var(--line); border-radius: 999px; padding: 5px; isolation: isolate; max-width: 100%; }
+  .periods button { position: relative; z-index: 1; border: 0; background: none; color: var(--muted); font: 600 14.5px var(--body);
+                    padding: 9px 16px; border-radius: 999px; cursor: pointer; white-space: nowrap; transition: color .25s; display: grid; justify-items: center; gap: 1px; }
+  .periods button small { font: 700 11px var(--mono); color: var(--neon); }
+  .periods button[aria-pressed="true"] { color: #1a0f08; }
+  .periods button[aria-pressed="true"] small { color: #1a0f08; }
+  .pill { position: absolute; z-index: 0; top: 5px; bottom: 5px; left: 5px; border-radius: 999px; background: linear-gradient(135deg, var(--rust-hot), var(--rust));
+          box-shadow: 0 6px 20px rgba(216,105,42,.45); transition: transform .35s cubic-bezier(.3,1.4,.5,1), width .35s; }
+
+  .cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-top: 34px; align-items: stretch; }
+  .card { position: relative; display: flex; flex-direction: column; gap: 14px; padding: 22px 20px 20px; border-radius: var(--radius);
+          background: linear-gradient(180deg, rgba(34,41,48,.92), rgba(22,26,31,.92)); border: 1px solid var(--line);
+          transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; animation: rise .6s both; min-width: 0; flex: 0 1 272px; }
+  .card:hover { transform: translateY(-6px); border-color: var(--line-2); box-shadow: 0 18px 40px rgba(0,0,0,.45); }
+  @keyframes rise { from { transform: translateY(14px); } to { transform: none; } }
+  .card.hot { border-color: transparent; background:
+      linear-gradient(180deg, rgba(40,32,26,.96), rgba(24,22,22,.96)) padding-box,
+      conic-gradient(from var(--a, 0deg), var(--rust), var(--neon), var(--rust-hot), var(--rust)) border-box;
+      border: 2px solid transparent; box-shadow: 0 0 40px rgba(216,105,42,.22); animation: rise .6s both, spin 6s linear infinite; }
+  @property --a { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+  @keyframes spin { to { --a: 360deg; } }
+  .badge { position: absolute; top: -12px; left: 20px; font: 800 11.5px var(--body); letter-spacing: .08em; text-transform: uppercase;
+           padding: 5px 11px; border-radius: 999px; background: var(--neon); color: #10140c; box-shadow: 0 4px 14px rgba(168,255,62,.35); }
+  .badge.clan { background: var(--rust); color: #1a0f08; box-shadow: 0 4px 14px rgba(216,105,42,.35); }
+  .name { display: flex; align-items: center; gap: 10px; }
+  .name .em { font-size: 26px; width: 44px; height: 44px; display: grid; place-items: center; border-radius: 12px; background: rgba(216,105,42,.12); border: 1px solid rgba(216,105,42,.4); }
+  .name h2 { font-family: var(--display); font-weight: 400; font-size: 24px; margin: 0; letter-spacing: .5px; }
+  .price { display: grid; gap: 2px; min-height: 76px; align-content: start; }
+  .amount { font-family: var(--display); font-size: 40px; line-height: 1; display: flex; align-items: baseline; gap: 6px; font-variant-numeric: tabular-nums; }
+  .amount .unit { font: 600 14px var(--body); color: var(--muted); }
+  .amount.flash { animation: flash .45s ease; }
+  @keyframes flash { 0% { opacity: .2; transform: translateY(6px); } 100% { opacity: 1; transform: none; } }
+  .sub { color: var(--muted); font-size: 13.5px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; min-height: 22px; }
+  .save { font: 800 12px var(--mono); color: #10140c; background: var(--neon); padding: 2px 7px; border-radius: 6px; }
+  .limits { display: grid; grid-template-columns: auto 1fr; gap: 5px 12px; margin: 0; padding: 12px 0; border-block: 1px dashed var(--line); font-size: 14px; }
+  .limits dt { color: var(--muted); }
+  .limits dd { margin: 0; text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .feats { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; font-size: 14.5px; flex: 1; align-content: start; }
+  .feats .from { color: var(--rust-hot); font-weight: 600; font-size: 13.5px; }
+  .feats li:not(.from) { display: grid; grid-template-columns: 18px 1fr; gap: 8px; }
+  .feats li:not(.from)::before { content: ""; width: 14px; height: 14px; margin-top: 4px; border-radius: 4px; background: var(--neon);
+     -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M6.2 11.6 2.6 8l1.4-1.4 2.2 2.2L12 3l1.4 1.4z'/%3E%3C/svg%3E") center/contain no-repeat;
+             mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M6.2 11.6 2.6 8l1.4-1.4 2.2 2.2L12 3l1.4 1.4z'/%3E%3C/svg%3E") center/contain no-repeat; }
+  .buy { display: flex; align-items: center; justify-content: center; gap: 9px; text-decoration: none; color: #fff; font-weight: 700; font-size: 15.5px;
+         padding: 13px 14px; border-radius: 13px; background: var(--discord); box-shadow: 0 6px 18px rgba(88,101,242,.3);
+         transition: transform .15s ease, filter .15s ease, box-shadow .15s ease; }
+  .buy svg { width: 20px; height: 20px; flex: none; }
+  .buy:hover { transform: translateY(-2px); filter: brightness(1.08); box-shadow: 0 0 0 2px var(--neon), 0 10px 24px rgba(168,255,62,.15); }
+  .buy.ghost { background: transparent; border: 1px solid var(--line-2); box-shadow: none; }
+  .card.hot .buy { background: linear-gradient(135deg, var(--rust-hot), var(--rust)); color: #1a0f08; box-shadow: 0 8px 22px rgba(216,105,42,.4); }
+  :focus-visible { outline: 3px solid var(--neon); outline-offset: 3px; }
+
+  .section { margin-top: 64px; }
+  .section h3 { font-family: var(--display); font-weight: 400; font-size: clamp(26px, 4vw, 36px); margin: 0 0 18px; text-align: center; }
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; counter-reset: s; list-style: none; padding: 0; margin: 0; }
+  .steps li { counter-increment: s; position: relative; padding: 20px 18px 18px 70px; border-radius: 16px; background: var(--steel-2); border: 1px solid var(--line); min-height: 86px; }
+  .steps li::before { content: counter(s); position: absolute; left: 18px; top: 18px; width: 38px; height: 38px; border-radius: 11px; display: grid; place-items: center;
+                      font-family: var(--display); font-size: 20px; color: #1a0f08; background: linear-gradient(135deg, var(--rust-hot), var(--rust)); }
+  .cta { display: flex; justify-content: center; margin-top: 18px; }
+  .cta .buy { min-width: min(320px, 100%); font-size: 17px; padding: 15px 22px; }
+  .dm { text-align: center; color: var(--muted); font-size: 14px; margin: 12px 0 0; }
+  .dm a { color: var(--rust-hot); font-weight: 600; text-decoration: none; }
+  .dm a:hover { text-decoration: underline; }
+
+  .faq { max-width: 780px; margin: 0 auto; display: grid; gap: 10px; }
+  details { background: var(--steel-2); border: 1px solid var(--line); border-radius: 14px; padding: 0 18px; }
+  details[open] { border-color: var(--line-2); }
+  summary { cursor: pointer; list-style: none; padding: 16px 0; font-weight: 600; display: flex; justify-content: space-between; gap: 12px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; color: var(--rust-hot); font: 400 22px/1 var(--display); transition: transform .2s; }
+  details[open] summary::after { transform: rotate(45deg); }
+  details p { margin: 0 0 16px; color: var(--muted); }
+
+  footer { text-align: center; padding-block: 50px 36px; display: grid; gap: 8px; justify-items: center; }
+  footer a { color: var(--bone); text-decoration: none; font-weight: 600; }
+  footer a:hover { color: var(--rust-hot); }
+  .note, .legal { color: var(--dim); font-size: 12.5px; max-width: 70ch; }
+
+  @media (max-width: 600px) { .card { flex-basis: 100%; } }
+  @media (max-width: 560px) {
+    .periods { grid-auto-flow: row; grid-template-columns: 1fr 1fr; border-radius: 18px; }
+    .pill { border-radius: 14px; transition: transform .35s cubic-bezier(.3,1.4,.5,1); }
+    .periods button { border-radius: 14px; }
+    .brand b { font-size: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+<div class="grid-bg" aria-hidden="true"></div>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="../"><img src="../assets/avatar.png" alt="" width="40" height="40"><b>RUST TRACKER<span>BROBOT</span></b></a>
+    <nav class="langs" id="langs" aria-label="Language"></nav>
+  </header>
+
+  <section class="hero">
+    <p class="kicker" data-t="kicker"></p>
+    <h1 data-t="title"></h1>
+    <p class="lead" data-t="lead"></p>
+    <p class="trial" data-t="trial"></p>
+    <div class="periods" id="periods" role="group">
+      <span class="pill" id="pill" aria-hidden="true"></span>
+    </div>
+  </section>
+
+  <section class="cards" id="cards" aria-live="polite"></section>
+
+  <section class="section">
+    <h3 data-t="how_title"></h3>
+    <ol class="steps">
+      <li data-t="how1"></li>
+      <li data-t="how2"></li>
+      <li data-t="how3"></li>
+    </ol>
+    <div class="cta"><a class="buy" id="cta-buy" href="../discord/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.6 1.3a18.3 18.3 0 0 0-5.6 0L8.6 3a19.7 19.7 0 0 0-4.9 1.4C.6 9 -.3 13.6.1 18.1A19.9 19.9 0 0 0 6.2 21l1.3-2a12.9 12.9 0 0 1-2-1l.5-.4a14.2 14.2 0 0 0 12 0l.5.4c-.6.4-1.3.7-2 1l1.3 2a19.8 19.8 0 0 0 6.1-2.9c.5-5.2-.8-9.7-3.6-13.7ZM8.3 15.3c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Zm7.4 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Z"/></svg><span data-t="buy"></span></a></div>
+    <p class="dm" id="dm" hidden><span data-t="dm_hint"></span> <a id="dm-link" href="#" data-t="dm_link"></a></p>
+  </section>
+
+  <section class="section">
+    <h3 data-t="faq_title"></h3>
+    <div class="faq">
+      <details><summary data-t="q1"></summary><p data-t="a1"></p></details>
+      <details><summary data-t="q2"></summary><p data-t="a2"></p></details>
+      <details><summary data-t="q3"></summary><p data-t="a3"></p></details>
+      <details><summary data-t="q4"></summary><p data-t="a4"></p></details>
+    </div>
+  </section>
+
+  <footer>
+    <a href="../" data-t="back"></a>
+    <div class="note" data-t="note"></div>
+    <div class="legal" data-t="legal"></div>
+  </footer>
+</div>
+<script src="../config.js"></script>
+<script src="texts.js"></script>
+<script>
+(function () {
+  var cfg = window.RTB || {};
+  var T = window.RTB_PRICING;
+  var DISCORD_ICON = document.querySelector("#cta-buy svg").outerHTML;
+  // Цены (USD) и лимиты — как в боте: core/usdt.py и core/tiers.py (значения по умолчанию).
+  var SEAT_PACK = 2.99;
+  var TIERS = [
+    { k: "free", em: "🆓", n: "Free", p: { "1m": 0 }, pl: 1, sv: 1, h: "h_last", cl: 0, gr: 0, sp: "s_slow", f: ["f_alerts", "f_card"] },
+    { k: "bronze", em: "🥉", n: "Bronze", p: { "1m": 0.99 }, pl: 2, sv: 2, h: "h_last", cl: 0, gr: 0, sp: "s_norm", from: "Free", f: ["f_profile", "f_flags"] },
+    { k: "silver", em: "🥈", n: "Silver", p: { "1m": 1.99 }, pl: 3, sv: 2, h: "h_last", cl: 0, gr: 0, sp: "s_norm", from: "Bronze", f: ["f_bans", "f_combat", "f_srvchart"] },
+    { k: "gold", em: "🥇", n: "Gold", hot: 1, p: { "1m": 4.99, "3m": 12.99, "6m": 22.99, "12m": 39.99 }, pl: 5, sv: 3, h: "h_30", cl: 1, gr: 0, sp: "s_norm", from: "Silver",
+      f: ["f_history", "f_heat", "f_sleep", "f_night", "f_team", "f_digest"] },
+    { k: "platinum", em: "💠", n: "Platinum", p: { "1m": 6.99, "3m": 18.99, "6m": 34.49, "12m": 59.99 }, pl: 7, sv: 5, h: "h_90", cl: 2, gr: 1, sp: "s_norm", from: "Gold", f: ["f_groups", "f_pdf"] },
+    { k: "diamond", em: "💎", n: "Diamond", p: { "1m": 10.49, "3m": 27.49, "6m": 49.49, "12m": 86.49 }, pl: 20, sv: 10, h: "h_inf", cl: 4, gr: 3, sp: "s_fast", from: "Platinum", f: ["f_fast"] },
+    { k: "guild", em: "🛡", n: "Clan", clan: 1, p: { "1m": 15.99 }, pl: 20, sv: 10, h: "h_inf", cl: 4, gr: 3, sp: "s_fast", from: "Diamond", f: ["f_clanrp", "f_seats"] }
+  ];
+  var PERIODS = [["1m", 1], ["3m", 3], ["6m", 6], ["12m", 12]];
+  var params = new URLSearchParams(location.search);
+  var state = { period: "1m", lang: "en" };
+
+  function money(v) { return "$" + (Math.round(v * 100) / 100).toFixed(2); }
+  function fill(s, map) { return s.replace(/\{(\w+)\}/g, function (_, k) { return map[k] != null ? map[k] : ""; }); }
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function bestSave(code, months) {
+    var best = 0;
+    TIERS.forEach(function (t) { var total = t.p[code]; if (total) best = Math.max(best, Math.round((1 - total / (t.p["1m"] * months)) * 100)); });
+    return best;
+  }
+
+  function periods() {
+    var t = T[state.lang], box = document.getElementById("periods");
+    box.querySelectorAll("button").forEach(function (b) { b.remove(); });
+    PERIODS.forEach(function (pp) {
+      var b = el("button"); b.type = "button"; b.dataset.p = pp[0];
+      b.setAttribute("aria-pressed", String(pp[0] === state.period));
+      b.appendChild(el("span", null, t["p" + pp[0]]));
+      var s = pp[1] > 1 ? bestSave(pp[0], pp[1]) : 0;
+      if (s) b.appendChild(el("small", null, fill(t.save, { d: s })));
+      b.addEventListener("click", function () { state.period = pp[0]; periods(); cards(true); });
+      box.appendChild(b);
+    });
+    requestAnimationFrame(movePill);
+  }
+  function movePill() {
+    var box = document.getElementById("periods"), on = box.querySelector('[aria-pressed="true"]'), pill = document.getElementById("pill");
+    if (!on) return;
+    pill.style.bottom = "auto"; pill.style.width = on.offsetWidth + "px"; pill.style.height = on.offsetHeight + "px"; pill.style.top = on.offsetTop + "px";
+    pill.style.transform = "translateX(" + (on.offsetLeft - 5) + "px)";
+  }
+
+  function cards(changed) {
+    var t = T[state.lang], root = document.getElementById("cards"), months = 1;
+    PERIODS.forEach(function (pp) { if (pp[0] === state.period) months = pp[1]; });
+    root.textContent = "";
+    TIERS.forEach(function (tier, i) {
+      var c = el("article", "card" + (tier.hot ? " hot" : "")); c.style.animationDelay = (i * 60) + "ms";
+      if (tier.hot) c.appendChild(el("span", "badge", t.popular));
+      if (tier.clan) c.appendChild(el("span", "badge clan", t.clan_badge));
+      var nm = el("div", "name"); nm.appendChild(el("span", "em", tier.em)); nm.appendChild(el("h2", null, tier.n)); c.appendChild(nm);
+
+      var pr = el("div", "price"), amount = el("div", "amount" + (changed ? " flash" : "")), sub = el("div", "sub");
+      var total = tier.p[state.period];
+      if (!tier.p["1m"]) {
+        amount.textContent = t.free_price;
+      } else if (total && months > 1) {
+        amount.textContent = money(total);
+        sub.appendChild(el("span", null, fill(t.per_month, { p: money(total / months) })));
+        var d = Math.round((1 - total / (tier.p["1m"] * months)) * 100);
+        if (d > 0) sub.appendChild(el("span", "save", fill(t.save, { d: d })));
+      } else {
+        amount.textContent = money(tier.p["1m"]); amount.appendChild(el("span", "unit", t.month));
+        if (months > 1) sub.appendChild(el("span", null, t.monthly_only));
+      }
+      pr.appendChild(amount); pr.appendChild(sub); c.appendChild(pr);
+
+      var dl = el("dl", "limits");
+      [["l_players", tier.pl], ["l_servers", tier.sv], ["l_history", t[tier.h]], ["l_clans", tier.cl || t.no],
+       ["l_groups", tier.gr || t.no], ["l_speed", t[tier.sp]]].forEach(function (row) {
+        dl.appendChild(el("dt", null, t[row[0]])); dl.appendChild(el("dd", null, String(row[1])));
+      });
+      c.appendChild(dl);
+
+      var ul = el("ul", "feats");
+      if (tier.from) ul.appendChild(el("li", "from", fill(t.all_from, { t: tier.from })));
+      tier.f.forEach(function (key) { ul.appendChild(el("li", null, fill(t[key], { p: money(SEAT_PACK) }))); });
+      c.appendChild(ul);
+
+      var a = el("a", "buy" + (tier.p["1m"] ? "" : " ghost")); a.href = buyUrl();
+      a.innerHTML = DISCORD_ICON; a.appendChild(el("span", null, tier.p["1m"] ? t.buy : t.start_free));
+      c.appendChild(a);
+      root.appendChild(c);
+    });
+  }
+
+  function buyUrl() { return cfg.DISCORD_APP_ID ? "https://discord.com/oauth2/authorize?client_id=" + cfg.DISCORD_APP_ID : "../discord/"; }
+
+  function pickLang() {
+    var saved = null;
+    try { saved = localStorage.getItem("rtb_lang"); } catch (e) {}
+    var wanted = (params.get("lang") || saved || navigator.language || "en").slice(0, 2).toLowerCase();
+    return T[wanted] ? wanted : "en";
+  }
+  function render(lang) {
+    state.lang = lang; var t = T[lang];
+    document.documentElement.lang = lang;
+    document.title = t.title + " — Rust Tracker Bro";
+    document.querySelectorAll("[data-t]").forEach(function (e) { var k = e.getAttribute("data-t"); if (t[k] !== undefined) e.textContent = t[k]; });
+    document.querySelectorAll("#langs button").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.lang === lang)); });
+    periods(); cards(false);
+  }
+
+  document.getElementById("cta-buy").href = buyUrl();
+  if (cfg.DISCORD_APP_ID) {
+    document.getElementById("dm-link").href = "https://discord.com/users/" + cfg.DISCORD_APP_ID;
+    document.getElementById("dm").hidden = false;
+  }
+  var langs = document.getElementById("langs");
+  Object.keys(T).forEach(function (code) {
+    var b = el("button", null, T[code].name); b.type = "button"; b.dataset.lang = code;
+    b.addEventListener("click", function () { try { localStorage.setItem("rtb_lang", code); } catch (e) {} render(code); });
+    langs.appendChild(b);
+  });
+  window.addEventListener("resize", movePill);
+  render(pickLang());
+})();
+</script>
+</body>
+</html>

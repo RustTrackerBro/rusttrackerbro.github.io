@@ -4,6 +4,9 @@
 
 - `/` — описание и кнопки «Добавить в Discord» / «Открыть в Telegram»; `?ref=<id>` — приглашение
   (Telegram открывается с `start=ref_<id>`, для Discord показывается команда `/start ref_<id>`), `?p=<код>` — партнёр.
+- `/pricing/` — тарифы и цены (USD, как в Discord-боте), переключатель срока 1/3/6/12 мес. со скидкой, кнопки «Купить в Discord»,
+  «Как купить» и вопросы. Оплата — в самом боте; про способ оплаты на сайте не пишем. Цены и лимиты — в `pricing/index.html`
+  (`TIERS`), сверять с ботом (`core/usdt.py`, `core/tiers.py`); тексты — `pricing/texts.js`.
 - `/discord` — сразу добавление бота в Discord, `/telegram` — сразу бот в Telegram (`?ref=` сохраняется).
 - Настройки — `config.js` (имя бота в Telegram, Application ID Discord), тексты — `i18n.js` (ru, en, es, fr, uk).
 

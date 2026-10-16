@@ -87,6 +87,11 @@
   .copy { background: var(--rust); color: #1a0f08; border: 0; border-radius: 12px; padding: 0 16px; font-weight: 800; cursor: pointer; }
   .copy:hover { background: var(--rust-hot); }
 
+  .pricing-link { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 18px; padding: 15px 18px; border-radius: 14px;
+                  border: 1px solid var(--rust); color: var(--bone); font-weight: 700; text-decoration: none;
+                  background: linear-gradient(135deg, rgba(216, 105, 42, .18), rgba(216, 105, 42, .04)); transition: transform .15s ease, box-shadow .15s ease; }
+  .pricing-link:hover { transform: translateY(-2px); box-shadow: 0 0 0 2px var(--neon), 0 10px 26px rgba(168, 255, 62, .15); }
+  .pricing-link:focus-visible { outline: 3px solid var(--neon); outline-offset: 3px; }
   footer { text-align: center; margin-top: 30px; }
   .support { color: var(--bone); font-size: 14.5px; }
   .support code { color: var(--rust-hot); font: 700 14px ui-monospace, SFMono-Regular, Menlo, monospace; }
@@ -147,8 +152,10 @@
     <div class="feat"><div class="ico">🛡</div><div><b data-t="f2_t"></b><span data-t="f2"></span></div></div>
     <div class="feat"><div class="ico">😴</div><div><b data-t="f3_t"></b><span data-t="f3"></span></div></div>
     <div class="feat"><div class="ico">📡</div><div><b data-t="f4_t"></b><span data-t="f4"></span></div></div>
-    <div class="feat wide"><div class="ico">🧹</div><div><b data-t="f5_t"></b><span data-t="f5"></span></div></div>
+    <div class="feat wide"><div class="ico">🖥</div><div><b data-t="f5_t"></b><span data-t="f5"></span></div></div>
   </section>
+
+  <a class="pricing-link" href="pricing/" data-t="pricing_link"></a>
 
   <footer>
     <div class="support" id="support"></div>
