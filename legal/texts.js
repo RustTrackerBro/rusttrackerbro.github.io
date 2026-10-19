@@ -59,7 +59,7 @@ window.RTB_LEGAL_DOCS = {
         "These paid features hide a confirmed Steam account inside the Service: “Invisible” — from everyone except Diamond subscribers, “Invisible+” — from everyone. Privacy applies only inside the Service. After the paid period ends, data collection and display resume as usual. Sessions recorded by Diamond users while the basic “Invisible” was active may become visible to other users after it is turned off. The hidden account can be changed at most once every 30 days.",
       ] },
       { h: "5. Bonuses", b: [
-        "Bonus points 🪙 are earned through the referral and partner programs and can be used only to pay for a subscription in Telegram, fully or partly. Bonuses cannot be withdrawn or exchanged for money and expire 3 months after they are credited; a reminder is sent 7 days before.",
+        "Bonus points 🪙 are earned through the referral and partner programs and giveaways and can be used only to pay for a subscription, fully or partly — in Telegram and in Discord. In Discord, 1 🪙 is worth as much as 1 ⭐ of the price of the same period; if bonuses do not cover the full price, at least 0.50 USDT remains to pay. Bonuses cannot be withdrawn or exchanged for money and expire 3 months after they are credited; a reminder is sent 7 days before.",
       ] },
       { h: "6. Rules of use", b: [
         "You must not:",
@@ -171,7 +171,7 @@ window.RTB_LEGAL_DOCS = {
         "Платные функции скрывают подтверждённый аккаунт Steam внутри Сервиса: «Невидимка» — от всех, кроме подписчиков Diamond, «Невидимка+» — от всех. Приватность действует только внутри Сервиса. После окончания оплаченного срока сбор и показ данных возобновляются. Сессии, записанные пользователями Diamond во время базовой «Невидимки», после её отключения могут стать видны остальным. Скрываемый аккаунт можно менять не чаще раза в 30 дней.",
       ] },
       { h: "5. Бонусы", b: [
-        "Бонусы 🪙 начисляются по реферальной и партнёрской программам и тратятся только на оплату подписки в Telegram — полностью или частично. Бонусы нельзя вывести или обменять на деньги; они сгорают через 3 месяца после начисления, напоминание приходит за 7 дней.",
+        "Бонусы 🪙 начисляются по реферальной и партнёрской программам и в розыгрышах и тратятся только на оплату подписки — полностью или частично, в Telegram и в Discord. В Discord 1 🪙 стоит столько же, сколько 1 ⭐ цены того же срока; если бонусов не хватает на всю цену, к оплате остаётся не меньше 0.50 USDT. Бонусы нельзя вывести или обменять на деньги; они сгорают через 3 месяца после начисления, напоминание приходит за 7 дней.",
       ] },
       { h: "6. Правила использования", b: [
         "Запрещается:",
