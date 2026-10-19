@@ -109,7 +109,7 @@ window.RTB_LEGAL_DOCS = {
         "Data may be processed outside your country; we use providers that apply appropriate safeguards.",
       ] },
       { h: "6. How long we keep data", b: [
-        "• Session history is kept as long as needed for the plans of the users who track the player (from 30 days up to unlimited for the highest plan).",
+        "• Session history is kept for up to 90 days for every player and every plan; older sessions are deleted automatically.",
         "• Account data is kept while you use the Service; you can delete your tracked players at any time with `/forget`, and Rust+ data with “Disconnect Rust+”.",
         "• Payment records are kept as long as required for accounting and disputes.",
         "• Backups are kept for a limited time and deleted by rotation.",
@@ -221,7 +221,7 @@ window.RTB_LEGAL_DOCS = {
         "Данные могут обрабатываться за пределами вашей страны; мы пользуемся поставщиками, которые применяют надлежащие меры защиты.",
       ] },
       { h: "6. Сколько хранятся данные", b: [
-        "• История сессий хранится столько, сколько нужно для тарифов пользователей, отслеживающих игрока (от 30 дней до бессрочно для старшего тарифа).",
+        "• История сессий хранится не дольше 90 дней — для любого игрока и на любом тарифе; более старые сессии удаляются автоматически.",
         "• Данные аккаунта хранятся, пока вы пользуетесь Сервисом; отслеживаемых игроков можно удалить в любой момент командой `/forget`, данные Rust+ — кнопкой «Отключить Rust+».",
         "• Сведения об оплатах хранятся столько, сколько нужно для учёта и споров.",
         "• Резервные копии хранятся ограниченное время и удаляются по ротации.",
