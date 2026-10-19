@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rust Tracker Bro — Rust bot for Discord & Telegram</title>
+<title>Rust Tracker Bro — Rust player tracker bot for Discord & Telegram</title>
 <meta name="description" content="Alerts when Rust players join or leave a server, your clan's online, play and sleep times, Rust+ events — in Discord and Telegram.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Rust Tracker Bro">
@@ -13,6 +13,7 @@
 <meta property="og:image:width" content="1280">
 <meta property="og:image:height" content="720">
 <meta property="og:url" content="https://rusttrackerbro.com/">
+<link rel="canonical" href="https://rusttrackerbro.com/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#a8ff3e">
 <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -96,6 +97,9 @@
   .support { color: var(--bone); font-size: 14.5px; }
   .support code { color: var(--rust-hot); font: 700 14px ui-monospace, SFMono-Regular, Menlo, monospace; }
   .legal { color: #6f7880; font-size: 12px; margin-top: 6px; }
+  .legal-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 14px; font-size: 13px; margin-top: 8px; }
+  .legal-links a { color: #9aa3ab; text-decoration: none; font-weight: 400; }
+  .legal-links a:hover { color: #f08a4b; text-decoration: underline; }
   .langs { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-top: 14px; }
   .langs button { background: none; border: 1px solid var(--line); color: var(--muted); border-radius: 999px; padding: 4px 12px; cursor: pointer; font-size: 13px; }
   .langs button[aria-pressed="true"] { color: var(--bone); border-color: var(--neon); }
@@ -159,12 +163,15 @@
 
   <footer>
     <div class="support" id="support"></div>
+    <div class="legal-links" data-base="legal/"></div>
     <div class="legal" data-t="legal"></div>
     <div class="langs" id="langs"></div>
   </footer>
 </main>
 <script src="config.js"></script>
 <script src="i18n.js"></script>
+<script src="legal/texts.js"></script>
+<script src="legal/legal.js"></script>
 <script>
 (function () {
   var cfg = window.RTB || {};
@@ -195,6 +202,7 @@
     document.querySelectorAll("#langs button").forEach(function (b) {
       b.setAttribute("aria-pressed", String(b.dataset.lang === lang));
     });
+    if (window.RTB_LEGAL_LINKS) window.RTB_LEGAL_LINKS(lang);
   }
 
   var tgUrl = "https://t.me/" + cfg.TELEGRAM_BOT + (start ? "?start=" + encodeURIComponent(start) : "");

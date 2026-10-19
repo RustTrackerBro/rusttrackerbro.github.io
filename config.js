@@ -4,4 +4,7 @@
 window.RTB = {
   TELEGRAM_BOT: "RustTrackerBroBot",
   DISCORD_APP_ID: "1559223160069562461",
+  // Почта для правовых страниц (запросы о данных, возвраты). Пусто — только /support в боте.
+  // Бесплатно: Cloudflare → Email Routing → support@rusttrackerbro.com пересылается на вашу почту.
+  CONTACT_EMAIL: "",
 };
