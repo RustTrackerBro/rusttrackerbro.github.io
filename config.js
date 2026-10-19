@@ -7,4 +7,6 @@ window.RTB = {
   // Почта для правовых страниц (запросы о данных, возвраты). Пусто — только /support в боте.
   // Бесплатно: Cloudflare → Email Routing → support@rusttrackerbro.com пересылается на вашу почту.
   CONTACT_EMAIL: "",
+  // Discord-сервер проекта: новости и розыгрыши (ссылка-приглашение без срока). Пусто — ссылки нет.
+  DISCORD_SERVER: "https://discord.gg/PJ2ZAu9Z7q",
 };

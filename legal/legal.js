@@ -33,6 +33,9 @@
     document.querySelectorAll(".legal-links").forEach(function (box) {
       var base = box.getAttribute("data-base") || "legal/";
       box.textContent = "";
+      if (cfg.DISCORD_SERVER) {  // сервер проекта в Discord — первым
+        var d = el("a", null, ui.server || UI.en.server); d.href = cfg.DISCORD_SERVER; d.rel = "noopener"; box.appendChild(d);
+      }
       PAGES.forEach(function (p) { var a = el("a", null, ui[p]); a.href = base + p + "/"; box.appendChild(a); });
     });
   };
