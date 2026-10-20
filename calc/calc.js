@@ -243,7 +243,7 @@
   }
 
   // ------------------------------------------------------------ рейд: расчёт (как core/raid_data.py в боте)
-  var RAID = (function () {
+  var RAID = !D ? null : (function () {  // на странице генов данных рейда нет
     var R = D.raid, EPS = 1e-6;
     function ceil(x) { return Math.max(0, Math.ceil(x - EPS)); }
     function craftable(m) { return (R.cost[m] && R.cost[m].sulfur) > 0; }
@@ -484,8 +484,163 @@
     return function render() { redraw(); };
   }
 
+  // ------------------------------------------------------------ гены
+  function genesPage() {
+    var G = window.RTB_GENES, pad = document.getElementById("keypad"), input = document.getElementById("gq");
+    var list = document.getElementById("plants"), out = document.getElementById("gout"), msg = document.getElementById("gmsg");
+    var plants = [], typed = "", lastAdvice = null;
+    // ?p=GGYYXH:2,GYGYHH — чтобы делиться набором
+    var fromUrl = G.parse((params.get("p") || "").replace(/:/g, " x").replace(/,/g, "\n"));
+    plants = fromUrl.plants;
+
+    function geneSpan(g) {
+      var wrap = el("span", "genes");
+      g.split("").forEach(function (c) { wrap.appendChild(el("span", "gene g-" + (c === "?" ? "q" : c), c)); });
+      return wrap;
+    }
+    function total() { return plants.reduce(function (a, p) { return a + p.count; }, 0); }
+    function note(text) { msg.textContent = text || ""; msg.hidden = !text; }
+    function saveUrl() {
+      var p = new URLSearchParams(location.search);
+      if (plants.length) p.set("p", plants.map(function (x) { return x.genes + (x.count > 1 ? ":" + x.count : ""); }).join(",")); else p.delete("p");
+      var s = p.toString();
+      history.replaceState(null, "", location.pathname + (s ? "?" + s : ""));
+    }
+    function addPlants(found) {
+      var merged = {}, order = [];
+      plants.concat(found).forEach(function (p) {
+        if (!(p.genes in merged)) { merged[p.genes] = 0; order.push(p.genes); }
+        merged[p.genes] = Math.min(9, merged[p.genes] + p.count);
+      });
+      var all = order.map(function (g) { return { genes: g, count: merged[g] }; });
+      var full = all.reduce(function (a, p) { return a + p.count; }, 0);
+      var kept = [], n = 0;
+      all.forEach(function (p) { var c = Math.min(p.count, G.MAX_PLANTS - n); if (c > 0) { kept.push({ genes: p.genes, count: c }); n += c; } });
+      plants = kept;
+      return full > G.MAX_PLANTS;
+    }
+    function changed() { out.hidden = true; lastAdvice = null; drawList(); saveUrl(); }
+
+    function drawPad() {
+      clear(pad);
+      var slots = el("div", "typed");
+      for (var i = 0; i < 6; i++) slots.appendChild(el("span", "gene slot" + (typed[i] ? " g-" + typed[i] : ""), typed[i] || "·"));
+      pad.appendChild(slots);
+      var keys = el("div", "keys");
+      "GYHWX".split("").forEach(function (c) {
+        var b = el("button", "key g-" + c, c); b.type = "button";
+        b.addEventListener("click", function () {
+          typed += c;
+          if (typed.length === 6) {
+            var over = addPlants([{ genes: typed, count: 1 }]);
+            typed = ""; note(over ? t("g_limit", { n: G.MAX_PLANTS }) : ""); changed();
+          }
+          drawPad();
+        });
+        keys.appendChild(b);
+      });
+      var back = el("button", "key back", "⌫"); back.type = "button";
+      back.addEventListener("click", function () { typed = typed.slice(0, -1); drawPad(); });
+      keys.appendChild(back);
+      pad.appendChild(keys);
+    }
+    function drawList() {
+      clear(list);
+      if (!plants.length) { list.appendChild(el("p", "muted small", t("g_empty"))); return; }
+      plants.forEach(function (p, i) {
+        var row = el("div", "prow");
+        row.appendChild(geneSpan(p.genes));
+        var step = el("div", "step on"), minus = el("button", null, "−"), plus = el("button", null, "+");
+        minus.type = plus.type = "button";
+        minus.addEventListener("click", function () { if (p.count > 1) p.count--; else plants.splice(i, 1); changed(); });
+        plus.addEventListener("click", function () { if (p.count < 9 && total() < G.MAX_PLANTS) { p.count++; changed(); } });
+        step.appendChild(minus); step.appendChild(el("output", null, "×" + p.count)); step.appendChild(plus);
+        row.appendChild(step);
+        list.appendChild(row);
+      });
+    }
+    function gridBox(plan) {
+      var around = [];
+      plan.donors.forEach(function (d) { for (var n = 0; n < d[1]; n++) around.push(d[0]); });
+      while (around.length < 8) around.push(null);
+      var cells = around.slice(0, 4).concat(["C"]).concat(around.slice(4));
+      var box = el("div", "planter");
+      cells.forEach(function (g) {
+        var c = el("div", "cell" + (g === "C" ? " center" : g ? "" : " empty"));
+        if (g === "C") { c.appendChild(el("small", null, t("g_center"))); c.appendChild(geneSpan(plan.center)); }
+        else if (g) c.appendChild(geneSpan(g));
+        else c.textContent = "·";
+        box.appendChild(c);
+      });
+      return box;
+    }
+    function pct(p) { var v = p * 100; return v >= 10 ? String(Math.round(v)) : String(Math.round(v * 10) / 10); }
+    function drawAdvice(adv) {
+      clear(out); out.hidden = false;
+      if (adv.haveGod) {
+        var p = el("p", "big-note"); p.textContent = t("g_have_god", { g: adv.haveGod }); out.appendChild(p); return;
+      }
+      if (!adv.steps.length) { out.appendChild(el("p", "muted", t("g_need_two"))); return; }
+      if (!adv.gain) {
+        out.appendChild(el("p", "big-note", t("g_no_gain", { g: adv.bestNow })));
+        out.appendChild(el("p", "note", t("g_tips")));
+        return;
+      }
+      adv.steps.forEach(function (plan, i) {
+        var card = el("div", "gstep");
+        if (adv.steps.length > 1) card.appendChild(el("h3", null, t("g_step", { n: i + 1, t: adv.steps.length })));
+        if (i > 0) card.appendChild(el("p", "muted small", t("g_from_new", { g: adv.steps[i - 1].result.genes })));
+        var row = el("div", "gcols");
+        row.appendChild(gridBox(plan));
+        var info = el("div", "ginfo");
+        info.appendChild(el("div", "lbl", t("g_result")));
+        info.appendChild(geneSpan(plan.result.genes));
+        var o = plan.result;
+        o.slots.forEach(function (opts, s) {
+          if (opts.length > 1) {
+            var share = Math.round(100 / opts.length);
+            info.appendChild(el("p", "note", t("g_slot", { n: s + 1, list: opts.map(function (g) { return g + " " + share + "%"; }).join(" / ") })));
+          }
+        });
+        if (o.pGod >= 1 - 1e-9) info.appendChild(el("p", "badge-ok", t("g_god_sure")));
+        else if (o.pGod > 0) info.appendChild(el("p", "badge-chance", t("g_god_chance", { p: pct(o.pGod) })));
+        var donors = plan.donors.map(function (d) { return d[0] + (d[1] > 1 ? " ×" + d[1] : ""); }).join(", ");
+        info.appendChild(el("p", "small", t("g_center") + ": " + plan.center + " · " + t("g_around") + ": " + donors));
+        row.appendChild(info);
+        card.appendChild(row);
+        out.appendChild(card);
+      });
+      var last = adv.steps[adv.steps.length - 1].result;
+      if (last.pGod === 0) out.appendChild(el("p", "note warn", t("g_no_god")));
+      out.appendChild(el("p", "note", t("g_tips")));
+    }
+    function addFromInput() {
+      var r = G.parse(input.value);
+      if (!r.plants.length) { note(t("g_skipped", { list: r.bad.join(", ") || input.value.slice(0, 20) })); return; }
+      var over = addPlants(r.plants);
+      note([over ? t("g_limit", { n: G.MAX_PLANTS }) : "", r.bad.length ? t("g_skipped", { list: r.bad.join(", ") }) : ""].filter(Boolean).join(" "));
+      input.value = ""; changed();
+    }
+    document.getElementById("gadd").addEventListener("click", addFromInput);
+    input.addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); addFromInput(); } });
+    document.getElementById("gclear").addEventListener("click", function () { plants = []; typed = ""; note(""); drawPad(); changed(); });
+    document.getElementById("gcalc").addEventListener("click", function () {
+      if (total() < 2) { note(t("g_need_two")); return; }
+      note("");
+      lastAdvice = G.advise(plants);
+      drawAdvice(lastAdvice);
+      out.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    return function render() {
+      input.placeholder = t("g_paste");
+      drawPad(); drawList();
+      if (lastAdvice) drawAdvice(lastAdvice);
+    };
+  }
+
   // ------------------------------------------------------------ общее
-  var renderPage = PAGE === "raid" ? raidPage() : itemPage(PAGE === "craft" ? "c" : "r");
+  var renderPage = PAGE === "raid" ? raidPage() : PAGE === "genes" ? genesPage() : itemPage(PAGE === "craft" ? "c" : "r");
 
   function render() {
     document.documentElement.lang = lang;
@@ -493,7 +648,7 @@
     document.querySelectorAll("#langs button").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.lang === lang)); });
     var note = document.getElementById("data-note");
     if (note) {
-      note.textContent = PAGE === "raid" ? t("data_raid", { v: month(D.raidVersion) }) : t("data_game", { v: month(D.game.updated) });
+      note.textContent = PAGE === "raid" ? t("data_raid", { v: month(D.raidVersion) }) : PAGE === "genes" ? "" : t("data_game", { v: month(D.game.updated) });
     }
     if (window.RTB_LEGAL_LINKS) window.RTB_LEGAL_LINKS(lang);
     renderPage();

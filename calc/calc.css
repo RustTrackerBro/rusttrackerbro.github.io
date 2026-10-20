@@ -127,6 +127,46 @@ small.over { color: var(--rust-hot); font-weight: 600; }
 .fastline .mid { font-family: var(--display); font-size: 24px; color: var(--rust-hot); line-height: 1.1; }
 .note.warn { color: var(--rust-hot); }
 
+/* Гены */
+.genes { display: inline-flex; gap: 3px; }
+.gene { display: inline-grid; place-items: center; width: 26px; height: 28px; border-radius: 7px; font: 800 15px var(--mono);
+        background: var(--steel-3); border: 1px solid var(--line-2); color: var(--bone); }
+.g-G, .g-Y, .g-H { background: rgba(120, 200, 60, .2); border-color: rgba(140, 220, 70, .55); color: #c6f58f; }
+.g-W, .g-X { background: rgba(230, 70, 60, .2); border-color: rgba(240, 90, 80, .6); color: #ffb0a6; }
+.g-q { background: rgba(240, 190, 60, .18); border-color: rgba(240, 190, 60, .6); color: #ffd982; }
+.keypad { display: grid; gap: 10px; margin: 12px 0; }
+.typed { display: flex; gap: 6px; }
+.typed .gene { width: 40px; height: 44px; font-size: 20px; }
+.typed .slot:not([class*="g-"]) { color: var(--dim); }
+.keys { display: flex; gap: 8px; flex-wrap: wrap; }
+.key { width: 52px; height: 48px; border-radius: 12px; border: 1px solid var(--line-2); background: var(--steel-3); color: var(--bone);
+       font: 800 20px var(--mono); cursor: pointer; }
+.key:hover { filter: brightness(1.2); }
+.paste { display: grid; grid-template-columns: 1fr auto; gap: 8px; }
+.plants { display: grid; gap: 8px; margin-top: 14px; }
+.prow { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 6px 0; border-bottom: 1px dashed var(--line); }
+.prow .step output { min-width: 40px; }
+.btn-main { border: 0; border-radius: 12px; padding: 12px 20px; font: 800 16px var(--body); cursor: pointer; color: #1a0f08;
+            background: linear-gradient(135deg, var(--rust-hot), var(--rust)); }
+.btn-main:hover { filter: brightness(1.08); }
+.gstep { padding: 6px 0 16px; border-bottom: 1px dashed var(--line); margin-bottom: 14px; }
+.gstep:last-of-type { border-bottom: 0; }
+.gstep h3 { margin: 0 0 8px; font-size: 14px; color: var(--rust-hot); text-transform: uppercase; letter-spacing: .06em; }
+.gcols { display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: start; }
+.planter { display: grid; grid-template-columns: repeat(3, auto); gap: 6px; padding: 10px; border-radius: 14px; background: #2a2118;
+           border: 2px solid #4a3826; }
+.cell { display: grid; place-items: center; gap: 2px; min-width: 96px; min-height: 52px; padding: 6px; border-radius: 10px; background: rgba(15,18,21,.6); }
+.cell .gene { width: 14px; height: 20px; font-size: 11px; border-radius: 4px; }
+.cell.center { outline: 2px solid var(--neon); background: rgba(168,255,62,.08); }
+.cell.center small { color: var(--neon); font-size: 10px; text-transform: uppercase; letter-spacing: .08em; }
+.cell.empty { color: var(--dim); }
+.ginfo .lbl { color: var(--muted); font-size: 13px; margin-bottom: 4px; }
+.ginfo > .genes .gene { width: 30px; height: 34px; font-size: 17px; }
+.badge-ok, .badge-chance { display: inline-block; margin: 10px 0 4px; padding: 6px 12px; border-radius: 10px; font-weight: 800; }
+.badge-ok { background: rgba(168,255,62,.14); color: var(--neon); border: 1px solid rgba(168,255,62,.5); }
+.badge-chance { background: rgba(240,190,60,.14); color: #ffd982; border: 1px solid rgba(240,190,60,.5); }
+.big-note { font-size: 16px; font-weight: 600; }
+
 /* Бот: Telegram и Discord */
 .cta { margin-top: 26px; border-color: var(--rust); background: linear-gradient(135deg, rgba(216,105,42,.16), rgba(216,105,42,.04) 60%), var(--steel-2); }
 .cta p { color: var(--muted); margin: 0 0 14px; }
@@ -153,7 +193,9 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--neon); outline-
   .summary { position: static; }
 }
 @media (max-width: 620px) {
-  .cols, .btns { grid-template-columns: 1fr; }
+  .cols, .btns, .gcols { grid-template-columns: 1fr; }
+  .cell { min-width: 0; }
+  .cell .gene { width: 12px; height: 18px; font-size: 10px; }
   .finder { grid-template-columns: 1fr 96px; }
   .results { right: 0; }
   .panel { padding: 16px; }
