@@ -93,6 +93,11 @@
                   background: linear-gradient(135deg, rgba(216, 105, 42, .18), rgba(216, 105, 42, .04)); transition: transform .15s ease, box-shadow .15s ease; }
   .pricing-link:hover { transform: translateY(-2px); box-shadow: 0 0 0 2px var(--neon), 0 10px 26px rgba(168, 255, 62, .15); }
   .pricing-link:focus-visible { outline: 3px solid var(--neon); outline-offset: 3px; }
+  .calc-links { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 10px; margin-top: 10px; }
+  .calc-links a { display: flex; justify-content: center; align-items: center; padding: 12px 10px; border-radius: 14px; border: 1px solid var(--line);
+                  background: var(--steel-2); color: var(--bone); font-weight: 700; font-size: 14.5px; text-decoration: none; text-align: center; }
+  .calc-links a:hover { border-color: var(--neon); }
+  @media (max-width: 620px) { .calc-links { grid-template-columns: 1fr 1fr; } .calc-links a:first-child { grid-column: 1 / -1; } }
   footer { text-align: center; margin-top: 30px; }
   .support { color: var(--bone); font-size: 14.5px; }
   .support code { color: var(--rust-hot); font: 700 14px ui-monospace, SFMono-Regular, Menlo, monospace; }
@@ -160,6 +165,11 @@
   </section>
 
   <a class="pricing-link" href="pricing/" data-t="pricing_link"></a>
+  <nav class="calc-links" aria-label="Rust calculators">
+    <a href="raid/" data-t="calc_raid">💣 Raid calculator</a>
+    <a href="craft/" data-t="calc_craft">🛠 Craft</a>
+    <a href="recycle/" data-t="calc_recycle">♻️ Recycle</a>
+  </nav>
 
   <footer>
     <div class="support" id="support"></div>

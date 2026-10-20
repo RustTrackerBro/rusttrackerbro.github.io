@@ -2,6 +2,7 @@
 window.RTB_TEXT = {
   ru: {
     name: "Русский",
+    calc_raid: "💣 Калькулятор рейда", calc_craft: "🛠 Крафт", calc_recycle: "♻️ Переработка",
     pricing_link: "⭐ Тарифы и цены →",
     pulse: "онлайн · серверы · кланы",
     tag: "Бот для Rust в Discord и Telegram",
@@ -25,6 +26,7 @@ window.RTB_TEXT = {
   },
   en: {
     name: "English",
+    calc_raid: "💣 Raid calculator", calc_craft: "🛠 Craft", calc_recycle: "♻️ Recycle",
     pricing_link: "⭐ Pricing →",
     pulse: "online · servers · clans",
     tag: "Rust bot for Discord and Telegram",
@@ -48,6 +50,7 @@ window.RTB_TEXT = {
   },
   es: {
     name: "Español",
+    calc_raid: "💣 Calculadora de raid", calc_craft: "🛠 Crafteo", calc_recycle: "♻️ Reciclaje",
     pricing_link: "⭐ Precios →",
     pulse: "online · servidores · clanes",
     tag: "Bot de Rust para Discord y Telegram",
@@ -71,6 +74,7 @@ window.RTB_TEXT = {
   },
   fr: {
     name: "Français",
+    calc_raid: "💣 Calculateur de raid", calc_craft: "🛠 Craft", calc_recycle: "♻️ Recyclage",
     pricing_link: "⭐ Tarifs →",
     pulse: "en ligne · serveurs · clans",
     tag: "Bot Rust pour Discord et Telegram",
@@ -94,6 +98,7 @@ window.RTB_TEXT = {
   },
   uk: {
     name: "Українська",
+    calc_raid: "💣 Калькулятор рейду", calc_craft: "🛠 Крафт", calc_recycle: "♻️ Переробка",
     pricing_link: "⭐ Тарифи й ціни →",
     pulse: "онлайн · сервери · клани",
     tag: "Бот для Rust у Discord і Telegram",
@@ -117,6 +122,7 @@ window.RTB_TEXT = {
   },
   de: {
     name: "Deutsch",
+    calc_raid: "💣 Raid-Rechner", calc_craft: "🛠 Craften", calc_recycle: "♻️ Recyceln",
     pricing_link: "⭐ Preise →",
     pulse: "online · server · clans",
     tag: "Rust-Bot für Discord und Telegram",
@@ -140,6 +146,7 @@ window.RTB_TEXT = {
   },
   tr: {
     name: "Türkçe",
+    calc_raid: "💣 Raid hesaplayıcı", calc_craft: "🛠 Üretim", calc_recycle: "♻️ Geri dönüşüm",
     pricing_link: "⭐ Fiyatlar →",
     pulse: "çevrimiçi · sunucular · klanlar",
     tag: "Discord ve Telegram için Rust botu",
@@ -163,6 +170,7 @@ window.RTB_TEXT = {
   },
   pt: {
     name: "Português",
+    calc_raid: "💣 Calculadora de raid", calc_craft: "🛠 Craft", calc_recycle: "♻️ Reciclagem",
     pricing_link: "⭐ Preços →",
     pulse: "online · servidores · clãs",
     tag: "Bot de Rust para Discord e Telegram",
