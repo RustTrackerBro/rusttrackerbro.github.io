@@ -6,7 +6,9 @@
   var LANGS = ["en", "ru", "es", "fr", "uk", "de", "tr", "pt"];
   var PAGE = document.body.getAttribute("data-page");
   var params = new URLSearchParams(location.search);
-  var lang = pickLang();
+  // Языковые версии (/ru/raid/ …) — язык задан страницей (<html data-lang>); английская (корень) — по выбору посетителя.
+  var FIXED = document.documentElement.getAttribute("data-lang");
+  var lang = FIXED && T[FIXED] ? FIXED : pickLang();
   var MAX_QTY = 1000;
   // Как в боте (bot/handlers/calc.py): популярные предметы для кнопок.
   var POPULAR = {
@@ -641,7 +643,9 @@
   function render() {
     document.documentElement.lang = lang;
     document.querySelectorAll("[data-t]").forEach(function (node) { node.textContent = t(node.getAttribute("data-t")); });
-    document.querySelectorAll("#langs button").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.lang === lang)); });
+    document.querySelectorAll("#langs a").forEach(function (a) {
+      if (a.dataset.lang === lang) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current");
+    });
     var note = document.getElementById("data-note");
     if (note) {
       note.textContent = PAGE === "raid" ? t("data_raid", { v: month(D.raidVersion) }) : PAGE === "genes" ? "" : t("data_game", { v: month(D.game.updated) });
@@ -655,15 +659,15 @@
   var dc = document.getElementById("btn-discord");
   if (dc && cfg.DISCORD_APP_ID) dc.href = "https://discord.com/oauth2/authorize?client_id=" + cfg.DISCORD_APP_ID;
 
-  var langs = document.getElementById("langs");
-  LANGS.filter(function (c) { return T[c]; }).forEach(function (code) {
-    var b = el("button", null, T[code].name); b.type = "button"; b.dataset.lang = code;
-    b.addEventListener("click", function () {
-      lang = code;
+  // Ссылки на языковые версии: запоминаем выбор и переносим состояние калькулятора (?t=…, ?item=…).
+  document.querySelectorAll("#langs a").forEach(function (a) {
+    a.addEventListener("click", function (ev) {
+      var code = a.dataset.lang;
+      if (!T[code]) return;
       try { localStorage.setItem("rtb_lang", code); } catch (e) {}
-      render();
+      ev.preventDefault();
+      location.href = a.getAttribute("href").split("?")[0] + location.search.replace(/([?&])lang=[^&]*&?/, "$1").replace(/[?&]$/, "");
     });
-    langs.appendChild(b);
   });
   render();
 })();

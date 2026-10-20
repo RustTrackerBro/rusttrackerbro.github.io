@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="de" data-lang="de">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rust Gen-Rechner | Rust Tracker Bro</title>
+<meta name="description" content="Gib die Gene deiner Klone ein — du siehst, was in die Mitte eines großen Pflanzkübels und was drumherum kommt, um den perfekten Klon (3 G + 3 Y in beliebiger Reihenfolge) zu züchten, mit genauer Chance und Schritt-für-Schritt-Plan.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rust Tracker Bro">
+<meta property="og:title" content="Rust Gen-Rechner | Rust Tracker Bro">
+<meta property="og:description" content="Gib die Gene deiner Klone ein — du siehst, was in die Mitte eines großen Pflanzkübels und was drumherum kommt, um den perfekten Klon (3 G + 3 Y in beliebiger Reihenfolge) zu züchten, mit genauer Chance und Schritt-für-Schritt-Plan.">
+<meta property="og:image" content="https://rusttrackerbro.com/assets/og.jpg">
+<meta property="og:url" content="https://rusttrackerbro.com/de/genes/">
+<link rel="canonical" href="https://rusttrackerbro.com/de/genes/">
+<link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/genes/">
+<link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/genes/">
+<link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/genes/">
+<link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/genes/">
+<link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/genes/">
+<link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/genes/">
+<link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/genes/">
+<link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/genes/">
+<link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/genes/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#15191e">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/avatar.png">
+<link rel="stylesheet" href="/calc/calc.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Rust Gen-Rechner", "url": "https://rusttrackerbro.com/de/genes/", "applicationCategory": "GameApplication", "operatingSystem": "Any", "isAccessibleForFree": true, "inLanguage": "de", "description": "Gib die Gene deiner Klone ein — du siehst, was in die Mitte eines großen Pflanzkübels und was drumherum kommt, um den perfekten Klon (3 G + 3 Y in beliebiger Reihenfolge) zu züchten, mit genauer Chance und Schritt-für-Schritt-Plan.", "publisher": {"@type": "Organization", "name": "Rust Tracker Bro", "url": "https://rusttrackerbro.com/"}}</script>
+</head>
+<body data-page="genes">
+<div class="glow" aria-hidden="true"></div>
+<div class="grid-bg" aria-hidden="true"></div>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="/"><img src="/assets/avatar.png" alt="" width="40" height="40"><b>RUST TRACKER<span>BROBOT</span></b></a>
+    <nav class="langs" id="langs" aria-label="Language"><a href="/genes/" hreflang="en" lang="en" data-lang="en">English</a><a href="/ru/genes/" hreflang="ru" lang="ru" data-lang="ru">Русский</a><a href="/uk/genes/" hreflang="uk" lang="uk" data-lang="uk">Українська</a><a href="/es/genes/" hreflang="es" lang="es" data-lang="es">Español</a><a href="/fr/genes/" hreflang="fr" lang="fr" data-lang="fr">Français</a><a href="/de/genes/" hreflang="de" lang="de" data-lang="de" aria-current="true">Deutsch</a><a href="/tr/genes/" hreflang="tr" lang="tr" data-lang="tr">Türkçe</a><a href="/pt/genes/" hreflang="pt" lang="pt" data-lang="pt">Português</a></nav>
+  </header>
+  <nav class="tabs" aria-label="Calculators"><a href="/de/raid/" data-t="nav_raid">💣 Raid</a><a href="/de/craft/" data-t="nav_craft">🛠 Craften</a><a href="/de/recycle/" data-t="nav_recycle">♻️ Recyceln</a><a href="/de/genes/" data-t="nav_genes" aria-current="page">🧬 Gene</a></nav>
+  <section class="hero">
+    <p class="kicker" data-t="genes_kicker">Rust Gen-Rechner</p>
+    <h1 data-t="genes_h1">Gen-Planer</h1>
+    <p class="lead" data-t="genes_lead">Gib die Gene deiner Klone ein — du siehst, was in die Mitte eines großen Pflanzkübels und was drumherum kommt, um den perfekten Klon (3 G + 3 Y in beliebiger Reihenfolge) zu züchten, mit genauer Chance und Schritt-für-Schritt-Plan.</p>
+  </section>
+  <section class="panel">
+    <h2 data-t="clones">Deine Klone</h2>
+    <p class="muted small" data-t="g_hint">Tippe die Buchstaben oder füge Gene ein: GGYYXH, GYGYHH x3 (x3 — so viele Klone davon).</p>
+    <div class="keypad" id="keypad"></div>
+    <div class="paste"><input class="field" id="gq" type="text" autocomplete="off" spellcheck="false" placeholder="Gene einfügen, z. B. GGYYXH, GYGYHH x3">
+      <button class="link-btn" id="gadd" type="button" data-t="g_add">Hinzufügen</button></div>
+    <p class="note warn" id="gmsg" hidden></p>
+    <div id="plants" class="plants"></div>
+    <div class="actions"><button class="btn-main" id="gcalc" type="button" data-t="g_calc">🧮 Berechnen</button>
+      <button class="link-btn" id="gclear" type="button" data-t="g_clear">Leeren</button></div>
+    <p class="note" data-t="g_legend">G Wachstum · Y Ertrag · H Widerstand: gut (Gewicht 0,6). W Wasser · X leer: schlecht (Gewicht 1,0).</p>
+  </section>
+  <section class="panel" id="gout" aria-live="polite" hidden></section>
+  <section class="panel"><p class="muted small" data-t="g_rules">Jedes Feld wird einzeln entschieden: Die Gewichte gleicher Gene der Nachbarn werden addiert, und der Gewinner ersetzt das Gen der Mitte nur, wenn seine Summe strikt größer ist als das Gewicht des Mittel-Gens. Gleichstand zwischen Nachbarn entscheidet der Zufall.</p></section>
+  <section class="panel cta">
+    <h2 data-t="cta_title">Dieselben Rechner im Bot — in Discord und Telegram</h2>
+    <p data-t="cta_text">Dazu: Benachrichtigungen, wenn ein Spieler online kommt, Clan-Online, Rust+-Raidalarme und die Befehle !craft, !recycle, !raid direkt im Spielchat.</p>
+    <div class="btns">
+      <a class="btn discord" id="btn-discord" href="/discord/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.6 1.3a18.3 18.3 0 0 0-5.6 0L8.6 3a19.7 19.7 0 0 0-4.9 1.4C.6 9 -.3 13.6.1 18.1A19.9 19.9 0 0 0 6.2 21l1.3-2a12.9 12.9 0 0 1-2-1l.5-.4a14.2 14.2 0 0 0 12 0l.5.4c-.6.4-1.3.7-2 1l1.3 2a19.8 19.8 0 0 0 6.1-2.9c.5-5.2-.8-9.7-3.6-13.7ZM8.3 15.3c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Zm7.4 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Z"/></svg><span data-t="btn_discord">Zu Discord hinzufügen</span></a>
+      <a class="btn tg" id="btn-tg" href="https://t.me/RustTrackerBroBot"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.6 19.8c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.2-8.3c.4-.4-.1-.6-.6-.2L6 13.4 1.1 11.9c-1.1-.3-1.1-1.1.2-1.6L20.5 2.9c.9-.3 1.7.2 1.4 1.4Z"/></svg><span data-t="btn_tg">In Telegram öffnen</span></a>
+    </div>
+  </section>
+  <footer>
+    <a class="home" href="/" data-t="home">← Rust Tracker Bro</a>
+    <div class="data-note" id="data-note"></div>
+    <div class="legal-links" data-base="/legal/"></div>
+    <div class="legal" data-t="legal">Rust ist eine Marke von Facepunch Studios. Dieses Projekt steht in keiner Verbindung zu Facepunch.</div>
+  </footer>
+</div>
+<script src="/config.js"></script>
+<script src="/legal/texts.js"></script>
+<script src="/legal/legal.js"></script>
+<script src="/calc/ui.js"></script>
+<script src="/calc/genes.js"></script>
+<script src="/calc/calc.js"></script>
+</body>
+</html>

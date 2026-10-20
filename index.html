@@ -168,10 +168,10 @@
 
   <a class="pricing-link" href="pricing/" data-t="pricing_link"></a>
   <nav class="calc-links" aria-label="Rust calculators">
-    <a href="raid/" data-t="calc_raid">💣 Raid calculator</a>
-    <a href="craft/" data-t="calc_craft">🛠 Craft</a>
-    <a href="recycle/" data-t="calc_recycle">♻️ Recycle</a>
-    <a href="genes/" data-t="calc_genes">🧬 Gene planner</a>
+    <a href="raid/" data-calc="raid" data-t="calc_raid">💣 Raid calculator</a>
+    <a href="craft/" data-calc="craft" data-t="calc_craft">🛠 Craft</a>
+    <a href="recycle/" data-calc="recycle" data-t="calc_recycle">♻️ Recycle</a>
+    <a href="genes/" data-calc="genes" data-t="calc_genes">🧬 Gene planner</a>
   </nav>
 
   <footer>
@@ -214,6 +214,10 @@
     var code = document.createElement("code"); code.textContent = "/support"; sup.appendChild(code);
     document.querySelectorAll("#langs button").forEach(function (b) {
       b.setAttribute("aria-pressed", String(b.dataset.lang === lang));
+    });
+    // Калькуляторы — на языке страницы (/ru/raid/ …; английские — в корне).
+    document.querySelectorAll("a[data-calc]").forEach(function (a) {
+      a.href = (lang === "en" ? "" : "/" + lang) + "/" + a.getAttribute("data-calc") + "/";
     });
     if (window.RTB_LEGAL_LINKS) window.RTB_LEGAL_LINKS(lang);
   }

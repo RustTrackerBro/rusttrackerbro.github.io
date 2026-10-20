@@ -31,6 +31,9 @@ body { background: var(--steel); color: var(--bone); font: 16px/1.5 var(--body);
 .langs { display: flex; flex-wrap: wrap; gap: 6px; }
 .langs button { background: rgba(26,31,37,.7); border: 1px solid var(--line); color: var(--muted); border-radius: 999px; padding: 4px 11px; cursor: pointer; font: 13px var(--body); }
 .langs button[aria-pressed="true"] { color: var(--bone); border-color: var(--neon); }
+.langs a { background: rgba(26,31,37,.7); border: 1px solid var(--line); color: var(--muted); border-radius: 999px; padding: 4px 11px; font: 13px var(--body); text-decoration: none; }
+.langs a:hover { color: var(--bone); }
+.langs a[aria-current="true"] { color: var(--bone); border-color: var(--neon); }
 
 .tabs { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; margin-top: 4px; }
 .tabs a { text-decoration: none; color: var(--muted); font-weight: 700; font-size: 15px; padding: 9px 16px; border-radius: 999px;
@@ -200,3 +203,11 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--neon); outline-
   .results { right: 0; }
   .panel { padding: 16px; }
 }
+
+/* Справочник: списки ссылок на цели рейда и предметы */
+.seo-links h2 { font-size: 16px; }
+.link-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 4px 14px; }
+.link-grid a { color: var(--muted); text-decoration: none; font-size: 14px; display: block; padding: 3px 0; overflow-wrap: anywhere; }
+.link-grid a:hover { color: var(--bone); text-decoration: underline; }
+a.btn-main { display: inline-block; text-decoration: none; }
+.hero h1, .hero .lead, .result-head h2 { overflow-wrap: anywhere; hyphens: auto; }

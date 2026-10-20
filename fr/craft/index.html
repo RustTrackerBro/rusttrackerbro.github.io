@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculateur de craft Rust | Rust Tracker Bro</title>
+<meta name="description" content="Ressources, niveau d&#x27;établi et temps de craft de n&#x27;importe quel objet de Rust, avec la poudre et les explosifs décomposés en soufre et charbon.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rust Tracker Bro">
+<meta property="og:title" content="Calculateur de craft Rust | Rust Tracker Bro">
+<meta property="og:description" content="Ressources, niveau d&#x27;établi et temps de craft de n&#x27;importe quel objet de Rust, avec la poudre et les explosifs décomposés en soufre et charbon.">
+<meta property="og:image" content="https://rusttrackerbro.com/assets/og.jpg">
+<meta property="og:url" content="https://rusttrackerbro.com/fr/craft/">
+<link rel="canonical" href="https://rusttrackerbro.com/fr/craft/">
+<link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/craft/">
+<link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/craft/">
+<link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/craft/">
+<link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/craft/">
+<link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/craft/">
+<link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/craft/">
+<link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/craft/">
+<link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/craft/">
+<link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/craft/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#15191e">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/avatar.png">
+<link rel="stylesheet" href="/calc/calc.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculateur de craft Rust", "url": "https://rusttrackerbro.com/fr/craft/", "applicationCategory": "GameApplication", "operatingSystem": "Any", "isAccessibleForFree": true, "inLanguage": "fr", "description": "Ressources, niveau d'établi et temps de craft de n'importe quel objet de Rust, avec la poudre et les explosifs décomposés en soufre et charbon.", "publisher": {"@type": "Organization", "name": "Rust Tracker Bro", "url": "https://rusttrackerbro.com/"}}</script>
+</head>
+<body data-page="craft">
+<div class="glow" aria-hidden="true"></div>
+<div class="grid-bg" aria-hidden="true"></div>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="/"><img src="/assets/avatar.png" alt="" width="40" height="40"><b>RUST TRACKER<span>BROBOT</span></b></a>
+    <nav class="langs" id="langs" aria-label="Language"><a href="/craft/" hreflang="en" lang="en" data-lang="en">English</a><a href="/ru/craft/" hreflang="ru" lang="ru" data-lang="ru">Русский</a><a href="/uk/craft/" hreflang="uk" lang="uk" data-lang="uk">Українська</a><a href="/es/craft/" hreflang="es" lang="es" data-lang="es">Español</a><a href="/fr/craft/" hreflang="fr" lang="fr" data-lang="fr" aria-current="true">Français</a><a href="/de/craft/" hreflang="de" lang="de" data-lang="de">Deutsch</a><a href="/tr/craft/" hreflang="tr" lang="tr" data-lang="tr">Türkçe</a><a href="/pt/craft/" hreflang="pt" lang="pt" data-lang="pt">Português</a></nav>
+  </header>
+  <nav class="tabs" aria-label="Calculators"><a href="/fr/raid/" data-t="nav_raid">💣 Raid</a><a href="/fr/craft/" data-t="nav_craft" aria-current="page">🛠 Craft</a><a href="/fr/recycle/" data-t="nav_recycle">♻️ Recyclage</a><a href="/fr/genes/" data-t="nav_genes">🧬 Gènes</a></nav>
+  <section class="hero">
+    <p class="kicker" data-t="craft_kicker">Calculateur de craft Rust</p>
+    <h1 data-t="craft_h1">Calculateur de craft</h1>
+    <p class="lead" data-t="craft_lead">Ressources, niveau d&#x27;établi et temps de craft de n&#x27;importe quel objet de Rust, avec la poudre et les explosifs décomposés en soufre et charbon.</p>
+  </section>
+  <section class="panel">
+    <div class="finder">
+      <label><span data-t="item">Objet</span>
+        <input class="field" id="q" type="search" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list"
+               aria-expanded="false" aria-controls="results" placeholder="Objet, ex. C4 ou AK"></label>
+      <label><span data-t="qty">Quantité</span><input class="field" id="qty" type="number" min="1" max="1000" value="1" inputmode="numeric"></label>
+      <ul class="results" id="results" role="listbox" hidden></ul>
+    </div>
+    <div class="chips" id="chips"></div>
+  </section>
+  <section class="panel" id="out" aria-live="polite"><p class="muted">Choisissez un objet ci-dessus pour voir le calcul.</p></section>
+  <section class="panel seo-links">
+    <h2>Objets populaires</h2>
+    <ul class="link-grid"><li><a href="/fr/item/explosive-timed/">Timed Explosive Charge</a></li><li><a href="/fr/item/ammo-rocket-basic/">Rocket</a></li><li><a href="/fr/item/ammo-rocket-hv/">High Velocity Rocket</a></li><li><a href="/fr/item/ammo-rocket-fire/">Incendiary Rocket</a></li><li><a href="/fr/item/ammo-rifle-explosive/">Explosive 5.56 Rifle Ammo</a></li><li><a href="/fr/item/explosive-satchel/">Satchel Charge</a></li><li><a href="/fr/item/grenade-beancan/">Beancan Grenade</a></li><li><a href="/fr/item/grenade-f1/">F1 Grenade</a></li><li><a href="/fr/item/gunpowder/">Gun Powder</a></li><li><a href="/fr/item/explosives/">Explosives</a></li><li><a href="/fr/item/ammo-rifle/">5.56 Rifle Ammo</a></li><li><a href="/fr/item/ammo-pistol/">Pistol Bullet</a></li><li><a href="/fr/item/ammo-shotgun/">12 Gauge Buckshot</a></li><li><a href="/fr/item/rifle-ak/">Assault Rifle</a></li><li><a href="/fr/item/rifle-bolt/">Bolt Action Rifle</a></li><li><a href="/fr/item/rifle-semiauto/">Semi-Automatic Rifle</a></li><li><a href="/fr/item/smg-mp5/">MP5A4</a></li><li><a href="/fr/item/smg-thompson/">Thompson</a></li><li><a href="/fr/item/smg-2/">Custom SMG</a></li><li><a href="/fr/item/pistol-python/">Python Revolver</a></li><li><a href="/fr/item/pistol-semiauto/">Semi-Automatic Pistol</a></li><li><a href="/fr/item/pistol-revolver/">Revolver</a></li><li><a href="/fr/item/shotgun-pump/">Pump Shotgun</a></li><li><a href="/fr/item/rocket-launcher/">Rocket Launcher</a></li><li><a href="/fr/item/metal-facemask/">Metal Facemask</a></li><li><a href="/fr/item/metal-plate-torso/">Metal Chest Plate</a></li><li><a href="/fr/item/roadsign-jacket/">Road Sign Jacket</a></li><li><a href="/fr/item/roadsign-kilt/">Road Sign Kilt</a></li><li><a href="/fr/item/coffeecan-helmet/">Coffee Can Helmet</a></li><li><a href="/fr/item/door-hinged-toptier/">Armored Door</a></li><li><a href="/fr/item/door-hinged-metal/">Sheet Metal Door</a></li><li><a href="/fr/item/wall-frame-garagedoor/">Garage Door</a></li><li><a href="/fr/item/wall-external-high-stone/">High External Stone Wall</a></li><li><a href="/fr/item/autoturret/">Auto Turret</a></li><li><a href="/fr/item/syringe-medical/">Medical Syringe</a></li><li><a href="/fr/item/largemedkit/">Large Medkit</a></li><li><a href="/fr/item/metalpipe/">Metal Pipe</a></li><li><a href="/fr/item/gears/">Gears</a></li><li><a href="/fr/item/metalspring/">Metal Spring</a></li><li><a href="/fr/item/roadsigns/">Road Signs</a></li><li><a href="/fr/item/propanetank/">Empty Propane Tank</a></li><li><a href="/fr/item/sewingkit/">Sewing Kit</a></li><li><a href="/fr/item/metalblade/">Metal Blade</a></li></ul>
+  </section>
+  <section class="panel cta">
+    <h2 data-t="cta_title">Les mêmes calculateurs dans le bot, sur Discord et Telegram</h2>
+    <p data-t="cta_text">En plus : alertes de connexion des joueurs, clan en ligne, alarmes de raid Rust+ et commandes !craft, !recycle, !raid dans le chat du jeu.</p>
+    <div class="btns">
+      <a class="btn discord" id="btn-discord" href="/discord/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.6 1.3a18.3 18.3 0 0 0-5.6 0L8.6 3a19.7 19.7 0 0 0-4.9 1.4C.6 9 -.3 13.6.1 18.1A19.9 19.9 0 0 0 6.2 21l1.3-2a12.9 12.9 0 0 1-2-1l.5-.4a14.2 14.2 0 0 0 12 0l.5.4c-.6.4-1.3.7-2 1l1.3 2a19.8 19.8 0 0 0 6.1-2.9c.5-5.2-.8-9.7-3.6-13.7ZM8.3 15.3c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Zm7.4 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Z"/></svg><span data-t="btn_discord">Ajouter à Discord</span></a>
+      <a class="btn tg" id="btn-tg" href="https://t.me/RustTrackerBroBot"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.6 19.8c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.2-8.3c.4-.4-.1-.6-.6-.2L6 13.4 1.1 11.9c-1.1-.3-1.1-1.1.2-1.6L20.5 2.9c.9-.3 1.7.2 1.4 1.4Z"/></svg><span data-t="btn_tg">Ouvrir dans Telegram</span></a>
+    </div>
+  </section>
+  <footer>
+    <a class="home" href="/" data-t="home">← Rust Tracker Bro</a>
+    <div class="data-note" id="data-note"></div>
+    <div class="legal-links" data-base="/legal/"></div>
+    <div class="legal" data-t="legal">Rust est une marque de Facepunch Studios. Ce projet n&#x27;est pas affilié à Facepunch.</div>
+  </footer>
+</div>
+<script src="/config.js"></script>
+<script src="/legal/texts.js"></script>
+<script src="/legal/legal.js"></script>
+<script src="/calc/ui.js"></script>
+<script src="/calc/data.js"></script>
+<script src="/calc/calc.js"></script>
+</body>
+</html>
