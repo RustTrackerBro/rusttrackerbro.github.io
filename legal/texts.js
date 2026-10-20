@@ -3,7 +3,7 @@
 // Сверять с ботом: /terms и /privacy (rusttracker/i18n/locales/*.toml, разделы [terms] и [privacy]).
 // Нельзя: называть источники данных и способ отслеживания, писать про криптовалюту и про то, где дешевле.
 // Разметка тела: строка «• …» — пункт списка; `…` — команда; {contact} — как связаться (config.js → CONTACT_EMAIL).
-window.RTB_LEGAL_UPDATED = "2026-10-19";
+window.RTB_LEGAL_UPDATED = "2026-10-20";
 
 window.RTB_LEGAL_UI = {
   en: { server: "💬 Discord server", name: "English", terms: "Terms of Service", privacy: "Privacy Policy", refunds: "Refund Policy", home: "Home",
@@ -88,7 +88,7 @@ window.RTB_LEGAL_DOCS = {
         "• Telegram or Discord account ID, name and language as provided by the platform.",
         "• Your settings, the players, servers and clans you track, and your notifications.",
         "• Subscription and payment records: plan, period, amount, date and the payment ID. We never receive card or wallet credentials.",
-        "• If you connect Rust+: encrypted access tokens, paired servers and devices.",
+        "• If you connect Rust+: encrypted access tokens, paired servers and devices; your team's last death spots (kept until the wipe, 30 days at most) and decay timers (until they fire).",
         "• Player board: your listings, responses, ratings and confirmed Steam account. Your contacts are shown only to the other side of an accepted response.",
         "• Support messages and technical logs; anonymous usage statistics of the bot’s screens (kept up to 90 days).",
       ] },
@@ -200,7 +200,7 @@ window.RTB_LEGAL_DOCS = {
         "• ID аккаунта Telegram или Discord, имя и язык — в том виде, как их передаёт платформа.",
         "• Ваши настройки, отслеживаемые игроки, серверы и кланы, уведомления.",
         "• Сведения о подписках и оплатах: уровень, срок, сумма, дата и номер платежа. Данные карт и кошельков мы не получаем.",
-        "• Если подключён Rust+: зашифрованные токены доступа, привязанные серверы и устройства.",
+        "• Если подключён Rust+: зашифрованные токены доступа, привязанные серверы и устройства; места последних смертей вашей команды (до вайпа, не дольше 30 дней) и таймеры гниения (до срабатывания).",
         "• Биржа игроков: ваши объявления, отклики, оценки и подтверждённый аккаунт Steam. Контакты видит только другая сторона принятого отклика.",
         "• Обращения в поддержку и технические журналы; обезличенная статистика открытия экранов бота (хранится до 90 дней).",
       ] },
