@@ -3,7 +3,9 @@
   "use strict";
   var WEIGHT = { G: 0.6, Y: 0.6, H: 0.6, W: 1.0, X: 1.0 };
   var RED = { W: true, X: true };
-  var MAX_DONORS = 8, MAX_COPIES = 9, MAX_PLANTS = 24, MAX_STEPS = 3, NEW_CLONE_COPIES = 4, EPS = 1e-9;
+  var MAX_DONORS = 8, MAX_COPIES = 9, MAX_KINDS = 8, MAX_STEPS = 3, NEW_CLONE_COPIES = 4, EPS = 1e-9;
+  var IW = { G: 3, Y: 3, H: 3, W: 5, X: 5 };  // веса ×5 — целые, без ошибок округления
+  var ALPHA = "GHWXY".split("");  // порядок генов в ничьей — как в боте
   var LOOK = { "Г": "G", "У": "Y", "Н": "H", "Х": "X", "Ш": "W" };
 
   function normalize(text) {
@@ -32,16 +34,10 @@
         } else bad.push(words[i].slice(0, 20));
       }
     });
-    return { plants: trim(order.map(function (g) { return { genes: g, count: plants[g] }; }), limit || MAX_PLANTS), bad: bad.slice(0, 5) };
+    return { plants: trim(order.map(function (g) { return { genes: g, count: plants[g] }; }), limit || MAX_KINDS), bad: bad.slice(0, 5) };
   }
   function trim(plants, limit) {
-    var out = [], total = 0;
-    for (var i = 0; i < plants.length; i++) {
-      var n = Math.min(plants[i].count, limit - total);
-      if (n <= 0) break;
-      out.push({ genes: plants[i].genes, count: n }); total += n;
-    }
-    return out;
+    return plants.slice(0, limit).map(function (p) { return { genes: p.genes, count: Math.max(1, Math.min(MAX_COPIES, p.count)) }; });
   }
   function count(s, ch) { var n = 0; for (var i = 0; i < s.length; i++) if (s[i] === ch) n++; return n; }
   function isGod(g) { return count(g, "G") === 3 && count(g, "Y") === 3; }
@@ -93,30 +89,41 @@
   function bestPlan(plants) {
     var kinds = plants.map(function (p) { return p.genes; }), counts = plants.map(function (p) { return p.count; });
     if (counts.reduce(function (a, b) { return a + b; }, 0) < 2) return null;
-    var best = null, bestPlan = null, chosen = kinds.map(function () { return 0; });
-    function evaluate() {
-      var donors = [];
-      kinds.forEach(function (g, i) { for (var n = 0; n < chosen[i]; n++) donors.push(g); });
-      var sig = [0, 1, 2, 3, 4, 5].map(function (s) { return slotWinners(donors, s); });
+    var idx = {}; ALPHA.forEach(function (g, i) { idx[g] = i; });
+    var kindSlots = kinds.map(function (k) { return [0, 1, 2, 3, 4, 5].map(function (s) { return idx[k[s]]; }); });
+    var wOf = ALPHA.map(function (g) { return IW[g]; });
+    var centers = kinds.map(function (c) { return [0, 1, 2, 3, 4, 5].map(function (s) { return [IW[c[s]], c[s]]; }); });
+    var sums = [0, 1, 2, 3, 4, 5].map(function () { return [0, 0, 0, 0, 0]; });
+    var chosen = kinds.map(function () { return 0; }), best = null, bestAt = null;
+    function evaluate(nDonors) {
+      var tops = [], wins = [];
+      for (var s = 0; s < 6; s++) {
+        var row = sums[s], top = Math.max.apply(null, row), w = [];
+        if (top > 0) for (var i = 0; i < 5; i++) if (row[i] === top) w.push(ALPHA[i]);
+        tops.push(top); wins.push(w);
+      }
       var nKinds = chosen.filter(function (n) { return n; }).length;
-      kinds.forEach(function (center, ci) {
-        if (chosen[ci] >= counts[ci]) return;
-        var slots = sig.map(function (w, s) { return w[0].length && w[1] > WEIGHT[center[s]] + EPS ? w[0] : [center[s]]; });
-        var o = outcome(slots), key = [o.pGod, o.eClose, -o.eRed, -donors.length, -nKinds];
-        if (best === null || greater(key, best)) {
-          best = key;
-          bestPlan = { center: center, donors: kinds.map(function (g, i) { return [g, chosen[i]]; }).filter(function (d) { return d[1]; }), result: o };
-        }
-      });
+      for (var ci = 0; ci < kinds.length; ci++) {
+        if (chosen[ci] >= counts[ci]) continue;
+        var cs = centers[ci], slots = [];
+        for (var t = 0; t < 6; t++) slots.push(wins[t].length && tops[t] > cs[t][0] ? wins[t] : [cs[t][1]]);
+        var o = outcome(slots), key = [o.pGod, o.eClose, -o.eRed, -nDonors, -nKinds];
+        if (best === null || greater(key, best)) { best = key; bestAt = [ci, chosen.slice(), o]; }
+      }
     }
+    function put(i, n) { kindSlots[i].forEach(function (gi, s) { sums[s][gi] += wOf[gi] * n; }); }
     function dfs(i, left) {
-      if (i === kinds.length) { if (left < MAX_DONORS) evaluate(); return; }
-      for (var n = 0; n <= Math.min(counts[i], left); n++) { chosen[i] = n; dfs(i + 1, left - n); }
-      chosen[i] = 0;
+      if (i === kinds.length) { if (left < MAX_DONORS) evaluate(MAX_DONORS - left); return; }
+      var topN = Math.min(counts[i], left);
+      for (var n = 0; n <= topN; n++) { chosen[i] = n; dfs(i + 1, left - n); if (n < topN) put(i, 1); }
+      put(i, -topN); chosen[i] = 0;
     }
     dfs(0, MAX_DONORS);
-    if (bestPlan) bestPlan.donorCount = bestPlan.donors.reduce(function (a, d) { return a + d[1]; }, 0);
-    return bestPlan;
+    if (!bestAt) return null;
+    var picked = bestAt[1], plan = { center: kinds[bestAt[0]], result: bestAt[2] };
+    plan.donors = kinds.map(function (g, i) { return [g, picked[i]]; }).filter(function (d) { return d[1]; });
+    plan.donorCount = plan.donors.reduce(function (a, d) { return a + d[1]; }, 0);
+    return plan;
   }
   function better(o, g) { return greater([o.eClose, -o.eRed], [closeness(g), -reds(g)]); }
   function improves(a, b) { return greater([a.pGod, a.eClose, -a.eRed], [b.pGod, b.eClose, -b.eRed]); }
@@ -129,7 +136,7 @@
         return greater([closeness(b), -reds(b)], [closeness(a), -reds(a)]) ? b : a;
       });
     }
-    var pool = plants.slice();
+    var pool = trim(plants, MAX_KINDS);
     for (var step = 0; step < MAX_STEPS; step++) {
       var plan = bestPlan(pool);
       if (!plan) break;
@@ -147,5 +154,5 @@
     }
     return adv;
   }
-  window.RTB_GENES = { parse: parse, advise: advise, crossbreed: function (c, d) { return [0, 1, 2, 3, 4, 5].map(function (s) { var w = slotWinners(d, s); return w[0].length && w[1] > WEIGHT[c[s]] + EPS ? w[0] : [c[s]]; }); }, MAX_PLANTS: MAX_PLANTS };
+  window.RTB_GENES = { parse: parse, advise: advise, crossbreed: function (c, d) { return [0, 1, 2, 3, 4, 5].map(function (s) { var w = slotWinners(d, s); return w[0].length && w[1] > WEIGHT[c[s]] + EPS ? w[0] : [c[s]]; }); }, MAX_KINDS: MAX_KINDS, MAX_COPIES: MAX_COPIES };
 })();

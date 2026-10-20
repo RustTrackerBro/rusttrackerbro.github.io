@@ -510,14 +510,10 @@
       var merged = {}, order = [];
       plants.concat(found).forEach(function (p) {
         if (!(p.genes in merged)) { merged[p.genes] = 0; order.push(p.genes); }
-        merged[p.genes] = Math.min(9, merged[p.genes] + p.count);
+        merged[p.genes] = Math.min(G.MAX_COPIES, merged[p.genes] + p.count);
       });
-      var all = order.map(function (g) { return { genes: g, count: merged[g] }; });
-      var full = all.reduce(function (a, p) { return a + p.count; }, 0);
-      var kept = [], n = 0;
-      all.forEach(function (p) { var c = Math.min(p.count, G.MAX_PLANTS - n); if (c > 0) { kept.push({ genes: p.genes, count: c }); n += c; } });
-      plants = kept;
-      return full > G.MAX_PLANTS;
+      plants = order.slice(0, G.MAX_KINDS).map(function (g) { return { genes: g, count: merged[g] }; });
+      return order.length > G.MAX_KINDS;
     }
     function changed() { out.hidden = true; lastAdvice = null; drawList(); saveUrl(); }
 
@@ -533,7 +529,7 @@
           typed += c;
           if (typed.length === 6) {
             var over = addPlants([{ genes: typed, count: 1 }]);
-            typed = ""; note(over ? t("g_limit", { n: G.MAX_PLANTS }) : ""); changed();
+            typed = ""; note(over ? t("g_limit", { n: G.MAX_KINDS }) : ""); changed();
           }
           drawPad();
         });
@@ -553,7 +549,7 @@
         var step = el("div", "step on"), minus = el("button", null, "−"), plus = el("button", null, "+");
         minus.type = plus.type = "button";
         minus.addEventListener("click", function () { if (p.count > 1) p.count--; else plants.splice(i, 1); changed(); });
-        plus.addEventListener("click", function () { if (p.count < 9 && total() < G.MAX_PLANTS) { p.count++; changed(); } });
+        plus.addEventListener("click", function () { if (p.count < G.MAX_COPIES) { p.count++; changed(); } });
         step.appendChild(minus); step.appendChild(el("output", null, "×" + p.count)); step.appendChild(plus);
         row.appendChild(step);
         list.appendChild(row);
@@ -618,7 +614,7 @@
       var r = G.parse(input.value);
       if (!r.plants.length) { note(t("g_skipped", { list: r.bad.join(", ") || input.value.slice(0, 20) })); return; }
       var over = addPlants(r.plants);
-      note([over ? t("g_limit", { n: G.MAX_PLANTS }) : "", r.bad.length ? t("g_skipped", { list: r.bad.join(", ") }) : ""].filter(Boolean).join(" "));
+      note([over ? t("g_limit", { n: G.MAX_KINDS }) : "", r.bad.length ? t("g_skipped", { list: r.bad.join(", ") }) : ""].filter(Boolean).join(" "));
       input.value = ""; changed();
     }
     document.getElementById("gadd").addEventListener("click", addFromInput);
