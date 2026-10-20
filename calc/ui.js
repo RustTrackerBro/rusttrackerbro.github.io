@@ -3,6 +3,7 @@
 window.RTB_CALC_UI = {
   en: {
     name: "English",
+    methods: "Raid with", methods_default: "↺ Default", methods_hint: "Tick the explosives you have — “cheapest” and “fast, no overkill” use only them.", fast: "Fast, no overkill", over: "{n}% overkill", none: "Nothing you picked can break this target.", missing: "Can't break with your pick: {names} — left out of the total.", catapult: "needs a catapult",
     nav_raid: "💣 Raid", nav_craft: "🛠 Craft", nav_recycle: "♻️ Recycle", home: "← Rust Tracker Bro",
     raid_kicker: "Rust raid calculator", craft_kicker: "Rust craft calculator", recycle_kicker: "Rust recycle calculator",
     raid_h1: "Raid calculator",
@@ -32,6 +33,7 @@ window.RTB_CALC_UI = {
   },
   ru: {
     name: "Русский",
+    methods: "Чем рейдим", methods_default: "↺ По умолчанию", methods_hint: "Отметьте взрывчатку, которая у вас есть, — «дешевле всего» и «быстро, без перебора» посчитаю только из неё.", fast: "Быстро, без перебора", over: "перебор {n}%", none: "Ничем из выбранного эту цель не взять.", missing: "Ничем из выбранного не взять: {names} — в итог не вошло.", catapult: "нужна катапульта",
     nav_raid: "💣 Рейд", nav_craft: "🛠 Крафт", nav_recycle: "♻️ Переработка", home: "← Rust Tracker Bro",
     raid_kicker: "Калькулятор рейда Rust", craft_kicker: "Калькулятор крафта Rust", recycle_kicker: "Калькулятор переработки Rust",
     raid_h1: "Калькулятор рейда",
@@ -61,6 +63,7 @@ window.RTB_CALC_UI = {
   },
   uk: {
     name: "Українська",
+    methods: "Чим рейдимо", methods_default: "↺ За замовчуванням", methods_hint: "Позначте вибухівку, яка у вас є, — «найдешевше» і «швидко, без перебору» порахую тільки з неї.", fast: "Швидко, без перебору", over: "перебір {n}%", none: "Нічим із вибраного цю ціль не взяти.", missing: "Нічим із вибраного не взяти: {names} — до підсумку не ввійшло.", catapult: "потрібна катапульта",
     nav_raid: "💣 Рейд", nav_craft: "🛠 Крафт", nav_recycle: "♻️ Переробка", home: "← Rust Tracker Bro",
     raid_kicker: "Калькулятор рейду Rust", craft_kicker: "Калькулятор крафту Rust", recycle_kicker: "Калькулятор переробки Rust",
     raid_h1: "Калькулятор рейду",
@@ -90,6 +93,7 @@ window.RTB_CALC_UI = {
   },
   es: {
     name: "Español",
+    methods: "Raidear con", methods_default: "↺ Predeterminado", methods_hint: "Marca los explosivos que tienes: «lo más barato» y «rápido, sin exceso» usan solo esos.", fast: "Rápido, sin exceso", over: "{n}% de exceso", none: "Nada de lo elegido rompe este objetivo.", missing: "Nada de lo elegido rompe: {names}; no entra en el total.", catapult: "requiere catapulta",
     nav_raid: "💣 Raid", nav_craft: "🛠 Crafteo", nav_recycle: "♻️ Reciclaje", home: "← Rust Tracker Bro",
     raid_kicker: "Calculadora de raid de Rust", craft_kicker: "Calculadora de crafteo de Rust", recycle_kicker: "Calculadora de reciclaje de Rust",
     raid_h1: "Calculadora de raid",
@@ -119,6 +123,7 @@ window.RTB_CALC_UI = {
   },
   fr: {
     name: "Français",
+    methods: "Raider avec", methods_default: "↺ Par défaut", methods_hint: "Cochez les explosifs que vous avez — « le moins cher » et « rapide, sans surplus » n'utilisent qu'eux.", fast: "Rapide, sans surplus", over: "{n} % de surplus", none: "Rien de ce que vous avez choisi ne casse cette cible.", missing: "Rien de ce que vous avez choisi ne casse : {names} — hors du total.", catapult: "catapulte requise",
     nav_raid: "💣 Raid", nav_craft: "🛠 Craft", nav_recycle: "♻️ Recyclage", home: "← Rust Tracker Bro",
     raid_kicker: "Calculateur de raid Rust", craft_kicker: "Calculateur de craft Rust", recycle_kicker: "Calculateur de recyclage Rust",
     raid_h1: "Calculateur de raid",
@@ -148,6 +153,7 @@ window.RTB_CALC_UI = {
   },
   de: {
     name: "Deutsch",
+    methods: "Raiden mit", methods_default: "↺ Standard", methods_hint: "Hake den Sprengstoff an, den du hast — „am günstigsten“ und „schnell, ohne Overkill“ nutzen nur ihn.", fast: "Schnell, ohne Overkill", over: "{n} % Overkill", none: "Mit deiner Auswahl geht dieses Ziel nicht kaputt.", missing: "Mit deiner Auswahl nicht zu knacken: {names} — nicht im Ergebnis.", catapult: "Katapult nötig",
     nav_raid: "💣 Raid", nav_craft: "🛠 Craften", nav_recycle: "♻️ Recyceln", home: "← Rust Tracker Bro",
     raid_kicker: "Rust Raid-Rechner", craft_kicker: "Rust Crafting-Rechner", recycle_kicker: "Rust Recycling-Rechner",
     raid_h1: "Raid-Rechner",
@@ -177,6 +183,7 @@ window.RTB_CALC_UI = {
   },
   tr: {
     name: "Türkçe",
+    methods: "Neyle raid", methods_default: "↺ Varsayılan", methods_hint: "Elindeki patlayıcıları işaretle — «en ucuzu» ve «hızlı, fazlasız» yalnızca bunlarla hesaplanır.", fast: "Hızlı, fazlasız", over: "%{n} fazla", none: "Seçtiklerinle bu hedef kırılmaz.", missing: "Seçtiklerinle kırılmaz: {names} — toplama girmedi.", catapult: "mancınık gerekir",
     nav_raid: "💣 Raid", nav_craft: "🛠 Üretim", nav_recycle: "♻️ Geri dönüşüm", home: "← Rust Tracker Bro",
     raid_kicker: "Rust raid hesaplayıcı", craft_kicker: "Rust üretim hesaplayıcı", recycle_kicker: "Rust geri dönüşüm hesaplayıcı",
     raid_h1: "Raid hesaplayıcı",
@@ -206,6 +213,7 @@ window.RTB_CALC_UI = {
   },
   pt: {
     name: "Português",
+    methods: "Raidar com", methods_default: "↺ Padrão", methods_hint: "Marque os explosivos que você tem — «mais barato» e «rápido, sem excesso» usam só eles.", fast: "Rápido, sem excesso", over: "{n}% de excesso", none: "Nada do que você escolheu quebra este alvo.", missing: "Nada do que você escolheu quebra: {names} — fora do total.", catapult: "precisa de catapulta",
     nav_raid: "💣 Raid", nav_craft: "🛠 Craft", nav_recycle: "♻️ Reciclagem", home: "← Rust Tracker Bro",
     raid_kicker: "Calculadora de raid de Rust", craft_kicker: "Calculadora de craft de Rust", recycle_kicker: "Calculadora de reciclagem de Rust",
     raid_h1: "Calculadora de raid",

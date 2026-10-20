@@ -63,6 +63,7 @@ h1 { font-family: var(--display); font-weight: 400; font-size: clamp(34px, 7vw, 
 .chips .lbl { color: var(--dim); font-size: 13px; margin-right: 2px; }
 .chip { border: 1px solid var(--line-2); background: var(--steel-2); color: var(--bone); border-radius: 999px; padding: 6px 12px; cursor: pointer; font: 600 13.5px var(--body); }
 .chip:hover, .chip[aria-pressed="true"] { border-color: var(--rust); color: var(--rust-hot); }
+.chip[aria-pressed="true"] { background: rgba(216,105,42,.16); }
 
 /* Результат крафта / переработки */
 .result-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
@@ -113,6 +114,18 @@ table.methods tr.best td { color: var(--neon); }
 .picked li { display: flex; justify-content: space-between; gap: 8px; }
 .picked li b { font-family: var(--mono); }
 .summary .box { margin-top: 12px; }
+
+.methods { margin: 0 0 14px; }
+.chip.ghost { border-style: dashed; color: var(--muted); }
+.chip.shake { animation: shake .35s; }
+@keyframes shake { 25% { transform: translateX(-3px); } 75% { transform: translateX(3px); } }
+small.over { color: var(--rust-hot); font-weight: 600; }
+.plan { margin: 8px 0 0; font-size: 14px; }
+.plan.cheap b { color: var(--neon); }
+.plan.fast b { color: var(--rust-hot); }
+.fastline { margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--line); }
+.fastline .mid { font-family: var(--display); font-size: 24px; color: var(--rust-hot); line-height: 1.1; }
+.note.warn { color: var(--rust-hot); }
 
 /* Бот: Telegram и Discord */
 .cta { margin-top: 26px; border-color: var(--rust); background: linear-gradient(135deg, rgba(216,105,42,.16), rgba(216,105,42,.04) 60%), var(--steel-2); }

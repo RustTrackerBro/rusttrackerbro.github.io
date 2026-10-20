@@ -15,8 +15,6 @@
     r: ["techparts", "metalpipe", "gears", "metalspring", "riflebody", "smgbody", "semibody", "sheetmetal",
         "roadsigns", "propanetank", "tarp", "rope"]
   };
-  // «Дешевле всего» — из обычной взрывчатки, как команда !raid в игре (катапульта и миномёт — отдельная техника).
-  var CHEAP = ["c4", "rocket", "satchel", "exp556", "beancan"];
 
   function pickLang() {
     var saved = null;
@@ -244,12 +242,81 @@
     };
   }
 
-  // ------------------------------------------------------------ рейд
+  // ------------------------------------------------------------ рейд: расчёт (как core/raid_data.py в боте)
+  var RAID = (function () {
+    var R = D.raid, EPS = 1e-6;
+    function ceil(x) { return Math.max(0, Math.ceil(x - EPS)); }
+    function craftable(m) { return (R.cost[m] && R.cost[m].sulfur) > 0; }
+    function sulfur(parts) { return Object.keys(parts).reduce(function (s, m) { return s + (R.cost[m].sulfur || 0) * parts[m]; }, 0); }
+    function actions(parts) { return Object.keys(parts).reduce(function (s, m) { return s + (R.actionWeight[m] != null ? R.actionWeight[m] : 1) * parts[m]; }, 0); }
+    function dmg(tg, m) { return tg.dmg[m] ? tg.dmg[m][0] : 0; }
+    function overkill(tg, m) { var d = tg.dmg[m]; return d && d[1] ? tg.counts[m] * d[0] / tg.hp - 1 : null; }
+    function pairs(list) { var o = {}; list.forEach(function (p) { o[p[0]] = p[1]; }); return o; }
+    function key(parts) { return Object.keys(parts).sort().map(function (m) { return m + "=" + parts[m]; }).join(","); }
+    function withKnown(parts, known) {
+      known.forEach(function (combo) {
+        var ks = Object.keys(combo);
+        if (ks.length !== 2 || Object.keys(parts).length !== 2 || !(ks[0] in parts) || !(ks[1] in parts)) return;
+        var a = ks[0], b = ks[1], next = {};
+        next[a] = parts[a]; next[b] = parts[b];
+        if (parts[a] === combo[a]) next[b] = Math.max(parts[b], combo[b]);
+        else if (parts[b] === combo[b]) next[a] = Math.max(parts[a], combo[a]);
+        parts = next;
+      });
+      return parts;
+    }
+    function options(tg, methods) {
+      var chosen = R.selectable.filter(function (m) { return methods.indexOf(m) >= 0 && tg.counts[m] && craftable(m); });
+      var known = (tg.combo.length ? [tg.combo] : []).concat(tg.also).filter(function (c) {
+        return c.every(function (p) { return chosen.indexOf(p[0]) >= 0; });
+      }).map(pairs);
+      var out = new Map();
+      function add(p) { out.set(key(p), p); }
+      chosen.forEach(function (m) { var p = {}; p[m] = tg.counts[m]; add(p); });
+      known.forEach(add);
+      chosen.forEach(function (a) {
+        var da = dmg(tg, a);
+        chosen.forEach(function (b) {
+          if (a === b) return;
+          var db = dmg(tg, b);
+          for (var k = 1; k < Math.min(tg.counts[a], R.maxK); k++) {
+            var j = ceil((tg.hp - k * da) / db);
+            if (j < 1 || j >= tg.counts[b]) continue;
+            var p = {}; p[a] = k; p[b] = j;
+            add(withKnown(p, known));
+          }
+        });
+      });
+      return Array.from(out.values());
+    }
+    function minBy(list) {
+      var best = null;
+      list.forEach(function (p) {
+        if (!best) { best = p; return; }
+        var s = sulfur(p), bs = sulfur(best);
+        if (s < bs || (s === bs && actions(p) < actions(best))) best = p;
+      });
+      return best || {};
+    }
+    function best(tg, methods) { return minBy(options(tg, methods)); }
+    function fastest(tg, methods) {
+      var opts = options(tg, methods);
+      if (!opts.length) return {};
+      var limit = Math.min.apply(null, opts.map(actions)) * R.fastSlack + EPS;
+      return minBy(opts.filter(function (p) { return actions(p) <= limit; }));
+    }
+    return { best: best, fastest: fastest, sulfur: sulfur, overkill: overkill, options: options };
+  })();
+  window.RTB_RAID = RAID;  // для проверки расчёта
+
   function raidPage() {
     var R = D.raid, list = document.getElementById("targets"), sum = document.getElementById("summary");
+    var chipsBox = document.getElementById("methods");
     var byKey = {};
     R.targets.forEach(function (tg) { byKey[tg.k] = tg; });
     var basket = {}, open = {};
+    // Чем рейдим — только пока страница открыта (так решил владелец), по умолчанию — как в боте.
+    var methods = R.defaultSelected.slice();
     (params.get("t") || "").split(",").forEach(function (part) {
       var m = /^([a-z_]+):(\d{1,3})$/.exec(part);
       if (m && byKey[m[1]]) basket[m[1]] = Math.min(99, parseInt(m[2], 10));
@@ -258,18 +325,11 @@
     if (initial && byKey[initial]) open[initial] = true;
 
     function name(kind, key) { var x = D.text[lang] || D.text.en; return x[kind + "_" + key] || D.text.en[kind + "_" + key] || key; }
-    function sulfur(parts) { return Object.keys(parts).reduce(function (s, m) { return s + (R.cost[m].sulfur || 0) * parts[m]; }, 0); }
-    function cheapest(tg) {
-      var options = CHEAP.filter(function (m) { return tg.counts[m]; }).map(function (m) { var o = {}; o[m] = tg.counts[m]; return o; });
-      if (tg.combo.length && tg.combo.every(function (p) { return CHEAP.indexOf(p[0]) >= 0; })) {
-        var c = {}; tg.combo.forEach(function (p) { c[p[0]] = p[1]; }); options.push(c);
-      }
-      options.sort(function (a, b) { return sulfur(a) - sulfur(b); });
-      return options[0] || {};
-    }
     function partsText(parts) {
-      return Object.keys(parts).map(function (m) { return fmt(parts[m]) + " × " + name("m", m); }).join(" + ");
+      return Object.keys(parts).sort(function (a, b) { return (R.cost[b].sulfur || 0) - (R.cost[a].sulfur || 0); })
+        .map(function (m) { return fmt(parts[m]) + " × " + name("m", m); }).join(" + ");
     }
+    function sulfurWord() { return t("sulfur").toLowerCase(); }
     function saveUrl() {
       var p = new URLSearchParams(location.search);
       var keys = Object.keys(basket).filter(function (k) { return basket[k] > 0; });
@@ -278,30 +338,64 @@
       var s = p.toString();
       history.replaceState(null, "", location.pathname + (s ? "?" + s : ""));
     }
+    function redraw() { drawChips(); drawList(); drawSummary(); }
     function setQty(k, n) {
       n = Math.max(0, Math.min(99, n));
       if (n) basket[k] = n; else delete basket[k];
       drawList(); drawSummary(); saveUrl();
     }
 
+    function drawChips() {
+      clear(chipsBox);
+      chipsBox.appendChild(el("span", "lbl", t("methods") + ":"));
+      R.selectable.forEach(function (m) {
+        var on = methods.indexOf(m) >= 0, b = el("button", "chip", (on ? "✓ " : "") + name("m", m));
+        b.type = "button"; b.setAttribute("aria-pressed", String(on));
+        b.addEventListener("click", function () {
+          if (on && methods.length === 1) { b.classList.add("shake"); setTimeout(function () { b.classList.remove("shake"); }, 400); return; }
+          if (on) methods.splice(methods.indexOf(m), 1); else methods.push(m);
+          redraw();
+        });
+        chipsBox.appendChild(b);
+      });
+      var reset = el("button", "chip ghost", t("methods_default")); reset.type = "button";
+      reset.addEventListener("click", function () { methods = R.defaultSelected.slice(); redraw(); });
+      chipsBox.appendChild(reset);
+    }
+
+    function planLine(cls, label, parts) {
+      var p = el("p", "plan " + cls);
+      p.appendChild(el("b", null, label + ": "));
+      p.appendChild(document.createTextNode(partsText(parts) + " — " + fmt(RAID.sulfur(parts)) + " " + sulfurWord()
+        + (parts.catapult ? " (" + t("catapult") + ")" : "")));
+      return p;
+    }
+
     function detail(tg) {
-      var box = el("div", "detail"), table = el("table", "methods"), best = cheapest(tg);
+      var box = el("div", "detail"), table = el("table", "methods"), best = RAID.best(tg, methods), fast = RAID.fastest(tg, methods);
       var single = Object.keys(best).length === 1 ? Object.keys(best)[0] : null;
-      var thead = el("tr");
+      var thead = el("tr"), rows = 0;
       [t("method"), t("count"), t("sulfur")].forEach(function (h) { thead.appendChild(el("th", null, h)); });
       table.appendChild(thead);
       R.methods.forEach(function (m) {
         var n = tg.counts[m];
-        if (!n) return;
-        var tr = el("tr", m === single ? "best" : null);
-        var nm = R.emoji[m] + " " + name("m", m) + (R.dud[m] ? " (" + t("dud", { n: R.dud[m] }) + ")" : "");
-        tr.appendChild(el("td", null, (m === single ? "★ " : "") + nm));
+        if (!n || (R.cost[m].sulfur && methods.indexOf(m) < 0)) return;
+        rows++;
+        var tr = el("tr", m === single ? "best" : null), cell = el("td", null, (m === single ? "★ " : "") + R.emoji[m] + " " + name("m", m));
+        if (R.dud[m]) cell.appendChild(el("small", "muted", " · " + t("dud", { n: R.dud[m] })));
+        var over = RAID.overkill(tg, m);
+        if (over != null && over >= R.overkillShown) cell.appendChild(el("small", "over", " · " + t("over", { n: Math.round(over * 100) })));
+        tr.appendChild(cell);
         tr.appendChild(el("td", "n", (tg.approx.indexOf(m) >= 0 ? "≈" : "") + fmt(n)));
         tr.appendChild(el("td", "n", R.cost[m].sulfur ? fmt(R.cost[m].sulfur * n) : "—"));
         table.appendChild(tr);
       });
-      box.appendChild(table);
-      box.appendChild(el("p", "note", "★ " + t("cheapest") + ": " + partsText(best) + " — " + fmt(sulfur(best)) + " " + t("sulfur").toLowerCase()));
+      if (rows) box.appendChild(table);
+      if (!Object.keys(best).length) { box.appendChild(el("p", "note", t("none"))); return box; }
+      box.appendChild(planLine("cheap", "💡 " + t("cheapest"), best));
+      if (Object.keys(fast).length && key2(fast) !== key2(best)) {
+        box.appendChild(planLine("fast", "⚡ " + t("fast"), fast));
+      }
       if (tg.approx.length) box.appendChild(el("p", "note", t("approx")));
       if (tg.disputed) box.appendChild(el("p", "note", t("disputed")));
       return box;
@@ -334,6 +428,15 @@
       });
     }
 
+    function total(keys, pick) {
+      var out = {};
+      keys.forEach(function (k) {
+        var p = pick(byKey[k], methods);
+        Object.keys(p).forEach(function (m) { out[m] = (out[m] || 0) + p[m] * basket[k]; });
+      });
+      return out;
+    }
+
     function drawSummary() {
       clear(sum);
       sum.appendChild(el("h2", null, t("total_title")));
@@ -342,35 +445,43 @@
       var picked = el("ul", "picked");
       keys.forEach(function (k) { var li = el("li"); li.appendChild(el("span", null, name("t", k))); li.appendChild(el("b", null, "× " + basket[k])); picked.appendChild(li); });
       sum.appendChild(picked);
-      var total = {};
-      keys.forEach(function (k) {
-        var best = cheapest(byKey[k]);
-        Object.keys(best).forEach(function (m) { total[m] = (total[m] || 0) + best[m] * basket[k]; });
-      });
-      sum.appendChild(el("div", "sub", "★ " + t("cheapest")));
-      sum.appendChild(el("div", "big", fmt(sulfur(total)) + " " + t("sulfur").toLowerCase()));
-      sum.appendChild(el("div", "sub", partsText(total)));
-      var res = {};
-      Object.keys(total).forEach(function (m) {
-        Object.keys(R.cost[m]).forEach(function (r) { res[r] = (res[r] || 0) + R.cost[m][r] * total[m]; });
-      });
-      var rows = R.resources.filter(function (r) { return res[r]; }).map(function (r) {
-        var note = r === "charcoal" ? t("mixing", { n: fmt(res[r] * R.mixingCharcoal) }) : null;
-        return [cap(name("r", r)), fmt(res[r]), note];
-      });
-      sum.appendChild(listBox(t("resources"), null, rows));
+      var missing = keys.filter(function (k) { return !Object.keys(RAID.best(byKey[k], methods)).length; });
+      if (missing.length) sum.appendChild(el("p", "note warn", t("missing", { names: missing.map(function (k) { return name("t", k); }).join(", ") })));
+      var cheap = total(keys, RAID.best), fast = total(keys, RAID.fastest);
+      if (Object.keys(cheap).length) {
+        sum.appendChild(el("div", "sub", "💡 " + t("cheapest")));
+        sum.appendChild(el("div", "big", fmt(RAID.sulfur(cheap)) + " " + sulfurWord()));
+        sum.appendChild(el("div", "sub", partsText(cheap)));
+        if (key2(fast) !== key2(cheap)) {
+          var f = el("div", "fastline");
+          f.appendChild(el("div", "sub", "⚡ " + t("fast")));
+          f.appendChild(el("div", "mid", fmt(RAID.sulfur(fast)) + " " + sulfurWord()));
+          f.appendChild(el("div", "sub", partsText(fast)));
+          sum.appendChild(f);
+        }
+        var res = {};
+        Object.keys(cheap).forEach(function (m) {
+          Object.keys(R.cost[m]).forEach(function (r) { res[r] = (res[r] || 0) + R.cost[m][r] * cheap[m]; });
+        });
+        var rows = R.resources.filter(function (r) { return res[r]; }).map(function (r) {
+          var note = r === "charcoal" ? t("mixing", { n: fmt(res[r] * R.mixingCharcoal) }) : null;
+          return [cap(name("r", r)), fmt(res[r]), note];
+        });
+        sum.appendChild(listBox(t("resources"), null, rows));
+      }
       var only = [];
-      R.main.filter(function (m) { return CHEAP.indexOf(m) >= 0; }).forEach(function (m) {
+      R.selectable.filter(function (m) { return methods.indexOf(m) >= 0; }).forEach(function (m) {
         var n = 0, ok = keys.every(function (k) { var c = byKey[k].counts[m]; n += (c || 0) * basket[k]; return !!c; });
         if (ok && n) only.push([R.emoji[m] + " " + name("m", m), fmt(n) + " · " + fmt(R.cost[m].sulfur * n)]);
       });
-      if (only.length) sum.appendChild(listBox(t("only_title"), t("sulfur").toLowerCase(), only));
+      if (only.length > 1) sum.appendChild(listBox(t("only_title"), sulfurWord(), only));
       var actions = el("div", "actions"), reset = el("button", "link-btn", t("reset")); reset.type = "button";
       reset.addEventListener("click", function () { basket = {}; drawList(); drawSummary(); saveUrl(); });
       actions.appendChild(reset); sum.appendChild(actions);
     }
+    function key2(p) { return Object.keys(p).sort().map(function (m) { return m + p[m]; }).join(","); }
 
-    return function render() { drawList(); drawSummary(); };
+    return function render() { redraw(); };
   }
 
   // ------------------------------------------------------------ общее
