@@ -1,6 +1,4 @@
-// Тексты страницы тарифов на 8 языках. Цены и лимиты — в index.html (TIERS), их сверять с ботом:
-// rusttracker/core/usdt.py (цены Discord) и rusttracker/core/tiers.py (лимиты и функции).
-// Слов про криптовалюту здесь нет намеренно: способ оплаты показывает сам бот.
+// Тексты страницы тарифов на 8 языках. Цены и лимиты — в index.html (TIERS), их сверять с ботом.
 window.RTB_PRICING = {
   ru: {
     name: "Русский",
@@ -32,6 +30,7 @@ window.RTB_PRICING = {
     f_groups: "Бот в чате клана",
     f_pdf: "PDF-отчёты",
     f_fast: "⚡ Быстрый режим",
+    f_decay: "⏳ Таймеры гниения вражеских баз (Rust+)",
     f_clanrp: "События Rust+ в канал или группу клана",
     f_seats: "До 25 участников, +10 мест за {p} на 30 дней",
     buy: "Купить в Discord", start_free: "Начать бесплатно",
@@ -79,6 +78,7 @@ window.RTB_PRICING = {
     f_groups: "Bot in your clan chat",
     f_pdf: "PDF reports",
     f_fast: "⚡ Fast mode",
+    f_decay: "⏳ Enemy base decay timers (Rust+)",
     f_clanrp: "Rust+ events in your clan channel or group",
     f_seats: "Up to 25 members, +10 seats for {p} per 30 days",
     buy: "Buy in Discord", start_free: "Start for free",
@@ -126,6 +126,7 @@ window.RTB_PRICING = {
     f_groups: "Бот у чаті клану",
     f_pdf: "PDF-звіти",
     f_fast: "⚡ Швидкий режим",
+    f_decay: "⏳ Таймери гниття ворожих баз (Rust+)",
     f_clanrp: "Події Rust+ у канал або групу клану",
     f_seats: "До 25 учасників, +10 місць за {p} на 30 днів",
     buy: "Купити в Discord", start_free: "Почати безкоштовно",
@@ -173,6 +174,7 @@ window.RTB_PRICING = {
     f_groups: "El bot en el chat del clan",
     f_pdf: "Informes PDF",
     f_fast: "⚡ Modo rápido",
+    f_decay: "⏳ Temporizadores de decay de bases enemigas (Rust+)",
     f_clanrp: "Eventos de Rust+ en el canal o grupo del clan",
     f_seats: "Hasta 25 miembros, +10 plazas por {p} cada 30 días",
     buy: "Comprar en Discord", start_free: "Empezar gratis",
@@ -220,6 +222,7 @@ window.RTB_PRICING = {
     f_groups: "Le bot dans le chat du clan",
     f_pdf: "Rapports PDF",
     f_fast: "⚡ Mode rapide",
+    f_decay: "⏳ Minuteurs de decay des bases ennemies (Rust+)",
     f_clanrp: "Événements Rust+ dans le salon ou le groupe du clan",
     f_seats: "Jusqu'à 25 membres, +10 places pour {p} par 30 jours",
     buy: "Acheter sur Discord", start_free: "Commencer gratuitement",
@@ -267,6 +270,7 @@ window.RTB_PRICING = {
     f_groups: "Bot in deinem Clan-Chat",
     f_pdf: "PDF-Berichte",
     f_fast: "⚡ Schnellmodus",
+    f_decay: "⏳ Decay-Timer für gegnerische Bases (Rust+)",
     f_clanrp: "Rust+-Ereignisse in deinem Clan-Kanal oder deiner Gruppe",
     f_seats: "Bis zu 25 Mitglieder, +10 Plätze für {p} pro 30 Tage",
     buy: "In Discord kaufen", start_free: "Gratis starten",
@@ -314,6 +318,7 @@ window.RTB_PRICING = {
     f_groups: "Klan sohbetinde bot",
     f_pdf: "PDF raporları",
     f_fast: "⚡ Hızlı mod",
+    f_decay: "⏳ Düşman üssü çürüme sayaçları (Rust+)",
     f_clanrp: "Klan kanalında veya grubunda Rust+ olayları",
     f_seats: "25 üyeye kadar, 30 günlüğüne {p} karşılığında +10 yer",
     buy: "Discord'da satın al", start_free: "Ücretsiz başla",
@@ -361,6 +366,7 @@ window.RTB_PRICING = {
     f_groups: "Bot no chat do seu clã",
     f_pdf: "Relatórios em PDF",
     f_fast: "⚡ Modo rápido",
+    f_decay: "⏳ Timers de decay de bases inimigas (Rust+)",
     f_clanrp: "Eventos do Rust+ no canal ou grupo do seu clã",
     f_seats: "Até 25 membros, +10 vagas por {p} a cada 30 dias",
     buy: "Comprar no Discord", start_free: "Começar grátis",
