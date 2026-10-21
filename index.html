@@ -99,6 +99,12 @@
   .calc-links a { display: flex; justify-content: center; align-items: center; padding: 12px 10px; border-radius: 14px; border: 1px solid var(--line);
                   background: var(--steel-2); color: var(--bone); font-weight: 700; font-size: 14.5px; text-decoration: none; text-align: center; }
   .calc-links a:hover { border-color: var(--neon); }
+  /* Промо-ролик: язык и формат выбирает скрипт (ru — русская озвучка, остальные — английская; телефон — 9:16) */
+  .promo { margin-top: 18px; }
+  .promo h2 { font-family: "Russo One", system-ui, sans-serif; font-weight: 400; font-size: 19px; margin: 0 0 10px; text-align: center; }
+  .promo video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #0c0f12; border: 1px solid var(--line);
+                 border-radius: var(--radius); box-shadow: 0 14px 34px rgba(0, 0, 0, .35); }
+  .promo video.tall { aspect-ratio: 9 / 16; max-height: 82vh; width: auto; max-width: 100%; margin: 0 auto; }
   
   footer { text-align: center; margin-top: 30px; }
   .support { color: var(--bone); font-size: 14.5px; }
@@ -156,6 +162,11 @@
       </a>
     </div>
     <p class="dm-hint" id="dm-hint" hidden><span data-t="dm_hint"></span> <a id="dm-link" href="#" data-t="dm_link"></a></p>
+  </section>
+
+  <section class="promo">
+    <h2 data-t="video"></h2>
+    <video id="promo" controls playsinline preload="none"></video>
   </section>
 
   <section class="features">
@@ -220,7 +231,26 @@
       a.href = (lang === "en" ? "" : "/" + lang) + "/" + a.getAttribute("data-calc") + "/";
     });
     if (window.RTB_LEGAL_LINKS) window.RTB_LEGAL_LINKS(lang);
+    setPromo();
   }
+
+  // Ролик: озвучка по языку страницы (русская — только для ru), формат по ширине экрана.
+  var promo = document.getElementById("promo");
+  var narrow = window.matchMedia("(max-width: 620px)");
+  function setPromo() {
+    var lang = document.documentElement.lang;
+    var name = (lang === "ru" ? "ru" : "en") + (narrow.matches ? "_9x16" : "_16x9");
+    promo.setAttribute("aria-label", (T[lang] || T.en).video);
+    if (promo.dataset.name === name) return;
+    var wasPlaying = !promo.paused;
+    promo.pause();
+    promo.dataset.name = name;
+    promo.className = narrow.matches ? "tall" : "";
+    promo.poster = "assets/promo/" + name + ".jpg";
+    promo.src = "assets/promo/" + name + ".mp4";
+    if (wasPlaying) promo.play().catch(function () {});
+  }
+  if (narrow.addEventListener) narrow.addEventListener("change", setPromo); else narrow.addListener(setPromo);
 
   var tgUrl = "https://t.me/" + cfg.TELEGRAM_BOT + (start ? "?start=" + encodeURIComponent(start) : "");
   document.getElementById("btn-tg").href = tgUrl;
