@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ru" data-lang="ru">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Как подключить Rust+ к Rust Tracker Bro — пошаговая инструкция</title>
+<meta name="description" content="Подключение Rust+ за 2 минуты на компьютере с Chrome: расширение, вход через Steam, токен в бот и привязка сервера в игре (ESC → Rust+ → Pair with server).">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rust Tracker Bro">
+<meta property="og:title" content="Как подключить Rust+ к Rust Tracker Bro — пошаговая инструкция">
+<meta property="og:description" content="Подключение Rust+ за 2 минуты на компьютере с Chrome: расширение, вход через Steam, токен в бот и привязка сервера в игре (ESC → Rust+ → Pair with server).">
+<meta property="og:image" content="https://rusttrackerbro.com/assets/og.jpg">
+<meta property="og:url" content="https://rusttrackerbro.com/ru/rustplus/">
+<link rel="canonical" href="https://rusttrackerbro.com/ru/rustplus/">
+<link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/rustplus/">
+<link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/rustplus/">
+<link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/rustplus/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#15191e">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/avatar.png">
+<link rel="stylesheet" href="/calc/calc.css">
+<style>
+.rp-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; counter-reset: s; }
+.rp-steps li { counter-increment: s; }
+.rp-steps h2 { margin: 0 0 6px; font-size: 19px; }
+.rp-steps h2::before { content: counter(s) ". "; color: var(--neon); }
+.rp-steps p { margin: 0 0 12px; color: var(--muted); }
+.rp-steps svg { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 14px; background: #101418; }
+.rp-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+.rp-links a { flex: 1 1 220px; text-align: center; padding: 12px 14px; border-radius: 12px; border: 1px solid var(--line);
+  color: var(--bone); text-decoration: none; font-weight: 700; background: rgba(255,255,255,.03); }
+.rp-links a:hover { border-color: var(--neon); }
+.rp-trouble { margin: 0; padding-left: 20px; color: var(--muted); display: grid; gap: 8px; }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "Как подключить Rust+", "description": "Подключение Rust+ за 2 минуты на компьютере с Chrome: расширение, вход через Steam, токен в бот и привязка сервера в игре (ESC → Rust+ → Pair with server).", "inLanguage": "ru", "totalTime": "PT2M", "step": [{"@type": "HowToStep", "position": 1, "name": "Установите расширение", "text": "На компьютере откройте Интернет-магазин Chrome и установите «Rust Companion Authenticator». Страница входа Rust+ сделана для телефона — расширение показывает токен в обычном браузере."}, {"@type": "HowToStep", "position": 2, "name": "Войдите через Steam", "text": "Откройте страницу входа Rust+ и войдите через Steam тем аккаунтом, на котором играете. Пароль от Steam бот не видит."}, {"@type": "HowToStep", "position": 3, "name": "Пришлите токен боту", "text": "Скопируйте токен из расширения и пришлите его боту одним сообщением (в боте: 🔗 Rust+ → 🔗 Подключить Rust+). Сообщение с токеном бот сразу удалит из чата."}, {"@type": "HowToStep", "position": 4, "name": "Привяжите сервер в игре", "text": "Зайдите на сервер и нажмите ESC → Rust+ → Pair with server. Через несколько секунд бот напишет, что сервер привязан."}, {"@type": "HowToStep", "position": 5, "name": "Привяжите устройства (по желанию)", "text": "Умная сигнализация, умный выключатель, монитор хранилища: подключите питание, наведитесь, зажмите E → Pair. Монитор на шкафу — содержание базы, на ящике — кто-то лутает."}], "tool": [{"@type": "HowToTool", "name": "Google Chrome"}]}</script>
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+<div class="grid-bg" aria-hidden="true"></div>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="/"><img src="/assets/avatar.png" alt="" width="40" height="40"><b>RUST TRACKER<span>BROBOT</span></b></a>
+    <nav class="langs" id="langs" aria-label="Language"><a href="/rustplus/" hreflang="en" lang="en" data-lang="en">English</a><a href="/ru/rustplus/" hreflang="ru" lang="ru" data-lang="ru" aria-current="true">Русский</a></nav>
+  </header>
+  <section class="hero">
+    <p class="kicker">🔗 Rust+ · около 2 минут</p>
+    <h1>Как подключить Rust+</h1>
+    <p class="lead">Нужен компьютер с браузером Chrome. Rust+ — официальное приложение Rust; через него бот отвечает на команды в игровом чате и присылает тревоги, смерти и содержание шкафа.</p>
+  </section>
+  <section class="panel">
+    <ol class="rp-steps"><li><h2>Установите расширение</h2><p>На компьютере откройте Интернет-магазин Chrome и установите «Rust Companion Authenticator». Страница входа Rust+ сделана для телефона — расширение показывает токен в обычном браузере.</p><svg viewBox="0 0 640 220" role="img" aria-label="Chrome Web Store: Rust Companion Authenticator" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, Segoe UI, Roboto, sans-serif"><rect x="20" y="20" width="600" height="180" rx="12" fill="#1b2026" stroke="#2e363e"/><rect x="20" y="20" width="600" height="30" rx="12" fill="#232a31"/><rect x="20" y="38" width="600" height="12" fill="#232a31"/><circle cx="36" cy="35" r="4" fill="#ff5b4f"/><circle cx="50" cy="35" r="4" fill="#f5c542"/><circle cx="64" cy="35" r="4" fill="#a8ff3e"/><rect x="84" y="27" width="490" height="16" rx="8" fill="#101418"/><text x="94" y="39" font-size="11" fill="#9aa3ab">chromewebstore.google.com</text><g transform="translate(578 27)"><rect width="22" height="22" rx="5" fill="#a8ff3e" opacity=".18"/><path d="M6 9h3a2 2 0 1 1 4 0h3v3a2 2 0 1 1 0 4v3H6z" fill="#a8ff3e"/></g><rect x="50" y="78" width="64" height="64" rx="14" fill="#d8692a"/><text x="82" y="119" font-size="26" text-anchor="middle" fill="#f1ece2">R+</text><text x="134" y="100" font-size="18" font-weight="700" fill="#f1ece2">Rust Companion Authenticator</text><text x="134" y="124" font-size="13" fill="#9aa3ab">chrome extension</text><rect x="440" y="142" width="150" height="38" rx="19" fill="#2aabee"/><text x="515" y="166" font-size="14" font-weight="700" text-anchor="middle" fill="#fff">Установить</text></svg></li><li><h2>Войдите через Steam</h2><p>Откройте страницу входа Rust+ и войдите через Steam тем аккаунтом, на котором играете. Пароль от Steam бот не видит.</p><svg viewBox="0 0 640 220" role="img" aria-label="Rust+ login and token" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, Segoe UI, Roboto, sans-serif"><rect x="20" y="20" width="380" height="180" rx="12" fill="#1b2026" stroke="#2e363e"/><rect x="20" y="20" width="380" height="30" rx="12" fill="#232a31"/><rect x="20" y="38" width="380" height="12" fill="#232a31"/><circle cx="36" cy="35" r="4" fill="#ff5b4f"/><circle cx="50" cy="35" r="4" fill="#f5c542"/><circle cx="64" cy="35" r="4" fill="#a8ff3e"/><rect x="84" y="27" width="270" height="16" rx="8" fill="#101418"/><text x="94" y="39" font-size="11" fill="#9aa3ab">companion-rust.facepunch.com/login</text><rect x="80" y="100" width="260" height="46" rx="10" fill="#1b2838" stroke="#2e363e"/><circle cx="106" cy="123" r="11" fill="none" stroke="#f1ece2" stroke-width="3"/><text x="128" y="128" font-size="15" font-weight="700" fill="#f1ece2">Войти через Steam</text><g transform="translate(410 105)"><path d="M0 0 L14 7 L0 14 Z" fill="#a8ff3e"/></g><rect x="440" y="44" width="180" height="140" rx="12" fill="#1b2026" stroke="#a8ff3e"/><text x="456" y="72" font-size="13" fill="#9aa3ab">Токен</text><rect x="456" y="82" width="148" height="30" rx="6" fill="#101418"/><text x="466" y="102" font-size="13" font-family="ui-monospace, monospace" fill="#f08a4b">eyJhbGciOiJ…</text><rect x="456" y="128" width="148" height="36" rx="18" fill="#a8ff3e"/><text x="530" y="151" font-size="14" font-weight="700" text-anchor="middle" fill="#0e1a07">Копировать</text></svg></li><li><h2>Пришлите токен боту</h2><p>Скопируйте токен из расширения и пришлите его боту одним сообщением (в боте: 🔗 Rust+ → 🔗 Подключить Rust+). Сообщение с токеном бот сразу удалит из чата.</p><svg viewBox="0 0 640 220" role="img" aria-label="Token sent to the bot" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, Segoe UI, Roboto, sans-serif"><rect x="30" y="80" width="200" height="60" rx="10" fill="#101418" stroke="#2e363e"/><text x="48" y="116" font-size="16" font-family="ui-monospace, monospace" fill="#f08a4b">eyJhbGciOiJ…</text><g transform="translate(252 103)"><path d="M0 0 L14 7 L0 14 Z" fill="#a8ff3e"/></g><rect x="290" y="30" width="320" height="160" rx="16" fill="#1b2026" stroke="#2e363e"/><circle cx="322" cy="62" r="16" fill="#d8692a" stroke="#a8ff3e" stroke-width="2"/><text x="348" y="67" font-size="14" font-weight="700" fill="#f1ece2">RustTrackerBro</text><rect x="310" y="92" width="280" height="40" rx="12" fill="#232a31"/><text x="326" y="117" font-size="15" fill="#f1ece2">✅ Rust+ подключён</text><rect x="310" y="142" width="180" height="30" rx="10" fill="#232a31" opacity=".6"/></svg></li><li><h2>Привяжите сервер в игре</h2><p>Зайдите на сервер и нажмите ESC → Rust+ → Pair with server. Через несколько секунд бот напишет, что сервер привязан.</p><svg viewBox="0 0 640 220" role="img" aria-label="In game: ESC → Rust+ → Pair with server" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, Segoe UI, Roboto, sans-serif"><rect x="20" y="20" width="600" height="180" rx="12" fill="#0b0e11" stroke="#2e363e"/><rect x="40" y="114" width="150" height="36" rx="6" fill="#a8ff3e" opacity=".12"/><text x="60" y="70" font-size="18" font-weight="700" fill="#9aa3ab">RESUME</text><text x="60" y="104" font-size="18" font-weight="700" fill="#9aa3ab">OPTIONS</text><text x="60" y="138" font-size="18" font-weight="700" fill="#a8ff3e">RUST+</text><text x="60" y="172" font-size="18" font-weight="700" fill="#9aa3ab">QUIT</text><text x="40" y="44" font-size="12" fill="#9aa3ab">ESC</text><g transform="translate(230 125)"><path d="M0 0 L14 7 L0 14 Z" fill="#a8ff3e"/></g><rect x="270" y="60" width="320" height="120" rx="10" fill="#1b2026" stroke="#2e363e"/><text x="290" y="92" font-size="16" font-weight="700" fill="#f1ece2">Rust+</text><rect x="290" y="114" width="200" height="40" rx="8" fill="#d8692a"/><text x="390" y="139" font-size="15" font-weight="700" text-anchor="middle" fill="#f1ece2">Pair with server</text></svg></li><li><h2>Привяжите устройства (по желанию)</h2><p>Умная сигнализация, умный выключатель, монитор хранилища: подключите питание, наведитесь, зажмите E → Pair. Монитор на шкафу — содержание базы, на ящике — кто-то лутает.</p><svg viewBox="0 0 640 220" role="img" aria-label="Smart devices: hold E → Pair" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, Segoe UI, Roboto, sans-serif"><rect x="50" y="40" width="160" height="110" rx="14" fill="#1b2026" stroke="#2e363e"/><text x="130" y="96" font-size="34" text-anchor="middle">🚨</text><text x="130" y="134" font-size="14" text-anchor="middle" fill="#f1ece2">Сигнализация</text><rect x="245" y="40" width="160" height="110" rx="14" fill="#1b2026" stroke="#2e363e"/><text x="325" y="96" font-size="34" text-anchor="middle">💡</text><text x="325" y="134" font-size="14" text-anchor="middle" fill="#f1ece2">Выключатель</text><rect x="440" y="40" width="160" height="110" rx="14" fill="#1b2026" stroke="#2e363e"/><text x="520" y="96" font-size="34" text-anchor="middle">🗄</text><text x="520" y="134" font-size="14" text-anchor="middle" fill="#f1ece2">Хранилище</text><text x="320" y="186" font-size="16" font-weight="700" text-anchor="middle" fill="#a8ff3e">зажать E → Pair</text></svg></li></ol>
+    <div class="rp-links">
+      <a href="https://chromewebstore.google.com/detail/rust-companion-authentica/idihpaljmebenfolkfibmdpefgcgcddd" rel="noopener" target="_blank">🧩 Расширение для Chrome</a>
+      <a href="https://companion-rust.facepunch.com/login" rel="noopener" target="_blank">🔑 Страница входа Rust+</a>
+    </div>
+  </section>
+  <section class="panel">
+    <h2>Не получается?</h2>
+    <ul class="rp-trouble"><li>Страница входа не открывается или пустая — откройте её на компьютере в Chrome с расширением.</li><li>Токен не принимается — скопируйте его целиком, одним сообщением. Старый токен не подойдёт: откройте страницу входа заново.</li><li>Сервер не привязывается — зайдите на него в игре: ESC → Rust+ → Pair with server. Если владелец сервера отключил Rust+, привязка не сработает.</li><li>Вошли не тем аккаунтом — выйдите на странице входа и войдите аккаунтом Steam, на котором играете.</li></ul>
+  </section>
+  <section class="panel cta">
+    <h2>Потом — проверьте в игре</h2>
+    <p>Напишите в чат команды !pop — бот ответит онлайном сервера. !help — все команды.</p>
+    <div class="btns">
+      <a class="btn discord" id="btn-discord" href="/discord/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.6 1.3a18.3 18.3 0 0 0-5.6 0L8.6 3a19.7 19.7 0 0 0-4.9 1.4C.6 9 -.3 13.6.1 18.1A19.9 19.9 0 0 0 6.2 21l1.3-2a12.9 12.9 0 0 1-2-1l.5-.4a14.2 14.2 0 0 0 12 0l.5.4c-.6.4-1.3.7-2 1l1.3 2a19.8 19.8 0 0 0 6.1-2.9c.5-5.2-.8-9.7-3.6-13.7ZM8.3 15.3c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Zm7.4 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Z"/></svg><span data-t="btn_discord">Добавить в Discord</span></a>
+      <a class="btn tg" id="btn-tg" href="https://t.me/RustTrackerBroBot"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.6 19.8c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.2-8.3c.4-.4-.1-.6-.6-.2L6 13.4 1.1 11.9c-1.1-.3-1.1-1.1.2-1.6L20.5 2.9c.9-.3 1.7.2 1.4 1.4Z"/></svg><span data-t="btn_tg">Открыть в Telegram</span></a>
+    </div>
+  </section>
+  <footer>
+    <a class="home" href="/" data-t="home">← Rust Tracker Bro</a>
+    <div class="data-note" id="data-note"></div>
+    <div class="legal-links" data-base="/legal/"></div>
+    <div class="legal" data-t="legal">Rust — товарный знак Facepunch Studios. Проект не связан с Facepunch.</div>
+  </footer>
+</div>
+<script src="/config.js"></script>
+<script src="/legal/texts.js"></script>
+<script src="/legal/legal.js"></script>
+<script src="/calc/page.js"></script>
+</body>
+</html>
