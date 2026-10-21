@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url><loc>https://rusttrackerbro.com/</loc><lastmod>2026-10-21</lastmod><changefreq>weekly</changefreq><priority>1.0</priority>
   </url>
   <url><loc>https://rusttrackerbro.com/pricing/</loc><lastmod>2026-10-21</lastmod><changefreq>weekly</changefreq><priority>0.9</priority>
@@ -8011,6 +8011,18 @@
     <xhtml:link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/item/fuse/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/item/fuse/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/item/fuse/"/>
+  </url>
+  <url><loc>https://rusttrackerbro.com/video/</loc><lastmod>2026-10-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/video/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/video/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/video/"/>
+    <video:video><video:thumbnail_loc>https://rusttrackerbro.com/assets/promo/en_16x9.jpg</video:thumbnail_loc><video:title>Rust Tracker Bro in action</video:title><video:description>Watch Rust Tracker Bro in under a minute: alerts when Rust players join or leave, clan online, play and sleep times, in-game chat commands with Rust+, free premium and Rust tools.</video:description><video:content_loc>https://rusttrackerbro.com/assets/promo/en_16x9.mp4</video:content_loc><video:duration>54</video:duration><video:publication_date>2026-10-21T12:00:00+03:00</video:publication_date></video:video>
+  </url>
+  <url><loc>https://rusttrackerbro.com/ru/video/</loc><lastmod>2026-10-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/video/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/video/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/video/"/>
+    <video:video><video:thumbnail_loc>https://rusttrackerbro.com/assets/promo/ru_16x9.jpg</video:thumbnail_loc><video:title>Rust Tracker Bro в деле</video:title><video:description>Rust Tracker Bro за минуту: уведомления о входе и выходе игроков Rust, онлайн клана, время игры и сна, команды в игровом чате через Rust+, бесплатная подписка и инструменты для Rust.</video:description><video:content_loc>https://rusttrackerbro.com/assets/promo/ru_16x9.mp4</video:content_loc><video:duration>45</video:duration><video:publication_date>2026-10-21T12:00:00+03:00</video:publication_date></video:video>
   </url>
   <url><loc>https://rusttrackerbro.com/legal/terms/</loc><lastmod>2026-10-21</lastmod><changefreq>monthly</changefreq><priority>0.3</priority>
   </url>

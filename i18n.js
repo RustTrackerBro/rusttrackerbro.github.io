@@ -25,6 +25,7 @@ window.RTB_TEXT = {
     support: "Поддержка и новости — в боте:",
     legal: "Rust — товарный знак Facepunch Studios. Проект не связан с Facepunch.",
     video: "🎬 Бот в деле — короткое видео",
+    video_more: "Ролик с главами →",
   },
   en: {
     name: "English",
@@ -51,6 +52,7 @@ window.RTB_TEXT = {
     support: "Support and news — in the bot:",
     legal: "Rust is a trademark of Facepunch Studios. This project is not affiliated with Facepunch.",
     video: "🎬 See the bot in action",
+    video_more: "Video with chapters →",
   },
   es: {
     name: "Español",
@@ -77,6 +79,7 @@ window.RTB_TEXT = {
     support: "Soporte y novedades — en el bot:",
     legal: "Rust es una marca de Facepunch Studios. Este proyecto no está relacionado con Facepunch.",
     video: "🎬 Mira el bot en acción",
+    video_more: "Vídeo con capítulos →",
   },
   fr: {
     name: "Français",
@@ -103,6 +106,7 @@ window.RTB_TEXT = {
     support: "Support et nouveautés — dans le bot :",
     legal: "Rust est une marque de Facepunch Studios. Ce projet n'est pas lié à Facepunch.",
     video: "🎬 Le bot en action",
+    video_more: "Vidéo avec chapitres →",
   },
   uk: {
     name: "Українська",
@@ -129,6 +133,7 @@ window.RTB_TEXT = {
     support: "Підтримка і новини — у боті:",
     legal: "Rust — торговельна марка Facepunch Studios. Проєкт не пов'язаний із Facepunch.",
     video: "🎬 Бот у дії — коротке відео",
+    video_more: "Відео з розділами →",
   },
   de: {
     name: "Deutsch",
@@ -155,6 +160,7 @@ window.RTB_TEXT = {
     support: "Support und News — im Bot:",
     legal: "Rust ist eine Marke von Facepunch Studios. Dieses Projekt steht in keiner Verbindung zu Facepunch.",
     video: "🎬 Der Bot in Aktion",
+    video_more: "Video mit Kapiteln →",
   },
   tr: {
     name: "Türkçe",
@@ -181,6 +187,7 @@ window.RTB_TEXT = {
     support: "Destek ve haberler — botta:",
     legal: "Rust, Facepunch Studios'un ticari markasıdır. Bu proje Facepunch ile bağlantılı değildir.",
     video: "🎬 Botu iş başında izle",
+    video_more: "Bölümlü video →",
   },
   pt: {
     name: "Português",
@@ -207,5 +214,6 @@ window.RTB_TEXT = {
     support: "Suporte e novidades — no bot:",
     legal: "Rust é uma marca registrada da Facepunch Studios. Este projeto não tem ligação com a Facepunch.",
     video: "🎬 Veja o bot em ação",
+    video_more: "Vídeo com capítulos →",
   },
 };

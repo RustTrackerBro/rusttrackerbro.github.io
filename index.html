@@ -104,6 +104,8 @@
   .promo h2 { font-family: "Russo One", system-ui, sans-serif; font-weight: 400; font-size: 19px; margin: 0 0 10px; text-align: center; }
   .promo video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #0c0f12; border: 1px solid var(--line);
                  border-radius: var(--radius); box-shadow: 0 14px 34px rgba(0, 0, 0, .35); }
+  .video-more { display: block; text-align: center; margin-top: 10px; color: var(--rust-hot); font-weight: 700; font-size: 14.5px; text-decoration: none; }
+  .video-more:hover, .video-more:focus-visible { text-decoration: underline; }
   .promo video.tall { aspect-ratio: 9 / 16; max-height: 82vh; width: auto; max-width: 100%; margin: 0 auto; }
   
   footer { text-align: center; margin-top: 30px; }
@@ -167,6 +169,7 @@
   <section class="promo">
     <h2 data-t="video"></h2>
     <video id="promo" controls playsinline preload="none"></video>
+    <a class="video-more" id="video-more" href="video/" data-t="video_more"></a>
   </section>
 
   <section class="features">
@@ -241,6 +244,7 @@
     var lang = document.documentElement.lang;
     var name = (lang === "ru" ? "ru" : "en") + (narrow.matches ? "_9x16" : "_16x9");
     promo.setAttribute("aria-label", (T[lang] || T.en).video);
+    document.getElementById("video-more").href = lang === "ru" ? "/ru/video/" : "/video/";
     if (promo.dataset.name === name) return;
     var wasPlaying = !promo.paused;
     promo.pause();
