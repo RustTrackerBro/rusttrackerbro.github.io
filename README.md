@@ -11,7 +11,9 @@
 - `/raid/`, `/craft/`, `/recycle/`, `/genes/` — калькуляторы (`calc/`), английские; версии на других языках —
   `/ru/raid/`, `/de/genes/` … (`hreflang` между ними). Справочник: `/raid/<цель>/` (сколько взрывчатки и серы) и
   `/item/<предмет>/` (крафт и переработка) на всех языках.
-- Эти страницы, `calc/data.js` и `sitemap.xml` генерирует `tools/build_site.py` из репозитория бота — руками не править,
+- `/rustplus/` (en) и `/ru/rustplus/` (ru) — инструкция «Как подключить Rust+»: 5 шагов со схемами (встроенные SVG,
+  скриншотов пока нет), разметка `HowTo`. На неё ведёт кнопка «📖 Инструкция со схемами» в боте.
+- Эти страницы, `/rustplus/`, `/video/`, `calc/data.js` и `sitemap.xml` генерирует `tools/build_site.py` из репозитория бота — руками не править,
   а пересобрать: `python -I tools/build_site.py ../rusttrackerbro.github.io`.
 - `/discord`, `/telegram` — переходы к боту; `/legal/terms/`, `/legal/privacy/`, `/legal/refunds/` — правовые страницы.
 - Поиск: `robots.txt`, `sitemap.xml` (со связками языков; новую страницу вне генератора — добавить в `tools/build_site.py`),
