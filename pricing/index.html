@@ -51,7 +51,8 @@
   .brand { display: flex; align-items: center; gap: 12px; color: var(--bone); text-decoration: none; }
   .brand img { width: 40px; height: 40px; border-radius: 50%; box-shadow: 0 0 0 2px #0c0f12, 0 0 0 4px var(--neon); }
   .brand b { font-family: var(--display); font-weight: 400; letter-spacing: .5px; font-size: 18px; line-height: 1; }
-  .brand b span { color: var(--rust); letter-spacing: .3em; font-size: 12px; display: block; margin-top: 4px; }
+  .brand b span { display: block; width: fit-content; margin: 7px auto 0; font-size: 12px; letter-spacing: normal; color: #14100c;
+    background: var(--rust-hot); padding: 3px 8px 2px; border-radius: 5px; transform: rotate(-5deg); box-shadow: 0 3px 8px rgba(0,0,0,.45); }  /* «BRO» — наклейка, как в промо-ролике */
   .langs { display: flex; flex-wrap: wrap; gap: 6px; }
   .langs button { background: rgba(26,31,37,.7); border: 1px solid var(--line); color: var(--muted); border-radius: 999px; padding: 4px 11px; cursor: pointer; font: 13px var(--body); }
   .langs button[aria-pressed="true"] { color: var(--bone); border-color: var(--neon); }
@@ -168,7 +169,7 @@
 <div class="grid-bg" aria-hidden="true"></div>
 <div class="wrap">
   <header class="top">
-    <a class="brand" href="../"><img src="../assets/avatar.png" alt="" width="40" height="40"><b>RUST TRACKER<span>BROBOT</span></b></a>
+    <a class="brand" href="../"><img src="../assets/avatar.png" alt="" width="40" height="40"><b>RUST TRACKER <span>BRO</span></b></a>
     <nav class="langs" id="langs" aria-label="Language"></nav>
   </header>
 
