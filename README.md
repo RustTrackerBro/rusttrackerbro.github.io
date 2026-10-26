@@ -14,7 +14,8 @@
 - `/rustplus/` (en) и `/ru/rustplus/` (ru) — инструкция «Как подключить Rust+»: 5 шагов со схемами (встроенные SVG,
   скриншотов пока нет), разметка `HowTo`. На неё ведёт кнопка «📖 Инструкция со схемами» в боте.
 - Эти страницы, `/rustplus/`, `/video/`, `calc/data.js` и `sitemap.xml` генерирует `tools/build_site.py` из репозитория бота — руками не править,
-  а пересобрать: `python -I tools/build_site.py ../rusttrackerbro.github.io`.
+  а пересобрать: `python -I tools/build_site.py ../rusttrackerbro.github.io`. Ссылки на `/calc/*.css` и `/calc/*.js`
+  генератор пишет с версией `?v=<хеш файла>`: после правки стилей пересоберите страницы, иначе браузеры возьмут файл из кэша.
 - `/discord`, `/telegram` — переходы к боту; `/legal/terms/`, `/legal/privacy/`, `/legal/refunds/` — правовые страницы.
 - Поиск: `robots.txt`, `sitemap.xml` (со связками языков; новую страницу вне генератора — добавить в `tools/build_site.py`),
   `<link rel="canonical">` на страницах.
