@@ -24,7 +24,7 @@ window.RTB_TEXT = {
     copy: "Копировать", copied: "Скопировано",
     support: "Поддержка и новости — в боте:",
     legal: "Rust — товарный знак Facepunch Studios. Проект не связан с Facepunch.",
-    video: "🎬 Бот в деле — короткое видео",
+    video: "RustTrackerBro в деле",
     video_more: "Ролик с главами →",
   },
   en: {
@@ -51,7 +51,7 @@ window.RTB_TEXT = {
     copy: "Copy", copied: "Copied",
     support: "Support and news — in the bot:",
     legal: "Rust is a trademark of Facepunch Studios. This project is not affiliated with Facepunch.",
-    video: "🎬 See the bot in action",
+    video: "RustTrackerBro in action",
     video_more: "Video with chapters →",
   },
   es: {
@@ -78,7 +78,7 @@ window.RTB_TEXT = {
     copy: "Copiar", copied: "Copiado",
     support: "Soporte y novedades — en el bot:",
     legal: "Rust es una marca de Facepunch Studios. Este proyecto no está relacionado con Facepunch.",
-    video: "🎬 Mira el bot en acción",
+    video: "RustTrackerBro en acción",
     video_more: "Vídeo con capítulos →",
   },
   fr: {
@@ -105,7 +105,7 @@ window.RTB_TEXT = {
     copy: "Copier", copied: "Copié",
     support: "Support et nouveautés — dans le bot :",
     legal: "Rust est une marque de Facepunch Studios. Ce projet n'est pas lié à Facepunch.",
-    video: "🎬 Le bot en action",
+    video: "RustTrackerBro en action",
     video_more: "Vidéo avec chapitres →",
   },
   uk: {
@@ -132,7 +132,7 @@ window.RTB_TEXT = {
     copy: "Копіювати", copied: "Скопійовано",
     support: "Підтримка і новини — у боті:",
     legal: "Rust — торговельна марка Facepunch Studios. Проєкт не пов'язаний із Facepunch.",
-    video: "🎬 Бот у дії — коротке відео",
+    video: "RustTrackerBro у дії",
     video_more: "Відео з розділами →",
   },
   de: {
@@ -159,7 +159,7 @@ window.RTB_TEXT = {
     copy: "Kopieren", copied: "Kopiert",
     support: "Support und News — im Bot:",
     legal: "Rust ist eine Marke von Facepunch Studios. Dieses Projekt steht in keiner Verbindung zu Facepunch.",
-    video: "🎬 Der Bot in Aktion",
+    video: "RustTrackerBro in Aktion",
     video_more: "Video mit Kapiteln →",
   },
   tr: {
@@ -186,7 +186,7 @@ window.RTB_TEXT = {
     copy: "Kopyala", copied: "Kopyalandı",
     support: "Destek ve haberler — botta:",
     legal: "Rust, Facepunch Studios'un ticari markasıdır. Bu proje Facepunch ile bağlantılı değildir.",
-    video: "🎬 Botu iş başında izle",
+    video: "RustTrackerBro iş başında",
     video_more: "Bölümlü video →",
   },
   pt: {
@@ -213,7 +213,7 @@ window.RTB_TEXT = {
     copy: "Copiar", copied: "Copiado",
     support: "Suporte e novidades — no bot:",
     legal: "Rust é uma marca registrada da Facepunch Studios. Este projeto não tem ligação com a Facepunch.",
-    video: "🎬 Veja o bot em ação",
+    video: "RustTrackerBro em ação",
     video_more: "Vídeo com capítulos →",
   },
 };
