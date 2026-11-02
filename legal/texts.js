@@ -37,7 +37,7 @@ window.RTB_LEGAL_DOCS = {
   en: {
     terms: [
       { h: "1. About the service", b: [
-        "RustTrackerBro (the “Service”) is the bot @RustTrackerBroBot in Telegram, the RustTrackerBro app in Discord and the website rusttrackerbro.com. The Service is run by an independent developer (“we”). It is not affiliated with Facepunch Studios, Valve, Telegram or Discord.",
+        "RustTrackerBro (the “Service”) is the bot @RustTrackerBroBot in Telegram, the RustTrackerBro app in Discord and the website rusttrackerbro.com. The Service is run by an independent developer. It is not affiliated with Facepunch Studios, Valve, Telegram or Discord.",
         "The Service shows the activity of Rust players on game servers — when they connect and leave, session history and statistics — and sends notifications. It also offers Rust+ notifications, clan tools and a player board.",
       ] },
       { h: "2. Your account", b: [
@@ -89,7 +89,7 @@ window.RTB_LEGAL_DOCS = {
         "• Telegram or Discord account ID, name and language as provided by the platform.",
         "• Your settings, the players, servers and clans you track, and your notifications.",
         "• Subscription and payment records: plan, period, amount, date and the payment ID. We never receive card or wallet credentials.",
-        "• If you connect Rust+: encrypted access tokens, paired servers and devices; your team's last death spots (kept until the wipe, 30 days at most) and decay timers (until they fire).",
+        "• If you connect Rust+: encrypted access tokens, paired servers and devices.",
         "• Player board: your listings, responses, ratings and confirmed Steam account. Your contacts are shown only to the other side of an accepted response.",
         "• Support messages and technical logs; anonymous usage statistics of the bot’s screens (kept up to 90 days).",
       ] },
@@ -104,7 +104,7 @@ window.RTB_LEGAL_DOCS = {
       ] },
       { h: "5. Who receives data", b: [
         "• Telegram and Discord — to deliver messages.",
-        "• Hosting provider in the EU (Netherlands) where the Service runs; encrypted backups are stored with a cloud storage provider.",
+        "• Hosting provider where the Service runs; encrypted backups are stored with a cloud storage provider.",
         "• Payment providers — to process payments.",
         "• Cloudflare — website delivery and protection.",
         "Data may be processed outside your country; we use providers that apply appropriate safeguards.",
@@ -116,8 +116,8 @@ window.RTB_LEGAL_DOCS = {
         "• Backups are kept for a limited time and deleted by rotation.",
       ] },
       { h: "7. Your rights", b: [
-        "Depending on your country (including the EU GDPR), you may request access to your data, correction, deletion, restriction, data portability, and object to processing based on legitimate interest. This also applies to Rust players whose public game data is processed by the Service.",
-        "Send requests via {contact}. For data about a Steam account we will ask you to confirm that the account is yours. We answer within one month. You may also complain to your data protection authority.",
+        "• For more information and to resolve any questions, please contact the Service's support team through the official channels in Discord and Telegram.",
+        "• To send a request to support, use the `/support` command.",
       ] },
       { h: "8. Security", b: [
         "Access to the server and the database is limited to the administrator; Rust+ tokens and backups are encrypted.",
@@ -151,7 +151,7 @@ window.RTB_LEGAL_DOCS = {
   ru: {
     terms: [
       { h: "1. О сервисе", b: [
-        "RustTrackerBro («Сервис») — это бот @RustTrackerBroBot в Telegram, приложение RustTrackerBro в Discord и сайт rusttrackerbro.com. Сервис ведёт независимый разработчик («мы»). Сервис не связан с Facepunch Studios, Valve, Telegram и Discord.",
+        "RustTrackerBro («Сервис») — это бот @RustTrackerBroBot в Telegram, приложение RustTrackerBro в Discord и сайт rusttrackerbro.com. Сервис ведёт независимый разработчик. Сервис не связан с Facepunch Studios, Valve, Telegram и Discord.",
         "Сервис показывает активность игроков Rust на игровых серверах — время входа и выхода, историю сессий и статистику — и присылает уведомления. Также есть уведомления Rust+, инструменты для кланов и биржа игроков.",
       ] },
       { h: "2. Аккаунт", b: [
@@ -203,7 +203,7 @@ window.RTB_LEGAL_DOCS = {
         "• ID аккаунта Telegram или Discord, имя и язык — в том виде, как их передаёт платформа.",
         "• Ваши настройки, отслеживаемые игроки, серверы и кланы, уведомления.",
         "• Сведения о подписках и оплатах: уровень, срок, сумма, дата и номер платежа. Данные карт и кошельков мы не получаем.",
-        "• Если подключён Rust+: зашифрованные токены доступа, привязанные серверы и устройства; места последних смертей вашей команды (до вайпа, не дольше 30 дней) и таймеры гниения (до срабатывания).",
+        "• Если подключён Rust+: зашифрованные токены доступа, привязанные серверы и устройства.",
         "• Биржа игроков: ваши объявления, отклики, оценки и подтверждённый аккаунт Steam. Контакты видит только другая сторона принятого отклика.",
         "• Обращения в поддержку и технические журналы; обезличенная статистика открытия экранов бота (хранится до 90 дней).",
       ] },
@@ -218,7 +218,7 @@ window.RTB_LEGAL_DOCS = {
       ] },
       { h: "5. Кому передаются данные", b: [
         "• Telegram и Discord — для доставки сообщений.",
-        "• Хостинг-провайдер в ЕС (Нидерланды), где работает Сервис; зашифрованные резервные копии хранятся у облачного хранилища.",
+        "• Хостинг-провайдер, где работает Сервис; зашифрованные резервные копии хранятся у облачного хранилища.",
         "• Платёжные сервисы — для проведения оплаты.",
         "• Cloudflare — доставка и защита сайта.",
         "Данные могут обрабатываться за пределами вашей страны; мы пользуемся поставщиками, которые применяют надлежащие меры защиты.",
@@ -230,8 +230,8 @@ window.RTB_LEGAL_DOCS = {
         "• Резервные копии хранятся ограниченное время и удаляются по ротации.",
       ] },
       { h: "7. Ваши права", b: [
-        "В зависимости от вашей страны (в том числе по GDPR в ЕС) вы можете запросить доступ к своим данным, их исправление, удаление, ограничение обработки, перенос, а также возразить против обработки на основании законного интереса. Это относится и к игрокам Rust, чьи общедоступные игровые данные обрабатывает Сервис.",
-        "Запросы направляйте через {contact}. По данным аккаунта Steam мы попросим подтвердить, что аккаунт ваш. Отвечаем в течение месяца. Вы также можете подать жалобу в надзорный орган по защите данных.",
+        "• Для получения дополнительной информации и разрешения возникающих вопросов рекомендуем направлять обращения в службу технической поддержки Сервиса через официальные каналы в Discord и Telegram.",
+        "• Для направления запроса в службу поддержки необходимо использовать команду `/support`.",
       ] },
       { h: "8. Безопасность", b: [
         "Доступ к серверу и базе есть только у администратора; токены Rust+ и резервные копии зашифрованы.",
