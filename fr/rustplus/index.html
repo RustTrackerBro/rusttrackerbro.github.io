@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comment connecter Rust+ à Rust Tracker Bro — guide étape par étape</title>
+<meta name="description" content="Connecte Rust+ en 2 minutes environ sur un ordinateur avec Chrome : installe l’extension, connecte-toi avec Steam, envoie le jeton au bot et associe ton serveur en jeu (ESC → Rust+ → Pair with server).">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rust Tracker Bro">
+<meta property="og:title" content="Comment connecter Rust+ à Rust Tracker Bro — guide étape par étape">
+<meta property="og:description" content="Connecte Rust+ en 2 minutes environ sur un ordinateur avec Chrome : installe l’extension, connecte-toi avec Steam, envoie le jeton au bot et associe ton serveur en jeu (ESC → Rust+ → Pair with server).">
+<meta property="og:image" content="https://rusttrackerbro.com/assets/og.jpg">
+<meta property="og:url" content="https://rusttrackerbro.com/fr/rustplus/">
+<link rel="canonical" href="https://rusttrackerbro.com/fr/rustplus/">
+<link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/rustplus/">
+<link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/rustplus/">
+<link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/rustplus/">
+<link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/rustplus/">
+<link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/rustplus/">
+<link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/rustplus/">
+<link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/rustplus/">
+<link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/rustplus/">
+<link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/rustplus/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#15191e">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/avatar.png">
+<link rel="stylesheet" href="/calc/calc.css?v=5c55fd0922">
+<style>
+.rp-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; counter-reset: s; }
+.rp-steps li { counter-increment: s; }
+.rp-steps h2 { margin: 0 0 6px; font-size: 19px; }
+.rp-steps h2::before { content: counter(s) ". "; color: var(--neon); }
+.rp-steps p { margin: 0 0 12px; color: var(--muted); }
+.rp-steps svg { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 14px; background: #101418; }
+.rp-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+.rp-links a { flex: 1 1 220px; text-align: center; padding: 12px 14px; border-radius: 12px; border: 1px solid var(--line);
+  color: var(--bone); text-decoration: none; font-weight: 700; background: rgba(255,255,255,.03); }
+.rp-links a:hover { border-color: var(--neon); }
+.rp-trouble { margin: 0; padding-left: 20px; color: var(--muted); display: grid; gap: 8px; }
+.rp-more { text-align: center; margin: 18px 0 0; }
+.rp-more a { color: var(--rust-hot); font-weight: 700; text-decoration: none; font-size: 17px; }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "Comment connecter Rust+", "description": "Connecte Rust+ en 2 minutes environ sur un ordinateur avec Chrome : installe l’extension, connecte-toi avec Steam, envoie le jeton au bot et associe ton serveur en jeu (ESC → Rust+ → Pair with server).", "inLanguage": "fr", "totalTime": "PT2M", "step": [{"@type": "HowToStep", "position": 1, "name": "Installe l’extension", "text": "Sur un ordinateur, ouvre le Chrome Web Store et ajoute « Rust Companion Authenticator » à Chrome. La page de connexion Rust+ est faite pour les téléphones : l’extension affiche le jeton dans un navigateur normal."}, {"@type": "HowToStep", "position": 2, "name": "Connecte-toi avec Steam", "text": "Ouvre la page de connexion Rust+ et connecte-toi via Steam avec le compte sur lequel tu joues. Le bot ne voit jamais ton mot de passe Steam."}, {"@type": "HowToStep", "position": 3, "name": "Envoie le jeton au bot", "text": "Copie le jeton de l’extension et envoie-le au bot en un seul message (dans le bot : 🔗 Rust+ → 🔗 Connecter Rust+). Le bot supprime aussitôt ce message du chat."}, {"@type": "HowToStep", "position": 4, "name": "Associe ton serveur en jeu", "text": "Rejoins le serveur et appuie sur ESC → Rust+ → Pair with server. En quelques secondes, le bot écrit que le serveur est associé."}, {"@type": "HowToStep", "position": 5, "name": "Associe des appareils (facultatif)", "text": "Alarme intelligente, interrupteur intelligent, moniteur de stockage : alimente-le, regarde-le, maintiens E → Pair. Un moniteur sur l’armoire montre l’entretien ; sur une caisse, si quelqu’un la pille."}], "tool": [{"@type": "HowToTool", "name": "Google Chrome"}]}</script>
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+<div class="grid-bg" aria-hidden="true"></div>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="/"><img src="/assets/avatar.png" alt="" width="40" height="40"><b>RUST TRACKER <span>BRO</span></b></a>
+    <nav class="langs" id="langs" aria-label="Language"><a href="/rustplus/" hreflang="en" lang="en" data-lang="en">English</a><a href="/ru/rustplus/" hreflang="ru" lang="ru" data-lang="ru">Русский</a><a href="/es/rustplus/" hreflang="es" lang="es" data-lang="es">Español</a><a href="/fr/rustplus/" hreflang="fr" lang="fr" data-lang="fr" aria-current="true">Français</a><a href="/uk/rustplus/" hreflang="uk" lang="uk" data-lang="uk">Українська</a><a href="/de/rustplus/" hreflang="de" lang="de" data-lang="de">Deutsch</a><a href="/tr/rustplus/" hreflang="tr" lang="tr" data-lang="tr">Türkçe</a><a href="/pt/rustplus/" hreflang="pt" lang="pt" data-lang="pt">Português</a></nav>
+  </header>
+  <section class="hero">
+    <h1>Comment connecter Rust+</h1>
+    <p class="lead">Il te faut un ordinateur avec le navigateur Chrome. Rust+ est l’appli officielle de Rust ; grâce à elle, le bot répond aux commandes du chat en jeu et envoie les alarmes, les morts et l’entretien de l’armoire.</p>
+  </section>
+  <section class="panel">
+    <ol class="rp-steps"><li><h2>Installe l’extension</h2><p>Sur un ordinateur, ouvre le Chrome Web Store et ajoute « Rust Companion Authenticator » à Chrome. La page de connexion Rust+ est faite pour les téléphones : l’extension affiche le jeton dans un navigateur normal.</p><svg viewBox="0 0 640 220" role="img" aria-label="Chrome Web Store: Rust Companion Authenticator" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, Segoe UI, Roboto, sans-serif"><rect x="20" y="20" width="600" height="180" rx="12" fill="#1b2026" stroke="#2e363e"/><rect x="20" y="20" width="600" height="30" rx="12" fill="#232a31"/><rect x="20" y="38" width="600" height="12" fill="#232a31"/><circle cx="36" cy="35" r="4" fill="#ff5b4f"/><circle cx="50" cy="35" r="4" fill="#f5c542"/><circle cx="64" cy="35" r="4" fill="#a8ff3e"/><rect x="84" y="27" width="490" height="16" rx="8" fill="#101418"/><text x="94" y="39" font-size="11" fill="#9aa3ab">chromewebstore.google.com</text><g transform="translate(578 27)"><rect width="22" height="22" rx="5" fill="#a8ff3e" opacity=".18"/><path d="M6 9h3a2 2 0 1 1 4 0h3v3a2 2 0 1 1 0 4v3H6z" fill="#a8ff3e"/></g><rect x="50" y="78" width="64" height="64" rx="14" fill="#d8692a"/><text x="82" y="119" font-size="26" text-anchor="middle" fill="#f1ece2">R+</text><text x="134" y="100" font-size="18" font-weight="700" fill="#f1ece2">Rust Companion Authenticator</text><text x="134" y="124" font-size="13" fill="#9aa3ab">chrome extension</text><rect x="440" y="142" width="150" height="38" rx="19" fill="#2aabee"/><text x="515" y="166" font-size="14" font-weight="700" text-anchor="middle" fill="#fff">Ajouter à Chrome</text></svg></li><li><h2>Connecte-toi avec Steam</h2><p>Ouvre la page de connexion Rust+ et connecte-toi via Steam avec le compte sur lequel tu joues. Le bot ne voit jamais ton mot de passe Steam.</p><svg viewBox="0 0 640 220" role="img" aria-label="Rust+ login and token" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, Segoe UI, Roboto, sans-serif"><rect x="20" y="20" width="380" height="180" rx="12" fill="#1b2026" stroke="#2e363e"/><rect x="20" y="20" width="380" height="30" rx="12" fill="#232a31"/><rect x="20" y="38" width="380" height="12" fill="#232a31"/><circle cx="36" cy="35" r="4" fill="#ff5b4f"/><circle cx="50" cy="35" r="4" fill="#f5c542"/><circle cx="64" cy="35" r="4" fill="#a8ff3e"/><rect x="84" y="27" width="270" height="16" rx="8" fill="#101418"/><text x="94" y="39" font-size="11" fill="#9aa3ab">companion-rust.facepunch.com/login</text><rect x="80" y="100" width="260" height="46" rx="10" fill="#1b2838" stroke="#2e363e"/><circle cx="106" cy="123" r="11" fill="none" stroke="#f1ece2" stroke-width="3"/><text x="128" y="128" font-size="15" font-weight="700" fill="#f1ece2">Connexion via Steam</text><g transform="translate(410 105)"><path d="M0 0 L14 7 L0 14 Z" fill="#a8ff3e"/></g><rect x="440" y="44" width="180" height="140" rx="12" fill="#1b2026" stroke="#a8ff3e"/><text x="456" y="72" font-size="13" fill="#9aa3ab">Jeton</text><rect x="456" y="82" width="148" height="30" rx="6" fill="#101418"/><text x="466" y="102" font-size="13" font-family="ui-monospace, monospace" fill="#f08a4b">eyJhbGciOiJ…</text><rect x="456" y="128" width="148" height="36" rx="18" fill="#a8ff3e"/><text x="530" y="151" font-size="14" font-weight="700" text-anchor="middle" fill="#0e1a07">Copier</text></svg></li><li><h2>Envoie le jeton au bot</h2><p>Copie le jeton de l’extension et envoie-le au bot en un seul message (dans le bot : 🔗 Rust+ → 🔗 Connecter Rust+). Le bot supprime aussitôt ce message du chat.</p><svg viewBox="0 0 640 220" role="img" aria-label="Token sent to the bot" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, Segoe UI, Roboto, sans-serif"><rect x="30" y="80" width="200" height="60" rx="10" fill="#101418" stroke="#2e363e"/><text x="48" y="116" font-size="16" font-family="ui-monospace, monospace" fill="#f08a4b">eyJhbGciOiJ…</text><g transform="translate(252 103)"><path d="M0 0 L14 7 L0 14 Z" fill="#a8ff3e"/></g><rect x="290" y="30" width="320" height="160" rx="16" fill="#1b2026" stroke="#2e363e"/><circle cx="322" cy="62" r="16" fill="#d8692a" stroke="#a8ff3e" stroke-width="2"/><text x="348" y="67" font-size="14" font-weight="700" fill="#f1ece2">RustTrackerBro</text><rect x="310" y="92" width="280" height="40" rx="12" fill="#232a31"/><text x="326" y="117" font-size="15" fill="#f1ece2">✅ Rust+ connecté</text><rect x="310" y="142" width="180" height="30" rx="10" fill="#232a31" opacity=".6"/></svg></li><li><h2>Associe ton serveur en jeu</h2><p>Rejoins le serveur et appuie sur ESC → Rust+ → Pair with server. En quelques secondes, le bot écrit que le serveur est associé.</p><svg viewBox="0 0 640 220" role="img" aria-label="In game: ESC → Rust+ → Pair with server" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, Segoe UI, Roboto, sans-serif"><rect x="20" y="20" width="600" height="180" rx="12" fill="#0b0e11" stroke="#2e363e"/><rect x="40" y="114" width="150" height="36" rx="6" fill="#a8ff3e" opacity=".12"/><text x="60" y="70" font-size="18" font-weight="700" fill="#9aa3ab">RESUME</text><text x="60" y="104" font-size="18" font-weight="700" fill="#9aa3ab">OPTIONS</text><text x="60" y="138" font-size="18" font-weight="700" fill="#a8ff3e">RUST+</text><text x="60" y="172" font-size="18" font-weight="700" fill="#9aa3ab">QUIT</text><text x="40" y="44" font-size="12" fill="#9aa3ab">ESC</text><g transform="translate(230 125)"><path d="M0 0 L14 7 L0 14 Z" fill="#a8ff3e"/></g><rect x="270" y="60" width="320" height="120" rx="10" fill="#1b2026" stroke="#2e363e"/><text x="290" y="92" font-size="16" font-weight="700" fill="#f1ece2">Rust+</text><rect x="290" y="114" width="200" height="40" rx="8" fill="#d8692a"/><text x="390" y="139" font-size="15" font-weight="700" text-anchor="middle" fill="#f1ece2">Pair with server</text></svg></li><li><h2>Associe des appareils (facultatif)</h2><p>Alarme intelligente, interrupteur intelligent, moniteur de stockage : alimente-le, regarde-le, maintiens E → Pair. Un moniteur sur l’armoire montre l’entretien ; sur une caisse, si quelqu’un la pille.</p><svg viewBox="0 0 640 220" role="img" aria-label="Smart devices: hold E → Pair" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, Segoe UI, Roboto, sans-serif"><rect x="50" y="40" width="160" height="110" rx="14" fill="#1b2026" stroke="#2e363e"/><text x="130" y="96" font-size="34" text-anchor="middle">🚨</text><text x="130" y="134" font-size="14" text-anchor="middle" fill="#f1ece2">Alarme</text><rect x="245" y="40" width="160" height="110" rx="14" fill="#1b2026" stroke="#2e363e"/><text x="325" y="96" font-size="34" text-anchor="middle">💡</text><text x="325" y="134" font-size="14" text-anchor="middle" fill="#f1ece2">Interrupteur</text><rect x="440" y="40" width="160" height="110" rx="14" fill="#1b2026" stroke="#2e363e"/><text x="520" y="96" font-size="34" text-anchor="middle">🗄</text><text x="520" y="134" font-size="14" text-anchor="middle" fill="#f1ece2">Stockage</text><text x="320" y="186" font-size="16" font-weight="700" text-anchor="middle" fill="#a8ff3e">maintiens E → Pair</text></svg></li></ol>
+    <div class="rp-links">
+      <a href="https://chromewebstore.google.com/detail/rust-companion-authentica/idihpaljmebenfolkfibmdpefgcgcddd" rel="noopener" target="_blank">🧩 Extension Chrome</a>
+      <a href="https://companion-rust.facepunch.com/login" rel="noopener" target="_blank">🔑 Page de connexion Rust+</a>
+    </div>
+  </section>
+  <section class="panel">
+    <h2>Ça ne marche pas ?</h2>
+    <ul class="rp-trouble"><li>La page de connexion ne s’ouvre pas ou reste vide : ouvre-la sur un ordinateur dans Chrome avec l’extension.</li><li>Le jeton n’est pas accepté : copie-le en entier, en un seul message. Un ancien jeton ne marche pas : rouvre la page de connexion.</li><li>Le serveur ne s’associe pas : rejoins-le en jeu, ESC → Rust+ → Pair with server. Si le propriétaire du serveur a désactivé Rust+, l’association est impossible.</li><li>Connecté avec le mauvais compte : déconnecte-toi sur la page de connexion et reconnecte-toi avec le compte Steam sur lequel tu joues.</li></ul>
+  </section>
+  <p class="rp-more"><a class="rp-cmds" href="/fr/rustplus/commands/">Commandes Rust+ dans le chat du jeu →</a></p>
+  <section class="panel cta">
+    <h2>Ensuite, essaie en jeu</h2>
+    <p>Tape !pop dans le chat d’équipe : le bot répond avec la population du serveur. !help liste toutes les commandes. Si le serveur bloque « ! », utilise un tiret : -pop, -help.</p>
+    <div class="btns">
+      <a class="btn discord" id="btn-discord" href="/discord/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.6 1.3a18.3 18.3 0 0 0-5.6 0L8.6 3a19.7 19.7 0 0 0-4.9 1.4C.6 9 -.3 13.6.1 18.1A19.9 19.9 0 0 0 6.2 21l1.3-2a12.9 12.9 0 0 1-2-1l.5-.4a14.2 14.2 0 0 0 12 0l.5.4c-.6.4-1.3.7-2 1l1.3 2a19.8 19.8 0 0 0 6.1-2.9c.5-5.2-.8-9.7-3.6-13.7ZM8.3 15.3c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Zm7.4 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Z"/></svg><span data-t="btn_discord">Ajouter à Discord</span></a>
+      <a class="btn tg" id="btn-tg" href="https://t.me/RustTrackerBroBot"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.6 19.8c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.2-8.3c.4-.4-.1-.6-.6-.2L6 13.4 1.1 11.9c-1.1-.3-1.1-1.1.2-1.6L20.5 2.9c.9-.3 1.7.2 1.4 1.4Z"/></svg><span data-t="btn_tg">Ouvrir dans Telegram</span></a>
+    </div>
+  </section>
+  <footer>
+    <a class="home" href="/" data-t="home">← Rust Tracker Bro</a>
+    <div class="data-note" id="data-note"></div>
+    <div class="legal-links" data-base="/legal/"></div>
+    <div class="legal" data-t="legal">Rust est une marque de Facepunch Studios. Ce projet n&#x27;est pas affilié à Facepunch.</div>
+  </footer>
+</div>
+<script src="/config.js"></script>
+<script src="/legal/texts.js"></script>
+<script src="/legal/legal.js"></script>
+<script src="/calc/page.js?v=36d25c017f"></script>
+</body>
+</html>

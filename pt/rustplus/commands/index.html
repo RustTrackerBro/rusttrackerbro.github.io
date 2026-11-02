@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt" data-lang="pt">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comandos do Rust+ no chat — !time, !timer, !decay, !raid | Rust Tracker Bro</title>
+<meta name="description" content="Todos os comandos do Rust Tracker Bro no chat da equipe: !pop, !time, !wipe, !timer, !decay, !upkeep, !craft, !recycle, !raid, !crate, !oil e mais — com exemplos de resposta. Em qualquer nível.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rust Tracker Bro">
+<meta property="og:title" content="Comandos do Rust+ no chat — !time, !timer, !decay, !raid | Rust Tracker Bro">
+<meta property="og:description" content="Todos os comandos do Rust Tracker Bro no chat da equipe: !pop, !time, !wipe, !timer, !decay, !upkeep, !craft, !recycle, !raid, !crate, !oil e mais — com exemplos de resposta. Em qualquer nível.">
+<meta property="og:image" content="https://rusttrackerbro.com/assets/og.jpg">
+<meta property="og:url" content="https://rusttrackerbro.com/pt/rustplus/commands/">
+<link rel="canonical" href="https://rusttrackerbro.com/pt/rustplus/commands/">
+<link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/rustplus/commands/">
+<link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/rustplus/commands/">
+<link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/rustplus/commands/">
+<link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/rustplus/commands/">
+<link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/rustplus/commands/">
+<link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/rustplus/commands/">
+<link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/rustplus/commands/">
+<link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/rustplus/commands/">
+<link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/rustplus/commands/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#15191e">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/avatar.png">
+<link rel="stylesheet" href="/calc/calc.css?v=5c55fd0922">
+<style>
+.cmd-table { width: 100%; border-collapse: collapse; }
+.cmd-table th { text-align: left; color: var(--muted); font-weight: 600; font-size: 13px; padding: 0 10px 8px 0; }
+.cmd-table td { vertical-align: top; padding: 10px 10px 10px 0; border-top: 1px solid var(--line); }
+.cmd-table code { color: var(--rust-hot); font: 700 14px ui-monospace, SFMono-Regular, Menlo, monospace; white-space: nowrap; }
+.cmd-table .ans { display: block; font: 13px/1.45 ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--bone);
+  background: #101418; border: 1px solid var(--line); border-left: 3px solid var(--neon); border-radius: 8px; padding: 6px 9px; margin-bottom: 6px; }
+.cmd-table .ans b { color: var(--rust-hot); font-weight: 400; }
+.cmd-table p { margin: 0; color: var(--muted); font-size: 14.5px; }
+.cmd-notes { margin: 0; padding-left: 20px; color: var(--muted); display: grid; gap: 8px; }
+.guide-link { display: inline-block; margin-top: 14px; color: var(--rust-hot); font-weight: 700; text-decoration: none; }
+@media (max-width: 620px) { .cmd-table thead { display: none; } .cmd-table td { display: block; border-top: 0; padding: 4px 0; }
+  .cmd-table tr { display: block; border-top: 1px solid var(--line); padding: 8px 0; } .cmd-table code { white-space: normal; } }
+</style>
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+<div class="grid-bg" aria-hidden="true"></div>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="/"><img src="/assets/avatar.png" alt="" width="40" height="40"><b>RUST TRACKER <span>BRO</span></b></a>
+    <nav class="langs" id="langs" aria-label="Language"><a href="/rustplus/commands/" hreflang="en" lang="en" data-lang="en">English</a><a href="/ru/rustplus/commands/" hreflang="ru" lang="ru" data-lang="ru">Русский</a><a href="/es/rustplus/commands/" hreflang="es" lang="es" data-lang="es">Español</a><a href="/fr/rustplus/commands/" hreflang="fr" lang="fr" data-lang="fr">Français</a><a href="/uk/rustplus/commands/" hreflang="uk" lang="uk" data-lang="uk">Українська</a><a href="/de/rustplus/commands/" hreflang="de" lang="de" data-lang="de">Deutsch</a><a href="/tr/rustplus/commands/" hreflang="tr" lang="tr" data-lang="tr">Türkçe</a><a href="/pt/rustplus/commands/" hreflang="pt" lang="pt" data-lang="pt" aria-current="true">Português</a></nav>
+  </header>
+  <section class="hero">
+    <h1>Comandos do Rust+ no chat do jogo</h1>
+    <p class="lead">Qualquer um da sua equipe digita um comando no chat do jogo — o bot responde ali mesmo com a marca [RustTrackerBro]. Basta alguém da equipe ter conectado o Rust+ no bot.</p>
+  </section>
+  <section class="panel">
+    <table class="cmd-table"><thead><tr><th>Comando</th><th>O que o bot responde</th></tr></thead><tbody><tr><td><code>!pop</code></td><td><span class="ans"><b>[RustTrackerBro]</b> Online 87, fila 4</span><p>Online do servidor e a fila.</p></td></tr><tr><td><code>!time</code></td><td><span class="ans"><b>[RustTrackerBro]</b> Hora 18:40, noite em ~12 min</span><p>A hora do jogo e quanto falta para a noite ou a manhã.</p></td></tr><tr><td><code>!wipe</code></td><td><span class="ans"><b>[RustTrackerBro]</b> Wipe há 3 d 4 h · Wipe global em 15 d 22 h</span><p>Tempo desde o wipe, o próximo se o servidor faz wipe semanal, e o wipe global.</p></td></tr><tr><td><code>!timer 12</code></td><td><span class="ans"><b>[RustTrackerBro]</b> ⏱ Timer: 12 min — aviso 1 min antes e no zero</span><p>Um timer para a caixa ou o que quiser: !timer 12:30, !timer crate, !timer heli, !timer bradley; !timer — os ativos, !timer stop — apagar o último.</p></td></tr><tr><td><code>!decay stone 300</code></td><td><span class="ans"><b>[RustTrackerBro]</b> pedra 300 HP — cai em cerca de 3 h, aviso 10 min antes</span><p>Olhe para uma parede inimiga com o martelo e digite o material e o HP — o bot avisa no chat e no bot quando ela estiver para cair. A partir do Bro+.</p></td></tr><tr><td><code>!decay</code></td><td><span class="ans"><b>[RustTrackerBro]</b> Sem manutenção deteriora em cerca de: … pedra 5 h …</span><p>Quanto tempo as paredes de cada material levam para deteriorar sem manutenção.</p></td></tr><tr><td><code>!upkeep</code></td><td><span class="ans"><b>[RustTrackerBro]</b> Armários: Casa 31 h</span><p>Manutenção restante nos armários da equipe (monitor de armazenamento no armário).</p></td></tr><tr><td><code>!craft c4</code></td><td><span class="ans"><b>[RustTrackerBro]</b> C4 x1: … · bancada 3</span><p>Custo de fabricação, bancada e tempo; com pólvora ou explosivos — também enxofre e carvão.</p></td></tr><tr><td><code>!recycle tech trash 5</code></td><td><span class="ans"><b>[RustTrackerBro]</b> Reciclar Tech Trash x5: …</span><p>O que o reciclador e o da zona segura dão.</p></td></tr><tr><td><code>!raid stone wall 2</code></td><td><span class="ans"><b>[RustTrackerBro]</b> Parede de pedra x2: … Mais barato: … de enxofre</span><p>Quantos C4, foguetes, bolsas ou munição explosiva — e o mais barato em enxofre.</p></td></tr><tr><td><code>!crate</code></td><td><span class="ans"><b>[RustTrackerBro]</b> Caixas: G12, K7</span><p>Onde estão as caixas trancadas agora.</p></td></tr><tr><td><code>!oil</code></td><td><span class="ans"><b>[RustTrackerBro]</b> Plataforma ativada há 3 min</span><p>Se há um Chinook com cientistas na plataforma de petróleo.</p></td></tr><tr><td><code>!bradley</code></td><td><span class="ans"><b>[RustTrackerBro]</b> Bradley destruído há 4 min</span><p>Quando o Bradley foi destruído.</p></td></tr><tr><td><code>!cargo · !heli · !chinook · !vendor</code></td><td><span class="ans"><b>[RustTrackerBro]</b> Cargueiro em H5</span><p>Onde estão o Cargueiro, o helicóptero de patrulha, o Chinook e o vendedor — em servidores que compartilham marcadores do mapa.</p></td></tr><tr><td><code>!help</code></td><td><span class="ans"><b>[RustTrackerBro]</b> !pop !time !wipe …</span><p>A lista de comandos.</p></td></tr></tbody></table>
+  </section>
+  <section class="panel">
+    <h2>Bom saber</h2>
+    <ul class="cmd-notes"><li>Se o servidor bloquear mensagens que começam com «!», use um hífen: -pop, -time, -timer 12. Aí os exemplos do bot também vêm com hífen.</li><li>O mesmo comando — no máximo uma vez a cada 10 segundos; todos juntos — até 12 respostas por minuto por equipe.</li><li>Os comandos podem ser desligados no bot: 🔗 Rust+ → 🔔 Notificações: bot e jogo → 💬 Comandos no chat do jogo.</li></ul>
+    <a class="guide-link" href="/pt/rustplus/">Como conectar o Rust+ →</a>
+  </section>
+  <section class="panel cta">
+    <h2 data-t="cta_title">As mesmas calculadoras no bot — no Discord e no Telegram</h2>
+    <p data-t="cta_text">E mais: alertas quando um jogador entra, clã online, alarmes de raid do Rust+ e os comandos !craft, !recycle, !raid no chat do jogo.</p>
+    <div class="btns">
+      <a class="btn discord" id="btn-discord" href="/discord/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.6 1.3a18.3 18.3 0 0 0-5.6 0L8.6 3a19.7 19.7 0 0 0-4.9 1.4C.6 9 -.3 13.6.1 18.1A19.9 19.9 0 0 0 6.2 21l1.3-2a12.9 12.9 0 0 1-2-1l.5-.4a14.2 14.2 0 0 0 12 0l.5.4c-.6.4-1.3.7-2 1l1.3 2a19.8 19.8 0 0 0 6.1-2.9c.5-5.2-.8-9.7-3.6-13.7ZM8.3 15.3c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Zm7.4 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Z"/></svg><span data-t="btn_discord">Adicionar ao Discord</span></a>
+      <a class="btn tg" id="btn-tg" href="https://t.me/RustTrackerBroBot"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.6 19.8c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.2-8.3c.4-.4-.1-.6-.6-.2L6 13.4 1.1 11.9c-1.1-.3-1.1-1.1.2-1.6L20.5 2.9c.9-.3 1.7.2 1.4 1.4Z"/></svg><span data-t="btn_tg">Abrir no Telegram</span></a>
+    </div>
+  </section>
+  <footer>
+    <a class="home" href="/" data-t="home">← Rust Tracker Bro</a>
+    <div class="data-note" id="data-note"></div>
+    <div class="legal-links" data-base="/legal/"></div>
+    <div class="legal" data-t="legal">Rust é uma marca da Facepunch Studios. Este projeto não é afiliado à Facepunch.</div>
+  </footer>
+</div>
+<script src="/config.js"></script>
+<script src="/legal/texts.js"></script>
+<script src="/legal/legal.js"></script>
+<script src="/calc/page.js?v=36d25c017f"></script>
+</body>
+</html>

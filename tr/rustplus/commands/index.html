@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="tr" data-lang="tr">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rust+ sohbet komutları — !time, !timer, !decay, !raid | Rust Tracker Bro</title>
+<meta name="description" content="Rust Tracker Bro&#x27;nun takım sohbetindeki tüm komutları: !pop, !time, !wipe, !timer, !decay, !upkeep, !craft, !recycle, !raid, !crate, !oil ve dahası — örnek cevaplarla. Her seviyede.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rust Tracker Bro">
+<meta property="og:title" content="Rust+ sohbet komutları — !time, !timer, !decay, !raid | Rust Tracker Bro">
+<meta property="og:description" content="Rust Tracker Bro&#x27;nun takım sohbetindeki tüm komutları: !pop, !time, !wipe, !timer, !decay, !upkeep, !craft, !recycle, !raid, !crate, !oil ve dahası — örnek cevaplarla. Her seviyede.">
+<meta property="og:image" content="https://rusttrackerbro.com/assets/og.jpg">
+<meta property="og:url" content="https://rusttrackerbro.com/tr/rustplus/commands/">
+<link rel="canonical" href="https://rusttrackerbro.com/tr/rustplus/commands/">
+<link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/rustplus/commands/">
+<link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/rustplus/commands/">
+<link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/rustplus/commands/">
+<link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/rustplus/commands/">
+<link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/rustplus/commands/">
+<link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/rustplus/commands/">
+<link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/rustplus/commands/">
+<link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/rustplus/commands/">
+<link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/rustplus/commands/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#15191e">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/avatar.png">
+<link rel="stylesheet" href="/calc/calc.css?v=5c55fd0922">
+<style>
+.cmd-table { width: 100%; border-collapse: collapse; }
+.cmd-table th { text-align: left; color: var(--muted); font-weight: 600; font-size: 13px; padding: 0 10px 8px 0; }
+.cmd-table td { vertical-align: top; padding: 10px 10px 10px 0; border-top: 1px solid var(--line); }
+.cmd-table code { color: var(--rust-hot); font: 700 14px ui-monospace, SFMono-Regular, Menlo, monospace; white-space: nowrap; }
+.cmd-table .ans { display: block; font: 13px/1.45 ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--bone);
+  background: #101418; border: 1px solid var(--line); border-left: 3px solid var(--neon); border-radius: 8px; padding: 6px 9px; margin-bottom: 6px; }
+.cmd-table .ans b { color: var(--rust-hot); font-weight: 400; }
+.cmd-table p { margin: 0; color: var(--muted); font-size: 14.5px; }
+.cmd-notes { margin: 0; padding-left: 20px; color: var(--muted); display: grid; gap: 8px; }
+.guide-link { display: inline-block; margin-top: 14px; color: var(--rust-hot); font-weight: 700; text-decoration: none; }
+@media (max-width: 620px) { .cmd-table thead { display: none; } .cmd-table td { display: block; border-top: 0; padding: 4px 0; }
+  .cmd-table tr { display: block; border-top: 1px solid var(--line); padding: 8px 0; } .cmd-table code { white-space: normal; } }
+</style>
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+<div class="grid-bg" aria-hidden="true"></div>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="/"><img src="/assets/avatar.png" alt="" width="40" height="40"><b>RUST TRACKER <span>BRO</span></b></a>
+    <nav class="langs" id="langs" aria-label="Language"><a href="/rustplus/commands/" hreflang="en" lang="en" data-lang="en">English</a><a href="/ru/rustplus/commands/" hreflang="ru" lang="ru" data-lang="ru">Русский</a><a href="/es/rustplus/commands/" hreflang="es" lang="es" data-lang="es">Español</a><a href="/fr/rustplus/commands/" hreflang="fr" lang="fr" data-lang="fr">Français</a><a href="/uk/rustplus/commands/" hreflang="uk" lang="uk" data-lang="uk">Українська</a><a href="/de/rustplus/commands/" hreflang="de" lang="de" data-lang="de">Deutsch</a><a href="/tr/rustplus/commands/" hreflang="tr" lang="tr" data-lang="tr" aria-current="true">Türkçe</a><a href="/pt/rustplus/commands/" hreflang="pt" lang="pt" data-lang="pt">Português</a></nav>
+  </header>
+  <section class="hero">
+    <h1>Oyun sohbetinde Rust+ komutları</h1>
+    <p class="lead">Takımından herkes oyun sohbetine bir komut yazar — bot aynı yerde [RustTrackerBro] etiketiyle cevap verir. Takımdan birinin botta Rust+&#x27;ı bağlamış olması yeterli.</p>
+  </section>
+  <section class="panel">
+    <table class="cmd-table"><thead><tr><th>Komut</th><th>Botun cevabı</th></tr></thead><tbody><tr><td><code>!pop</code></td><td><span class="ans"><b>[RustTrackerBro]</b> Çevrimiçi 87, sıra 4</span><p>Sunucunun çevrimiçi sayısı ve sıra.</p></td></tr><tr><td><code>!time</code></td><td><span class="ans"><b>[RustTrackerBro]</b> Saat 18:40, gece ~12 dk sonra</span><p>Oyun saati ve geceye ya da sabaha ne kadar kaldığı.</p></td></tr><tr><td><code>!wipe</code></td><td><span class="ans"><b>[RustTrackerBro]</b> Wipe 3 g 4 sa önce · Global wipe&#x27;a 15 g 22 sa</span><p>Wipe&#x27;tan bu yana geçen süre, sunucu haftalık wipe yapıyorsa bir sonraki ve global wipe.</p></td></tr><tr><td><code>!timer 12</code></td><td><span class="ans"><b>[RustTrackerBro]</b> ⏱ Zamanlayıcı: 12 dk — 1 dk kala ve sıfırda hatırlatırım</span><p>Sandık ya da başka bir şey için zamanlayıcı: !timer 12:30, !timer crate, !timer heli, !timer bradley; !timer — aktif olanlar, !timer stop — sonuncuyu sıfırla.</p></td></tr><tr><td><code>!decay stone 300</code></td><td><span class="ans"><b>[RustTrackerBro]</b> taş 300 HP — yaklaşık 3 sa içinde yıkılır, 10 dk önce hatırlatırım</span><p>Düşman duvarına çekiçle bak, malzemesini ve HP&#x27;sini yaz — yıkılmak üzereyken bot sohbette ve botta hatırlatır. Bro+&#x27;dan itibaren.</p></td></tr><tr><td><code>!decay</code></td><td><span class="ans"><b>[RustTrackerBro]</b> Bakımsız çürüme yaklaşık: … taş 5 sa …</span><p>Her malzemedeki duvarların bakımsız ne kadar sürede çürüdüğü.</p></td></tr><tr><td><code>!upkeep</code></td><td><span class="ans"><b>[RustTrackerBro]</b> Dolaplar: Ev 31 sa</span><p>Takım dolaplarında kalan bakım süresi (dolaptaki depo monitörü).</p></td></tr><tr><td><code>!craft c4</code></td><td><span class="ans"><b>[RustTrackerBro]</b> C4 x1: … · tezgah 3</span><p>Üretim maliyeti, tezgah ve süre; barut veya patlayıcıyla — sülfür ve kömür de.</p></td></tr><tr><td><code>!recycle tech trash 5</code></td><td><span class="ans"><b>[RustTrackerBro]</b> Geri dönüşüm Tech Trash x5: …</span><p>Geri dönüştürücüden ve güvenli bölgedekinden ne çıkacağı.</p></td></tr><tr><td><code>!raid stone wall 2</code></td><td><span class="ans"><b>[RustTrackerBro]</b> Taş duvar x2: … En ucuz: … sülfür</span><p>Kaç C4, roket, çanta ya da patlayıcı mermi — ve sülfüre göre en ucuzu.</p></td></tr><tr><td><code>!crate</code></td><td><span class="ans"><b>[RustTrackerBro]</b> Sandıklar: G12, K7</span><p>Kilitli sandıkların şu an nerede olduğu.</p></td></tr><tr><td><code>!oil</code></td><td><span class="ans"><b>[RustTrackerBro]</b> Platform 3 dk önce etkinleştirildi</span><p>Petrol platformunda bilim insanlarıyla bir Chinook olup olmadığı.</p></td></tr><tr><td><code>!bradley</code></td><td><span class="ans"><b>[RustTrackerBro]</b> Bradley 4 dk önce yok edildi</span><p>Bradley&#x27;nin ne zaman yok edildiği.</p></td></tr><tr><td><code>!cargo · !heli · !chinook · !vendor</code></td><td><span class="ans"><b>[RustTrackerBro]</b> Kargo H5 konumunda</span><p>Kargo, devriye helikopteri, Chinook ve gezgin satıcının yeri — harita işaretlerini paylaşan sunucularda.</p></td></tr><tr><td><code>!help</code></td><td><span class="ans"><b>[RustTrackerBro]</b> !pop !time !wipe …</span><p>Komut listesi.</p></td></tr></tbody></table>
+  </section>
+  <section class="panel">
+    <h2>Bilmekte fayda var</h2>
+    <ul class="cmd-notes"><li>Sunucu «!» ile başlayan mesajları engelliyorsa tire kullan: -pop, -time, -timer 12. O zaman botun örnekleri de tireyle gelir.</li><li>Aynı komut — en fazla 10 saniyede bir; hepsi birlikte — takım başına dakikada en fazla 12 cevap.</li><li>Komutlar botta kapatılabilir: 🔗 Rust+ → 🔔 Bildirimler: bot ve oyun → 💬 Oyun içi sohbet komutları.</li></ul>
+    <a class="guide-link" href="/tr/rustplus/">Rust+ nasıl bağlanır →</a>
+  </section>
+  <section class="panel cta">
+    <h2 data-t="cta_title">Aynı hesaplayıcılar botta — Discord ve Telegram&#x27;da</h2>
+    <p data-t="cta_text">Ayrıca: oyuncu girince bildirim, klan çevrimiçi durumu, Rust+ raid alarmı ve oyun sohbetinde !craft, !recycle, !raid komutları.</p>
+    <div class="btns">
+      <a class="btn discord" id="btn-discord" href="/discord/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.6 1.3a18.3 18.3 0 0 0-5.6 0L8.6 3a19.7 19.7 0 0 0-4.9 1.4C.6 9 -.3 13.6.1 18.1A19.9 19.9 0 0 0 6.2 21l1.3-2a12.9 12.9 0 0 1-2-1l.5-.4a14.2 14.2 0 0 0 12 0l.5.4c-.6.4-1.3.7-2 1l1.3 2a19.8 19.8 0 0 0 6.1-2.9c.5-5.2-.8-9.7-3.6-13.7ZM8.3 15.3c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Zm7.4 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Z"/></svg><span data-t="btn_discord">Discord&#x27;a ekle</span></a>
+      <a class="btn tg" id="btn-tg" href="https://t.me/RustTrackerBroBot"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.6 19.8c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.2-8.3c.4-.4-.1-.6-.6-.2L6 13.4 1.1 11.9c-1.1-.3-1.1-1.1.2-1.6L20.5 2.9c.9-.3 1.7.2 1.4 1.4Z"/></svg><span data-t="btn_tg">Telegram&#x27;da aç</span></a>
+    </div>
+  </section>
+  <footer>
+    <a class="home" href="/" data-t="home">← Rust Tracker Bro</a>
+    <div class="data-note" id="data-note"></div>
+    <div class="legal-links" data-base="/legal/"></div>
+    <div class="legal" data-t="legal">Rust, Facepunch Studios&#x27;un ticari markasıdır. Bu proje Facepunch ile bağlantılı değildir.</div>
+  </footer>
+</div>
+<script src="/config.js"></script>
+<script src="/legal/texts.js"></script>
+<script src="/legal/legal.js"></script>
+<script src="/calc/page.js?v=36d25c017f"></script>
+</body>
+</html>

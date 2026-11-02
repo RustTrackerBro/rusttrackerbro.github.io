@@ -1,8 +1,180 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url><loc>https://rusttrackerbro.com/</loc><lastmod>2026-11-02</lastmod><changefreq>weekly</changefreq><priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/"/>
+  </url>
+  <url><loc>https://rusttrackerbro.com/ru/</loc><lastmod>2026-11-02</lastmod><changefreq>weekly</changefreq><priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/"/>
+  </url>
+  <url><loc>https://rusttrackerbro.com/es/</loc><lastmod>2026-11-02</lastmod><changefreq>weekly</changefreq><priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/"/>
+  </url>
+  <url><loc>https://rusttrackerbro.com/fr/</loc><lastmod>2026-11-02</lastmod><changefreq>weekly</changefreq><priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/"/>
+  </url>
+  <url><loc>https://rusttrackerbro.com/uk/</loc><lastmod>2026-11-02</lastmod><changefreq>weekly</changefreq><priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/"/>
+  </url>
+  <url><loc>https://rusttrackerbro.com/de/</loc><lastmod>2026-11-02</lastmod><changefreq>weekly</changefreq><priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/"/>
+  </url>
+  <url><loc>https://rusttrackerbro.com/tr/</loc><lastmod>2026-11-02</lastmod><changefreq>weekly</changefreq><priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/"/>
+  </url>
+  <url><loc>https://rusttrackerbro.com/pt/</loc><lastmod>2026-11-02</lastmod><changefreq>weekly</changefreq><priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/"/>
   </url>
   <url><loc>https://rusttrackerbro.com/pricing/</loc><lastmod>2026-11-02</lastmod><changefreq>weekly</changefreq><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/pricing/"/>
+  </url>
+  <url><loc>https://rusttrackerbro.com/ru/pricing/</loc><lastmod>2026-11-02</lastmod><changefreq>weekly</changefreq><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/pricing/"/>
+  </url>
+  <url><loc>https://rusttrackerbro.com/es/pricing/</loc><lastmod>2026-11-02</lastmod><changefreq>weekly</changefreq><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/pricing/"/>
+  </url>
+  <url><loc>https://rusttrackerbro.com/fr/pricing/</loc><lastmod>2026-11-02</lastmod><changefreq>weekly</changefreq><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/pricing/"/>
+  </url>
+  <url><loc>https://rusttrackerbro.com/uk/pricing/</loc><lastmod>2026-11-02</lastmod><changefreq>weekly</changefreq><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/pricing/"/>
+  </url>
+  <url><loc>https://rusttrackerbro.com/de/pricing/</loc><lastmod>2026-11-02</lastmod><changefreq>weekly</changefreq><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/pricing/"/>
+  </url>
+  <url><loc>https://rusttrackerbro.com/tr/pricing/</loc><lastmod>2026-11-02</lastmod><changefreq>weekly</changefreq><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/pricing/"/>
+  </url>
+  <url><loc>https://rusttrackerbro.com/pt/pricing/</loc><lastmod>2026-11-02</lastmod><changefreq>weekly</changefreq><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/pricing/"/>
   </url>
   <url><loc>https://rusttrackerbro.com/raid/</loc><lastmod>2026-11-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/raid/"/>
@@ -8027,12 +8199,178 @@
   <url><loc>https://rusttrackerbro.com/rustplus/</loc><lastmod>2026-11-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/rustplus/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/rustplus/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/rustplus/"/>
   </url>
   <url><loc>https://rusttrackerbro.com/ru/rustplus/</loc><lastmod>2026-11-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/rustplus/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/rustplus/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/rustplus/"/>
+  </url>
+  <url><loc>https://rusttrackerbro.com/es/rustplus/</loc><lastmod>2026-11-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/rustplus/"/>
+  </url>
+  <url><loc>https://rusttrackerbro.com/fr/rustplus/</loc><lastmod>2026-11-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/rustplus/"/>
+  </url>
+  <url><loc>https://rusttrackerbro.com/uk/rustplus/</loc><lastmod>2026-11-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/rustplus/"/>
+  </url>
+  <url><loc>https://rusttrackerbro.com/de/rustplus/</loc><lastmod>2026-11-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/rustplus/"/>
+  </url>
+  <url><loc>https://rusttrackerbro.com/tr/rustplus/</loc><lastmod>2026-11-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/rustplus/"/>
+  </url>
+  <url><loc>https://rusttrackerbro.com/pt/rustplus/</loc><lastmod>2026-11-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/rustplus/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/rustplus/"/>
+  </url>
+  <url><loc>https://rusttrackerbro.com/rustplus/commands/</loc><lastmod>2026-11-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/rustplus/commands/"/>
+  </url>
+  <url><loc>https://rusttrackerbro.com/ru/rustplus/commands/</loc><lastmod>2026-11-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/rustplus/commands/"/>
+  </url>
+  <url><loc>https://rusttrackerbro.com/es/rustplus/commands/</loc><lastmod>2026-11-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/rustplus/commands/"/>
+  </url>
+  <url><loc>https://rusttrackerbro.com/fr/rustplus/commands/</loc><lastmod>2026-11-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/rustplus/commands/"/>
+  </url>
+  <url><loc>https://rusttrackerbro.com/uk/rustplus/commands/</loc><lastmod>2026-11-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/rustplus/commands/"/>
+  </url>
+  <url><loc>https://rusttrackerbro.com/de/rustplus/commands/</loc><lastmod>2026-11-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/rustplus/commands/"/>
+  </url>
+  <url><loc>https://rusttrackerbro.com/tr/rustplus/commands/</loc><lastmod>2026-11-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/rustplus/commands/"/>
+  </url>
+  <url><loc>https://rusttrackerbro.com/pt/rustplus/commands/</loc><lastmod>2026-11-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/rustplus/commands/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/rustplus/commands/"/>
   </url>
   <url><loc>https://rusttrackerbro.com/legal/terms/</loc><lastmod>2026-11-02</lastmod><changefreq>monthly</changefreq><priority>0.3</priority>
   </url>
