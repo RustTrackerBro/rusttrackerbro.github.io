@@ -2,7 +2,7 @@
 // Документы — на английском и русском (на остальных языках сайта показывается английская версия с пометкой).
 // Сверять с ботом: /terms и /privacy (rusttracker/i18n/locales/*.toml, разделы [terms] и [privacy]).
 // Разметка тела: строка «• …» — пункт списка; `…` — команда; {contact} — как связаться (config.js → CONTACT_EMAIL).
-window.RTB_LEGAL_UPDATED = "2026-10-20";
+window.RTB_LEGAL_UPDATED = "2026-10-29";
 
 window.RTB_LEGAL_UI = {
   en: { server: "💬 Discord server", name: "English", terms: "Terms of Service", privacy: "Privacy Policy", refunds: "Refund Policy", home: "Home",
@@ -47,15 +47,17 @@ window.RTB_LEGAL_DOCS = {
         "• The Service is not intended for persons under 16.",
       ] },
       { h: "3. Plans and payment", b: [
-        "The Free plan is free. Paid plans (Bronze, Silver, Gold, Platinum, Diamond, Clan) and the “Invisible” features are paid for a fixed period. Current prices are shown in the bot.",
+        "The Free plan is free. Paid plans (Bro+ and Bro Max), team seats and the “Invisible” feature are paid for a fixed period. Current prices are shown in the bot.",
         "• In Telegram, payment is made with Telegram Stars. A monthly subscription in Telegram may renew automatically; you can turn renewal off at any time in the bot, and the paid period is kept.",
         "• In Discord, payment is made on the payment page of an external payment provider. Every period is a one-time payment without auto-renewal.",
         "• Access opens as soon as the payment is confirmed and lasts until the date shown in `/premium`.",
-        "• New users can try Gold for free once (up to 3 days).",
+        "• New users can try Bro+ for free once (up to 3 days).",
+        "• Team seats: a Bro Max subscriber can pay for up to 5 seats for teammates (30 days each). A seat gives the teammate Bro+ while the seat is paid and the owner's Bro Max is active; a taken seat can be freed no sooner than 24 hours later.",
+        "• Promo code BESTBRO: 30% off Bro+ and Bro Max (a month or a year) when paying via Discord; once per account and per Steam account, a verified Steam account is required; it cannot be combined with bonuses or other discounts.",
         "If you get days of different plans at the same time (for example, a purchase and a gift), the higher plan is active and the days of the other plan wait in reserve; nothing is lost.",
       ] },
-      { h: "4. “Invisible” and “Invisible+”", b: [
-        "These paid features hide a confirmed Steam account inside the Service: “Invisible” — from everyone except Diamond subscribers, “Invisible+” — from everyone. Privacy applies only inside the Service. After the paid period ends, data collection and display resume as usual. Sessions recorded by Diamond users while the basic “Invisible” was active may become visible to other users after it is turned off. The hidden account can be changed at most once every 30 days.",
+      { h: "4. “Invisible”", b: [
+        "This paid feature hides a confirmed Steam account from all users of the Service; only the Service administration keeps access to the data. Privacy applies only inside the Service. After the paid period ends, data collection and display resume as usual. The hidden account can be changed at most once every 30 days.",
       ] },
       { h: "5. Bonuses", b: [
         "Bonus points 🪙 are earned through the referral and partner programs and giveaways and can be used only to pay for a subscription, fully or partly — in Telegram and in Discord. In Discord, 1 🪙 is worth as much as 1 ⭐ of the price of the same period; if bonuses do not cover the full price, at least $0.50 remains to pay. Bonuses cannot be withdrawn or exchanged for money and expire 3 months after they are credited; a reminder is sent 7 days before.",
@@ -130,7 +132,7 @@ window.RTB_LEGAL_DOCS = {
     refunds: [
       { h: "1. General rule", b: [
         "Subscriptions are digital services that start immediately after payment. By paying, you agree that the service starts at once and acknowledge that, once it has started, the right of withdrawal no longer applies. Money for a paid period is therefore not refunded, including when you stop using the Service early.",
-        "To try the Service before paying, use the Free plan and the free Gold trial.",
+        "To try the Service before paying, use the Free plan and the free Bro+ trial.",
       ] },
       { h: "2. When we fix or refund", b: [
         "• You were charged twice for the same order.",
@@ -159,15 +161,17 @@ window.RTB_LEGAL_DOCS = {
         "• Сервис не предназначен для лиц младше 16 лет.",
       ] },
       { h: "3. Тарифы и оплата", b: [
-        "Тариф Free бесплатный. Платные уровни (Bronze, Silver, Gold, Platinum, Diamond, Clan) и «Невидимка» оплачиваются на срок. Актуальные цены показаны в боте.",
+        "Тариф Free бесплатный. Платные уровни (Bro+ и Bro Max), места в команде и «Невидимка» оплачиваются на срок. Актуальные цены показаны в боте.",
         "• В Telegram оплата — Telegram Stars. Месячная подписка в Telegram может продлеваться автоматически; автопродление можно выключить в боте в любой момент, оплаченный срок сохраняется.",
         "• В Discord оплата — на странице оплаты внешнего платёжного сервиса. Каждый срок — разовый платёж без автопродления.",
         "• Доступ открывается сразу после подтверждения оплаты и действует до даты, указанной в `/premium`.",
-        "• Новым пользователям один раз доступен бесплатный Gold (до 3 дней).",
+        "• Новым пользователям один раз доступен бесплатный Bro+ (до 3 дней).",
+        "• Места в команде: подписчик Bro Max может оплатить до 5 мест для тиммейтов (по 30 дней). Место даёт тиммейту Bro+, пока оно оплачено и действует Bro Max владельца; освободить занятое место можно не раньше чем через сутки.",
+        "• Промокод BESTBRO: −30% на Bro+ и Bro Max (месяц или год) при оплате через Discord; один раз на аккаунт и на аккаунт Steam, нужен подтверждённый Steam; не сочетается с бонусами и другими скидками.",
         "Если у вас одновременно есть дни разных уровней (например, покупка и подарок), действует более высокий уровень, а дни другого ждут в запасе — ничего не теряется.",
       ] },
-      { h: "4. «Невидимка» и «Невидимка+»", b: [
-        "Платные функции скрывают подтверждённый аккаунт Steam внутри Сервиса: «Невидимка» — от всех, кроме подписчиков Diamond, «Невидимка+» — от всех. Приватность действует только внутри Сервиса. После окончания оплаченного срока сбор и показ данных возобновляются. Сессии, записанные пользователями Diamond во время базовой «Невидимки», после её отключения могут стать видны остальным. Скрываемый аккаунт можно менять не чаще раза в 30 дней.",
+      { h: "4. «Невидимка»", b: [
+        "Платная функция скрывает подтверждённый аккаунт Steam от всех пользователей Сервиса; доступ к данным сохраняется только у администрации Сервиса. Приватность действует только внутри Сервиса. После окончания оплаченного срока сбор и показ данных возобновляются. Скрываемый аккаунт можно менять не чаще раза в 30 дней.",
       ] },
       { h: "5. Бонусы", b: [
         "Бонусы 🪙 начисляются по реферальной и партнёрской программам и в розыгрышах и тратятся только на оплату подписки — полностью или частично, в Telegram и в Discord. В Discord 1 🪙 стоит столько же, сколько 1 ⭐ цены того же срока; если бонусов не хватает на всю цену, к оплате остаётся не меньше $0.50. Бонусы нельзя вывести или обменять на деньги; они сгорают через 3 месяца после начисления, напоминание приходит за 7 дней.",
@@ -242,7 +246,7 @@ window.RTB_LEGAL_DOCS = {
     refunds: [
       { h: "1. Общее правило", b: [
         "Подписка — цифровая услуга, которая начинает оказываться сразу после оплаты. Оплачивая, вы соглашаетесь на немедленное начало оказания услуги и признаёте, что после этого право на отказ от покупки не действует. Поэтому деньги за оплаченный срок не возвращаются, в том числе если вы перестали пользоваться Сервисом раньше.",
-        "Попробовать Сервис до оплаты можно на тарифе Free и в бесплатном пробном Gold.",
+        "Попробовать Сервис до оплаты можно на тарифе Free и в бесплатном пробном Bro+.",
       ] },
       { h: "2. Когда мы исправляем или возвращаем", b: [
         "• С вас дважды списали оплату за один и тот же заказ.",
