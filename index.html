@@ -56,6 +56,11 @@
                    box-shadow: 0 0 0 0 rgba(168, 255, 62, .7); animation: ping 2s infinite; }
   @keyframes ping { 70% { box-shadow: 0 0 0 10px rgba(168, 255, 62, 0); } 100% { box-shadow: 0 0 0 0 rgba(168, 255, 62, 0); } }
   .lead { color: var(--muted); margin: 6px 0 0; font-size: 15px; }
+  /* Главная мысль — крупно под логотипом */
+  .headline { margin: 16px 0 0; font-family: "Russo One", system-ui, sans-serif; font-size: clamp(21px, 3.4vw, 27px); line-height: 1.15;
+              color: var(--bone); }
+  .headline + .pulse { margin-top: 10px; }
+  .free-note { margin: 14px 0 0; text-align: center; color: var(--neon); font-weight: 700; font-size: 15px; }
 
   .panel { background: linear-gradient(180deg, var(--steel-2), #171b20); border: 1px solid var(--line);
            border-radius: var(--radius); padding: 22px; margin-top: 18px; }
@@ -137,6 +142,7 @@
     <div class="avatar"><img src="assets/avatar.png" alt="Rust Tracker Bro" width="256" height="256"></div>
     <div>
       <h1 class="word"><span class="big">RUST TRACKER</span> <span class="sub">BRO</span></h1>
+      <p class="headline" data-t="head"></p>
       <p class="pulse" data-t="pulse"></p>
       <p class="lead" data-t="tag"></p>
     </div>
@@ -165,6 +171,7 @@
         <span data-t="btn_tg"></span>
       </a>
     </div>
+    <p class="free-note" data-t="free_note"></p>
     <p class="dm-hint" id="dm-hint" hidden><span data-t="dm_hint"></span> <a id="dm-link" href="#" data-t="dm_link"></a></p>
   </section>
 
@@ -177,8 +184,11 @@
     <div class="feat"><div class="ico">🔔</div><div><b data-t="f1_t"></b><span data-t="f1"></span></div></div>
     <div class="feat"><div class="ico">🛡</div><div><b data-t="f2_t"></b><span data-t="f2"></span></div></div>
     <div class="feat"><div class="ico">😴</div><div><b data-t="f3_t"></b><span data-t="f3"></span></div></div>
+    <div class="feat"><div class="ico">💬</div><div><b data-t="f6_t"></b><span data-t="f6"></span></div></div>
     <div class="feat"><div class="ico">📡</div><div><b data-t="f4_t"></b><span data-t="f4"></span></div></div>
-    <div class="feat wide"><div class="ico">🖥</div><div><b data-t="f5_t"></b><span data-t="f5"></span></div></div>
+    <div class="feat"><div class="ico">🌐</div><div><b data-t="f7_t"></b><span data-t="f7"></span></div></div>
+    <div class="feat"><div class="ico">🖥</div><div><b data-t="f5_t"></b><span data-t="f5"></span></div></div>
+    <div class="feat"><div class="ico">🎁</div><div><b data-t="f8_t"></b><span data-t="f8"></span></div></div>
   </section>
 
   <a class="pricing-link" href="pricing/" data-t="pricing_link"></a>
