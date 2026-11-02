@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="tr" data-lang="tr">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rust+ nasıl Rust Tracker Bro&#x27;ya bağlanır — adım adım rehber</title>
+<meta name="description" content="Chrome&#x27;lu bir bilgisayarda Rust+&#x27;ı yaklaşık 2 dakikada bağla: eklentiyi kur, Steam ile giriş yap, tokeni bota gönder ve sunucunu oyunda eşle (ESC → Rust+ → Pair with server).">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rust Tracker Bro">
+<meta property="og:title" content="Rust+ nasıl Rust Tracker Bro&#x27;ya bağlanır — adım adım rehber">
+<meta property="og:description" content="Chrome&#x27;lu bir bilgisayarda Rust+&#x27;ı yaklaşık 2 dakikada bağla: eklentiyi kur, Steam ile giriş yap, tokeni bota gönder ve sunucunu oyunda eşle (ESC → Rust+ → Pair with server).">
+<meta property="og:image" content="https://rusttrackerbro.com/assets/og.jpg">
+<meta property="og:url" content="https://rusttrackerbro.com/tr/rustplus/">
+<link rel="canonical" href="https://rusttrackerbro.com/tr/rustplus/">
+<link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/rustplus/">
+<link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/rustplus/">
+<link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/rustplus/">
+<link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/rustplus/">
+<link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/rustplus/">
+<link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/rustplus/">
+<link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/rustplus/">
+<link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/rustplus/">
+<link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/rustplus/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#15191e">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/avatar.png">
+<link rel="stylesheet" href="/calc/calc.css?v=5c55fd0922">
+<style>
+.rp-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; counter-reset: s; }
+.rp-steps li { counter-increment: s; }
+.rp-steps h2 { margin: 0 0 6px; font-size: 19px; }
+.rp-steps h2::before { content: counter(s) ". "; color: var(--neon); }
+.rp-steps p { margin: 0 0 12px; color: var(--muted); }
+.rp-steps svg { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 14px; background: #101418; }
+.rp-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+.rp-links a { flex: 1 1 220px; text-align: center; padding: 12px 14px; border-radius: 12px; border: 1px solid var(--line);
+  color: var(--bone); text-decoration: none; font-weight: 700; background: rgba(255,255,255,.03); }
+.rp-links a:hover { border-color: var(--neon); }
+.rp-trouble { margin: 0; padding-left: 20px; color: var(--muted); display: grid; gap: 8px; }
+.rp-more { text-align: center; margin: 18px 0 0; }
+.rp-more a { color: var(--rust-hot); font-weight: 700; text-decoration: none; font-size: 17px; }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "Rust+ nasıl bağlanır", "description": "Chrome'lu bir bilgisayarda Rust+'ı yaklaşık 2 dakikada bağla: eklentiyi kur, Steam ile giriş yap, tokeni bota gönder ve sunucunu oyunda eşle (ESC → Rust+ → Pair with server).", "inLanguage": "tr", "totalTime": "PT2M", "step": [{"@type": "HowToStep", "position": 1, "name": "Eklentiyi kur", "text": "Bilgisayarda Chrome Web Mağazası'nı aç ve «Rust Companion Authenticator»ı Chrome'a ekle. Rust+ giriş sayfası telefonlar için yapılmış — eklenti tokeni normal tarayıcıda gösterir."}, {"@type": "HowToStep", "position": 2, "name": "Steam ile giriş yap", "text": "Rust+ giriş sayfasını aç ve oynadığın hesapla Steam üzerinden giriş yap. Bot Steam şifreni asla görmez."}, {"@type": "HowToStep", "position": 3, "name": "Tokeni bota gönder", "text": "Tokeni eklentiden kopyala ve bota tek mesajla gönder (botta: 🔗 Rust+ → 🔗 Rust+ bağla). Bot bu mesajı sohbetten hemen siler."}, {"@type": "HowToStep", "position": 4, "name": "Sunucunu oyunda eşle", "text": "Sunucuya gir ve ESC → Rust+ → Pair with server'a bas. Birkaç saniye içinde bot sunucunun eşlendiğini yazar."}, {"@type": "HowToStep", "position": 5, "name": "Cihazları eşle (isteğe bağlı)", "text": "Akıllı alarm, akıllı anahtar, depo monitörü: elektrik ver, ona bak, E'ye basılı tut → Pair. Dolaptaki monitör bakımı gösterir; sandıktaki — biri yağmalıyorsa."}], "tool": [{"@type": "HowToTool", "name": "Google Chrome"}]}</script>
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+<div class="grid-bg" aria-hidden="true"></div>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="/"><img src="/assets/avatar.png" alt="" width="40" height="40"><b>RUST TRACKER <span>BRO</span></b></a>
+    <nav class="langs" id="langs" aria-label="Language"><a href="/rustplus/" hreflang="en" lang="en" data-lang="en">English</a><a href="/ru/rustplus/" hreflang="ru" lang="ru" data-lang="ru">Русский</a><a href="/es/rustplus/" hreflang="es" lang="es" data-lang="es">Español</a><a href="/fr/rustplus/" hreflang="fr" lang="fr" data-lang="fr">Français</a><a href="/uk/rustplus/" hreflang="uk" lang="uk" data-lang="uk">Українська</a><a href="/de/rustplus/" hreflang="de" lang="de" data-lang="de">Deutsch</a><a href="/tr/rustplus/" hreflang="tr" lang="tr" data-lang="tr" aria-current="true">Türkçe</a><a href="/pt/rustplus/" hreflang="pt" lang="pt" data-lang="pt">Português</a></nav>
+  </header>
+  <section class="hero">
+    <h1>Rust+ nasıl bağlanır</h1>
+    <p class="lead">Chrome tarayıcılı bir bilgisayar gerekir. Rust+, Rust&#x27;ın resmi yardımcı uygulamasıdır; bot onunla oyun sohbetindeki komutlara cevap verir, alarm, ölüm ve dolap bakımı bildirimleri gönderir.</p>
+  </section>
+  <section class="panel">
+    <ol class="rp-steps"><li><h2>Eklentiyi kur</h2><p>Bilgisayarda Chrome Web Mağazası&#x27;nı aç ve «Rust Companion Authenticator»ı Chrome&#x27;a ekle. Rust+ giriş sayfası telefonlar için yapılmış — eklenti tokeni normal tarayıcıda gösterir.</p><svg viewBox="0 0 640 220" role="img" aria-label="Chrome Web Store: Rust Companion Authenticator" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, Segoe UI, Roboto, sans-serif"><rect x="20" y="20" width="600" height="180" rx="12" fill="#1b2026" stroke="#2e363e"/><rect x="20" y="20" width="600" height="30" rx="12" fill="#232a31"/><rect x="20" y="38" width="600" height="12" fill="#232a31"/><circle cx="36" cy="35" r="4" fill="#ff5b4f"/><circle cx="50" cy="35" r="4" fill="#f5c542"/><circle cx="64" cy="35" r="4" fill="#a8ff3e"/><rect x="84" y="27" width="490" height="16" rx="8" fill="#101418"/><text x="94" y="39" font-size="11" fill="#9aa3ab">chromewebstore.google.com</text><g transform="translate(578 27)"><rect width="22" height="22" rx="5" fill="#a8ff3e" opacity=".18"/><path d="M6 9h3a2 2 0 1 1 4 0h3v3a2 2 0 1 1 0 4v3H6z" fill="#a8ff3e"/></g><rect x="50" y="78" width="64" height="64" rx="14" fill="#d8692a"/><text x="82" y="119" font-size="26" text-anchor="middle" fill="#f1ece2">R+</text><text x="134" y="100" font-size="18" font-weight="700" fill="#f1ece2">Rust Companion Authenticator</text><text x="134" y="124" font-size="13" fill="#9aa3ab">chrome extension</text><rect x="440" y="142" width="150" height="38" rx="19" fill="#2aabee"/><text x="515" y="166" font-size="14" font-weight="700" text-anchor="middle" fill="#fff">Chrome&#x27;a ekle</text></svg></li><li><h2>Steam ile giriş yap</h2><p>Rust+ giriş sayfasını aç ve oynadığın hesapla Steam üzerinden giriş yap. Bot Steam şifreni asla görmez.</p><svg viewBox="0 0 640 220" role="img" aria-label="Rust+ login and token" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, Segoe UI, Roboto, sans-serif"><rect x="20" y="20" width="380" height="180" rx="12" fill="#1b2026" stroke="#2e363e"/><rect x="20" y="20" width="380" height="30" rx="12" fill="#232a31"/><rect x="20" y="38" width="380" height="12" fill="#232a31"/><circle cx="36" cy="35" r="4" fill="#ff5b4f"/><circle cx="50" cy="35" r="4" fill="#f5c542"/><circle cx="64" cy="35" r="4" fill="#a8ff3e"/><rect x="84" y="27" width="270" height="16" rx="8" fill="#101418"/><text x="94" y="39" font-size="11" fill="#9aa3ab">companion-rust.facepunch.com/login</text><rect x="80" y="100" width="260" height="46" rx="10" fill="#1b2838" stroke="#2e363e"/><circle cx="106" cy="123" r="11" fill="none" stroke="#f1ece2" stroke-width="3"/><text x="128" y="128" font-size="15" font-weight="700" fill="#f1ece2">Steam ile giriş</text><g transform="translate(410 105)"><path d="M0 0 L14 7 L0 14 Z" fill="#a8ff3e"/></g><rect x="440" y="44" width="180" height="140" rx="12" fill="#1b2026" stroke="#a8ff3e"/><text x="456" y="72" font-size="13" fill="#9aa3ab">Token</text><rect x="456" y="82" width="148" height="30" rx="6" fill="#101418"/><text x="466" y="102" font-size="13" font-family="ui-monospace, monospace" fill="#f08a4b">eyJhbGciOiJ…</text><rect x="456" y="128" width="148" height="36" rx="18" fill="#a8ff3e"/><text x="530" y="151" font-size="14" font-weight="700" text-anchor="middle" fill="#0e1a07">Kopyala</text></svg></li><li><h2>Tokeni bota gönder</h2><p>Tokeni eklentiden kopyala ve bota tek mesajla gönder (botta: 🔗 Rust+ → 🔗 Rust+ bağla). Bot bu mesajı sohbetten hemen siler.</p><svg viewBox="0 0 640 220" role="img" aria-label="Token sent to the bot" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, Segoe UI, Roboto, sans-serif"><rect x="30" y="80" width="200" height="60" rx="10" fill="#101418" stroke="#2e363e"/><text x="48" y="116" font-size="16" font-family="ui-monospace, monospace" fill="#f08a4b">eyJhbGciOiJ…</text><g transform="translate(252 103)"><path d="M0 0 L14 7 L0 14 Z" fill="#a8ff3e"/></g><rect x="290" y="30" width="320" height="160" rx="16" fill="#1b2026" stroke="#2e363e"/><circle cx="322" cy="62" r="16" fill="#d8692a" stroke="#a8ff3e" stroke-width="2"/><text x="348" y="67" font-size="14" font-weight="700" fill="#f1ece2">RustTrackerBro</text><rect x="310" y="92" width="280" height="40" rx="12" fill="#232a31"/><text x="326" y="117" font-size="15" fill="#f1ece2">✅ Rust+ bağlandı</text><rect x="310" y="142" width="180" height="30" rx="10" fill="#232a31" opacity=".6"/></svg></li><li><h2>Sunucunu oyunda eşle</h2><p>Sunucuya gir ve ESC → Rust+ → Pair with server&#x27;a bas. Birkaç saniye içinde bot sunucunun eşlendiğini yazar.</p><svg viewBox="0 0 640 220" role="img" aria-label="In game: ESC → Rust+ → Pair with server" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, Segoe UI, Roboto, sans-serif"><rect x="20" y="20" width="600" height="180" rx="12" fill="#0b0e11" stroke="#2e363e"/><rect x="40" y="114" width="150" height="36" rx="6" fill="#a8ff3e" opacity=".12"/><text x="60" y="70" font-size="18" font-weight="700" fill="#9aa3ab">RESUME</text><text x="60" y="104" font-size="18" font-weight="700" fill="#9aa3ab">OPTIONS</text><text x="60" y="138" font-size="18" font-weight="700" fill="#a8ff3e">RUST+</text><text x="60" y="172" font-size="18" font-weight="700" fill="#9aa3ab">QUIT</text><text x="40" y="44" font-size="12" fill="#9aa3ab">ESC</text><g transform="translate(230 125)"><path d="M0 0 L14 7 L0 14 Z" fill="#a8ff3e"/></g><rect x="270" y="60" width="320" height="120" rx="10" fill="#1b2026" stroke="#2e363e"/><text x="290" y="92" font-size="16" font-weight="700" fill="#f1ece2">Rust+</text><rect x="290" y="114" width="200" height="40" rx="8" fill="#d8692a"/><text x="390" y="139" font-size="15" font-weight="700" text-anchor="middle" fill="#f1ece2">Pair with server</text></svg></li><li><h2>Cihazları eşle (isteğe bağlı)</h2><p>Akıllı alarm, akıllı anahtar, depo monitörü: elektrik ver, ona bak, E&#x27;ye basılı tut → Pair. Dolaptaki monitör bakımı gösterir; sandıktaki — biri yağmalıyorsa.</p><svg viewBox="0 0 640 220" role="img" aria-label="Smart devices: hold E → Pair" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, Segoe UI, Roboto, sans-serif"><rect x="50" y="40" width="160" height="110" rx="14" fill="#1b2026" stroke="#2e363e"/><text x="130" y="96" font-size="34" text-anchor="middle">🚨</text><text x="130" y="134" font-size="14" text-anchor="middle" fill="#f1ece2">Alarm</text><rect x="245" y="40" width="160" height="110" rx="14" fill="#1b2026" stroke="#2e363e"/><text x="325" y="96" font-size="34" text-anchor="middle">💡</text><text x="325" y="134" font-size="14" text-anchor="middle" fill="#f1ece2">Anahtar</text><rect x="440" y="40" width="160" height="110" rx="14" fill="#1b2026" stroke="#2e363e"/><text x="520" y="96" font-size="34" text-anchor="middle">🗄</text><text x="520" y="134" font-size="14" text-anchor="middle" fill="#f1ece2">Depo</text><text x="320" y="186" font-size="16" font-weight="700" text-anchor="middle" fill="#a8ff3e">E&#x27;ye basılı tut → Pair</text></svg></li></ol>
+    <div class="rp-links">
+      <a href="https://chromewebstore.google.com/detail/rust-companion-authentica/idihpaljmebenfolkfibmdpefgcgcddd" rel="noopener" target="_blank">🧩 Chrome eklentisi</a>
+      <a href="https://companion-rust.facepunch.com/login" rel="noopener" target="_blank">🔑 Rust+ giriş sayfası</a>
+    </div>
+  </section>
+  <section class="panel">
+    <h2>Çalışmıyor mu?</h2>
+    <ul class="rp-trouble"><li>Giriş sayfası açılmıyor ya da boş — bilgisayarda eklentili Chrome&#x27;da aç.</li><li>Token kabul edilmiyor — tamamını, tek mesajla kopyala. Eski token çalışmaz: giriş sayfasını yeniden aç.</li><li>Sunucu eşlenmiyor — oyunda gir: ESC → Rust+ → Pair with server. Sunucu sahibi Rust+&#x27;ı kapattıysa eşleme olmaz.</li><li>Yanlış hesapla girdin — giriş sayfasında çıkış yap ve oynadığın Steam hesabıyla gir.</li></ul>
+  </section>
+  <p class="rp-more"><a class="rp-cmds" href="/tr/rustplus/commands/">Oyun sohbetinde Rust+ komutları →</a></p>
+  <section class="panel cta">
+    <h2>Sonra oyunda dene</h2>
+    <p>Takım sohbetine !pop yaz — bot sunucunun çevrimiçi sayısıyla cevap verir. !help tüm komutları gösterir. Sunucu «!» işaretini engelliyorsa tire kullan: -pop, -help.</p>
+    <div class="btns">
+      <a class="btn discord" id="btn-discord" href="/discord/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.6 1.3a18.3 18.3 0 0 0-5.6 0L8.6 3a19.7 19.7 0 0 0-4.9 1.4C.6 9 -.3 13.6.1 18.1A19.9 19.9 0 0 0 6.2 21l1.3-2a12.9 12.9 0 0 1-2-1l.5-.4a14.2 14.2 0 0 0 12 0l.5.4c-.6.4-1.3.7-2 1l1.3 2a19.8 19.8 0 0 0 6.1-2.9c.5-5.2-.8-9.7-3.6-13.7ZM8.3 15.3c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Zm7.4 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Z"/></svg><span data-t="btn_discord">Discord&#x27;a ekle</span></a>
+      <a class="btn tg" id="btn-tg" href="https://t.me/RustTrackerBroBot"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.6 19.8c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.2-8.3c.4-.4-.1-.6-.6-.2L6 13.4 1.1 11.9c-1.1-.3-1.1-1.1.2-1.6L20.5 2.9c.9-.3 1.7.2 1.4 1.4Z"/></svg><span data-t="btn_tg">Telegram&#x27;da aç</span></a>
+    </div>
+  </section>
+  <footer>
+    <a class="home" href="/" data-t="home">← Rust Tracker Bro</a>
+    <div class="data-note" id="data-note"></div>
+    <div class="legal-links" data-base="/legal/"></div>
+    <div class="legal" data-t="legal">Rust, Facepunch Studios&#x27;un ticari markasıdır. Bu proje Facepunch ile bağlantılı değildir.</div>
+  </footer>
+</div>
+<script src="/config.js"></script>
+<script src="/legal/texts.js"></script>
+<script src="/legal/legal.js"></script>
+<script src="/calc/page.js?v=36d25c017f"></script>
+</body>
+</html>

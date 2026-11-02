@@ -10,10 +10,21 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Rust Tracker Bro">
 <meta property="og:title" content="Rust Tracker Bro — Pricing">
-<meta property="og:description" content="Free, Bro+ and Bro Max. One-time payment, no auto-renewal.">
+<meta property="og:description" content="Rust Tracker Bro tiers and prices: player alerts, clan online, sleep window, Rust+ events. One-time payment, no auto-renewal.">
 <meta property="og:image" content="https://rusttrackerbro.com/assets/og.jpg">
 <meta property="og:url" content="https://rusttrackerbro.com/pricing/">
 <link rel="canonical" href="https://rusttrackerbro.com/pricing/">
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/pricing/">
+<link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/pricing/">
+<link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/pricing/">
+<link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/pricing/">
+<link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/pricing/">
+<link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/pricing/">
+<link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/pricing/">
+<link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/pricing/">
+<link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/pricing/">
+<!--/hreflang-->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#15191e">
 <link rel="icon" type="image/png" href="../assets/favicon.png">
@@ -164,22 +175,25 @@
     *, *::before, *::after { animation: none !important; transition: none !important; }
   }
 </style>
+<!--ld-->
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "en", "mainEntity": [{"@type": "Question", "name": "Is there auto-renewal?", "acceptedAnswer": {"@type": "Answer", "text": "No. Every period is a one-time payment. When it ends, you simply go back to Free."}}, {"@type": "Question", "name": "What happens when the subscription ends?", "acceptedAnswer": {"@type": "Answer", "text": "Players over the Free limit are paused. History and settings are kept — renew and everything comes back."}}, {"@type": "Question", "name": "Can I switch tiers?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, any time in ⭐ Subscription. Paid days are recalculated into the new tier."}}, {"@type": "Question", "name": "What about Telegram?", "acceptedAnswer": {"@type": "Answer", "text": "The bot works in Telegram too — you can subscribe right in the bot there. Link your Discord and Telegram accounts to share one subscription."}}]}</script>
+<!--/ld-->
 </head>
 <body>
 <div class="glow" aria-hidden="true"></div>
 <div class="grid-bg" aria-hidden="true"></div>
 <div class="wrap">
   <header class="top">
-    <a class="brand" href="../"><img src="../assets/avatar.png" alt="" width="40" height="40"><b>RUST TRACKER <span>BRO</span></b></a>
+    <a class="brand" href="../" data-home><img src="../assets/avatar.png" alt="" width="40" height="40"><b>RUST TRACKER <span>BRO</span></b></a>
     <nav class="langs" id="langs" aria-label="Language"></nav>
   </header>
 
   <section class="hero">
-    <p class="kicker" data-t="kicker"></p>
-    <h1 data-t="title"></h1>
-    <p class="lead" data-t="lead"></p>
-    <p class="trial" data-t="trial"></p>
-    <p class="trial promo" data-t="promo"></p>
+    <p class="kicker" data-t="kicker">subscription · one-time payment</p>
+    <h1 data-t="title">Pricing</h1>
+    <p class="lead" data-t="lead">Pick a tier and a period. Pay in the Discord bot in a couple of clicks, no auto-renewal: pay once and use it until the period ends.</p>
+    <p class="trial" data-t="trial">🎁 New users get Bro+ for free: 1 day right away and 2 more days once you confirm you play Rust.</p>
+    <p class="trial promo" data-t="promo">🎟 Promo code BESTBRO — 30% off Bro+ and Bro Max when you pay via Discord: once per account, a verified Steam account is required.</p>
     <div class="periods" id="periods" role="group">
       <span class="pill" id="pill" aria-hidden="true"></span>
     </div>
@@ -188,31 +202,31 @@
   <section class="cards" id="cards" aria-live="polite"></section>
 
   <section class="section">
-    <h3 data-t="how_title"></h3>
+    <h3 data-t="how_title">How to buy</h3>
     <ol class="steps">
-      <li data-t="how1"></li>
-      <li data-t="how2"></li>
-      <li data-t="how3"></li>
+      <li data-t="how1">Add the bot to Discord with the button above.</li>
+      <li data-t="how2">Open your DM with the bot and tap ⭐ Subscription.</li>
+      <li data-t="how3">Pick a tier and period — it turns on right after payment.</li>
     </ol>
-    <div class="cta"><a class="buy" id="cta-buy" href="../discord/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.6 1.3a18.3 18.3 0 0 0-5.6 0L8.6 3a19.7 19.7 0 0 0-4.9 1.4C.6 9 -.3 13.6.1 18.1A19.9 19.9 0 0 0 6.2 21l1.3-2a12.9 12.9 0 0 1-2-1l.5-.4a14.2 14.2 0 0 0 12 0l.5.4c-.6.4-1.3.7-2 1l1.3 2a19.8 19.8 0 0 0 6.1-2.9c.5-5.2-.8-9.7-3.6-13.7ZM8.3 15.3c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Zm7.4 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Z"/></svg><span data-t="buy"></span></a></div>
-    <p class="dm" id="dm" hidden><span data-t="dm_hint"></span> <a id="dm-link" href="#" data-t="dm_link"></a></p>
+    <div class="cta"><a class="buy" id="cta-buy" href="../discord/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.6 1.3a18.3 18.3 0 0 0-5.6 0L8.6 3a19.7 19.7 0 0 0-4.9 1.4C.6 9 -.3 13.6.1 18.1A19.9 19.9 0 0 0 6.2 21l1.3-2a12.9 12.9 0 0 1-2-1l.5-.4a14.2 14.2 0 0 0 12 0l.5.4c-.6.4-1.3.7-2 1l1.3 2a19.8 19.8 0 0 0 6.1-2.9c.5-5.2-.8-9.7-3.6-13.7ZM8.3 15.3c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Zm7.4 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Z"/></svg><span data-t="buy">Buy in Discord</span></a></div>
+    <p class="dm" id="dm" hidden><span data-t="dm_hint">Already added the bot?</span> <a id="dm-link" href="#" data-t="dm_link">Open DM with the bot →</a></p>
   </section>
 
   <section class="section">
-    <h3 data-t="faq_title"></h3>
+    <h3 data-t="faq_title">Questions</h3>
     <div class="faq">
-      <details><summary data-t="q1"></summary><p data-t="a1"></p></details>
-      <details><summary data-t="q2"></summary><p data-t="a2"></p></details>
-      <details><summary data-t="q3"></summary><p data-t="a3"></p></details>
-      <details><summary data-t="q4"></summary><p data-t="a4"></p></details>
+      <details><summary data-t="q1">Is there auto-renewal?</summary><p data-t="a1">No. Every period is a one-time payment. When it ends, you simply go back to Free.</p></details>
+      <details><summary data-t="q2">What happens when the subscription ends?</summary><p data-t="a2">Players over the Free limit are paused. History and settings are kept — renew and everything comes back.</p></details>
+      <details><summary data-t="q3">Can I switch tiers?</summary><p data-t="a3">Yes, any time in ⭐ Subscription. Paid days are recalculated into the new tier.</p></details>
+      <details><summary data-t="q4">What about Telegram?</summary><p data-t="a4">The bot works in Telegram too — you can subscribe right in the bot there. Link your Discord and Telegram accounts to share one subscription.</p></details>
     </div>
   </section>
 
   <footer>
-    <a href="../" data-t="back"></a>
-    <div class="note" data-t="note"></div>
+    <a href="../" data-home data-t="back">← Home</a>
+    <div class="note" data-t="note">Prices in US dollars. Limits and prices may change — the bot always shows the current ones.</div>
     <div class="legal-links" data-base="../legal/"></div>
-    <div class="legal" data-t="legal"></div>
+    <div class="legal" data-t="legal">Rust is a trademark of Facepunch Studios. This project is not affiliated with Facepunch.</div>
   </footer>
 </div>
 <script src="../config.js"></script>
@@ -228,7 +242,7 @@
   var SEAT_PACK = 2.99;   // +10 мест в группе клана на 30 дней
   var TEAM_SEAT = 2.49;   // место в команде Bro Max (Bro+ тиммейту) на 30 дней
   var TIERS = [
-    { k: "free", em: "🆓", n: "Free", p: { "1m": 0 }, pl: 1, sv: 1, rs: 1, dv: 15, h: "h_last", cl: 0, gr: 0, sp: "s_slow", f: ["f_alerts", "f_card"] },
+    { k: "free", em: "🆓", n: "Free", p: { "1m": 0 }, pl: 1, sv: 1, rs: 1, dv: 15, h: "h_last", cl: 0, gr: 0, sp: "s_slow", f: ["f_alerts", "f_card", "f_rp", "f_cmds"] },
     { k: "plus", em: "🔥", n: "Bro+", hot: 1, p: { "1m": 4.99, "12m": 49.99 }, pl: 10, sv: 5, rs: 3, dv: 30, h: "h_30", cl: 0, gr: 0, sp: "s_norm", from: "Free",
       f: ["f_history", "f_heat", "f_sleep", "f_night", "f_team", "f_digest", "f_profile", "f_flags", "f_bans", "f_combat", "f_srvchart", "f_map", "f_decay"] },
     { k: "max", em: "👑", n: "Bro Max", clan: 1, p: { "1m": 9.99, "12m": 99.99 }, pl: 25, sv: 10, rs: 5, dv: 60, h: "h_90", cl: 4, gr: 2, sp: "s_fast", from: "Bro+",
@@ -315,6 +329,8 @@
   function buyUrl() { return cfg.DISCORD_APP_ID ? "https://discord.com/oauth2/authorize?client_id=" + cfg.DISCORD_APP_ID : "../discord/"; }
 
   function pickLang() {
+    // Страница на своём языке (/ru/, /ru/pricing/ — их делает tools/build_site.py): язык — по адресу.
+    if (window.RTB_PAGE_LANG && T[window.RTB_PAGE_LANG]) return window.RTB_PAGE_LANG;
     var saved = null;
     try { saved = localStorage.getItem("rtb_lang"); } catch (e) {}
     var wanted = (params.get("lang") || saved || navigator.language || "en").slice(0, 2).toLowerCase();
@@ -326,6 +342,7 @@
     document.title = t.title + " — Rust Tracker Bro";
     document.querySelectorAll("[data-t]").forEach(function (e) { var k = e.getAttribute("data-t"); if (t[k] !== undefined) e.textContent = t[k]; });
     document.querySelectorAll("#langs button").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.lang === lang)); });
+    document.querySelectorAll("a[data-home]").forEach(function (a) { a.href = lang === "en" ? "/" : "/" + lang + "/"; });
     periods(); cards(false);
     if (window.RTB_LEGAL_LINKS) window.RTB_LEGAL_LINKS(lang);
   }
@@ -335,10 +352,18 @@
     document.getElementById("dm-link").href = "https://discord.com/users/" + cfg.DISCORD_APP_ID;
     document.getElementById("dm").hidden = false;
   }
+  // Кнопка языка ведёт на страницу этого языка (у каждого языка свой адрес — его видят поисковики);
+  // ?ref= и ?p= приглашения сохраняются.
+  function goLang(code, page) {
+    try { localStorage.setItem("rtb_lang", code); } catch (e) {}
+    var q = new URLSearchParams(location.search); q.delete("lang");
+    var s = q.toString();
+    location.href = (code === "en" ? "" : "/" + code) + page + (s ? "?" + s : "");
+  }
   var langs = document.getElementById("langs");
   ["en", "ru", "es", "fr", "uk", "de", "tr", "pt"].filter(function (c) { return T[c]; }).forEach(function (code) {
     var b = el("button", null, T[code].name); b.type = "button"; b.dataset.lang = code;
-    b.addEventListener("click", function () { try { localStorage.setItem("rtb_lang", code); } catch (e) {} render(code); });
+    b.addEventListener("click", function () { goLang(code, "/pricing/"); });
     langs.appendChild(b);
   });
   window.addEventListener("resize", movePill);

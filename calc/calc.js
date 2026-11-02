@@ -341,6 +341,24 @@
       history.replaceState(null, "", location.pathname + (s ? "?" + s : ""));
     }
     function redraw() { drawChips(); drawList(); drawSummary(); }
+    // Телефон: итог — под длинным списком целей. Пока он не на экране, внизу — плашка с серой и кнопкой «Итог ↓».
+    var bar = el("div", "raidbar"), barTxt = el("div", "rb-txt"), barBig = el("b"), barSub = el("small");
+    var barBtn = el("button", null, t("to_total")); barBtn.type = "button";
+    barTxt.appendChild(barBig); barTxt.appendChild(barSub); bar.appendChild(barTxt); bar.appendChild(barBtn);
+    bar.hidden = true; document.body.appendChild(bar);
+    barBtn.addEventListener("click", function () { sum.scrollIntoView({ behavior: "smooth", block: "start" }); });
+    var sumSeen = false;
+    if (window.IntersectionObserver) {
+      new IntersectionObserver(function (es) { sumSeen = es[0].isIntersecting; drawBar(); }).observe(sum);
+    }
+    function drawBar() {
+      var keys = Object.keys(basket), cheap = keys.length ? total(keys, RAID.best) : {};
+      barBtn.textContent = t("to_total");
+      if (!Object.keys(cheap).length || sumSeen) { bar.hidden = true; return; }
+      barBig.textContent = "💡 " + fmt(RAID.sulfur(cheap)) + " " + sulfurWord();
+      barSub.textContent = partsText(cheap);
+      bar.hidden = false;
+    }
     function setQty(k, n) {
       n = Math.max(0, Math.min(99, n));
       if (n) basket[k] = n; else delete basket[k];
@@ -443,7 +461,7 @@
       clear(sum);
       sum.appendChild(el("h2", null, t("total_title")));
       var keys = Object.keys(basket);
-      if (!keys.length) { sum.appendChild(el("p", "muted", t("empty"))); return; }
+      if (!keys.length) { sum.appendChild(el("p", "muted", t("empty"))); drawBar(); return; }
       var picked = el("ul", "picked");
       keys.forEach(function (k) { var li = el("li"); li.appendChild(el("span", null, name("t", k))); li.appendChild(el("b", null, "× " + basket[k])); picked.appendChild(li); });
       sum.appendChild(picked);
@@ -480,6 +498,7 @@
       var actions = el("div", "actions"), reset = el("button", "link-btn", t("reset")); reset.type = "button";
       reset.addEventListener("click", function () { basket = {}; drawList(); drawSummary(); saveUrl(); });
       actions.appendChild(reset); sum.appendChild(actions);
+      drawBar();
     }
     function key2(p) { return Object.keys(p).sort().map(function (m) { return m + p[m]; }).join(","); }
 

@@ -16,12 +16,18 @@
 <link rel="canonical" href="https://rusttrackerbro.com/ru/rustplus/">
 <link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/rustplus/">
 <link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/rustplus/">
+<link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/rustplus/">
+<link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/rustplus/">
+<link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/rustplus/">
+<link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/rustplus/">
+<link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/rustplus/">
+<link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/rustplus/">
 <link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/rustplus/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#15191e">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <link rel="apple-touch-icon" href="/assets/avatar.png">
-<link rel="stylesheet" href="/calc/calc.css?v=7665f9e5ee">
+<link rel="stylesheet" href="/calc/calc.css?v=5c55fd0922">
 <style>
 .rp-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; counter-reset: s; }
 .rp-steps li { counter-increment: s; }
@@ -34,6 +40,8 @@
   color: var(--bone); text-decoration: none; font-weight: 700; background: rgba(255,255,255,.03); }
 .rp-links a:hover { border-color: var(--neon); }
 .rp-trouble { margin: 0; padding-left: 20px; color: var(--muted); display: grid; gap: 8px; }
+.rp-more { text-align: center; margin: 18px 0 0; }
+.rp-more a { color: var(--rust-hot); font-weight: 700; text-decoration: none; font-size: 17px; }
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "Как подключить Rust+", "description": "Подключение Rust+ за 2 минуты на компьютере с Chrome: расширение, вход через Steam, токен в бот и привязка сервера в игре (ESC → Rust+ → Pair with server).", "inLanguage": "ru", "totalTime": "PT2M", "step": [{"@type": "HowToStep", "position": 1, "name": "Установите расширение", "text": "На компьютере откройте Интернет-магазин Chrome и установите «Rust Companion Authenticator». Страница входа Rust+ сделана для телефона — расширение показывает токен в обычном браузере."}, {"@type": "HowToStep", "position": 2, "name": "Войдите через Steam", "text": "Откройте страницу входа Rust+ и войдите через Steam тем аккаунтом, на котором играете. Пароль от Steam бот не видит."}, {"@type": "HowToStep", "position": 3, "name": "Пришлите токен боту", "text": "Скопируйте токен из расширения и пришлите его боту одним сообщением (в боте: 🔗 Rust+ → 🔗 Подключить Rust+). Сообщение с токеном бот сразу удалит из чата."}, {"@type": "HowToStep", "position": 4, "name": "Привяжите сервер в игре", "text": "Зайдите на сервер и нажмите ESC → Rust+ → Pair with server. Через несколько секунд бот напишет, что сервер привязан."}, {"@type": "HowToStep", "position": 5, "name": "Привяжите устройства (по желанию)", "text": "Умная сигнализация, умный выключатель, монитор хранилища: подключите питание, наведитесь, зажмите E → Pair. Монитор на шкафу — содержание базы, на ящике — кто-то лутает."}], "tool": [{"@type": "HowToTool", "name": "Google Chrome"}]}</script>
 </head>
@@ -43,7 +51,7 @@
 <div class="wrap">
   <header class="top">
     <a class="brand" href="/"><img src="/assets/avatar.png" alt="" width="40" height="40"><b>RUST TRACKER <span>BRO</span></b></a>
-    <nav class="langs" id="langs" aria-label="Language"><a href="/rustplus/" hreflang="en" lang="en" data-lang="en">English</a><a href="/ru/rustplus/" hreflang="ru" lang="ru" data-lang="ru" aria-current="true">Русский</a></nav>
+    <nav class="langs" id="langs" aria-label="Language"><a href="/rustplus/" hreflang="en" lang="en" data-lang="en">English</a><a href="/ru/rustplus/" hreflang="ru" lang="ru" data-lang="ru" aria-current="true">Русский</a><a href="/es/rustplus/" hreflang="es" lang="es" data-lang="es">Español</a><a href="/fr/rustplus/" hreflang="fr" lang="fr" data-lang="fr">Français</a><a href="/uk/rustplus/" hreflang="uk" lang="uk" data-lang="uk">Українська</a><a href="/de/rustplus/" hreflang="de" lang="de" data-lang="de">Deutsch</a><a href="/tr/rustplus/" hreflang="tr" lang="tr" data-lang="tr">Türkçe</a><a href="/pt/rustplus/" hreflang="pt" lang="pt" data-lang="pt">Português</a></nav>
   </header>
   <section class="hero">
     <h1>Как подключить Rust+</h1>
@@ -60,6 +68,7 @@
     <h2>Не получается?</h2>
     <ul class="rp-trouble"><li>Страница входа не открывается или пустая — откройте её на компьютере в Chrome с расширением.</li><li>Токен не принимается — скопируйте его целиком, одним сообщением. Старый токен не подойдёт: откройте страницу входа заново.</li><li>Сервер не привязывается — зайдите на него в игре: ESC → Rust+ → Pair with server. Если владелец сервера отключил Rust+, привязка не сработает.</li><li>Вошли не тем аккаунтом — выйдите на странице входа и войдите аккаунтом Steam, на котором играете.</li></ul>
   </section>
+  <p class="rp-more"><a class="rp-cmds" href="/ru/rustplus/commands/">Команды Rust+ в игровом чате →</a></p>
   <section class="panel cta">
     <h2>Потом — проверьте в игре</h2>
     <p>Напишите в чат команды !pop — бот ответит онлайном сервера. !help — все команды. Если сервер не пропускает «!», пишите через дефис: -pop, -help.</p>
