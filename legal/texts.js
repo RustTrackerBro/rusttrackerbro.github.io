@@ -83,7 +83,7 @@ window.RTB_LEGAL_DOCS = {
     ],
     privacy: [
       { h: "1. Who we are", b: [
-        "This policy explains how RustTrackerBro (the bot @RustTrackerBroBot in Telegram, the RustTrackerBro app in Discord and the website rusttrackerbro.com) processes personal data. The Service is run by an independent developer (“we”). Contact: {contact}.",
+        "This policy explains how RustTrackerBro (the bot @RustTrackerBroBot in Telegram, the RustTrackerBro app in Discord and the website rusttrackerbro.com) processes personal data. The Service is run by an independent developer. Contact: {contact}.",
       ] },
       { h: "2. Data about users of the Service", b: [
         "• Telegram or Discord account ID, name and language as provided by the platform.",
@@ -197,7 +197,7 @@ window.RTB_LEGAL_DOCS = {
     ],
     privacy: [
       { h: "1. Кто мы", b: [
-        "Здесь описано, как RustTrackerBro (бот @RustTrackerBroBot в Telegram, приложение RustTrackerBro в Discord и сайт rusttrackerbro.com) обрабатывает персональные данные. Сервис ведёт независимый разработчик («мы»). Связь: {contact}.",
+        "Здесь описано, как RustTrackerBro (бот @RustTrackerBroBot в Telegram, приложение RustTrackerBro в Discord и сайт rusttrackerbro.com) обрабатывает персональные данные. Сервис ведёт независимый разработчик. Связь: {contact}.",
       ] },
       { h: "2. Данные пользователей Сервиса", b: [
         "• ID аккаунта Telegram или Discord, имя и язык — в том виде, как их передаёт платформа.",
