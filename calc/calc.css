@@ -110,6 +110,7 @@ table.methods th { text-align: left; color: var(--dim); font-weight: 600; font-s
 table.methods td { padding: 5px 6px; border-top: 1px dashed var(--line); }
 table.methods td.n { text-align: right; font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
 table.methods tr.best td { color: var(--neon); }
+table.methods tr.res td { border-top: 0; padding-top: 0; color: var(--dim); font-size: 12.5px; }
 .note { color: var(--dim); font-size: 12.5px; margin: 6px 0 0; }
 .summary { position: sticky; top: 14px; }
 .summary .big { font-family: var(--display); font-size: 34px; color: var(--neon); line-height: 1.1; }

@@ -331,7 +331,13 @@
       return Object.keys(parts).sort(function (a, b) { return (R.cost[b].sulfur || 0) - (R.cost[a].sulfur || 0); })
         .map(function (m) { return fmt(parts[m]) + " × " + name("m", m); }).join(" + ");
     }
-    function sulfurWord() { return t("sulfur").toLowerCase(); }
+    function sulfurWord() { var w = t("sulfur_amount"); return w || t("sulfur").toLowerCase(); }
+    // Всё, кроме серы, на n штук способа m: уголь, фраги, топливо, трубы… (строка под строкой взрывчатки).
+    function extraRes(m, n) {
+      return R.resources.filter(function (r) { return r !== "sulfur" && R.cost[m][r]; }).map(function (r) {
+        return name("r", r) + " " + fmt(Math.ceil(R.cost[m][r] * n - 1e-6));
+      }).join(" · ");
+    }
     function saveUrl() {
       var p = new URLSearchParams(location.search);
       var keys = Object.keys(basket).filter(function (k) { return basket[k] > 0; });
@@ -409,6 +415,8 @@
         tr.appendChild(el("td", "n", (tg.approx.indexOf(m) >= 0 ? "≈" : "") + fmt(n)));
         tr.appendChild(el("td", "n", R.cost[m].sulfur ? fmt(R.cost[m].sulfur * n) : "—"));
         table.appendChild(tr);
+        var extra = extraRes(m, n);
+        if (extra) { var rr = el("tr", "res"), td = el("td", null, extra); td.colSpan = 3; rr.appendChild(td); table.appendChild(rr); }
       });
       if (rows) box.appendChild(table);
       if (!Object.keys(best).length) { box.appendChild(el("p", "note", t("none"))); return box; }
@@ -485,7 +493,7 @@
         });
         var rows = R.resources.filter(function (r) { return res[r]; }).map(function (r) {
           var note = r === "charcoal" ? t("mixing", { n: fmt(res[r] * R.mixingCharcoal) }) : null;
-          return [cap(name("r", r)), fmt(res[r]), note];
+          return [cap(name("r", r)), fmt(Math.ceil(res[r] - 1e-6)), note];
         });
         sum.appendChild(listBox(t("resources"), null, rows));
       }
