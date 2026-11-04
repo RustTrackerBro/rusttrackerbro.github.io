@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="de" data-lang="de">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rust Global-Wipe Countdown — Datum und Uhrzeit des nächsten Force Wipes</title>
+<meta name="description" content="Wann ist der nächste Rust Global-Wipe (Force Wipe)? Countdown in deiner Ortszeit, die nächsten 12 Termine, was gewiped wird und wann die Server zurück sind.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rust Tracker Bro">
+<meta property="og:title" content="Rust Global-Wipe Countdown — Datum und Uhrzeit des nächsten Force Wipes">
+<meta property="og:description" content="Wann ist der nächste Rust Global-Wipe (Force Wipe)? Countdown in deiner Ortszeit, die nächsten 12 Termine, was gewiped wird und wann die Server zurück sind.">
+<meta property="og:image" content="https://rusttrackerbro.com/assets/og.jpg">
+<meta property="og:url" content="https://rusttrackerbro.com/de/force-wipe/">
+<link rel="canonical" href="https://rusttrackerbro.com/de/force-wipe/">
+<link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/force-wipe/">
+<link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/force-wipe/">
+<link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/force-wipe/">
+<link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/force-wipe/">
+<link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/force-wipe/">
+<link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/force-wipe/">
+<link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/force-wipe/">
+<link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/force-wipe/">
+<link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/force-wipe/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#15191e">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/avatar.png">
+<link rel="stylesheet" href="/calc/calc.css?v=dc22d521d4">
+<style>
+.wipe-count { text-align: center; }
+.wipe-count .when { color: var(--muted); margin: 6px 0 14px; }
+.wipe-count .clock { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+.wipe-count .clock div { min-width: 74px; padding: 10px 8px; border: 1px solid var(--line); border-radius: 14px; background: #101418; }
+.wipe-count .clock b { display: block; font: 800 34px/1.1 ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--neon);
+  font-variant-numeric: tabular-nums; }
+.wipe-count .clock span { color: var(--muted); font-size: 13px; }
+.wipe-count .live { color: var(--rust-hot); font-weight: 700; }
+.wipe-table { width: 100%; border-collapse: collapse; }
+.wipe-table th { text-align: left; color: var(--muted); font-weight: 600; font-size: 13px; padding: 0 10px 8px 0; }
+.wipe-table td { padding: 8px 10px 8px 0; border-top: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+.wipe-table tr.next td { color: var(--neon); font-weight: 700; }
+.wipe-list { margin: 0; padding-left: 20px; }
+.wipe-faq details { border-top: 1px solid var(--line); padding: 10px 0; }
+@media (max-width: 420px) {
+  .wipe-count .clock { gap: 6px; flex-wrap: nowrap; }
+  .wipe-count .clock div { min-width: 0; flex: 1; padding: 8px 4px; }
+  .wipe-count .clock b { font-size: 26px; }
+}
+.wipe-faq summary { cursor: pointer; font-weight: 700; }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "de", "mainEntity": [{"@type": "Question", "name": "Wann ist der nächste Rust Force Wipe?", "acceptedAnswer": {"@type": "Answer", "text": "Am ersten Donnerstag des Monats gegen 14 Uhr New Yorker Zeit. Der genaue Countdown steht oben."}}, {"@type": "Question", "name": "Um wie viel Uhr ist der Global-Wipe in Berlin?", "acceptedAnswer": {"@type": "Answer", "text": "In Berlin das ganze Jahr um 20:00 Uhr — die Tabelle zeigt jeden Termin."}}, {"@type": "Question", "name": "Wipen alle Server?", "acceptedAnswer": {"@type": "Answer", "text": "Ja — der Global-Wipe ist wegen des monatlichen Updates für alle Server Pflicht. Viele Server wipen zusätzlich wöchentlich oder alle zwei Wochen."}}]}</script>
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+<div class="grid-bg" aria-hidden="true"></div>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="/"><img src="/assets/avatar.png" alt="" width="40" height="40"><b>RUST TRACKER <span>BRO</span></b></a>
+    <nav class="langs" id="langs" aria-label="Language"><a href="/force-wipe/" hreflang="en" lang="en" data-lang="en">English</a><a href="/ru/force-wipe/" hreflang="ru" lang="ru" data-lang="ru">Русский</a><a href="/es/force-wipe/" hreflang="es" lang="es" data-lang="es">Español</a><a href="/fr/force-wipe/" hreflang="fr" lang="fr" data-lang="fr">Français</a><a href="/uk/force-wipe/" hreflang="uk" lang="uk" data-lang="uk">Українська</a><a href="/de/force-wipe/" hreflang="de" lang="de" data-lang="de" aria-current="true">Deutsch</a><a href="/tr/force-wipe/" hreflang="tr" lang="tr" data-lang="tr">Türkçe</a><a href="/pt/force-wipe/" hreflang="pt" lang="pt" data-lang="pt">Português</a></nav>
+  </header>
+  <section class="hero">
+    <h1>Rust Global-Wipe Countdown</h1>
+    <p class="lead">Der Global-Wipe (Force Wipe) ist am ersten Donnerstag jedes Monats, zusammen mit dem Rust-Update. Der Countdown nutzt die Zeitzone deines Geräts.</p>
+  </section>
+  <section class="panel wipe-count" id="wipe-count" data-yours="deine Zeit">
+    <h2>Nächster Global-Wipe</h2>
+    <p class="when">2026-11-05 · 19:00 UTC · 20:00 Berlin</p>
+    <div class="clock"><div><b>–</b><span>T</span></div><div><b>–</b><span>Std</span></div><div><b>–</b><span>Min</span></div><div><b>–</b><span>Sek</span></div></div>
+    <p class="live" hidden>Der Wipe läuft — die Server werden aktualisiert und kommen mit neuer Map zurück.</p>
+  </section>
+  <section class="panel">
+    <h2>Um wie viel Uhr ist der Wipe</h2>
+    <p>Gegen 14 Uhr New Yorker Zeit — im Winter 19:00 UTC, im Sommer 18:00 UTC. Die Server starten 1–2 Stunden nach dem Update neu; manche wipen erst später am Abend.</p>
+  </section>
+  <section class="panel">
+    <h2>Nächste Global-Wipes</h2>
+    <table class="wipe-table"><thead><tr><th>Datum</th><th>UTC</th><th>Berlin</th></tr></thead>
+    <tbody><tr data-day="2026-11-05" class="next"><td>2026-11-05</td><td>19:00</td><td>20:00</td></tr><tr data-day="2026-12-03"><td>2026-12-03</td><td>19:00</td><td>20:00</td></tr><tr data-day="2027-01-07"><td>2027-01-07</td><td>19:00</td><td>20:00</td></tr><tr data-day="2027-02-04"><td>2027-02-04</td><td>19:00</td><td>20:00</td></tr><tr data-day="2027-03-04"><td>2027-03-04</td><td>19:00</td><td>20:00</td></tr><tr data-day="2027-04-01"><td>2027-04-01</td><td>18:00</td><td>20:00</td></tr><tr data-day="2027-05-06"><td>2027-05-06</td><td>18:00</td><td>20:00</td></tr><tr data-day="2027-06-03"><td>2027-06-03</td><td>18:00</td><td>20:00</td></tr><tr data-day="2027-07-01"><td>2027-07-01</td><td>18:00</td><td>20:00</td></tr><tr data-day="2027-08-05"><td>2027-08-05</td><td>18:00</td><td>20:00</td></tr><tr data-day="2027-09-02"><td>2027-09-02</td><td>18:00</td><td>20:00</td></tr><tr data-day="2027-10-07"><td>2027-10-07</td><td>18:00</td><td>20:00</td></tr></tbody></table>
+  </section>
+  <section class="panel">
+    <h2>Was gewiped wird</h2>
+    <ul class="wipe-list"><li>Die Map, alle Bauten, Items und Ressourcen — auf jedem Server.</li><li>Blueprints — nach Serverregeln: viele wipen sie mit; manchmal macht Facepunch den Blueprint-Wipe verpflichtend.</li><li>Das Spielupdate erscheint zur selben Zeit — Steam lädt es, bevor du joinen kannst.</li></ul>
+  </section>
+  <section class="panel wipe-faq">
+    <details><summary>Wann ist der nächste Rust Force Wipe?</summary><p>Am ersten Donnerstag des Monats gegen 14 Uhr New Yorker Zeit. Der genaue Countdown steht oben.</p></details><details><summary>Um wie viel Uhr ist der Global-Wipe in Berlin?</summary><p>In Berlin das ganze Jahr um 20:00 Uhr — die Tabelle zeigt jeden Termin.</p></details><details><summary>Wipen alle Server?</summary><p>Ja — der Global-Wipe ist wegen des monatlichen Updates für alle Server Pflicht. Viele Server wipen zusätzlich wöchentlich oder alle zwei Wochen.</p></details>
+  </section>
+  <section class="panel">
+    <h2>Nach dem Wipe</h2>
+    <p>Planst du den ersten Raid? Der Raid-Rechner zeigt, wie viel Schwefel du für jede Wand oder Tür brauchst.</p>
+    <a class="guide-link" href="/de/raid/">💣 Raid-Rechner →</a>
+  </section>
+  <section class="panel cta">
+    <h2>Verpasse keinen Wipe</h2>
+    <p>Der Bot erinnert dich am Tag vor dem Global-Wipe und sagt dir, wann die Spieler, denen du folgst, auf die neue Map kommen. Der Start ist kostenlos.</p>
+    <div class="btns">
+      <a class="btn discord" id="btn-discord" href="/discord/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.6 1.3a18.3 18.3 0 0 0-5.6 0L8.6 3a19.7 19.7 0 0 0-4.9 1.4C.6 9 -.3 13.6.1 18.1A19.9 19.9 0 0 0 6.2 21l1.3-2a12.9 12.9 0 0 1-2-1l.5-.4a14.2 14.2 0 0 0 12 0l.5.4c-.6.4-1.3.7-2 1l1.3 2a19.8 19.8 0 0 0 6.1-2.9c.5-5.2-.8-9.7-3.6-13.7ZM8.3 15.3c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Zm7.4 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Z"/></svg><span data-t="btn_discord">Zu Discord hinzufügen</span></a>
+      <a class="btn tg" id="btn-tg" href="https://t.me/RustTrackerBroBot"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.6 19.8c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.2-8.3c.4-.4-.1-.6-.6-.2L6 13.4 1.1 11.9c-1.1-.3-1.1-1.1.2-1.6L20.5 2.9c.9-.3 1.7.2 1.4 1.4Z"/></svg><span data-t="btn_tg">In Telegram öffnen</span></a>
+    </div>
+  </section>
+  <footer>
+    <a class="home" href="/" data-t="home">← Rust Tracker Bro</a>
+    <div class="data-note" id="data-note"></div>
+    <div class="legal-links" data-base="/legal/"></div>
+    <div class="legal" data-t="legal">Rust ist eine Marke von Facepunch Studios. Dieses Projekt steht in keiner Verbindung zu Facepunch.</div>
+  </footer>
+</div>
+<script src="/config.js"></script>
+<script src="/legal/texts.js"></script>
+<script src="/legal/legal.js"></script>
+<script src="/calc/page.js?v=36d25c017f"></script>
+<script>
+(function () {
+  var box = document.getElementById("wipe-count");
+  if (!box || !window.Intl) return;
+  var lang = document.documentElement.lang || "en";
+  var nyHour = new Intl.DateTimeFormat("en-US", { timeZone: "America/New_York", hour: "numeric", hourCycle: "h23" });
+  function at(y, m) {
+    var d = new Date(Date.UTC(y, m, 1)), day = 1 + (4 - d.getUTCDay() + 7) % 7;
+    for (var h = 16; h <= 21; h++) {
+      var t = new Date(Date.UTC(y, m, day, h));
+      if (+nyHour.format(t) === 14) return t;
+    }
+    return new Date(Date.UTC(y, m, day, 19));
+  }
+  function next(now) {
+    var y = now.getUTCFullYear(), m = now.getUTCMonth();
+    for (var i = 0; i < 3; i++) {
+      var t = at(y, m);
+      if (t.getTime() + 3 * 3600e3 > now.getTime()) return t;  // 3 ч после начала — «вайп идёт»
+      m += 1; if (m > 11) { m = 0; y += 1; }
+    }
+    return at(y, m);
+  }
+  var target = next(new Date());
+  var fmt = new Intl.DateTimeFormat(lang, { weekday: "long", day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" });
+  box.querySelector(".when").textContent = fmt.format(target) + " — " + box.dataset.yours;
+  var cells = box.querySelectorAll(".clock b"), live = box.querySelector(".live");
+  function tick() {
+    var left = Math.floor((target.getTime() - Date.now()) / 1000);
+    if (left <= 0) { live.hidden = false; box.querySelector(".clock").hidden = true; return; }
+    var v = [Math.floor(left / 86400), Math.floor(left % 86400 / 3600), Math.floor(left % 3600 / 60), left % 60];
+    for (var i = 0; i < 4; i++) cells[i].textContent = i ? String(v[i]).padStart(2, "0") : v[i];
+    setTimeout(tick, 1000 - Date.now() % 1000);
+  }
+  tick();
+  var iso = target.toISOString().slice(0, 10);
+  var day = new Intl.DateTimeFormat(lang, { weekday: "short", day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+  document.querySelectorAll(".wipe-table tr[data-day]").forEach(function (tr) {
+    tr.classList.toggle("next", tr.dataset.day === iso);
+    tr.cells[0].textContent = day.format(new Date(tr.dataset.day + "T12:00:00Z"));  // «чт, 5 ноября 2026 г.»
+  });
+})();
+</script>
+</body>
+</html>
