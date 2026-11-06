@@ -283,6 +283,9 @@
   var ref = (params.get("ref") || "").replace(/[^0-9]/g, "").slice(0, 20);
   var partner = (params.get("p") || "").toLowerCase().replace(/[^a-z0-9_]/g, "").slice(0, 32);
   var start = ref ? "ref_" + ref : (partner ? "p_" + partner : "");
+  // Ссылка-метка владельца (?s=reddit): откуда пришёл человек — только в ссылку Telegram, без блока приглашения.
+  var tag = (params.get("s") || "").toLowerCase().replace(/[^a-z0-9_]/g, "").slice(0, 24);
+  var tgStart = start || (tag.length >= 2 ? "s_" + tag : "");
 
   function pickLang() {
     // Страница на своём языке (/ru/, /ru/pricing/ — их делает tools/build_site.py): язык — по адресу.
@@ -335,7 +338,7 @@
   }
   if (narrow.addEventListener) narrow.addEventListener("change", setPromo); else narrow.addListener(setPromo);
 
-  var tgUrl = "https://t.me/" + cfg.TELEGRAM_BOT + (start ? "?start=" + encodeURIComponent(start) : "");
+  var tgUrl = "https://t.me/" + cfg.TELEGRAM_BOT + (tgStart ? "?start=" + encodeURIComponent(tgStart) : "");
   document.getElementById("btn-tg").href = tgUrl;
   if (cfg.DISCORD_APP_ID) {
     document.getElementById("btn-discord").href = "https://discord.com/oauth2/authorize?client_id=" + cfg.DISCORD_APP_ID;
@@ -355,7 +358,7 @@
   }
 
   // Кнопка языка ведёт на страницу этого языка (у каждого языка свой адрес — его видят поисковики);
-  // ?ref= и ?p= приглашения сохраняются.
+  // ?ref= и ?p= приглашения и ?s= метка сохраняются.
   function goLang(code, page) {
     try { localStorage.setItem("rtb_lang", code); } catch (e) {}
     var q = new URLSearchParams(location.search); q.delete("lang");
