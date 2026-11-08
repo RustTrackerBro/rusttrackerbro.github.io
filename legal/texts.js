@@ -2,7 +2,7 @@
 // Документы — на английском и русском (на остальных языках сайта показывается английская версия с пометкой).
 // Сверять с ботом: /terms и /privacy (rusttracker/i18n/locales/*.toml, разделы [terms] и [privacy]).
 // Разметка тела: строка «• …» — пункт списка; `…` — команда; {contact} — как связаться (config.js → CONTACT_EMAIL).
-window.RTB_LEGAL_UPDATED = "2026-10-29";
+window.RTB_LEGAL_UPDATED = "2026-11-08";
 
 window.RTB_LEGAL_UI = {
   en: { server: "💬 Discord server", name: "English", terms: "Terms of Service", privacy: "Privacy Policy", refunds: "Refund Policy", home: "Home",
@@ -89,7 +89,7 @@ window.RTB_LEGAL_DOCS = {
         "• Telegram or Discord account ID, name and language as provided by the platform.",
         "• Your settings, the players, servers and clans you track, and your notifications.",
         "• Subscription and payment records: plan, period, amount, date and the payment ID. We never receive card or wallet credentials.",
-        "• If you connect Rust+: encrypted access tokens, paired servers and devices.",
+        "• If you connect Rust+: encrypted access tokens (including your Rust+ sign-in token, which Facepunch issues for 14 days), paired servers and devices.",
         "• Player board: your listings, responses, ratings and confirmed Steam account. Your contacts are shown only to the other side of an accepted response.",
         "• Support messages and technical logs; anonymous usage statistics of the bot’s screens (kept up to 90 days).",
       ] },
@@ -125,7 +125,14 @@ window.RTB_LEGAL_DOCS = {
       { h: "9. Website and cookies", b: [
         "The website does not use advertising or tracking cookies. It stores only your selected language in your browser.",
       ] },
-      { h: "10. Changes", b: [
+      { h: "10. Browser extension “RustTrackerBro — Rust+ token”", b: [
+        "The Chrome extension only helps you copy your Rust+ sign-in token after you sign in on the official Facepunch page (companion-rust.facepunch.com).",
+        "• It works only on companion-rust.facepunch.com and reads the sign-in result there to show you the token.",
+        "• The token is kept only in your browser’s memory and is cleared after 15 minutes or when you close the browser.",
+        "• The extension sends nothing to us or anyone else: it makes no network requests of its own, has no analytics and does not see your Steam password.",
+        "• The token reaches the Service only if you send it to the bot yourself; after that it is handled as described in section 2.",
+      ] },
+      { h: "11. Changes", b: [
         "We may update this policy; the current version is always on this page.",
       ] },
     ],
@@ -203,7 +210,7 @@ window.RTB_LEGAL_DOCS = {
         "• ID аккаунта Telegram или Discord, имя и язык — в том виде, как их передаёт платформа.",
         "• Ваши настройки, отслеживаемые игроки, серверы и кланы, уведомления.",
         "• Сведения о подписках и оплатах: уровень, срок, сумма, дата и номер платежа. Данные карт и кошельков мы не получаем.",
-        "• Если подключён Rust+: зашифрованные токены доступа, привязанные серверы и устройства.",
+        "• Если подключён Rust+: зашифрованные токены доступа (в том числе токен входа Rust+, который Facepunch выдаёт на 14 дней), привязанные серверы и устройства.",
         "• Биржа игроков: ваши объявления, отклики, оценки и подтверждённый аккаунт Steam. Контакты видит только другая сторона принятого отклика.",
         "• Обращения в поддержку и технические журналы; обезличенная статистика открытия экранов бота (хранится до 90 дней).",
       ] },
@@ -239,7 +246,14 @@ window.RTB_LEGAL_DOCS = {
       { h: "9. Сайт и cookie", b: [
         "Сайт не использует рекламные и отслеживающие cookie. В браузере сохраняется только выбранный язык.",
       ] },
-      { h: "10. Изменения", b: [
+      { h: "10. Расширение браузера «RustTrackerBro — Rust+ token»", b: [
+        "Расширение для Chrome только помогает скопировать токен входа Rust+ после входа на официальной странице Facepunch (companion-rust.facepunch.com).",
+        "• Оно работает только на companion-rust.facepunch.com и читает там результат входа, чтобы показать вам токен.",
+        "• Токен хранится только в памяти вашего браузера и стирается через 15 минут или при закрытии браузера.",
+        "• Расширение ничего не отправляет ни нам, ни кому-либо ещё: своих сетевых запросов, аналитики у него нет, пароль Steam оно не видит.",
+        "• Токен попадает в Сервис, только если вы сами пришлёте его боту; дальше с ним обращаются, как описано в разделе 2.",
+      ] },
+      { h: "11. Изменения", b: [
         "Мы можем обновлять эту политику; актуальная редакция всегда на этой странице.",
       ] },
     ],
