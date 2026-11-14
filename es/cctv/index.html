@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es" data-lang="es">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Códigos de cámaras de Rust — todos los monumentos (2026) | Rust Tracker Bro</title>
+<meta name="description" content="Todos los códigos de cámaras CCTV de Rust: plataformas petrolíferas, silo de misiles, Cargo, terminal de ferris, Outpost, Radtown, Cúpula, campamento bandido, aeródromo — y cómo conseguir los del laboratorio y la base militar.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rust Tracker Bro">
+<meta property="og:title" content="Códigos de cámaras de Rust — todos los monumentos (2026) | Rust Tracker Bro">
+<meta property="og:description" content="Todos los códigos de cámaras CCTV de Rust: plataformas petrolíferas, silo de misiles, Cargo, terminal de ferris, Outpost, Radtown, Cúpula, campamento bandido, aeródromo — y cómo conseguir los del laboratorio y la base militar.">
+<meta property="og:image" content="https://rusttrackerbro.com/assets/og.jpg">
+<meta property="og:url" content="https://rusttrackerbro.com/es/cctv/">
+<link rel="canonical" href="https://rusttrackerbro.com/es/cctv/">
+<link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/cctv/">
+<link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/cctv/">
+<link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/cctv/">
+<link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/cctv/">
+<link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/cctv/">
+<link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/cctv/">
+<link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/cctv/">
+<link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/cctv/">
+<link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/cctv/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#15191e">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/avatar.png">
+<link rel="stylesheet" href="/calc/calc.css?v=dc22d521d4">
+<style>
+.cmd-table { width: 100%; border-collapse: collapse; }
+.cmd-table th { text-align: left; color: var(--muted); font-weight: 600; font-size: 13px; padding: 0 10px 8px 0; }
+.cmd-table td { vertical-align: top; padding: 10px 10px 10px 0; border-top: 1px solid var(--line); }
+.cmd-table code { color: var(--rust-hot); font: 700 14px ui-monospace, SFMono-Regular, Menlo, monospace; white-space: nowrap; }
+.cmd-table .ans { display: block; font: 13px/1.45 ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--bone);
+  background: #101418; border: 1px solid var(--line); border-left: 3px solid var(--neon); border-radius: 8px; padding: 6px 9px; margin-bottom: 6px; }
+.cmd-table .ans b { color: var(--rust-hot); font-weight: 400; }
+.cmd-table p { margin: 0; color: var(--muted); font-size: 14.5px; }
+.cmd-notes { margin: 0; padding-left: 20px; color: var(--muted); display: grid; gap: 8px; }
+.guide-link { display: inline-block; margin-top: 14px; color: var(--rust-hot); font-weight: 700; text-decoration: none; }
+@media (max-width: 620px) { .cmd-table thead { display: none; } .cmd-table td { display: block; border-top: 0; padding: 4px 0; }
+  .cmd-table tr { display: block; border-top: 1px solid var(--line); padding: 8px 0; } .cmd-table code { white-space: normal; } }
+.cctv-codes code { display: inline-block; margin: 2px 6px 2px 0; padding: 2px 6px; border-radius: 6px;
+  background: rgba(255,255,255,.06); user-select: all; -webkit-user-select: all; cursor: copy; }
+.cctv-note { color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+<div class="grid-bg" aria-hidden="true"></div>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="/"><img src="/assets/avatar.png" alt="" width="40" height="40"><b>RUST TRACKER <span>BRO</span></b></a>
+    <nav class="langs" id="langs" aria-label="Language"><a href="/cctv/" hreflang="en" lang="en" data-lang="en">English</a><a href="/ru/cctv/" hreflang="ru" lang="ru" data-lang="ru">Русский</a><a href="/es/cctv/" hreflang="es" lang="es" data-lang="es" aria-current="true">Español</a><a href="/fr/cctv/" hreflang="fr" lang="fr" data-lang="fr">Français</a><a href="/uk/cctv/" hreflang="uk" lang="uk" data-lang="uk">Українська</a><a href="/de/cctv/" hreflang="de" lang="de" data-lang="de">Deutsch</a><a href="/tr/cctv/" hreflang="tr" lang="tr" data-lang="tr">Türkçe</a><a href="/pt/cctv/" hreflang="pt" lang="pt" data-lang="pt">Português</a></nav>
+  </header>
+  <section class="hero">
+    <h1>Códigos de cámaras de Rust</h1>
+    <p class="lead">Escribe un código en una estación de computadora para ver el monumento. Los códigos son iguales en todos los servidores y no cambian con el wipe. Haz clic en un código para seleccionarlo.</p>
+  </section>
+  <section class="panel">
+    <table class="cmd-table"><thead><tr><th>Monumento</th><th>Códigos</th></tr></thead><tbody><tr><td><b>🛢 Plataforma petrolífera grande</b></td><td class="cctv-codes"><code>OILRIG2HELI</code><code>OILRIG2DOCK</code><code>OILRIG2EXHAUST</code><code>OILRIG2L1</code><code>OILRIG2L2</code><code>OILRIG2L3A</code><code>OILRIG2L3B</code><code>OILRIG2L4</code><code>OILRIG2L5</code><code>OILRIG2L6A</code><code>OILRIG2L6B</code><code>OILRIG2L6C</code><code>OILRIG2L6D</code></td></tr><tr><td><b>🛢 Plataforma petrolífera pequeña</b></td><td class="cctv-codes"><code>OILRIG1HELI</code><code>OILRIG1DOCK</code><code>OILRIG1L1</code><code>OILRIG1L2</code><code>OILRIG1L3</code><code>OILRIG1L4</code></td></tr><tr><td><b>🚀 Silo de misiles</b></td><td class="cctv-codes"><code>SILOTOWER</code><code>SILOEXIT1</code><code>SILOEXIT2</code><code>SILOMISSILE</code><code>SILOSHIPPING</code></td></tr><tr><td><b>🚢 Cargo</b></td><td class="cctv-codes"><code>CARGODECK</code><code>CARGOBRIDGE</code><code>CARGOSTERN</code><code>CARGOHOLD1</code><code>CARGOHOLD2</code></td></tr><tr><td><b>⛴ Terminal de ferris</b></td><td class="cctv-codes"><code>FERRYDOCK</code><code>FERRYPARKING</code><code>FERRYUTILITIES</code><code>FERRYLOGISTICS</code></td></tr><tr><td><b>🏪 Outpost</b></td><td class="cctv-codes"><code>COMPOUNDSTREET</code><code>COMPOUNDCHILL</code><code>COMPOUNDMUSIC</code><code>COMPOUNDCRUDE</code></td></tr><tr><td><b>☢️ Radtown</b></td><td class="cctv-codes"><code>RADTOWNHOUSE</code><code>RADTOWNAPARTMENTS</code><code>RADTOWNSBL</code></td></tr><tr><td><b>🔭 La Cúpula</b></td><td class="cctv-codes"><code>DOME1</code><code>DOMETOP</code></td></tr><tr><td><b>🎰 Campamento bandido</b></td><td class="cctv-codes"><code>CASINO</code><code>TOWNWEAPONS</code></td></tr><tr><td><b>✈️ Aeródromo</b></td><td class="cctv-codes"><code>AIRFIELDHELIPAD</code></td></tr></tbody></table>
+    <p class="cctv-note">L1–L6 — pisos de abajo arriba · HELI — helipuerto · DOCK — muelle · EXHAUST — chimenea. Plataforma grande — <code>OILRIG2…</code>, pequeña — <code>OILRIG1…</code>, no las confundas.</p>
+    <p class="cctv-note">💻 <b>Estación de computadora</b>: banco de trabajo nivel 2 o cómprala en el Outpost. Escribe el código en el campo Identifier y pulsa Add: la cámara se guarda en la lista de la estación. «No Signal» — código incorrecto, «Weak Signal» — la cámara no tiene energía.</p>
+    <p class="cctv-note"><i>Verificado el 14.11.2026. ¿Un código no funciona? Compruébalo en la estación: en servidores modificados pueden renombrar las cámaras.</i></p>
+  </section>
+  <section class="panel cctv-codes">
+    <h2>Códigos que cambian en cada mapa</h2>
+    <h3>Laboratorio submarino</h3>
+    <p>El código es el nombre de la sala + 4 dígitos de este laboratorio, por ejemplo <code>CANTINA4821</code>. Los dígitos son únicos en cada mapa y cambian con el wipe.</p><p><b>Dónde conseguirlos:</b> el laboratorio tiene una sala CCTV Station tras una puerta con tarjeta. Su computadora muestra todos los códigos de este laboratorio. Algunos laboratorios no tienen esta sala: entonces sus códigos no se pueden saber.</p><p><b>Salas:</b> <code>AUXPOWER</code> <code>BRIG</code> <code>CANTINA</code> <code>CAPTAINQUARTER</code> <code>CLASSIFIED</code> <code>CREWQUARTERS</code> <code>HALLWAY</code> <code>INFIRMARY</code> <code>LAB</code> <code>LOCKERROOM</code> <code>OPERATIONS</code> <code>SECURITYHALL</code> <code>TECHCABINET</code></p><p><code>SPECTRE</code> — no está en todos los laboratorios.</p>
+    <h3>Base militar abandonada</h3>
+    <p>Los códigos son <code>COMPOUND</code> y <code>OUTDOOR</code> + un número de este mapa. El número cambia con el wipe.</p><p><b>Dónde conseguirlos:</b> la estación de computadora en la tienda de comunicaciones de la base muestra sus códigos.</p>
+    <a class="guide-link" href="/es/rustplus/commands/">!cams · Comandos de Rust+ en el chat del juego →</a>
+  </section>
+  <section class="panel cta">
+    <h2>Códigos del laboratorio y la base de este mapa — para todo tu equipo</h2>
+    <p>Guárdalos una vez en el chat del juego (!cams add CANTINA4821): el bot se los muestra a tu equipo hasta el wipe. Los códigos de monumentos también están en el bot: Herramientas → Cámaras o !cams en el juego.</p>
+    <div class="btns">
+      <a class="btn discord" id="btn-discord" href="/discord/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.6 1.3a18.3 18.3 0 0 0-5.6 0L8.6 3a19.7 19.7 0 0 0-4.9 1.4C.6 9 -.3 13.6.1 18.1A19.9 19.9 0 0 0 6.2 21l1.3-2a12.9 12.9 0 0 1-2-1l.5-.4a14.2 14.2 0 0 0 12 0l.5.4c-.6.4-1.3.7-2 1l1.3 2a19.8 19.8 0 0 0 6.1-2.9c.5-5.2-.8-9.7-3.6-13.7ZM8.3 15.3c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Zm7.4 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Z"/></svg><span data-t="btn_discord">Añadir a Discord</span></a>
+      <a class="btn tg" id="btn-tg" href="https://t.me/RustTrackerBroBot"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.6 19.8c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.2-8.3c.4-.4-.1-.6-.6-.2L6 13.4 1.1 11.9c-1.1-.3-1.1-1.1.2-1.6L20.5 2.9c.9-.3 1.7.2 1.4 1.4Z"/></svg><span data-t="btn_tg">Abrir en Telegram</span></a>
+    </div>
+  </section>
+  <footer>
+    <a class="home" href="/" data-t="home">← Rust Tracker Bro</a>
+    <div class="data-note" id="data-note"></div>
+    <div class="legal-links" data-base="/legal/"></div>
+    <div class="legal" data-t="legal">Rust es una marca de Facepunch Studios. Este proyecto no está afiliado a Facepunch.</div>
+  </footer>
+</div>
+<script src="/config.js"></script>
+<script src="/legal/texts.js"></script>
+<script src="/legal/legal.js"></script>
+<script src="/calc/page.js?v=36d25c017f"></script>
+</body>
+</html>
