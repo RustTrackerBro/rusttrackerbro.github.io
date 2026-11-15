@@ -321,7 +321,8 @@
     var methods = R.defaultSelected.slice();
     (params.get("t") || "").split(",").forEach(function (part) {
       var m = /^([a-z_]+):(\d{1,3})$/.exec(part);
-      if (m && byKey[m[1]]) basket[m[1]] = Math.min(99, parseInt(m[2], 10));
+      var q = m ? Math.min(99, parseInt(m[2], 10)) : 0;
+      if (m && byKey[m[1]] && q > 0) basket[m[1]] = q;  // «:0» в ссылке — цели нет
     });
     var initial = params.get("open");
     if (initial && byKey[initial]) open[initial] = true;
