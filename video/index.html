@@ -22,6 +22,7 @@
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <link rel="apple-touch-icon" href="/assets/avatar.png">
 <link rel="stylesheet" href="/calc/calc.css?v=1e66f271c3">
+<link rel="stylesheet" href="/assets/site-header.css?v=5789d5ce62">
 <style>
 .watch video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #0c0f12; border: 1px solid var(--line);
   border-radius: 18px; }
@@ -38,11 +39,9 @@
 <body>
 <div class="glow" aria-hidden="true"></div>
 <div class="grid-bg" aria-hidden="true"></div>
+<header class="sh"><div class="sh-in"><a class="sh-br" href="/"><img src="/assets/home/av.webp" alt="" width="38" height="38">RUST TRACKER <span>BRO</span></a><nav class="sh-nav" aria-label="Rust Tracker Bro"><a href="/rustplus/" data-sh="rustplus"><img src="/assets/items/64/smart.alarm.webp" alt="" width="22" height="22"><span>Rust+</span></a><a href="/raid/" data-sh="raid"><img src="/assets/items/64/explosive.timed.webp" alt="" width="22" height="22"><span>Raid</span></a><a href="/craft/" data-sh="craft"><img src="/assets/items/64/workbench3.webp" alt="" width="22" height="22"><span>Craft</span></a><a href="/recycle/" data-sh="recycle"><img src="/assets/items/64/scrap.webp" alt="" width="22" height="22"><span>Recycle</span></a><a href="/genes/" data-sh="genes"><img src="/assets/items/64/clone.hemp.webp" alt="" width="22" height="22"><span>Genes</span></a><a href="/cctv/" data-sh="cctv"><img src="/assets/items/64/cctv.camera.webp" alt="" width="22" height="22"><span>CCTV codes</span></a><a href="/force-wipe/" data-sh="force-wipe"><img src="/assets/items/64/electric.digitalclock.webp" alt="" width="22" height="22"><span>Global wipe</span></a><a href="/pricing/" data-sh="pricing"><img src="/assets/items/64/keycard_red.webp" alt="" width="22" height="22"><span>Pricing</span></a></nav><details class="sh-lang"><summary><span id="sh-cur">English</span> ▾</summary><div class="sh-menu" id="langs"><a href="/video/" hreflang="en" lang="en" data-lang="en" aria-current="true">English</a><a href="/ru/video/" hreflang="ru" lang="ru" data-lang="ru">Русский</a></div></details></div><nav class="sh-row" aria-label="Rust Tracker Bro"><a href="/rustplus/" data-sh="rustplus"><img src="/assets/items/64/smart.alarm.webp" alt="" width="22" height="22"><span>Rust+</span></a><a href="/raid/" data-sh="raid"><img src="/assets/items/64/explosive.timed.webp" alt="" width="22" height="22"><span>Raid</span></a><a href="/craft/" data-sh="craft"><img src="/assets/items/64/workbench3.webp" alt="" width="22" height="22"><span>Craft</span></a><a href="/recycle/" data-sh="recycle"><img src="/assets/items/64/scrap.webp" alt="" width="22" height="22"><span>Recycle</span></a><a href="/genes/" data-sh="genes"><img src="/assets/items/64/clone.hemp.webp" alt="" width="22" height="22"><span>Genes</span></a><a href="/cctv/" data-sh="cctv"><img src="/assets/items/64/cctv.camera.webp" alt="" width="22" height="22"><span>CCTV codes</span></a><a href="/force-wipe/" data-sh="force-wipe"><img src="/assets/items/64/electric.digitalclock.webp" alt="" width="22" height="22"><span>Global wipe</span></a><a href="/pricing/" data-sh="pricing"><img src="/assets/items/64/keycard_red.webp" alt="" width="22" height="22"><span>Pricing</span></a></nav></header>
 <div class="wrap">
-  <header class="top">
-    <a class="brand" href="/"><img src="/assets/avatar.png" alt="" width="40" height="40"><b>RUST TRACKER <span>BRO</span></b></a>
-    <nav class="langs" id="langs" aria-label="Language"><a href="/video/" hreflang="en" lang="en" data-lang="en" aria-current="true">English</a><a href="/ru/video/" hreflang="ru" lang="ru" data-lang="ru">Русский</a></nav>
-  </header>
+
   <section class="hero">
     <h1>Rust Tracker Bro in action</h1>
     <p class="lead">Watch Rust Tracker Bro in under a minute: alerts when Rust players join or leave, clan online, play and sleep times, in-game chat commands with Rust+, free premium and Rust tools.</p>
@@ -51,10 +50,6 @@
     <video id="promo" controls playsinline preload="metadata" width="1280" height="720" poster="/assets/promo/en_16x9.jpg"
            src="/assets/promo/en_16x9.mp4" data-tall="/assets/promo/en_9x16" aria-label="Rust Tracker Bro in action"></video>
     <a class="other-lang" href="/ru/video/" hreflang="ru" lang="ru">Русская версия →</a>
-  </section>
-  <section class="panel">
-    <h2>What&#x27;s in the video</h2>
-    <ol class="chapters"><li><button type="button" data-t="0"><time datetime="PT0S">0:00</time><span>Intro</span></button></li><li><button type="button" data-t="4"><time datetime="PT4S">0:04</time><span>Player tracking: join and leave alerts, stats, heatmap, sleep window, teammates</span></button></li><li><button type="button" data-t="14"><time datetime="PT14S">0:14</time><span>Clans: the whole clan online at a glance</span></button></li><li><button type="button" data-t="18"><time datetime="PT18S">0:18</time><span>Rust+ and in-game chat commands: !pop !time !wipe !raid !craft</span></button></li><li><button type="button" data-t="29"><time datetime="PT29S">0:29</time><span>Where your teammate died — grid and map</span></button></li><li><button type="button" data-t="33"><time datetime="PT33S">0:33</time><span>Premium for free: giveaways, invites, tag in your name</span></button></li><li><button type="button" data-t="39"><time datetime="PT39S">0:39</time><span>Tools: raid calculator, craft, recycle, genes, base decay</span></button></li><li><button type="button" data-t="47"><time datetime="PT47S">0:47</time><span>Get started for free</span></button></li></ol>
   </section>
   <section class="panel cta">
     <h2>Try it in Discord or Telegram</h2>

@@ -74,6 +74,8 @@
     });
     document.getElementById("legal").textContent = ui.legal;
     document.querySelectorAll("#langs button").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.lang === lang)); });
+    if (window.RTB_NAV_SET) window.RTB_NAV_SET(lang, UI[lang].name);  // общая шапка — на языке документа
+    var menu = document.querySelector("header.sh details"); if (menu) menu.open = false;
   }
 
   var langs = document.getElementById("langs");

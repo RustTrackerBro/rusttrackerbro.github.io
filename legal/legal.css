@@ -14,7 +14,7 @@ body { background: var(--steel); color: var(--bone); font: 16px/1.65 system-ui, 
 .brand { display: flex; align-items: center; gap: 12px; color: var(--bone); text-decoration: none; }
 .brand img { width: 36px; height: 36px; border-radius: 50%; box-shadow: 0 0 0 2px #0c0f12, 0 0 0 4px var(--neon); }
 .brand b { font-family: "Russo One", system-ui, sans-serif; font-weight: 400; font-size: 17px; letter-spacing: .5px; }
-nav.docs { display: flex; flex-wrap: wrap; gap: 6px; }
+nav.docs { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 22px; }
 nav.docs a { color: var(--muted); text-decoration: none; border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; font-size: 14px; }
 nav.docs a[aria-current="page"] { color: var(--bone); border-color: var(--rust); }
 nav.docs a:hover { color: var(--bone); }

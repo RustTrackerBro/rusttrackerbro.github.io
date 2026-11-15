@@ -29,6 +29,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#15191e">
 <link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="stylesheet" href="/assets/site-header.css">
 <link rel="apple-touch-icon" href="../assets/avatar.png">
 <style>
   @font-face { font-family: "Russo One"; src: url("../assets/RussoOne-Regular.ttf") format("truetype"); font-display: swap; }
@@ -183,11 +184,11 @@
 <body>
 <div class="glow" aria-hidden="true"></div>
 <div class="grid-bg" aria-hidden="true"></div>
+<!--header-->
+<header class="sh"><div class="sh-in"><a class="sh-br" href="/ru/"><img src="/assets/home/av.webp" alt="" width="38" height="38">RUST TRACKER <span>BRO</span></a><nav class="sh-nav" aria-label="Rust Tracker Bro"><a href="/ru/rustplus/" data-sh="rustplus"><img src="/assets/items/64/smart.alarm.webp" alt="" width="22" height="22"><span>Rust+</span></a><a href="/ru/raid/" data-sh="raid"><img src="/assets/items/64/explosive.timed.webp" alt="" width="22" height="22"><span>Рейд</span></a><a href="/ru/craft/" data-sh="craft"><img src="/assets/items/64/workbench3.webp" alt="" width="22" height="22"><span>Крафт</span></a><a href="/ru/recycle/" data-sh="recycle"><img src="/assets/items/64/scrap.webp" alt="" width="22" height="22"><span>Переработка</span></a><a href="/ru/genes/" data-sh="genes"><img src="/assets/items/64/clone.hemp.webp" alt="" width="22" height="22"><span>Гены</span></a><a href="/ru/cctv/" data-sh="cctv"><img src="/assets/items/64/cctv.camera.webp" alt="" width="22" height="22"><span>Коды камер</span></a><a href="/ru/force-wipe/" data-sh="force-wipe"><img src="/assets/items/64/electric.digitalclock.webp" alt="" width="22" height="22"><span>Глобал вайп</span></a><a href="/ru/pricing/" data-sh="pricing" aria-current="page"><img src="/assets/items/64/keycard_red.webp" alt="" width="22" height="22"><span>Тарифы</span></a></nav><details class="sh-lang"><summary><span id="sh-cur">Русский</span> ▾</summary><div class="sh-menu" id="langs"><a href="/pricing/" hreflang="en" lang="en" data-lang="en">English</a><a href="/ru/pricing/" hreflang="ru" lang="ru" data-lang="ru" aria-current="true">Русский</a><a href="/es/pricing/" hreflang="es" lang="es" data-lang="es">Español</a><a href="/fr/pricing/" hreflang="fr" lang="fr" data-lang="fr">Français</a><a href="/uk/pricing/" hreflang="uk" lang="uk" data-lang="uk">Українська</a><a href="/de/pricing/" hreflang="de" lang="de" data-lang="de">Deutsch</a><a href="/tr/pricing/" hreflang="tr" lang="tr" data-lang="tr">Türkçe</a><a href="/pt/pricing/" hreflang="pt" lang="pt" data-lang="pt">Português</a></div></details></div><nav class="sh-row" aria-label="Rust Tracker Bro"><a href="/ru/rustplus/" data-sh="rustplus"><img src="/assets/items/64/smart.alarm.webp" alt="" width="22" height="22"><span>Rust+</span></a><a href="/ru/raid/" data-sh="raid"><img src="/assets/items/64/explosive.timed.webp" alt="" width="22" height="22"><span>Рейд</span></a><a href="/ru/craft/" data-sh="craft"><img src="/assets/items/64/workbench3.webp" alt="" width="22" height="22"><span>Крафт</span></a><a href="/ru/recycle/" data-sh="recycle"><img src="/assets/items/64/scrap.webp" alt="" width="22" height="22"><span>Переработка</span></a><a href="/ru/genes/" data-sh="genes"><img src="/assets/items/64/clone.hemp.webp" alt="" width="22" height="22"><span>Гены</span></a><a href="/ru/cctv/" data-sh="cctv"><img src="/assets/items/64/cctv.camera.webp" alt="" width="22" height="22"><span>Коды камер</span></a><a href="/ru/force-wipe/" data-sh="force-wipe"><img src="/assets/items/64/electric.digitalclock.webp" alt="" width="22" height="22"><span>Глобал вайп</span></a><a href="/ru/pricing/" data-sh="pricing" aria-current="page"><img src="/assets/items/64/keycard_red.webp" alt="" width="22" height="22"><span>Тарифы</span></a></nav><script>window.RTB_PAGE_LANG = "ru";</script>
+<script src="/assets/site-nav.js" defer></script></header>
+<!--/header-->
 <div class="wrap">
-  <header class="top">
-    <a class="brand" href="/ru/" data-home><img src="../assets/avatar.png" alt="" width="40" height="40"><b>RUST TRACKER <span>BRO</span></b></a>
-    <nav class="langs" id="langs" aria-label="Language"></nav>
-  </header>
 
   <section class="hero">
     <p class="kicker" data-t="kicker">подписка · разовый платёж</p>
@@ -230,7 +231,6 @@
     <div class="legal" data-t="legal">Rust — товарный знак Facepunch Studios. Проект не связан с Facepunch.</div>
   </footer>
 </div>
-<script>window.RTB_PAGE_LANG = "ru";</script>
 <script src="../config.js"></script>
 <script src="texts.js"></script>
 <script src="../legal/texts.js"></script>
@@ -362,14 +362,15 @@
     var s = q.toString();
     location.href = (code === "en" ? "" : "/" + code) + page + (s ? "?" + s : "");
   }
-  var langs = document.getElementById("langs");
-  ["en", "ru", "es", "fr", "uk", "de", "tr", "pt"].filter(function (c) { return T[c]; }).forEach(function (code) {
-    var b = el("button", null, T[code].name); b.type = "button"; b.dataset.lang = code;
-    b.addEventListener("click", function () { goLang(code, "/pricing/"); });
-    langs.appendChild(b);
+  // Меню языков общей шапки (tools/site_header.py): ссылка на страницу языка, ?ref= и ?p= сохраняются.
+  document.querySelectorAll("header.sh #langs a[data-lang]").forEach(function (a) {
+    a.addEventListener("click", function (ev) { if (!T[a.dataset.lang]) return; ev.preventDefault(); goLang(a.dataset.lang, "/pricing/"); });
   });
   window.addEventListener("resize", movePill);
-  render(pickLang());
+  var first = pickLang();
+  // Английская страница (корень) с другим выбранным языком — на страницу этого языка (шапка и тексты совпадут).
+  if (!window.RTB_PAGE_LANG && first !== "en") { goLang(first, "/pricing/"); return; }
+  render(first);
 })();
 </script>
 </body>

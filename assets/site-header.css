@@ -1,0 +1,29 @@
+/* Единая шапка сайта — tools/site_header.py (не править руками) */
+@font-face{font-family:"Russo One";src:url(/assets/RussoOne-Regular.ttf) format("truetype");font-display:swap}
+header.sh{position:relative;z-index:40;background:linear-gradient(180deg,rgba(8,10,12,.94),rgba(10,12,15,.82));border-bottom:1px solid rgba(255,255,255,.07)}
+header.sh.sh-home{position:absolute;top:0;left:0;right:0;background:linear-gradient(180deg,rgba(8,10,12,.78),rgba(8,10,12,0));border:0}
+.sh-in{max-width:1240px;margin:0 auto;padding:0 20px;height:68px;display:flex;align-items:center;gap:16px;box-sizing:border-box}
+.sh-br{display:flex;align-items:center;gap:10px;font:400 17px "Russo One",system-ui,sans-serif;color:#efe8dc;text-decoration:none;white-space:nowrap;letter-spacing:.5px}
+.sh-br img{width:38px;height:38px;border-radius:50%}
+.sh-br span{background:#f08a4b;color:#1a0d05;font-size:12px;padding:3px 8px;border-radius:6px;transform:rotate(-4deg);display:inline-block}
+.sh-nav{display:flex;align-items:center;gap:2px;margin-left:auto}
+.sh-nav a,.sh-row a{display:inline-flex;align-items:center;gap:6px;padding:5px 10px 5px 6px;border-radius:999px;color:#d9d2c6;text-decoration:none;font:600 13px system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;white-space:nowrap;border:1px solid transparent;line-height:1.2}
+.sh-nav a img,.sh-row a img{width:22px;height:22px;flex:none}
+.sh-nav a:hover,.sh-row a:hover{border-color:rgba(255,255,255,.16);color:#fff}
+.sh-nav a[aria-current],.sh-row a[aria-current]{background:linear-gradient(135deg,#ffb36b,#e2572a);color:#1a0d05}
+header.sh details.sh-lang{position:relative;flex:none;background:none;border:0;padding:0;margin:0;box-shadow:none;border-radius:0}
+.sh-lang summary::after,.sh-lang summary::before{content:none!important;display:none!important}
+header.sh *{box-sizing:border-box}
+header.sh .sh-lang summary{display:block;margin:0;list-style:none;cursor:pointer;border:1px solid rgba(255,255,255,.18);background:rgba(10,12,14,.6);border-radius:9px;padding:7px 12px;font:600 13px system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#efe8dc;white-space:nowrap}
+.sh-lang summary::-webkit-details-marker{display:none}
+.sh-menu{position:absolute;right:0;top:calc(100% + 6px);background:#171b20;border:1px solid #2b333b;border-radius:10px;padding:6px;display:grid;min-width:150px;box-shadow:0 18px 40px rgba(0,0,0,.5);z-index:50}
+.sh-menu a,.sh-menu button{display:block;text-align:left;background:none;border:0;color:#d9d2c6;text-decoration:none;font:500 14px system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding:7px 10px;border-radius:7px;cursor:pointer}
+.sh-menu a:hover,.sh-menu button:hover{background:rgba(255,255,255,.06);color:#fff}
+.sh-menu a[aria-current],.sh-menu button[aria-pressed="true"]{color:#a8ff3e}
+.sh-row{display:none}
+@media(max-width:1279px){.sh-nav{display:none}.sh-lang{margin-left:auto}
+.sh-row{display:flex;gap:6px;overflow-x:auto;padding:0 16px 10px;scrollbar-width:none;max-width:1240px;margin:0 auto;box-sizing:border-box}
+.sh-row::-webkit-scrollbar{display:none}
+.sh-row a{flex:none;border-color:rgba(255,255,255,.14);background:rgba(10,12,14,.6);color:#efe8dc}
+.sh-row a img{width:20px;height:20px}}
+@media(max-width:480px){.sh-in{padding:0 12px;gap:10px;height:60px}.sh-br{font-size:14px}.sh-br img{width:30px;height:30px}.sh-lang summary{padding:6px 9px;font-size:12px}.sh-row{padding:0 12px 10px}}

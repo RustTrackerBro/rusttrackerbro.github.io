@@ -22,6 +22,7 @@
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <link rel="apple-touch-icon" href="/assets/avatar.png">
 <link rel="stylesheet" href="/calc/calc.css?v=1e66f271c3">
+<link rel="stylesheet" href="/assets/site-header.css?v=5789d5ce62">
 <style>
 .watch video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #0c0f12; border: 1px solid var(--line);
   border-radius: 18px; }
@@ -38,11 +39,9 @@
 <body>
 <div class="glow" aria-hidden="true"></div>
 <div class="grid-bg" aria-hidden="true"></div>
+<header class="sh"><div class="sh-in"><a class="sh-br" href="/ru/"><img src="/assets/home/av.webp" alt="" width="38" height="38">RUST TRACKER <span>BRO</span></a><nav class="sh-nav" aria-label="Rust Tracker Bro"><a href="/ru/rustplus/" data-sh="rustplus"><img src="/assets/items/64/smart.alarm.webp" alt="" width="22" height="22"><span>Rust+</span></a><a href="/ru/raid/" data-sh="raid"><img src="/assets/items/64/explosive.timed.webp" alt="" width="22" height="22"><span>Рейд</span></a><a href="/ru/craft/" data-sh="craft"><img src="/assets/items/64/workbench3.webp" alt="" width="22" height="22"><span>Крафт</span></a><a href="/ru/recycle/" data-sh="recycle"><img src="/assets/items/64/scrap.webp" alt="" width="22" height="22"><span>Переработка</span></a><a href="/ru/genes/" data-sh="genes"><img src="/assets/items/64/clone.hemp.webp" alt="" width="22" height="22"><span>Гены</span></a><a href="/ru/cctv/" data-sh="cctv"><img src="/assets/items/64/cctv.camera.webp" alt="" width="22" height="22"><span>Коды камер</span></a><a href="/ru/force-wipe/" data-sh="force-wipe"><img src="/assets/items/64/electric.digitalclock.webp" alt="" width="22" height="22"><span>Глобал вайп</span></a><a href="/ru/pricing/" data-sh="pricing"><img src="/assets/items/64/keycard_red.webp" alt="" width="22" height="22"><span>Тарифы</span></a></nav><details class="sh-lang"><summary><span id="sh-cur">Русский</span> ▾</summary><div class="sh-menu" id="langs"><a href="/video/" hreflang="en" lang="en" data-lang="en">English</a><a href="/ru/video/" hreflang="ru" lang="ru" data-lang="ru" aria-current="true">Русский</a></div></details></div><nav class="sh-row" aria-label="Rust Tracker Bro"><a href="/ru/rustplus/" data-sh="rustplus"><img src="/assets/items/64/smart.alarm.webp" alt="" width="22" height="22"><span>Rust+</span></a><a href="/ru/raid/" data-sh="raid"><img src="/assets/items/64/explosive.timed.webp" alt="" width="22" height="22"><span>Рейд</span></a><a href="/ru/craft/" data-sh="craft"><img src="/assets/items/64/workbench3.webp" alt="" width="22" height="22"><span>Крафт</span></a><a href="/ru/recycle/" data-sh="recycle"><img src="/assets/items/64/scrap.webp" alt="" width="22" height="22"><span>Переработка</span></a><a href="/ru/genes/" data-sh="genes"><img src="/assets/items/64/clone.hemp.webp" alt="" width="22" height="22"><span>Гены</span></a><a href="/ru/cctv/" data-sh="cctv"><img src="/assets/items/64/cctv.camera.webp" alt="" width="22" height="22"><span>Коды камер</span></a><a href="/ru/force-wipe/" data-sh="force-wipe"><img src="/assets/items/64/electric.digitalclock.webp" alt="" width="22" height="22"><span>Глобал вайп</span></a><a href="/ru/pricing/" data-sh="pricing"><img src="/assets/items/64/keycard_red.webp" alt="" width="22" height="22"><span>Тарифы</span></a></nav></header>
 <div class="wrap">
-  <header class="top">
-    <a class="brand" href="/"><img src="/assets/avatar.png" alt="" width="40" height="40"><b>RUST TRACKER <span>BRO</span></b></a>
-    <nav class="langs" id="langs" aria-label="Language"><a href="/video/" hreflang="en" lang="en" data-lang="en">English</a><a href="/ru/video/" hreflang="ru" lang="ru" data-lang="ru" aria-current="true">Русский</a></nav>
-  </header>
+
   <section class="hero">
     <h1>Rust Tracker Bro в деле</h1>
     <p class="lead">Rust Tracker Bro за минуту: уведомления о входе и выходе игроков Rust, онлайн клана, время игры и сна, команды в игровом чате через Rust+, бесплатная подписка и инструменты для Rust.</p>
@@ -51,10 +50,6 @@
     <video id="promo" controls playsinline preload="metadata" width="1280" height="720" poster="/assets/promo/ru_16x9.jpg"
            src="/assets/promo/ru_16x9.mp4" data-tall="/assets/promo/ru_9x16" aria-label="Rust Tracker Bro в деле"></video>
     <a class="other-lang" href="/video/" hreflang="en" lang="en">English version →</a>
-  </section>
-  <section class="panel">
-    <h2>Что в ролике</h2>
-    <ol class="chapters"><li><button type="button" data-t="0"><time datetime="PT0S">0:00</time><span>Заставка</span></button></li><li><button type="button" data-t="4"><time datetime="PT4S">0:04</time><span>Отслеживание игроков: вход и выход, статистика, тепловая карта, окно сна, напарники</span></button></li><li><button type="button" data-t="12"><time datetime="PT12S">0:12</time><span>Кланы: онлайн всего клана в одном сообщении</span></button></li><li><button type="button" data-t="16"><time datetime="PT16S">0:16</time><span>Rust+ и команды в игровом чате: !pop !time !wipe !raid !craft</span></button></li><li><button type="button" data-t="24"><time datetime="PT24S">0:24</time><span>Где погиб тиммейт — квадрат и метка на карте</span></button></li><li><button type="button" data-t="27"><time datetime="PT27S">0:27</time><span>Подписка бесплатно: розыгрыши, приглашения, тег в нике</span></button></li><li><button type="button" data-t="32"><time datetime="PT32S">0:32</time><span>Инструменты: калькулятор рейда, крафт, переработка, гены, гниение базы</span></button></li><li><button type="button" data-t="39"><time datetime="PT39S">0:39</time><span>Начать бесплатно</span></button></li></ol>
   </section>
   <section class="panel cta">
     <h2>Попробуйте в Discord или Telegram</h2>
