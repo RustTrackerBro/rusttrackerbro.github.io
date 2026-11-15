@@ -284,6 +284,23 @@ footer .wrap{display:block}.support{margin-bottom:8px}
 .lmap{aspect-ratio:800/738;background:#0e2233}.lmap .lmf img{display:block;width:100%;height:100%;object-fit:cover}
 .lmcap{position:absolute;left:12px;bottom:12px;background:rgba(10,12,14,.88);border:1px solid var(--line-2,#3a444e);color:var(--bone);font:700 13px var(--body);padding:7px 12px;border-radius:8px}
 .lmlive{position:absolute;right:12px;top:12px;background:rgba(10,12,14,.85);color:#a8ff3e;font:700 11px var(--mono);letter-spacing:2px;padding:5px 9px;border-radius:6px}
+/* Анимация прихода уведомлений (JS добавляет .js; без JS или при reduced-motion — всё видно сразу) */
+.typing{display:none}
+.mock2.js .scr>div{animation:none;opacity:0;transition:opacity .45s}
+.mock2.js .scr>div.cur{opacity:1}
+.mock2.js .ntf{display:none}
+.mock2.js .ntf.in{display:block;animation:ntf-in .42s cubic-bezier(.2,.9,.3,1.2)}
+.mock2.js .dc-m.ntf.in{display:flex}
+@keyframes ntf-in{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+.mock2.js .ntf.in.fresh .tg-b,.mock2.js .ntf.in.fresh .dc-e{box-shadow:0 0 0 1px rgba(168,255,62,.35),0 0 18px rgba(168,255,62,.18);transition:box-shadow 1.2s}
+.mock2.js .typing.on{display:inline-flex;gap:4px;align-self:flex-start;background:#182533;border-radius:12px;padding:8px 10px;margin-top:2px}
+.mock2.js .typing.dct.on{background:#2b2d31;margin-left:38px}
+.typing i{width:6px;height:6px;border-radius:50%;background:#8aa0b4;animation:dot 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes dot{0%,60%,100%{opacity:.3;transform:none}30%{opacity:1;transform:translateY(-3px)}}
+.mock2.js .sw span{animation:none;background:transparent;color:var(--muted);transition:background .3s,color .3s}
+.mock2.js .sw span.cur.t1{background:#2aabee;color:#fff}.mock2.js .sw span.cur.t2{background:#5865f2;color:#fff}
+.sw span{cursor:pointer}
 
 </style>
 <!--ld-->
@@ -298,7 +315,7 @@ footer .wrap{display:block}.support{margin-bottom:8px}
 <section class="hero"><div class="wrap">
 <div><span class="label">Discord · Telegram · Rust+</span><h1><small>Rust Tracker <span class="stk">BRO</span></small>Seu parceiro no Rust</h1>
 <p class="lead">Saiba primeiro quando seus vizinhos entram no jogo. Controle sua base pelo Rust+, receba alarmes e fale com sua equipe — no Discord e no Telegram.</p><div class="btns"><a class="btn btn-dc js-dc" href="/discord/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="18" height="18"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.6 1.3a18.3 18.3 0 0 0-5.6 0L8.6 3a19.7 19.7 0 0 0-4.9 1.4C.6 9 -.3 13.6.1 18.1A19.9 19.9 0 0 0 6.2 21l1.3-2a12.9 12.9 0 0 1-2-1l.5-.4a14.2 14.2 0 0 0 12 0l.5.4c-.6.4-1.3.7-2 1l1.3 2a19.8 19.8 0 0 0 6.1-2.9c.5-5.2-.8-9.7-3.6-13.7ZM8.3 15.3c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Zm7.4 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Z"/></svg><span data-t="btn_discord">Adicionar ao Discord</span></a><a class="btn btn-tg js-tg" href="/telegram/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="18" height="18"><path d="M21.9 4.3 18.6 19.8c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.2-8.3c.4-.4-.1-.6-.6-.2L6 13.4 1.1 11.9c-1.1-.3-1.1-1.1.2-1.6L20.5 2.9c.9-.3 1.7.2 1.4 1.4Z"/></svg><span data-t="btn_tg">Abrir no Telegram</span></a></div></div>
-<div class="mock2"><div class="ph2"><div class="scr"><div class="tg"><div class="tg-top"><span class="tg-back">‹ <i>12</i></span><div class="tg-ttl"><b>RustTrackerBro</b><small>bot</small></div><img src="/assets/home/av.webp" alt=""></div><div class="tg-feed"><div class="tg-m"><div class="tg-b">🟢 <b>Shadow</b> entrou no jogo<br>🖥 <i>servidor ainda não identificado</i><br>🕒 18:42<span class="tg-t">18:42</span></div><div class="tg-r"><span>📊 Estatísticas</span><span>👤 Ficha</span><span>🔕 8 h</span></div><div class="tg-r"><span>🏠 Menu</span></div></div><div class="tg-m"><div class="tg-b">📍 <b>Shadow</b> — servidor identificado<br>🖥 <b>Northwind EU | Main</b> · 412<span class="tg-t">18:43</span></div><div class="tg-r"><span>📊 Estatísticas</span><span>👤 Ficha</span><span>🔕 8 h</span></div><div class="tg-r"><span>📋 Copiar client.connect</span></div><div class="tg-r"><span>🏠 Menu</span></div></div><div class="tg-m"><div class="tg-b">🔄 O servidor não responde — provavelmente um reinício<br>🖥 <i>Iron Valley | US Monthly</i><span class="tg-t">19:25</span></div><div class="tg-r"><span>🔗 Abrir Rust+</span><span>🏠 Menu</span></div></div><div class="tg-m"><div class="tg-b">✅ O servidor voltou a ficar online<br>🖥 <i>Iron Valley | US Monthly</i><span class="tg-t">19:28</span></div><div class="tg-r"><span>🔗 Abrir Rust+</span><span>🏠 Menu</span></div></div><div class="tg-m"><div class="tg-b">🔴 <b>Kira</b> saiu do jogo<br>🖥 <b>Northwind EU | Main</b> · 398<br>🕒 21:14 · ficou online 2 h 6 min<span class="tg-t">21:14</span></div><div class="tg-r"><span>📊 Estatísticas</span><span>👤 Ficha</span><span>🔕 8 h</span></div><div class="tg-r"><span>🏠 Menu</span></div></div><div class="tg-m"><div class="tg-b">✅ A fila do servidor está livre<br>🖥 <i>Northwind EU | Main</i><span class="tg-t">21:32</span></div><div class="tg-r"><span>🔗 Abrir Rust+</span><span>🏠 Menu</span></div></div></div><div class="tg-in"><span class="tg-menu">≡ Menu</span><span class="tg-field">Mensagem</span><span>🎤</span></div></div><div class="dc"><div class="dc-top"><span>←</span><img src="/assets/home/av.webp" alt=""><b>RustTrackerBro ›</b></div><div class="dc-feed"><div class="dc-m"><img src="/assets/home/av.webp" alt=""><div class="dc-body"><div class="dc-h"><b>RustTrackerBro</b><span class="dc-bot">BOT</span><small>Ontem às 18:42</small></div><div class="dc-e">🟢 <b>Shadow</b> entrou no jogo<br>🖥 <i>servidor ainda não identificado</i><br>🕒 18:42</div><div class="dc-r"><span>📊 Estatísticas</span><span>👤 Ficha</span><span>🔕 8 h</span></div><div class="dc-e">📍 <b>Shadow</b> — servidor identificado<br>🖥 <b>Northwind EU | Main</b> · 412</div><div class="dc-r"><span>📊 Estatísticas</span><span>👤 Ficha</span><span>🔕 8 h</span></div></div></div><div class="dc-m"><img src="/assets/home/av.webp" alt=""><div class="dc-body"><div class="dc-h"><b>RustTrackerBro</b><span class="dc-bot">BOT</span><small>Ontem às 21:14</small></div><div class="dc-e">🔴 <b>Kira</b> saiu do jogo<br>🖥 <b>Northwind EU | Main</b> · 398<br>🕒 21:14 · ficou online 2 h 6 min</div><div class="dc-r"><span>📊 Estatísticas</span><span>👤 Ficha</span><span>🔕 8 h</span></div></div></div><div class="dc-m"><img src="/assets/home/av.webp" alt=""><div class="dc-body"><div class="dc-h"><b>RustTrackerBro</b><span class="dc-bot">BOT</span><small>Ontem às 21:32</small></div><div class="dc-e">✅ A fila do servidor está livre<br>🖥 <i>Northwind EU | Main</i></div><div class="dc-r"><span>🔗 Abrir Rust+</span><span>🏠 Menu</span></div></div></div></div><div class="dc-in">＋ <span>Conversar com @RustTrackerBro</span></div></div></div></div><div class="sw"><span class="t1">Telegram</span><span class="t2">Discord</span></div></div>
+<div class="mock2"><div class="ph2"><div class="scr"><div class="tg"><div class="tg-top"><span class="tg-back">‹ <i>12</i></span><div class="tg-ttl"><b>RustTrackerBro</b><small>bot</small></div><img src="/assets/home/av.webp" alt=""></div><div class="tg-feed"><div class="tg-m ntf"><div class="tg-b">🟢 <b>Shadow</b> entrou no jogo<br>🖥 <i>servidor ainda não identificado</i><br>🕒 18:42<span class="tg-t">18:42</span></div><div class="tg-r"><span>📊 Estatísticas</span><span>👤 Ficha</span><span>🔕 8 h</span></div><div class="tg-r"><span>🏠 Menu</span></div></div><div class="tg-m ntf"><div class="tg-b">📍 <b>Shadow</b> — servidor identificado<br>🖥 <b>Northwind EU | Main</b> · 412<span class="tg-t">18:43</span></div><div class="tg-r"><span>📊 Estatísticas</span><span>👤 Ficha</span><span>🔕 8 h</span></div><div class="tg-r"><span>📋 Copiar client.connect</span></div><div class="tg-r"><span>🏠 Menu</span></div></div><div class="tg-m ntf"><div class="tg-b">🔄 O servidor não responde — provavelmente um reinício<br>🖥 <i>Iron Valley | US Monthly</i><span class="tg-t">19:25</span></div><div class="tg-r"><span>🔗 Abrir Rust+</span><span>🏠 Menu</span></div></div><div class="tg-m ntf"><div class="tg-b">✅ O servidor voltou a ficar online<br>🖥 <i>Iron Valley | US Monthly</i><span class="tg-t">19:28</span></div><div class="tg-r"><span>🔗 Abrir Rust+</span><span>🏠 Menu</span></div></div><div class="tg-m ntf"><div class="tg-b">🔴 <b>Kira</b> saiu do jogo<br>🖥 <b>Northwind EU | Main</b> · 398<br>🕒 21:14 · ficou online 2 h 6 min<span class="tg-t">21:14</span></div><div class="tg-r"><span>📊 Estatísticas</span><span>👤 Ficha</span><span>🔕 8 h</span></div><div class="tg-r"><span>🏠 Menu</span></div></div><div class="tg-m ntf"><div class="tg-b">✅ A fila do servidor está livre<br>🖥 <i>Northwind EU | Main</i><span class="tg-t">21:32</span></div><div class="tg-r"><span>🔗 Abrir Rust+</span><span>🏠 Menu</span></div></div><div class="typing"><i></i><i></i><i></i></div></div><div class="tg-in"><span class="tg-menu">≡ Menu</span><span class="tg-field">Mensagem</span><span>🎤</span></div></div><div class="dc"><div class="dc-top"><span>←</span><img src="/assets/home/av.webp" alt=""><b>RustTrackerBro ›</b></div><div class="dc-feed"><div class="dc-m ntf"><img src="/assets/home/av.webp" alt=""><div class="dc-body"><div class="dc-h"><b>RustTrackerBro</b><span class="dc-bot">BOT</span><small>Ontem às 18:42</small></div><div class="dc-e">🟢 <b>Shadow</b> entrou no jogo<br>🖥 <i>servidor ainda não identificado</i><br>🕒 18:42</div><div class="dc-r"><span>📊 Estatísticas</span><span>👤 Ficha</span><span>🔕 8 h</span></div><div class="dc-e">📍 <b>Shadow</b> — servidor identificado<br>🖥 <b>Northwind EU | Main</b> · 412</div><div class="dc-r"><span>📊 Estatísticas</span><span>👤 Ficha</span><span>🔕 8 h</span></div></div></div><div class="dc-m ntf"><img src="/assets/home/av.webp" alt=""><div class="dc-body"><div class="dc-h"><b>RustTrackerBro</b><span class="dc-bot">BOT</span><small>Ontem às 21:14</small></div><div class="dc-e">🔴 <b>Kira</b> saiu do jogo<br>🖥 <b>Northwind EU | Main</b> · 398<br>🕒 21:14 · ficou online 2 h 6 min</div><div class="dc-r"><span>📊 Estatísticas</span><span>👤 Ficha</span><span>🔕 8 h</span></div></div></div><div class="dc-m ntf"><img src="/assets/home/av.webp" alt=""><div class="dc-body"><div class="dc-h"><b>RustTrackerBro</b><span class="dc-bot">BOT</span><small>Ontem às 21:32</small></div><div class="dc-e">✅ A fila do servidor está livre<br>🖥 <i>Northwind EU | Main</i></div><div class="dc-r"><span>🔗 Abrir Rust+</span><span>🏠 Menu</span></div></div></div><div class="typing dct"><i></i><i></i><i></i></div></div><div class="dc-in">＋ <span>Conversar com @RustTrackerBro</span></div></div></div></div><div class="sw"><span class="t1">Telegram</span><span class="t2">Discord</span></div></div>
 </div></section>
 <section class="invite" id="invite" hidden><h2 data-t="invite_title">Você foi convidado</h2><p data-t="invite_gift">🎁 Novos usuários ganham Bro+ de graça</p><p data-t="invite_dc">No Discord:</p><ol><li data-t="invite_step1">Adicione o bot com o botão “Adicionar ao Discord”.</li><li data-t="invite_step2">Abra as DMs com o bot (link “Abrir DMs com o bot” abaixo → “Mensagem”) e envie este comando:</li></ol><div class="code"><code id="start-cmd"></code><button class="copy" id="copy" type="button" data-t="copy">Copiar</button></div><p data-t="invite_tg">No Telegram o convite funciona sozinho — é só tocar em “Abrir no Telegram”.</p><p id="dm-hint" hidden><span data-t="dm_hint">Já adicionou o bot no Discord?</span> <a id="dm-link" href="#" data-t="dm_link">Abrir DMs com o bot →</a></p></section>
 <section class="proof"><div class="wrap"><div class="ctr"><span class="label" style="--lc:var(--rust)">Vídeo</span><h2 class="ttl">Veja como funciona</h2><p class="sub">Um minuto sobre o essencial: rastreamento, Rust+ no bot, comandos no chat do jogo.</p></div><div class="video"><video id="promo" controls playsinline preload="none"></video></div></div></section>
@@ -446,6 +463,45 @@ footer .wrap{display:block}.support{margin-bottom:8px}
       if (navigator.clipboard) navigator.clipboard.writeText("/start " + start).then(done, done); else done();
     });
   }
+  // Телефон на первом экране: уведомления приходят по одному (Telegram, потом Discord, по кругу).
+  (function phoneAnim() {
+    var mock = document.querySelector(".mock2");
+    if (!mock || (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)) return;
+    var screens = [mock.querySelector(".scr .tg"), mock.querySelector(".scr .dc")];
+    var tabs = [mock.querySelector(".sw .t1"), mock.querySelector(".sw .t2")];
+    if (!screens[0] || !screens[1]) return;
+    mock.classList.add("js");
+    var cur = 0, timers = [];
+    function later(fn, ms) { timers.push(setTimeout(fn, ms)); }
+    function play(i) {
+      timers.forEach(clearTimeout); timers = [];
+      cur = i;
+      screens.forEach(function (s, k) { s.classList.toggle("cur", k === i); });
+      tabs.forEach(function (t, k) { if (t) t.classList.toggle("cur", k === i); });
+      var scr = screens[i], items = scr.querySelectorAll(".ntf"), typing = scr.querySelector(".typing");
+      items.forEach(function (n) { n.classList.remove("in", "fresh"); });
+      var t = 500;
+      items.forEach(function (n) {
+        later(function () { if (typing) { typing.classList.add("on"); typing.parentNode.appendChild(typing); } }, t);
+        t += 800;
+        later(function () {
+          if (typing) typing.classList.remove("on");
+          items.forEach(function (m) { m.classList.remove("fresh"); });
+          n.classList.add("in", "fresh");
+        }, t);
+        t += 900;
+      });
+      later(function () { play(1 - i); }, t + 2600);
+    }
+    tabs.forEach(function (tab, k) { if (tab) tab.addEventListener("click", function () { play(k); }); });
+    // Начинаем, когда телефон на экране.
+    if ("IntersectionObserver" in window) {
+      var started = false;
+      new IntersectionObserver(function (es) {
+        if (es[0].isIntersecting && !started) { started = true; play(0); }
+      }).observe(mock);
+    } else { play(0); }
+  })();
 })();
 </script>
 </body>
