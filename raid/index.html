@@ -27,7 +27,7 @@
 <meta name="theme-color" content="#15191e">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <link rel="apple-touch-icon" href="/assets/avatar.png">
-<link rel="stylesheet" href="/calc/calc.css?v=dc22d521d4">
+<link rel="stylesheet" href="/calc/calc.css?v=1e66f271c3">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Rust Raid Calculator", "url": "https://rusttrackerbro.com/raid/", "applicationCategory": "GameApplication", "operatingSystem": "Any", "isAccessibleForFree": true, "inLanguage": "en", "description": "Free Rust raid calculator: how many C4, rockets, satchels, explosive ammo or beancans to break walls, doors, hatches and deployables, and the total sulfur cost of your raid.", "publisher": {"@type": "Organization", "name": "Rust Tracker Bro", "url": "https://rusttrackerbro.com/"}}</script>
 </head>
 <body data-page="raid">
@@ -38,20 +38,23 @@
     <a class="brand" href="/"><img src="/assets/avatar.png" alt="" width="40" height="40"><b>RUST TRACKER <span>BRO</span></b></a>
     <nav class="langs" id="langs" aria-label="Language"><a href="/raid/" hreflang="en" lang="en" data-lang="en" aria-current="true">English</a><a href="/ru/raid/" hreflang="ru" lang="ru" data-lang="ru">Русский</a><a href="/es/raid/" hreflang="es" lang="es" data-lang="es">Español</a><a href="/fr/raid/" hreflang="fr" lang="fr" data-lang="fr">Français</a><a href="/uk/raid/" hreflang="uk" lang="uk" data-lang="uk">Українська</a><a href="/de/raid/" hreflang="de" lang="de" data-lang="de">Deutsch</a><a href="/tr/raid/" hreflang="tr" lang="tr" data-lang="tr">Türkçe</a><a href="/pt/raid/" hreflang="pt" lang="pt" data-lang="pt">Português</a></nav>
   </header>
-  <nav class="tabs" aria-label="Calculators"><a href="/raid/" data-t="nav_raid" aria-current="page">💣 Raid</a><a href="/craft/" data-t="nav_craft">🛠 Craft</a><a href="/recycle/" data-t="nav_recycle">♻️ Recycle</a><a href="/genes/" data-t="nav_genes">🧬 Genes</a></nav>
+  <nav class="tabs" aria-label="Calculators"><a href="/raid/" aria-current="page"><img class="ico" src="/assets/items/64/explosive.timed.webp" alt="" width="22" height="22" loading="lazy" decoding="async"><span data-t="nav_raid">Raid</span></a><a href="/craft/"><img class="ico" src="/assets/items/64/workbench3.webp" alt="" width="22" height="22" loading="lazy" decoding="async"><span data-t="nav_craft">Craft</span></a><a href="/recycle/"><img class="ico" src="/assets/items/64/scrap.webp" alt="" width="22" height="22" loading="lazy" decoding="async"><span data-t="nav_recycle">Recycle</span></a><a href="/genes/"><img class="ico" src="/assets/items/64/clone.hemp.webp" alt="" width="22" height="22" loading="lazy" decoding="async"><span data-t="nav_genes">Genes</span></a></nav>
   <section class="hero">
     <p class="kicker" data-t="raid_kicker">Rust raid calculator</p>
     <h1 data-t="raid_h1">Raid calculator</h1>
     <p class="lead" data-t="raid_lead">How many C4, rockets, satchels or explosive ammo to break any wall, door or deployable — and how much sulfur it costs. Add several targets to plan the whole raid.</p>
   </section>
-  <div class="raid">
-    <section class="panel" aria-labelledby="targets-title">
-      <h2 id="targets-title" data-t="targets">What are you raiding?</h2>
+  <div class="raid raid3">
+    <section class="panel gp tools-col" aria-labelledby="methods-title">
+      <h2 class="gp-h" id="methods-title" data-t="methods">Raid with</h2>
       <p class="muted small" data-t="methods_hint">Tick the explosives you have — “cheapest” and “fast, no overkill” use only them.</p>
-      <div class="chips methods" id="methods"></div>
+      <div class="mlist" id="methods"></div>
+    </section>
+    <section class="panel gp targets-col" aria-labelledby="targets-title">
+      <h2 class="gp-h" id="targets-title" data-t="targets">What are you raiding?</h2>
       <div id="targets"></div>
     </section>
-    <aside class="panel summary" id="summary" aria-live="polite"><h2>Raid total</h2></aside>
+    <aside class="panel gp summary" id="summary" aria-live="polite"><h2>Raid total</h2></aside>
   </div>
   <section class="panel seo-links">
     <h2>Raid cost for every target</h2>
@@ -75,8 +78,8 @@
 <script src="/config.js"></script>
 <script src="/legal/texts.js"></script>
 <script src="/legal/legal.js"></script>
-<script src="/calc/ui.js?v=a83af323d1"></script>
-<script src="/calc/data.js?v=b1848724bb"></script>
-<script src="/calc/calc.js?v=e65c2b8e58"></script>
+<script src="/calc/ui.js?v=a059bd0769"></script>
+<script src="/calc/data.js?v=956953e1a4"></script>
+<script src="/calc/calc.js?v=4a1e77da06"></script>
 </body>
 </html>

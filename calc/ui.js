@@ -119,7 +119,8 @@ window.RTB_CALC_UI = {
   "open_craft": "Open in the craft calculator →",
   "open_recycle": "Open in the recycle calculator →",
   "popular_items": "Popular items",
-  "for_one": "for {n}"
+  "for_one": "for {n}",
+  "charges": "charges"
  },
  "ru": {
   "name": "Русский",
@@ -240,7 +241,8 @@ window.RTB_CALC_UI = {
   "open_craft": "Открыть в калькуляторе крафта →",
   "open_recycle": "Открыть в калькуляторе переработки →",
   "popular_items": "Популярные предметы",
-  "for_one": "на {n} шт."
+  "for_one": "на {n} шт.",
+  "charges": "заряды"
  },
  "uk": {
   "name": "Українська",
@@ -361,7 +363,8 @@ window.RTB_CALC_UI = {
   "open_craft": "Відкрити в калькуляторі крафту →",
   "open_recycle": "Відкрити в калькуляторі переробки →",
   "popular_items": "Популярні предмети",
-  "for_one": "на {n} шт."
+  "for_one": "на {n} шт.",
+  "charges": "заряди"
  },
  "es": {
   "name": "Español",
@@ -482,7 +485,8 @@ window.RTB_CALC_UI = {
   "open_craft": "Abrir en la calculadora de crafteo →",
   "open_recycle": "Abrir en la calculadora de reciclaje →",
   "popular_items": "Objetos populares",
-  "for_one": "para {n}"
+  "for_one": "para {n}",
+  "charges": "cargas"
  },
  "fr": {
   "name": "Français",
@@ -603,7 +607,8 @@ window.RTB_CALC_UI = {
   "open_craft": "Ouvrir dans le calculateur de craft →",
   "open_recycle": "Ouvrir dans le calculateur de recyclage →",
   "popular_items": "Objets populaires",
-  "for_one": "pour {n}"
+  "for_one": "pour {n}",
+  "charges": "charges"
  },
  "de": {
   "name": "Deutsch",
@@ -724,7 +729,8 @@ window.RTB_CALC_UI = {
   "open_craft": "Im Crafting-Rechner öffnen →",
   "open_recycle": "Im Recycling-Rechner öffnen →",
   "popular_items": "Beliebte Gegenstände",
-  "for_one": "für {n}"
+  "for_one": "für {n}",
+  "charges": "Ladungen"
  },
  "tr": {
   "name": "Türkçe",
@@ -845,7 +851,8 @@ window.RTB_CALC_UI = {
   "open_craft": "Üretim hesaplayıcıda aç →",
   "open_recycle": "Geri dönüşüm hesaplayıcıda aç →",
   "popular_items": "Popüler eşyalar",
-  "for_one": "{n} adet için"
+  "for_one": "{n} adet için",
+  "charges": "patlayıcı"
  },
  "pt": {
   "name": "Português",
@@ -966,6 +973,7 @@ window.RTB_CALC_UI = {
   "open_craft": "Abrir na calculadora de craft →",
   "open_recycle": "Abrir na calculadora de reciclagem →",
   "popular_items": "Itens populares",
-  "for_one": "para {n}"
+  "for_one": "para {n}",
+  "charges": "cargas"
  }
 };

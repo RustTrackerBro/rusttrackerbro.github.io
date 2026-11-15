@@ -29,6 +29,17 @@
     return vars ? s.replace(/\{(\w+)\}/g, function (m, k) { return vars[k] != null ? vars[k] : m; }) : s;
   }
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  // Картинки предметов из игры: /assets/items/<64|128>/<имя>.webp (tools/site_icons.py); нет картинки — пусто.
+  var ICONS = new Set((D && D.icons) || []);
+  function icon(name, size) {
+    if (!name || !ICONS.has(name)) return null;
+    var img = document.createElement("img");
+    img.className = "ico"; img.alt = ""; img.loading = "lazy"; img.decoding = "async";
+    img.width = img.height = size || 28;
+    img.src = "/assets/items/" + ((size || 28) > 48 ? 128 : 64) + "/" + name + ".webp";
+    return img;
+  }
+  function withIcon(node, name, size) { var i = icon(name, size); if (i) node.insertBefore(i, node.firstChild); return node; }
   function clear(node) { while (node.firstChild) node.removeChild(node.firstChild); return node; }
   function fmt(v) {
     var r = Math.abs(v - Math.round(v)) < 0.05 ? Math.round(v) : Math.round(v * 10) / 10;
@@ -120,7 +131,7 @@
     box.appendChild(h);
     var ul = el("ul", "list");
     rows.forEach(function (r) {
-      var li = el("li"), left = el("span", null, r[0]);
+      var li = el("li"), left = withIcon(el("span", null, r[0]), r[3]);
       if (r[2]) { left.appendChild(el("br")); left.appendChild(el("small", "muted", r[2])); }  // пояснение под названием
       li.appendChild(left); li.appendChild(el("b", null, r[1])); ul.appendChild(li);
     });
@@ -160,7 +171,7 @@
       state.found.forEach(function (sn, i) {
         var li = el("li"); li.setAttribute("role", "option"); li.id = "opt-" + i;
         li.setAttribute("aria-selected", String(i === state.active));
-        li.appendChild(el("span", null, itemName(sn)));
+        li.appendChild(withIcon(el("span", null, itemName(sn)), sn, 28));
         if ((lang === "ru" || lang === "uk") && item(sn).ru) li.appendChild(el("small", null, item(sn).en));
         li.addEventListener("mousedown", function (e) { e.preventDefault(); choose(sn); });
         results.appendChild(li);
@@ -192,7 +203,7 @@
       clear(chips);
       chips.appendChild(el("span", "lbl", t("popular") + ":"));
       POPULAR[mode].filter(function (sn) { return item(sn) && item(sn)[mode]; }).forEach(function (sn) {
-        var b = el("button", "chip", itemName(sn)); b.type = "button";
+        var b = withIcon(el("button", "chip", itemName(sn)), sn, 22); b.type = "button";
         b.setAttribute("aria-pressed", String(sn === state.sn));
         b.addEventListener("click", function () { choose(sn); drawChips(); });
         chips.appendChild(b);
@@ -204,7 +215,7 @@
       if (!state.sn) { out.appendChild(el("p", "muted", t("pick"))); return; }
       var head = el("div", "result-head"), tags = el("div", "tags");
       var title = el("h2", null, itemName(state.sn) + " × " + fmt(mode === "c" ? craftCalc(state.sn, state.qty).made : state.qty));
-      head.appendChild(title); head.appendChild(tags); out.appendChild(head);
+      withIcon(title, state.sn, 56); head.appendChild(title); head.appendChild(tags); out.appendChild(head);
       var other = mode === "c" ? "r" : "c", otherHref = (mode === "c" ? "../recycle/" : "../craft/") + "?item=" + encodeURIComponent(state.sn) + (state.qty > 1 ? "&qty=" + state.qty : "");
       if (mode === "c") {
         var c = craftCalc(state.sn, state.qty);
@@ -212,9 +223,9 @@
         tags.appendChild(el("span", "tag", "⏱ " + duration(c.seconds)));
         if (c.per > 1) tags.appendChild(el("span", "tag neon", t("batch", { n: c.per })));
         var cols = el("div", "cols");
-        cols.appendChild(listBox(t("need"), null, c.parts.map(function (p) { return [label(p[0]), fmt(p[1])]; })));
+        cols.appendChild(listBox(t("need"), null, c.parts.map(function (p) { return [label(p[0]), fmt(p[1]), null, p[0]]; })));
         if (c.raw) {
-          var rows = Object.keys(c.raw).map(function (s) { return [label(s), fmt(c.raw[s])]; });
+          var rows = Object.keys(c.raw).map(function (s) { return [label(s), fmt(c.raw[s]), null, s]; });
           cols.appendChild(listBox(t("raw"), t("raw_note"), rows));
         }
         out.appendChild(cols);
@@ -224,7 +235,7 @@
           var rows = item(state.sn).r.map(function (p) {
             var v = p[1] * pair[1] * state.qty;
             if (Math.abs(v - Math.round(v)) >= 0.05) fractional = true;
-            return [label(p[0]), fmt(v)];
+            return [label(p[0]), fmt(v), null, p[0]];
           });
           cols2.appendChild(listBox(t(pair[0]), null, rows));
         });
@@ -374,10 +385,11 @@
 
     function drawChips() {
       clear(chipsBox);
-      chipsBox.appendChild(el("span", "lbl", t("methods") + ":"));
       R.selectable.forEach(function (m) {
-        var on = methods.indexOf(m) >= 0, b = el("button", "chip", (on ? "✓ " : "") + name("m", m));
+        var on = methods.indexOf(m) >= 0, b = el("button", "mrow");
         b.type = "button"; b.setAttribute("aria-pressed", String(on));
+        b.appendChild(withIcon(el("span", "mname", name("m", m)), R.icons.m[m], 28));
+        b.appendChild(el("span", "mcost", fmt(R.cost[m].sulfur || 0) + " " + sulfurWord()));
         b.addEventListener("click", function () {
           if (on && methods.length === 1) { b.classList.add("shake"); setTimeout(function () { b.classList.remove("shake"); }, 400); return; }
           if (on) methods.splice(methods.indexOf(m), 1); else methods.push(m);
@@ -389,6 +401,18 @@
       reset.addEventListener("click", function () { methods = R.defaultSelected.slice(); redraw(); });
       chipsBox.appendChild(reset);
     }
+    // Взрывчатка списком с картинками (самая дорогая первой), справа — сера.
+    function partsList(parts, cls) {
+      var ul = el("ul", "parts" + (cls ? " " + cls : ""));
+      Object.keys(parts).sort(function (a, b) { return (R.cost[b].sulfur || 0) - (R.cost[a].sulfur || 0); }).forEach(function (m) {
+        var li = el("li");
+        li.appendChild(withIcon(el("span", null, fmt(parts[m]) + " × " + name("m", m)), R.icons.m[m], 32));
+        li.appendChild(el("b", null, fmt((R.cost[m].sulfur || 0) * parts[m])));
+        ul.appendChild(li);
+      });
+      return ul;
+    }
+    function catName(cat) { return name("c", cat).replace(/^[^\p{L}\p{N}]+/u, ""); }
 
     function planLine(cls, label, parts) {
       var p = el("p", "plan " + cls);
@@ -408,7 +432,8 @@
         var n = tg.counts[m];
         if (!n || (R.cost[m].sulfur && methods.indexOf(m) < 0)) return;
         rows++;
-        var tr = el("tr", m === single ? "best" : null), cell = el("td", null, (m === single ? "★ " : "") + R.emoji[m] + " " + name("m", m));
+        var tr = el("tr", m === single ? "best" : null), cell = el("td");
+        cell.appendChild(withIcon(el("span", null, (m === single ? "★ " : "") + name("m", m)), R.icons.m[m], 28));
         if (R.dud[m]) cell.appendChild(el("small", "muted", " · " + t("dud", { n: R.dud[m] })));
         var over = RAID.overkill(tg, m);
         if (over != null && over >= R.overkillShown) cell.appendChild(el("small", "over", " · " + t("over", { n: Math.round(over * 100) })));
@@ -434,13 +459,18 @@
       clear(list);
       R.categories.forEach(function (cat) {
         var sec = el("div", "cat");
-        sec.appendChild(el("h3", null, name("c", cat)));
+        sec.appendChild(el("h3", null, catName(cat)));
         R.targets.filter(function (tg) { return tg.cat === cat; }).forEach(function (tg) {
           var row = el("div", "trow" + (open[tg.k] ? " open" : "")), line = el("div", "tline");
           var btn = el("button", "tname"); btn.type = "button";
           btn.setAttribute("aria-expanded", String(!!open[tg.k]));
-          btn.appendChild(el("span", null, name("t", tg.k)));
-          btn.appendChild(el("small", null, t("hp", { n: fmt(tg.hp) })));
+          var tname = el("span", "tn"); tname.appendChild(el("span", null, name("t", tg.k)));
+          tname.appendChild(el("small", null, t("hp", { n: fmt(tg.hp) })));
+          var ti = icon(R.icons.t[tg.k], 34);
+          if (ti) btn.appendChild(ti);
+          btn.appendChild(tname);
+          var bestTg = RAID.best(tg, methods);
+          btn.appendChild(el("span", "tcost", Object.keys(bestTg).length ? fmt(RAID.sulfur(bestTg)) : "—"));
           btn.addEventListener("click", function () { open[tg.k] = !open[tg.k]; drawList(); });
           var q = basket[tg.k] || 0, step = el("div", "step" + (q ? " on" : ""));
           var minus = el("button", null, "−"), plus = el("button", null, "+"), out = el("output", null, String(q));
@@ -478,14 +508,21 @@
       if (missing.length) sum.appendChild(el("p", "note warn", t("missing", { names: missing.map(function (k) { return name("t", k); }).join(", ") })));
       var cheap = total(keys, RAID.best), fast = total(keys, RAID.fastest);
       if (Object.keys(cheap).length) {
+        var res0 = {};
+        Object.keys(cheap).forEach(function (m) { Object.keys(R.cost[m]).forEach(function (r) { res0[r] = (res0[r] || 0) + R.cost[m][r] * cheap[m]; }); });
+        var stats = el("div", "stats");
+        [[fmt(RAID.sulfur(cheap)), t("sulfur"), "gold"], [fmt(Math.ceil((res0.lgf || 0) - 1e-6)), name("r", "lgf"), ""],
+         [fmt(Object.keys(cheap).reduce(function (a, m) { return a + cheap[m]; }, 0)), t("charges"), ""]].forEach(function (s) {
+          var box = el("div", "stat " + s[2]); box.appendChild(el("b", null, s[0])); box.appendChild(el("small", null, s[1])); stats.appendChild(box);
+        });
+        sum.appendChild(stats);
         sum.appendChild(el("div", "sub", "💡 " + t("cheapest")));
-        sum.appendChild(el("div", "big", fmt(RAID.sulfur(cheap)) + " " + sulfurWord()));
-        sum.appendChild(el("div", "sub", partsText(cheap)));
+        sum.appendChild(partsList(cheap, "cheap"));
         if (key2(fast) !== key2(cheap)) {
           var f = el("div", "fastline");
           f.appendChild(el("div", "sub", "⚡ " + t("fast")));
           f.appendChild(el("div", "mid", fmt(RAID.sulfur(fast)) + " " + sulfurWord()));
-          f.appendChild(el("div", "sub", partsText(fast)));
+          f.appendChild(partsList(fast));
           sum.appendChild(f);
         }
         var res = {};
@@ -494,14 +531,14 @@
         });
         var rows = R.resources.filter(function (r) { return res[r]; }).map(function (r) {
           var note = r === "charcoal" ? t("mixing", { n: fmt(res[r] * R.mixingCharcoal) }) : null;
-          return [cap(name("r", r)), fmt(Math.ceil(res[r] - 1e-6)), note];
+          return [cap(name("r", r)), fmt(Math.ceil(res[r] - 1e-6)), note, R.icons.r[r]];
         });
         sum.appendChild(listBox(t("resources"), null, rows));
       }
       var only = [];
       R.selectable.filter(function (m) { return methods.indexOf(m) >= 0; }).forEach(function (m) {
         var n = 0, ok = keys.every(function (k) { var c = byKey[k].counts[m]; n += (c || 0) * basket[k]; return !!c; });
-        if (ok && n) only.push([R.emoji[m] + " " + name("m", m), fmt(n) + " · " + fmt(R.cost[m].sulfur * n)]);
+        if (ok && n) only.push([name("m", m), fmt(n) + " · " + fmt(R.cost[m].sulfur * n), null, R.icons.m[m]]);
       });
       if (only.length > 1) sum.appendChild(listBox(t("only_title"), sulfurWord(), only));
       var actions = el("div", "actions"), reset = el("button", "link-btn", t("reset")); reset.type = "button";
@@ -670,7 +707,10 @@
 
   function render() {
     document.documentElement.lang = lang;
-    document.querySelectorAll("[data-t]").forEach(function (node) { node.textContent = t(node.getAttribute("data-t")); });
+    document.querySelectorAll("[data-t]").forEach(function (node) {
+      var key = node.getAttribute("data-t"), text = t(key);
+      node.textContent = key.indexOf("nav_") === 0 ? text.replace(/^[^\p{L}\p{N}]+/u, "") : text;  // у вкладок — иконка
+    });
     document.querySelectorAll("#langs a").forEach(function (a) {
       if (a.dataset.lang === lang) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current");
     });

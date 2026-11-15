@@ -27,7 +27,7 @@
 <meta name="theme-color" content="#15191e">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <link rel="apple-touch-icon" href="/assets/avatar.png">
-<link rel="stylesheet" href="/calc/calc.css?v=dc22d521d4">
+<link rel="stylesheet" href="/calc/calc.css?v=1e66f271c3">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Калькулятор рейду Rust", "url": "https://rusttrackerbro.com/uk/raid/", "applicationCategory": "GameApplication", "operatingSystem": "Any", "isAccessibleForFree": true, "inLanguage": "uk", "description": "Скільки C4, ракет, сумок чи розривних набоїв треба на будь-яку стіну, двері чи будову — і скільки це сірки. Додайте кілька цілей і порахуйте весь рейд.", "publisher": {"@type": "Organization", "name": "Rust Tracker Bro", "url": "https://rusttrackerbro.com/"}}</script>
 </head>
 <body data-page="raid">
@@ -38,20 +38,23 @@
     <a class="brand" href="/"><img src="/assets/avatar.png" alt="" width="40" height="40"><b>RUST TRACKER <span>BRO</span></b></a>
     <nav class="langs" id="langs" aria-label="Language"><a href="/raid/" hreflang="en" lang="en" data-lang="en">English</a><a href="/ru/raid/" hreflang="ru" lang="ru" data-lang="ru">Русский</a><a href="/es/raid/" hreflang="es" lang="es" data-lang="es">Español</a><a href="/fr/raid/" hreflang="fr" lang="fr" data-lang="fr">Français</a><a href="/uk/raid/" hreflang="uk" lang="uk" data-lang="uk" aria-current="true">Українська</a><a href="/de/raid/" hreflang="de" lang="de" data-lang="de">Deutsch</a><a href="/tr/raid/" hreflang="tr" lang="tr" data-lang="tr">Türkçe</a><a href="/pt/raid/" hreflang="pt" lang="pt" data-lang="pt">Português</a></nav>
   </header>
-  <nav class="tabs" aria-label="Calculators"><a href="/uk/raid/" data-t="nav_raid" aria-current="page">💣 Рейд</a><a href="/uk/craft/" data-t="nav_craft">🛠 Крафт</a><a href="/uk/recycle/" data-t="nav_recycle">♻️ Переробка</a><a href="/uk/genes/" data-t="nav_genes">🧬 Гени</a></nav>
+  <nav class="tabs" aria-label="Calculators"><a href="/uk/raid/" aria-current="page"><img class="ico" src="/assets/items/64/explosive.timed.webp" alt="" width="22" height="22" loading="lazy" decoding="async"><span data-t="nav_raid">Рейд</span></a><a href="/uk/craft/"><img class="ico" src="/assets/items/64/workbench3.webp" alt="" width="22" height="22" loading="lazy" decoding="async"><span data-t="nav_craft">Крафт</span></a><a href="/uk/recycle/"><img class="ico" src="/assets/items/64/scrap.webp" alt="" width="22" height="22" loading="lazy" decoding="async"><span data-t="nav_recycle">Переробка</span></a><a href="/uk/genes/"><img class="ico" src="/assets/items/64/clone.hemp.webp" alt="" width="22" height="22" loading="lazy" decoding="async"><span data-t="nav_genes">Гени</span></a></nav>
   <section class="hero">
     <p class="kicker" data-t="raid_kicker">Калькулятор рейду Rust</p>
     <h1 data-t="raid_h1">Калькулятор рейду</h1>
     <p class="lead" data-t="raid_lead">Скільки C4, ракет, сумок чи розривних набоїв треба на будь-яку стіну, двері чи будову — і скільки це сірки. Додайте кілька цілей і порахуйте весь рейд.</p>
   </section>
-  <div class="raid">
-    <section class="panel" aria-labelledby="targets-title">
-      <h2 id="targets-title" data-t="targets">Що ламаємо?</h2>
+  <div class="raid raid3">
+    <section class="panel gp tools-col" aria-labelledby="methods-title">
+      <h2 class="gp-h" id="methods-title" data-t="methods">Чим рейдимо</h2>
       <p class="muted small" data-t="methods_hint">Позначте вибухівку, яка у вас є, — «найдешевше» і «швидко, без перебору» порахую тільки з неї.</p>
-      <div class="chips methods" id="methods"></div>
+      <div class="mlist" id="methods"></div>
+    </section>
+    <section class="panel gp targets-col" aria-labelledby="targets-title">
+      <h2 class="gp-h" id="targets-title" data-t="targets">Що ламаємо?</h2>
       <div id="targets"></div>
     </section>
-    <aside class="panel summary" id="summary" aria-live="polite"><h2>Підсумок рейду</h2></aside>
+    <aside class="panel gp summary" id="summary" aria-live="polite"><h2>Підсумок рейду</h2></aside>
   </div>
   <section class="panel seo-links">
     <h2>Вартість рейду за цілями</h2>
@@ -75,8 +78,8 @@
 <script src="/config.js"></script>
 <script src="/legal/texts.js"></script>
 <script src="/legal/legal.js"></script>
-<script src="/calc/ui.js?v=a83af323d1"></script>
-<script src="/calc/data.js?v=b1848724bb"></script>
-<script src="/calc/calc.js?v=e65c2b8e58"></script>
+<script src="/calc/ui.js?v=a059bd0769"></script>
+<script src="/calc/data.js?v=956953e1a4"></script>
+<script src="/calc/calc.js?v=4a1e77da06"></script>
 </body>
 </html>
