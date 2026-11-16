@@ -11,7 +11,7 @@
 <meta property="og:site_name" content="Rust Tracker Bro">
 <meta property="og:title" content="Cómo conectar Rust+ a Rust Tracker Bro — guía paso a paso">
 <meta property="og:description" content="Conecta Rust+ en unos 2 minutos en un ordenador con Chrome: instala la extensión, entra con Steam, envía el token al bot y vincula tu servidor en el juego (ESC → Rust+ → Pair with server).">
-<meta property="og:image" content="https://rusttrackerbro.com/assets/og.jpg">
+<meta property="og:image" content="https://rusttrackerbro.com/assets/og/rustplus-es.jpg">
 <meta property="og:url" content="https://rusttrackerbro.com/es/rustplus/">
 <link rel="canonical" href="https://rusttrackerbro.com/es/rustplus/">
 <link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/rustplus/">
@@ -27,7 +27,7 @@
 <meta name="theme-color" content="#15191e">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <link rel="apple-touch-icon" href="/assets/avatar.png">
-<link rel="stylesheet" href="/calc/calc.css?v=1e66f271c3">
+<link rel="stylesheet" href="/calc/calc.css?v=1d45376e3b">
 <link rel="stylesheet" href="/assets/site-header.css?v=5789d5ce62">
 <style>
 /* «Как подключить Rust+» (09.11.2026): шаги — карточки (текст слева, схема справа; на телефоне — друг под другом),
@@ -85,12 +85,12 @@
 <header class="sh"><div class="sh-in"><a class="sh-br" href="/es/"><img src="/assets/home/av.webp" alt="" width="38" height="38">RUST TRACKER <span>BRO</span></a><nav class="sh-nav" aria-label="Rust Tracker Bro"><a href="/es/rustplus/" data-sh="rustplus" aria-current="page"><img src="/assets/items/64/smart.alarm.webp" alt="" width="22" height="22"><span>Rust+</span></a><a href="/es/raid/" data-sh="raid"><img src="/assets/items/64/explosive.timed.webp" alt="" width="22" height="22"><span>Raid</span></a><a href="/es/craft/" data-sh="craft"><img src="/assets/items/64/workbench3.webp" alt="" width="22" height="22"><span>Crafteo</span></a><a href="/es/recycle/" data-sh="recycle"><img src="/assets/items/64/scrap.webp" alt="" width="22" height="22"><span>Reciclaje</span></a><a href="/es/genes/" data-sh="genes"><img src="/assets/items/64/clone.hemp.webp" alt="" width="22" height="22"><span>Genes</span></a><a href="/es/cctv/" data-sh="cctv"><img src="/assets/items/64/cctv.camera.webp" alt="" width="22" height="22"><span>Códigos CCTV</span></a><a href="/es/force-wipe/" data-sh="force-wipe"><img src="/assets/items/64/electric.digitalclock.webp" alt="" width="22" height="22"><span>Wipe global</span></a><a href="/es/pricing/" data-sh="pricing"><img src="/assets/items/64/keycard_red.webp" alt="" width="22" height="22"><span>Precios</span></a></nav><details class="sh-lang"><summary><span id="sh-cur">Español</span> ▾</summary><div class="sh-menu" id="langs"><a href="/rustplus/" hreflang="en" lang="en" data-lang="en">English</a><a href="/ru/rustplus/" hreflang="ru" lang="ru" data-lang="ru">Русский</a><a href="/es/rustplus/" hreflang="es" lang="es" data-lang="es" aria-current="true">Español</a><a href="/fr/rustplus/" hreflang="fr" lang="fr" data-lang="fr">Français</a><a href="/uk/rustplus/" hreflang="uk" lang="uk" data-lang="uk">Українська</a><a href="/de/rustplus/" hreflang="de" lang="de" data-lang="de">Deutsch</a><a href="/tr/rustplus/" hreflang="tr" lang="tr" data-lang="tr">Türkçe</a><a href="/pt/rustplus/" hreflang="pt" lang="pt" data-lang="pt">Português</a></div></details></div><nav class="sh-row" aria-label="Rust Tracker Bro"><a href="/es/rustplus/" data-sh="rustplus" aria-current="page"><img src="/assets/items/64/smart.alarm.webp" alt="" width="22" height="22"><span>Rust+</span></a><a href="/es/raid/" data-sh="raid"><img src="/assets/items/64/explosive.timed.webp" alt="" width="22" height="22"><span>Raid</span></a><a href="/es/craft/" data-sh="craft"><img src="/assets/items/64/workbench3.webp" alt="" width="22" height="22"><span>Crafteo</span></a><a href="/es/recycle/" data-sh="recycle"><img src="/assets/items/64/scrap.webp" alt="" width="22" height="22"><span>Reciclaje</span></a><a href="/es/genes/" data-sh="genes"><img src="/assets/items/64/clone.hemp.webp" alt="" width="22" height="22"><span>Genes</span></a><a href="/es/cctv/" data-sh="cctv"><img src="/assets/items/64/cctv.camera.webp" alt="" width="22" height="22"><span>Códigos CCTV</span></a><a href="/es/force-wipe/" data-sh="force-wipe"><img src="/assets/items/64/electric.digitalclock.webp" alt="" width="22" height="22"><span>Wipe global</span></a><a href="/es/pricing/" data-sh="pricing"><img src="/assets/items/64/keycard_red.webp" alt="" width="22" height="22"><span>Precios</span></a></nav><script src="/assets/site-nav.js?v=c55816b3c7" defer></script></header>
 <div class="wrap">
 
-  <section class="hero">
+  <section class="hero strip strip-rustplus">
     <h1>Cómo conectar Rust+</h1>
     <p class="lead">Necesitas un ordenador con el navegador Chrome. Rust+ es la app oficial de Rust; con ella el bot responde a comandos en el chat del juego y envía alarmas, muertes y el mantenimiento del armario.</p>
     <div class="rp-actions">
-      <a class="primary" href="https://chromewebstore.google.com/detail/lkimonbepjmccanklnagpdblblbnhckd" rel="noopener" target="_blank">🧩 Extensión de Chrome</a>
-      <a class="ghost" href="https://companion-rust.facepunch.com/login" rel="noopener" target="_blank">🔑 Página de acceso de Rust+</a>
+      <a class="primary" href="https://chromewebstore.google.com/detail/lkimonbepjmccanklnagpdblblbnhckd" rel="noopener" target="_blank"><img class="bi" src="/assets/items/64/computerstation.webp" alt="" width="20" height="20">Extensión de Chrome</a>
+      <a class="ghost" href="https://companion-rust.facepunch.com/login" rel="noopener" target="_blank"><img class="bi" src="/assets/items/64/keycard_green.webp" alt="" width="20" height="20">Página de acceso de Rust+</a>
     </div>
   </section>
   <section class="panel">
@@ -110,7 +110,6 @@
     </div>
   </section>
   <footer>
-    <a class="home" href="/" data-t="home">← Rust Tracker Bro</a>
     <div class="data-note" id="data-note"></div>
     <div class="legal-links" data-base="/legal/"></div>
     <div class="legal" data-t="legal">Rust es una marca de Facepunch Studios. Este proyecto no está afiliado a Facepunch.</div>

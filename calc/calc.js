@@ -559,6 +559,10 @@
     // ?p=GGYYXH:2,GYGYHH — чтобы делиться набором
     var fromUrl = G.parse((params.get("p") || "").replace(/:/g, " x").replace(/,/g, "\n"));
     plants = fromUrl.plants;
+    // Первое открытие без своего набора — пример с готовым расчётом (16.11.2026); «Очистить» убирает его.
+    var example = false, seen = null;
+    try { seen = localStorage.getItem("rtb_genes_seen"); localStorage.setItem("rtb_genes_seen", "1"); } catch (e) {}
+    if (!plants.length && !seen) { plants = G.parse("GGYYYH\nYYGGHH\nGYYHHW\nXGYYGH\nGGGYYH").plants; example = true; }
 
     function geneSpan(g) {
       var wrap = el("span", "genes");
@@ -582,7 +586,7 @@
       plants = order.slice(0, G.MAX_KINDS).map(function (g) { return { genes: g, count: merged[g] }; });
       return order.length > G.MAX_KINDS;
     }
-    function changed() { out.hidden = true; lastAdvice = null; drawList(); saveUrl(); }
+    function changed() { if (example) { example = false; note(""); } out.hidden = true; lastAdvice = null; drawList(); saveUrl(); }
 
     function drawPad() {
       clear(pad);
@@ -686,7 +690,7 @@
     }
     document.getElementById("gadd").addEventListener("click", addFromInput);
     input.addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); addFromInput(); } });
-    document.getElementById("gclear").addEventListener("click", function () { plants = []; typed = ""; note(""); drawPad(); changed(); });
+    document.getElementById("gclear").addEventListener("click", function () { plants = []; typed = ""; example = false; note(""); drawPad(); changed(); });
     document.getElementById("gcalc").addEventListener("click", function () {
       if (total() < 2) { note(t("g_need_two")); return; }
       note("");
@@ -698,6 +702,8 @@
     return function render() {
       input.placeholder = t("g_paste");
       drawPad(); drawList();
+      if (example && !lastAdvice && total() >= 2) lastAdvice = G.advise(plants);
+      if (example) note(t("g_example"));
       if (lastAdvice) drawAdvice(lastAdvice);
     };
   }

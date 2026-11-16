@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Rust Tracker Bro">
 <meta property="og:title" content="Rust Tracker Bro — Pricing">
 <meta property="og:description" content="Niveaux et prix de Rust Tracker Bro : Free, Bro+ et Bro Max — alertes joueurs, présence du clan, fenêtre de sommeil, Rust+. Paiement unique, sans renouvellement automatique.">
-<meta property="og:image" content="https://rusttrackerbro.com/assets/og.jpg">
+<meta property="og:image" content="https://rusttrackerbro.com/assets/og/pricing-fr.jpg">
 <meta property="og:url" content="https://rusttrackerbro.com/fr/pricing/">
 <link rel="canonical" href="https://rusttrackerbro.com/fr/pricing/">
 <!--hreflang-->
@@ -71,6 +71,12 @@
   .langs button[aria-pressed="true"] { color: var(--bone); border-color: var(--neon); }
 
   .hero { text-align: center; padding-block: 26px 10px; display: grid; justify-items: center; gap: 12px; }
+  /* Фото-полоса за заголовком (16.11.2026), как у страниц разделов. */
+  .hero.strip { position: relative; margin-top: 14px; padding: 42px 20px 30px; border-radius: 16px; overflow: hidden; border: 1px solid var(--line);
+    background: url(/assets/home/scene_dome.webp) center 40% / cover no-repeat, #161a1f; }
+  .hero.strip::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,18,21,.6), rgba(15,18,21,.93)); }
+  .hero.strip > * { position: relative; }
+  @media (max-width: 560px) { .hero.strip { padding: 28px 14px 20px; } }
   .kicker { color: var(--neon); font-weight: 700; font-size: 14px; letter-spacing: .14em; text-transform: uppercase; display: flex; align-items: center; gap: 9px; margin: 0; }
   .kicker::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--neon); animation: ping 2s infinite; }
   @keyframes ping { 0% { box-shadow: 0 0 0 0 rgba(168,255,62,.7); } 70%, 100% { box-shadow: 0 0 0 10px rgba(168,255,62,0); } }
@@ -137,7 +143,7 @@
   .buy svg { width: 20px; height: 20px; flex: none; }
   .buy:hover { transform: translateY(-2px); filter: brightness(1.08); box-shadow: 0 0 0 2px var(--neon), 0 10px 24px rgba(168,255,62,.15); }
   .buy.ghost { background: transparent; border: 1px solid var(--line-2); box-shadow: none; }
-  .card.hot .buy { background: linear-gradient(135deg, var(--rust-hot), var(--rust)); color: #1a0f08; box-shadow: 0 8px 22px rgba(216,105,42,.4); }
+  /* Кнопки покупки — все синие (Discord), Bro+ выделяется рамкой карточки (16.11.2026) */
   :focus-visible { outline: 3px solid var(--neon); outline-offset: 3px; }
 
   .section { margin-top: 64px; }
@@ -168,6 +174,7 @@
   .legal-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 14px; font-size: 13px; margin-top: 8px; }
   .legal-links a { color: #9aa3ab; text-decoration: none; font-weight: 400; }
   .legal-links a:hover { color: #f08a4b; text-decoration: underline; }
+  .legal-links .dc-ico{vertical-align:-2px;margin-right:5px;color:#8a94ff}
 
   @media (max-width: 600px) { .card { flex-basis: 100%; } }
   @media (max-width: 560px) {
@@ -193,7 +200,7 @@
 <!--/header-->
 <div class="wrap">
 
-  <section class="hero">
+  <section class="hero strip">
     <p class="kicker" data-t="kicker">abonnement · paiement unique</p>
     <h1 data-t="title">Tarifs</h1>
     <p class="lead" data-t="lead">Choisis un niveau et une durée. Le paiement se fait dans le bot Discord en deux clics, sans renouvellement automatique : tu paies une fois et tu en profites jusqu&#x27;à la fin.</p>
@@ -228,7 +235,6 @@
   </section>
 
   <footer>
-    <a href="/fr/" data-home data-t="back">← Accueil</a>
     <div class="note" data-t="note">Prix en dollars américains. Les limites et les prix peuvent changer — le bot affiche toujours les valeurs actuelles.</div>
     <div class="legal-links" data-base="../legal/"></div>
     <div class="legal" data-t="legal">Rust est une marque de Facepunch Studios. Ce projet n&#x27;est pas affilié à Facepunch.</div>

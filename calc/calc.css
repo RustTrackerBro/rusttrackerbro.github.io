@@ -190,6 +190,7 @@ footer a.home { color: var(--rust-hot); text-decoration: none; font-weight: 700;
 .legal-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 14px; font-size: 13px; }
 .legal-links a { color: #9aa3ab; text-decoration: none; }
 .legal-links a:hover { color: var(--rust-hot); text-decoration: underline; }
+.legal-links .dc-ico{vertical-align:-2px;margin-right:5px;color:#8a94ff}
 [hidden] { display: none !important; }
 a:focus-visible, button:focus-visible { outline: 3px solid var(--neon); outline-offset: 2px; }
 
@@ -287,3 +288,24 @@ ul.parts.cheap li b { color: #dff5bd; }
   .mrow .mcost { display: none; }
 }
 @media (max-width: 420px) { .mrow { padding: 5px 6px; font-size: 13px; } .mrow img.ico { width: 24px; height: 24px; margin-right: 6px; } }
+
+/* Фото-полоса за заголовком раздела (16.11.2026): класс ставит tools/build_site.py по разделу шапки. */
+.hero.strip { position: relative; margin-top: 14px; padding: 46px 20px 34px; border-radius: 16px; overflow: hidden;
+  border: 1px solid var(--line); background: var(--strip) center 45% / cover no-repeat, #161a1f; }
+.hero.strip::before { content: ""; position: absolute; inset: 0; z-index: 0;
+  background: linear-gradient(180deg, rgba(15,18,21,.55), rgba(15,18,21,.92)); }
+.hero.strip > * { position: relative; z-index: 1; }
+.hero.strip .lead { color: #c9d0d6; }
+.strip-raid { --strip: url(/assets/home/scene_raid.webp); }
+.strip-craft { --strip: url(/assets/home/m_radtown.webp); }
+.strip-recycle { --strip: url(/assets/home/m_bandit.webp); }
+.strip-genes { --strip: url(/assets/home/scene_jungle.webp); }
+.strip-cctv { --strip: url(/assets/home/m_large_rig.webp); }
+.strip-force-wipe { --strip: url(/assets/home/map.webp); }
+.strip-rustplus { --strip: url(/assets/home/scene_lab.webp); }
+@media (max-width: 560px) { .hero.strip { padding: 30px 14px 22px; } }
+
+/* Клавиатура генов в цвет генов (16.11.2026): зелёные — хорошие, красные — плохие. */
+.key.g-G, .key.g-Y, .key.g-H { background: rgba(120, 200, 60, .2); border-color: rgba(140, 220, 70, .55); color: #c6f58f; }
+.key.g-W, .key.g-X { background: rgba(230, 70, 60, .2); border-color: rgba(240, 90, 80, .6); color: #ffb0a6; }
+@media (max-width: 420px) { .keys { gap: 6px; } .key { width: 44px; height: 46px; } }
