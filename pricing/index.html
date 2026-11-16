@@ -108,9 +108,12 @@
   .badge { position: absolute; top: -12px; left: 20px; font: 800 11.5px var(--body); letter-spacing: .08em; text-transform: uppercase;
            padding: 5px 11px; border-radius: 999px; background: var(--neon); color: #10140c; box-shadow: 0 4px 14px rgba(168,255,62,.35); }
   .badge.clan { background: var(--rust); color: #1a0f08; box-shadow: 0 4px 14px rgba(216,105,42,.35); }
-  .name { display: flex; align-items: center; gap: 10px; }
-  .name .em { font-size: 26px; width: 44px; height: 44px; display: grid; place-items: center; border-radius: 12px; background: rgba(216,105,42,.12); border: 1px solid rgba(216,105,42,.4); }
-  .name h2 { font-family: var(--display); font-weight: 400; font-size: 24px; margin: 0; letter-spacing: .5px; }
+  .name { display: flex; align-items: center; gap: 10px; margin: 6px 0 0; }
+  /* Названия уровней — надписями, как на главной (без эмодзи, 16.11.2026) */
+  .name h2 { margin: 0; font: 400 17px var(--display); letter-spacing: 3px; text-transform: uppercase; padding: 5px 14px; border-radius: 7px; }
+  .name h2.free { color: #cfd4da; border: 1px solid rgba(255,255,255,.22); }
+  .name h2.plus { color: #1a0d05; background: linear-gradient(135deg, #ffb36b, #e2572a); box-shadow: 0 0 18px rgba(240,138,75,.35); }
+  .name h2.max { color: #1a1205; background: linear-gradient(135deg, #ffe08a, #c98f1c); box-shadow: 0 0 18px rgba(232,178,58,.35); }
   .price { display: grid; gap: 2px; min-height: 76px; align-content: start; }
   .amount { font-family: var(--display); font-size: 40px; line-height: 1; display: flex; align-items: baseline; gap: 6px; font-variant-numeric: tabular-nums; }
   .amount .unit { font: 600 14px var(--body); color: var(--muted); }
@@ -192,8 +195,8 @@
     <p class="kicker" data-t="kicker">subscription · one-time payment</p>
     <h1 data-t="title">Pricing</h1>
     <p class="lead" data-t="lead">Pick a tier and a period. Pay in the Discord bot in a couple of clicks, no auto-renewal: pay once and use it until the period ends.</p>
-    <p class="trial" data-t="trial">🎁 New users get Bro+ for free: 1 day right away and 2 more days once you confirm you play Rust.</p>
-    <p class="trial promo" data-t="promo">🎟 Promo code BESTBRO — 30% off Bro+ and Bro Max when you pay via Discord: once per account, a verified Steam account is required.</p>
+    <p class="trial" data-t="trial">New users get Bro+ for free: 1 day right away and 2 more days once you confirm you play Rust.</p>
+    <p class="trial promo" data-t="promo">Promo code BESTBRO — 30% off Bro+ and Bro Max when you pay via Discord: once per account, a verified Steam account is required.</p>
     <div class="periods" id="periods" role="group">
       <span class="pill" id="pill" aria-hidden="true"></span>
     </div>
@@ -242,10 +245,10 @@
   var SEAT_PACK = 2.99;   // +10 мест в группе клана на 30 дней
   var TEAM_SEAT = 2.49;   // место в команде Bro Max (Bro+ тиммейту) на 30 дней
   var TIERS = [
-    { k: "free", em: "🆓", n: "Free", p: { "1m": 0 }, pl: 1, sv: 1, rs: 1, dv: 15, h: "h_last", cl: 0, gr: 0, sp: "s_slow", f: ["f_alerts", "f_card", "f_rp", "f_cmds"] },
-    { k: "plus", em: "🔥", n: "Bro+", hot: 1, p: { "1m": 4.99, "12m": 49.99 }, pl: 10, sv: 5, rs: 3, dv: 30, h: "h_30", cl: 0, gr: 0, sp: "s_norm", from: "Free",
+    { k: "free", n: "Free", p: { "1m": 0 }, pl: 1, sv: 1, rs: 1, dv: 15, h: "h_last", cl: 0, gr: 0, sp: "s_slow", f: ["f_alerts", "f_card", "f_rp", "f_cmds"] },
+    { k: "plus", n: "Bro+", hot: 1, p: { "1m": 4.99, "12m": 49.99 }, pl: 10, sv: 5, rs: 3, dv: 30, h: "h_30", cl: 0, gr: 0, sp: "s_norm", from: "Free",
       f: ["f_history", "f_heat", "f_sleep", "f_night", "f_team", "f_digest", "f_profile", "f_flags", "f_bans", "f_combat", "f_srvchart", "f_map", "f_decay"] },
-    { k: "max", em: "👑", n: "Bro Max", clan: 1, p: { "1m": 9.99, "12m": 99.99 }, pl: 25, sv: 10, rs: 5, dv: 60, h: "h_90", cl: 4, gr: 2, sp: "s_fast", from: "Bro+",
+    { k: "max", n: "Bro Max", clan: 1, p: { "1m": 9.99, "12m": 99.99 }, pl: 25, sv: 10, rs: 5, dv: 60, h: "h_90", cl: 4, gr: 2, sp: "s_fast", from: "Bro+",
       f: ["f_fast", "f_groups", "f_pdf", "f_clanrp", "f_seats", "f_tseats"] }
   ];
   var PERIODS = [["1m", 1], ["12m", 12]];
@@ -254,6 +257,7 @@
 
   function money(v) { return "$" + (Math.round(v * 100) / 100).toFixed(2); }
   function fill(s, map) { return s.replace(/\{(\w+)\}/g, function (_, k) { return map[k] != null ? map[k] : ""; }); }
+  function noEmoji(s) { return String(s).replace(/^[^\p{L}\p{N}$«"(!]+/u, ""); }  // как на главной: без эмодзи в начале
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
   function bestSave(code, months) {
     var best = 0;
@@ -290,7 +294,7 @@
       var c = el("article", "card" + (tier.hot ? " hot" : "")); c.style.animationDelay = (i * 60) + "ms";
       if (tier.hot) c.appendChild(el("span", "badge", t.popular));
       if (tier.clan) c.appendChild(el("span", "badge clan", t.clan_badge));
-      var nm = el("div", "name"); nm.appendChild(el("span", "em", tier.em)); nm.appendChild(el("h2", null, tier.n)); c.appendChild(nm);
+      var nm = el("div", "name"); nm.appendChild(el("h2", tier.k, tier.n)); c.appendChild(nm);
 
       var pr = el("div", "price"), amount = el("div", "amount" + (changed ? " flash" : "")), sub = el("div", "sub");
       var total = tier.p[state.period];
@@ -316,7 +320,7 @@
 
       var ul = el("ul", "feats");
       if (tier.from) ul.appendChild(el("li", "from", fill(t.all_from, { t: tier.from })));
-      tier.f.forEach(function (key) { ul.appendChild(el("li", null, fill(t[key], { p: money(SEAT_PACK), q: money(TEAM_SEAT) }))); });
+      tier.f.forEach(function (key) { ul.appendChild(el("li", null, noEmoji(fill(t[key], { p: money(SEAT_PACK), q: money(TEAM_SEAT) })))); });
       c.appendChild(ul);
 
       var a = el("a", "buy" + (tier.p["1m"] ? "" : " ghost")); a.href = buyUrl();
