@@ -451,7 +451,7 @@ footer .wrap{display:block}.support{margin-bottom:8px}
   if (window.RTB_LEGAL_LINKS) window.RTB_LEGAL_LINKS(lang);
 
   // Язык: ссылки в меню ведут на страницу языка; выбор запоминаем, приглашение и метка сохраняются.
-  document.querySelectorAll(".lang .menu a").forEach(function (a) {
+  document.querySelectorAll("#langs a[data-lang]").forEach(function (a) {  // меню языков общей шапки
     a.addEventListener("click", function (ev) {
       try { localStorage.setItem("rtb_lang", a.dataset.lang); } catch (e) {}
       var q = new URLSearchParams(location.search); q.delete("lang");
