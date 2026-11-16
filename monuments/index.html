@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rust monuments guide — keycards, fuses, radiation, power grid (2026) | Rust Tracker Bro</title>
+<meta name="description" content="What to bring to every Rust monument puzzle and what you find: keycards, fuses, blueprint pages and books, radiation by area, crates, scientists and the loot rooms the Power Plant grid unlocks.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rust Tracker Bro">
+<meta property="og:title" content="Rust monuments guide — keycards, fuses, radiation, power grid (2026) | Rust Tracker Bro">
+<meta property="og:description" content="What to bring to every Rust monument puzzle and what you find: keycards, fuses, blueprint pages and books, radiation by area, crates, scientists and the loot rooms the Power Plant grid unlocks.">
+<meta property="og:image" content="https://rusttrackerbro.com/assets/og/monuments-en.jpg">
+<meta property="og:url" content="https://rusttrackerbro.com/monuments/">
+<link rel="canonical" href="https://rusttrackerbro.com/monuments/">
+<link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/monuments/">
+<link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/monuments/">
+<link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/monuments/">
+<link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/monuments/">
+<link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/monuments/">
+<link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/monuments/">
+<link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/monuments/">
+<link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/monuments/">
+<link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/monuments/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#15191e">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/avatar.png">
+<link rel="stylesheet" href="/calc/calc.css?v=48a9be103c">
+<link rel="stylesheet" href="/assets/site-header.css?v=00be21d123">
+<style>
+.cmd-table { width: 100%; border-collapse: collapse; }
+.cmd-table th { text-align: left; color: var(--muted); font-weight: 600; font-size: 13px; padding: 0 10px 8px 0; }
+.cmd-table td { vertical-align: top; padding: 10px 10px 10px 0; border-top: 1px solid var(--line); }
+.cmd-table code { color: var(--rust-hot); font: 700 14px ui-monospace, SFMono-Regular, Menlo, monospace; white-space: nowrap; }
+.cmd-table .ans { display: block; font: 13px/1.45 ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--bone);
+  background: #101418; border: 1px solid var(--line); border-left: 3px solid var(--neon); border-radius: 8px; padding: 6px 9px; margin-bottom: 6px; }
+.cmd-table .ans b { color: var(--rust-hot); font-weight: 400; }
+.cmd-table p { margin: 0; color: var(--muted); font-size: 14.5px; }
+.cmd-notes { margin: 0; padding-left: 20px; color: var(--muted); display: grid; gap: 8px; }
+.guide-link { display: inline-block; margin-top: 14px; color: var(--rust-hot); font-weight: 700; text-decoration: none; }
+@media (max-width: 620px) { .cmd-table thead { display: none; } .cmd-table td { display: block; border-top: 0; padding: 4px 0; }
+  .cmd-table tr { display: block; border-top: 1px solid var(--line); padding: 8px 0; } .cmd-table code { white-space: normal; } }
+.mon-jump { display: flex; flex-wrap: wrap; gap: 8px; }
+.mon-jump a { color: var(--bone); text-decoration: none; border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px;
+  font-size: 14px; background: rgba(255,255,255,.03); }
+.mon-jump a:hover { border-color: var(--rust-hot); color: var(--rust-hot); }
+.mon-card h2 { margin: 0 0 12px; scroll-margin-top: 90px; }
+.mon-grid { display: grid; grid-template-columns: 170px 1fr; gap: 10px 16px; margin: 0; }
+.mon-grid dt { color: var(--muted); font-weight: 600; font-size: 14px; }
+.mon-grid dd { margin: 0; }
+.mon-it { display: inline-flex; align-items: center; gap: 6px; margin: 0 10px 4px 0; }
+.mon-it img { width: 28px; height: 28px; }
+.mon-grid ul { margin: 0; padding-left: 18px; }
+.mon-codes code { display: inline-block; margin: 2px 6px 2px 0; padding: 2px 6px; border-radius: 6px; background: rgba(255,255,255,.06);
+  color: var(--rust-hot); font: 700 13px ui-monospace, SFMono-Regular, Menlo, monospace; user-select: all; }
+.mon-note { color: var(--muted); font-size: 14px; }
+.mon-stages { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
+@media (max-width: 620px) { .mon-grid { grid-template-columns: 1fr; gap: 2px; } .mon-grid dd { margin-bottom: 10px; } }
+</style>
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+<div class="grid-bg" aria-hidden="true"></div>
+<header class="sh"><div class="sh-in"><a class="sh-br" href="/"><img src="/assets/home/av.webp" alt="" width="38" height="38">RUST TRACKER <span>BRO</span></a><nav class="sh-nav" aria-label="Rust Tracker Bro"><a href="/rustplus/" data-sh="rustplus"><img src="/assets/items/64/smart.alarm.webp" alt="" width="22" height="22"><span>Rust+</span></a><a href="/raid/" data-sh="raid"><img src="/assets/items/64/explosive.timed.webp" alt="" width="22" height="22"><span>Raid</span></a><a href="/craft/" data-sh="craft"><img src="/assets/items/64/workbench3.webp" alt="" width="22" height="22"><span>Craft</span></a><a href="/recycle/" data-sh="recycle"><img src="/assets/items/64/scrap.webp" alt="" width="22" height="22"><span>Recycle</span></a><a href="/genes/" data-sh="genes"><img src="/assets/items/64/clone.hemp.webp" alt="" width="22" height="22"><span>Genes</span></a><a href="/cctv/" data-sh="cctv"><img src="/assets/items/64/cctv.camera.webp" alt="" width="22" height="22"><span>CCTV codes</span></a><a href="/monuments/" data-sh="monuments" aria-current="page"><img src="/assets/items/64/keycard_blue.webp" alt="" width="22" height="22"><span>Monuments</span></a><a href="/force-wipe/" data-sh="force-wipe"><img src="/assets/items/64/electric.digitalclock.webp" alt="" width="22" height="22"><span>Global wipe</span></a><a href="/pricing/" data-sh="pricing"><img src="/assets/items/64/keycard_red.webp" alt="" width="22" height="22"><span>Pricing</span></a></nav><details class="sh-lang"><summary><span id="sh-cur">English</span> ▾</summary><div class="sh-menu" id="langs"><a href="/monuments/" hreflang="en" lang="en" data-lang="en" aria-current="true">English</a><a href="/ru/monuments/" hreflang="ru" lang="ru" data-lang="ru">Русский</a><a href="/es/monuments/" hreflang="es" lang="es" data-lang="es">Español</a><a href="/fr/monuments/" hreflang="fr" lang="fr" data-lang="fr">Français</a><a href="/uk/monuments/" hreflang="uk" lang="uk" data-lang="uk">Українська</a><a href="/de/monuments/" hreflang="de" lang="de" data-lang="de">Deutsch</a><a href="/tr/monuments/" hreflang="tr" lang="tr" data-lang="tr">Türkçe</a><a href="/pt/monuments/" hreflang="pt" lang="pt" data-lang="pt">Português</a></div></details></div><nav class="sh-row" aria-label="Rust Tracker Bro"><a href="/rustplus/" data-sh="rustplus"><img src="/assets/items/64/smart.alarm.webp" alt="" width="22" height="22"><span>Rust+</span></a><a href="/raid/" data-sh="raid"><img src="/assets/items/64/explosive.timed.webp" alt="" width="22" height="22"><span>Raid</span></a><a href="/craft/" data-sh="craft"><img src="/assets/items/64/workbench3.webp" alt="" width="22" height="22"><span>Craft</span></a><a href="/recycle/" data-sh="recycle"><img src="/assets/items/64/scrap.webp" alt="" width="22" height="22"><span>Recycle</span></a><a href="/genes/" data-sh="genes"><img src="/assets/items/64/clone.hemp.webp" alt="" width="22" height="22"><span>Genes</span></a><a href="/cctv/" data-sh="cctv"><img src="/assets/items/64/cctv.camera.webp" alt="" width="22" height="22"><span>CCTV codes</span></a><a href="/monuments/" data-sh="monuments" aria-current="page"><img src="/assets/items/64/keycard_blue.webp" alt="" width="22" height="22"><span>Monuments</span></a><a href="/force-wipe/" data-sh="force-wipe"><img src="/assets/items/64/electric.digitalclock.webp" alt="" width="22" height="22"><span>Global wipe</span></a><a href="/pricing/" data-sh="pricing"><img src="/assets/items/64/keycard_red.webp" alt="" width="22" height="22"><span>Pricing</span></a></nav><script src="/assets/site-nav.js?v=51ba2fe78d" defer></script></header>
+<div class="wrap">
+
+  <section class="hero strip strip-monuments">
+    <h1>Monuments</h1>
+    <p class="lead">What to bring to the puzzle, what you find, radiation, crates and what the power grid unlocks.</p>
+  </section>
+  <section class="panel">
+    <h2>Jump to</h2>
+    <nav class="mon-jump"><a href="#harbor">Harbor</a><a href="#sewer_branch">Sewer Branch</a><a href="#satellite_dish">Satellite Dish</a><a href="#airfield">Airfield</a><a href="#power_plant">Power Plant</a><a href="#train_yard">Train Yard</a><a href="#water_treatment">Water Treatment Plant</a><a href="#arctic_base">Arctic Research Base</a><a href="#military_tunnel">Military Tunnels</a><a href="#launch_site">Launch Site</a><a href="#missile_silo">Missile Silo</a><a href="#small_oil_rig">Small Oil Rig</a><a href="#large_oil_rig">Large Oil Rig</a><a href="#underwater_lab">Underwater Lab</a><a href="#grid">Power Plant and stages</a></nav>
+  </section>
+  <section class="panel mon-card" id="harbor">
+    <h2>Harbor</h2>
+    <dl class="mon-grid"><dt>Bring</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">green card</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">fuse</span></dd><dt>You&#x27;ll find</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">blue card</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">blueprint page</span></dd><dt>Radiation</dt><dd>none</dd><dt>Crates</dt><dd>15</dd><dt>On site</dt><dd>recycler, oil refinery</dd><dt>Power grid</dt><dd><ul><li>loot room — stage 1 (1+ Heavy Fuses)</li></ul></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="sewer_branch">
+    <h2>Sewer Branch</h2>
+    <dl class="mon-grid"><dt>Bring</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">green card</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">fuse</span></dd><dt>You&#x27;ll find</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">blue card</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">blueprint page</span></dd><dt>Radiation</dt><dd>11% — puzzle room and recycler<br>3% — everywhere else</dd><dt>Crates</dt><dd>17</dd><dt>On site</dt><dd>recycler</dd><dt>Power grid</dt><dd><ul><li>loot room — stage 2 (4+ Heavy Fuses)</li></ul></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="satellite_dish">
+    <h2>Satellite Dish</h2>
+    <dl class="mon-grid"><dt>Bring</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">green card</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">fuse</span></dd><dt>You&#x27;ll find</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">blue card</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">blueprint page</span></dd><dt>Radiation</dt><dd>11% — puzzle, recycler and dish<br>3% — everywhere else</dd><dt>Crates</dt><dd>14</dd><dt>On site</dt><dd>recycler, research table</dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="airfield">
+    <h2>Airfield</h2>
+    <dl class="mon-grid"><dt>Bring</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">green card</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">blue card</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">2 × fuse</span></dd><dt>You&#x27;ll find</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">red card</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">2 × blueprint page</span></dd><dt>Radiation</dt><dd>11% — whole monument</dd><dt>Crates</dt><dd>38</dd><dt>On site</dt><dd>recycler, repair bench, research table</dd><dt>Power grid</dt><dd><ul><li>loot room — stage 2 (4+ Heavy Fuses)</li><li>stage 1: supply drops twice as often (terminal in the airfield tower)</li><li>stage 4: call a Chinook with a locked crate to the airfield</li></ul></dd><dt>CCTV codes</dt><dd><span class="mon-codes"><code>AIRFIELDHELIPAD</code></span> <a href="/cctv/">→</a></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="power_plant">
+    <h2>Power Plant</h2>
+    <dl class="mon-grid"><dt>Bring</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">green card</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">blue card</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">fuse</span></dd><dt>You&#x27;ll find</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">red card</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">3 × blueprint page</span></dd><dt>Radiation</dt><dd>26% — blue card level<br>none — green card room and recycler</dd><dt>Crates</dt><dd>35</dd><dt>On site</dt><dd>recycler, repair bench, research table</dd><dt>Power grid</dt><dd><ul><li>loot room — stage 1 (1+ Heavy Fuses)</li><li>Heavy Fuse boxes — the whole grid is powered from here</li><li>stage 4: red recycler 75%</li></ul></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="train_yard">
+    <h2>Train Yard</h2>
+    <dl class="mon-grid"><dt>Bring</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">blue card</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">fuse</span></dd><dt>You&#x27;ll find</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">red card</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">3 × blueprint page</span></dd><dt>Radiation</dt><dd>26% — puzzle room and recycler<br>11% — everywhere else</dd><dt>Crates</dt><dd>31</dd><dt>On site</dt><dd>recycler, repair bench, research table</dd><dt>Power grid</dt><dd><ul><li>loot room — stage 2 (4+ Heavy Fuses)</li></ul></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="water_treatment">
+    <h2>Water Treatment Plant</h2>
+    <dl class="mon-grid"><dt>Bring</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">blue card</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">fuse</span></dd><dt>You&#x27;ll find</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">red card</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">3 × blueprint page</span></dd><dt>Radiation</dt><dd>26% — red card room<br>none — the rest, puzzle included</dd><dt>Crates</dt><dd>24</dd><dt>On site</dt><dd>recycler, repair bench, research table</dd><dt>Power grid</dt><dd><ul><li>loot room — stage 2 (4+ Heavy Fuses)</li><li>stage 1: clean water stations around the map (start: a gear into the valve)</li></ul></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="arctic_base">
+    <h2>Arctic Research Base</h2>
+    <dl class="mon-grid"><dt>Bring</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">blue card</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">red card</span></dd><dt>You&#x27;ll find</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">red card</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">2 × blueprint page</span></dd><dt>Radiation</dt><dd>11% — puzzle room and recycler<br>3% — everywhere else</dd><dt>Crates</dt><dd>23 · 24 barrels</dd><dt>Scientists</dt><dd>10</dd><dt>On site</dt><dd>recycler</dd></dl>
+    <p class="mon-note">Requirements differ between monument variants — check on site.</p>
+  </section>
+  <section class="panel mon-card" id="military_tunnel">
+    <h2>Military Tunnels</h2>
+    <dl class="mon-grid"><dt>Bring</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">green card</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">blue card</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">red card</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">fuse</span></dd><dt>You&#x27;ll find</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintbook.webp" alt="" width="28" height="28" loading="lazy" decoding="async">blueprint book</span></dd><dt>Radiation</dt><dd>26% — inside the tunnels<br>11% — outside</dd><dt>Crates</dt><dd>28</dd><dt>Scientists</dt><dd>14–18</dd><dt>Power grid</dt><dd><ul><li>loot room — stage 3 (10+ Heavy Fuses)</li></ul></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="launch_site">
+    <h2>Launch Site</h2>
+    <dl class="mon-grid"><dt>Bring</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">green card</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">red card</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">2 × fuse</span></dd><dt>You&#x27;ll find</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintbook.webp" alt="" width="28" height="28" loading="lazy" decoding="async">blueprint book</span></dd><dt>Radiation</dt><dd>50% — red card room<br>26% — yellow crane and rocket<br>11% — everywhere else</dd><dt>Crates</dt><dd>74 · 3 elite</dd><dt></dt><dd>Bradley</dd><dt>On site</dt><dd>recycler, repair bench, research table, oil refinery, pump jack</dd><dt>Power grid</dt><dd><ul><li>loot room — stage 3 (10+ Heavy Fuses)</li><li>stage 4: satellite crash terminal at Launch Site</li></ul></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="missile_silo">
+    <h2>Missile Silo</h2>
+    <dl class="mon-grid"><dt>Bring</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">red card</span></dd><dt>You&#x27;ll find</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintbook.webp" alt="" width="28" height="28" loading="lazy" decoding="async">blueprint book</span></dd><dt>Radiation</dt><dd>26% — whole monument</dd><dt>Crates</dt><dd>35 · 4 elite</dd><dt>Scientists</dt><dd>27</dd><dt>CCTV codes</dt><dd><span class="mon-codes"><code>SILOTOWER</code><code>SILOEXIT1</code><code>SILOEXIT2</code><code>SILOMISSILE</code><code>SILOSHIPPING</code></span> <a href="/cctv/">→</a></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="small_oil_rig">
+    <h2>Small Oil Rig</h2>
+    <dl class="mon-grid"><dt>Bring</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">blue card</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">red card</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">fuse</span></dd><dt>You&#x27;ll find</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">green card</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintbook.webp" alt="" width="28" height="28" loading="lazy" decoding="async">blueprint book</span></dd><dt>Radiation</dt><dd>none</dd><dt>Crates</dt><dd>~11 · 1 elite · 1 locked · 4 diesel barrels</dd><dt>Scientists</dt><dd>15 (6 heavy)</dd><dt>On site</dt><dd>computer station</dd><dt>Radio (call for backup)</dt><dd>4765</dd><dt>Power grid</dt><dd><ul><li>stage 3: crude oil pumps at the Dome (switch on the rig)</li></ul></dd><dt>CCTV codes</dt><dd><span class="mon-codes"><code>OILRIG1HELI</code><code>OILRIG1DOCK</code><code>OILRIG1L1</code><code>OILRIG1L2</code><code>OILRIG1L3</code><code>OILRIG1L4</code></span> <a href="/cctv/">→</a></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="large_oil_rig">
+    <h2>Large Oil Rig</h2>
+    <dl class="mon-grid"><dt>Bring</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">green card</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">blue card</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">red card</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">fuse</span></dd><dt>You&#x27;ll find</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">green card</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintbook.webp" alt="" width="28" height="28" loading="lazy" decoding="async">blueprint book</span></dd><dt>Radiation</dt><dd>none</dd><dt>Crates</dt><dd>~21 · 2 elite · 1 locked · 4 diesel barrels</dd><dt>Scientists</dt><dd>27 (12 heavy)</dd><dt>On site</dt><dd>research table, computer station</dd><dt>Radio (call for backup)</dt><dd>4768</dd><dt>Power grid</dt><dd><ul><li>stage 3: crude oil pumps at the Dome (switch on the rig)</li></ul></dd><dt>CCTV codes</dt><dd><span class="mon-codes"><code>OILRIG2HELI</code><code>OILRIG2DOCK</code><code>OILRIG2EXHAUST</code><code>OILRIG2L1</code><code>OILRIG2L2</code><code>OILRIG2L3A</code><code>OILRIG2L3B</code><code>OILRIG2L4</code><code>OILRIG2L5</code><code>OILRIG2L6A</code><code>OILRIG2L6B</code><code>OILRIG2L6C</code><code>OILRIG2L6D</code></span> <a href="/cctv/">→</a></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="underwater_lab">
+    <h2>Underwater Lab</h2>
+    <dl class="mon-grid"><dt>Bring</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">green card</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">blue card</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">red card</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">fuse</span></dd><dt>You&#x27;ll find</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">4 × blueprint page</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintbook.webp" alt="" width="28" height="28" loading="lazy" decoding="async">blueprint book</span></dd><dt>Radiation</dt><dd>none</dd><dt>Crates</dt><dd>40+</dd><dt>Scientists</dt><dd>15–30</dd><dt>On site</dt><dd>recycler</dd></dl>
+    <p class="mon-note">Requirements differ between monument variants — check on site.</p>
+  </section>
+  <section class="panel" id="grid">
+    <h2>Power Plant and stages</h2>
+    <ul class="mon-stages"><li>stage 1 — 1–3 Heavy Fuses</li><li>stage 2 — 4–9 Heavy Fuses</li><li>stage 3 — 10–17 Heavy Fuses</li><li>stage 4 — 18+ Heavy Fuses</li></ul>
+    <h3>Loot rooms unlocked by the power grid</h3>
+    <ul class="mon-stages"><li>stage 1: Ferry Terminal, Harbor, Junkyard, Power Plant</li><li>stage 2: Airfield, Radtown, Sewer Branch, Train Yard, Water Treatment Plant</li><li>stage 3: Launch Site, Military Tunnels, Missile Silo</li></ul>
+    <h3>What else the power grid turns on</h3>
+    <ul class="mon-stages"><li>stage 1: supply drops twice as often (terminal in the airfield tower), freezer with food at Supermarkets, garage with a car lift at Oxum&#x27;s, clean water stations around the map (start: a gear into the valve), roadside transformers (power for your base)</li><li>stage 2: green recyclers — 60%</li><li>stage 3: crude oil pumps at the Dome (switch on the rig)</li><li>stage 4: red recycler 75%, call a Chinook with a locked crate to the airfield, satellite crash terminal at Launch Site</li></ul>
+    <p class="mon-note">Heavy Fuses go into the fuse boxes at the Power Plant; each lasts about 2 h 40 min (4× longer on servers with 10 players or fewer), then the stage drops.</p>
+  </section>
+  <section class="panel">
+    <p class="mon-note">Crates, scientists and page counts are approximate.</p>
+    <p class="mon-note">Checked 17.11.2026: Facepunch news (Power Trip, Livestock, Printed and Polished), Corrosion Hour, Rust Wiki.</p>
+  </section>
+  <section class="panel cta">
+    <h2>The monument guide is also in the bot</h2>
+    <p>Tools → Monuments in the bot, or !mon launch in game chat — the same cards right in Rust.</p>
+    <div class="btns">
+      <a class="btn discord" id="btn-discord" href="/discord/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.6 1.3a18.3 18.3 0 0 0-5.6 0L8.6 3a19.7 19.7 0 0 0-4.9 1.4C.6 9 -.3 13.6.1 18.1A19.9 19.9 0 0 0 6.2 21l1.3-2a12.9 12.9 0 0 1-2-1l.5-.4a14.2 14.2 0 0 0 12 0l.5.4c-.6.4-1.3.7-2 1l1.3 2a19.8 19.8 0 0 0 6.1-2.9c.5-5.2-.8-9.7-3.6-13.7ZM8.3 15.3c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Zm7.4 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Z"/></svg><span data-t="btn_discord">Add to Discord</span></a>
+      <a class="btn tg" id="btn-tg" href="https://t.me/RustTrackerBroBot"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.6 19.8c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.2-8.3c.4-.4-.1-.6-.6-.2L6 13.4 1.1 11.9c-1.1-.3-1.1-1.1.2-1.6L20.5 2.9c.9-.3 1.7.2 1.4 1.4Z"/></svg><span data-t="btn_tg">Open in Telegram</span></a>
+    </div>
+  </section>
+  <footer>
+    <div class="data-note" id="data-note"></div>
+    <div class="legal-links" data-base="/legal/"></div>
+    <div class="legal" data-t="legal">Rust is a trademark of Facepunch Studios. This project is not affiliated with Facepunch.</div>
+  </footer>
+</div>
+<script src="/config.js"></script>
+<script src="/legal/texts.js"></script>
+<script src="/legal/legal.js"></script>
+<script src="/calc/page.js?v=36d25c017f"></script>
+</body>
+</html>

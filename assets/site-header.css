@@ -21,7 +21,7 @@ header.sh .sh-lang summary{display:block;margin:0;list-style:none;cursor:pointer
 .sh-menu a:hover,.sh-menu button:hover{background:rgba(255,255,255,.06);color:#fff}
 .sh-menu a[aria-current],.sh-menu button[aria-pressed="true"]{color:#a8ff3e}
 .sh-row{display:none}
-@media(max-width:1279px){.sh-nav{display:none}.sh-lang{margin-left:auto}
+@media(max-width:1439px){.sh-nav{display:none}.sh-lang{margin-left:auto}
 .sh-row{display:flex;gap:6px;overflow-x:auto;padding:0 16px 10px;scrollbar-width:none;max-width:1240px;margin:0 auto;box-sizing:border-box}
 .sh-row::-webkit-scrollbar{display:none}
 .sh-row a{flex:none;border-color:rgba(255,255,255,.14);background:rgba(10,12,14,.6);color:#efe8dc}

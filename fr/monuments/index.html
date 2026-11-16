@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guide des monuments Rust — cartes, fusibles, radiation, réseau électrique (2026) | Rust Tracker Bro</title>
+<meta name="description" content="Quoi apporter au puzzle de chaque monument de Rust et ce que tu trouves : cartes, fusibles, pages et livres de plans, radiation par zone, caisses, scientifiques et salles ouvertes par la Centrale.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rust Tracker Bro">
+<meta property="og:title" content="Guide des monuments Rust — cartes, fusibles, radiation, réseau électrique (2026) | Rust Tracker Bro">
+<meta property="og:description" content="Quoi apporter au puzzle de chaque monument de Rust et ce que tu trouves : cartes, fusibles, pages et livres de plans, radiation par zone, caisses, scientifiques et salles ouvertes par la Centrale.">
+<meta property="og:image" content="https://rusttrackerbro.com/assets/og/monuments-fr.jpg">
+<meta property="og:url" content="https://rusttrackerbro.com/fr/monuments/">
+<link rel="canonical" href="https://rusttrackerbro.com/fr/monuments/">
+<link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/monuments/">
+<link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/monuments/">
+<link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/monuments/">
+<link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/monuments/">
+<link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/monuments/">
+<link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/monuments/">
+<link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/monuments/">
+<link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/monuments/">
+<link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/monuments/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#15191e">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/avatar.png">
+<link rel="stylesheet" href="/calc/calc.css?v=48a9be103c">
+<link rel="stylesheet" href="/assets/site-header.css?v=00be21d123">
+<style>
+.cmd-table { width: 100%; border-collapse: collapse; }
+.cmd-table th { text-align: left; color: var(--muted); font-weight: 600; font-size: 13px; padding: 0 10px 8px 0; }
+.cmd-table td { vertical-align: top; padding: 10px 10px 10px 0; border-top: 1px solid var(--line); }
+.cmd-table code { color: var(--rust-hot); font: 700 14px ui-monospace, SFMono-Regular, Menlo, monospace; white-space: nowrap; }
+.cmd-table .ans { display: block; font: 13px/1.45 ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--bone);
+  background: #101418; border: 1px solid var(--line); border-left: 3px solid var(--neon); border-radius: 8px; padding: 6px 9px; margin-bottom: 6px; }
+.cmd-table .ans b { color: var(--rust-hot); font-weight: 400; }
+.cmd-table p { margin: 0; color: var(--muted); font-size: 14.5px; }
+.cmd-notes { margin: 0; padding-left: 20px; color: var(--muted); display: grid; gap: 8px; }
+.guide-link { display: inline-block; margin-top: 14px; color: var(--rust-hot); font-weight: 700; text-decoration: none; }
+@media (max-width: 620px) { .cmd-table thead { display: none; } .cmd-table td { display: block; border-top: 0; padding: 4px 0; }
+  .cmd-table tr { display: block; border-top: 1px solid var(--line); padding: 8px 0; } .cmd-table code { white-space: normal; } }
+.mon-jump { display: flex; flex-wrap: wrap; gap: 8px; }
+.mon-jump a { color: var(--bone); text-decoration: none; border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px;
+  font-size: 14px; background: rgba(255,255,255,.03); }
+.mon-jump a:hover { border-color: var(--rust-hot); color: var(--rust-hot); }
+.mon-card h2 { margin: 0 0 12px; scroll-margin-top: 90px; }
+.mon-grid { display: grid; grid-template-columns: 170px 1fr; gap: 10px 16px; margin: 0; }
+.mon-grid dt { color: var(--muted); font-weight: 600; font-size: 14px; }
+.mon-grid dd { margin: 0; }
+.mon-it { display: inline-flex; align-items: center; gap: 6px; margin: 0 10px 4px 0; }
+.mon-it img { width: 28px; height: 28px; }
+.mon-grid ul { margin: 0; padding-left: 18px; }
+.mon-codes code { display: inline-block; margin: 2px 6px 2px 0; padding: 2px 6px; border-radius: 6px; background: rgba(255,255,255,.06);
+  color: var(--rust-hot); font: 700 13px ui-monospace, SFMono-Regular, Menlo, monospace; user-select: all; }
+.mon-note { color: var(--muted); font-size: 14px; }
+.mon-stages { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
+@media (max-width: 620px) { .mon-grid { grid-template-columns: 1fr; gap: 2px; } .mon-grid dd { margin-bottom: 10px; } }
+</style>
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+<div class="grid-bg" aria-hidden="true"></div>
+<header class="sh"><div class="sh-in"><a class="sh-br" href="/fr/"><img src="/assets/home/av.webp" alt="" width="38" height="38">RUST TRACKER <span>BRO</span></a><nav class="sh-nav" aria-label="Rust Tracker Bro"><a href="/fr/rustplus/" data-sh="rustplus"><img src="/assets/items/64/smart.alarm.webp" alt="" width="22" height="22"><span>Rust+</span></a><a href="/fr/raid/" data-sh="raid"><img src="/assets/items/64/explosive.timed.webp" alt="" width="22" height="22"><span>Raid</span></a><a href="/fr/craft/" data-sh="craft"><img src="/assets/items/64/workbench3.webp" alt="" width="22" height="22"><span>Craft</span></a><a href="/fr/recycle/" data-sh="recycle"><img src="/assets/items/64/scrap.webp" alt="" width="22" height="22"><span>Recyclage</span></a><a href="/fr/genes/" data-sh="genes"><img src="/assets/items/64/clone.hemp.webp" alt="" width="22" height="22"><span>Gènes</span></a><a href="/fr/cctv/" data-sh="cctv"><img src="/assets/items/64/cctv.camera.webp" alt="" width="22" height="22"><span>Codes CCTV</span></a><a href="/fr/monuments/" data-sh="monuments" aria-current="page"><img src="/assets/items/64/keycard_blue.webp" alt="" width="22" height="22"><span>Monuments</span></a><a href="/fr/force-wipe/" data-sh="force-wipe"><img src="/assets/items/64/electric.digitalclock.webp" alt="" width="22" height="22"><span>Wipe global</span></a><a href="/fr/pricing/" data-sh="pricing"><img src="/assets/items/64/keycard_red.webp" alt="" width="22" height="22"><span>Tarifs</span></a></nav><details class="sh-lang"><summary><span id="sh-cur">Français</span> ▾</summary><div class="sh-menu" id="langs"><a href="/monuments/" hreflang="en" lang="en" data-lang="en">English</a><a href="/ru/monuments/" hreflang="ru" lang="ru" data-lang="ru">Русский</a><a href="/es/monuments/" hreflang="es" lang="es" data-lang="es">Español</a><a href="/fr/monuments/" hreflang="fr" lang="fr" data-lang="fr" aria-current="true">Français</a><a href="/uk/monuments/" hreflang="uk" lang="uk" data-lang="uk">Українська</a><a href="/de/monuments/" hreflang="de" lang="de" data-lang="de">Deutsch</a><a href="/tr/monuments/" hreflang="tr" lang="tr" data-lang="tr">Türkçe</a><a href="/pt/monuments/" hreflang="pt" lang="pt" data-lang="pt">Português</a></div></details></div><nav class="sh-row" aria-label="Rust Tracker Bro"><a href="/fr/rustplus/" data-sh="rustplus"><img src="/assets/items/64/smart.alarm.webp" alt="" width="22" height="22"><span>Rust+</span></a><a href="/fr/raid/" data-sh="raid"><img src="/assets/items/64/explosive.timed.webp" alt="" width="22" height="22"><span>Raid</span></a><a href="/fr/craft/" data-sh="craft"><img src="/assets/items/64/workbench3.webp" alt="" width="22" height="22"><span>Craft</span></a><a href="/fr/recycle/" data-sh="recycle"><img src="/assets/items/64/scrap.webp" alt="" width="22" height="22"><span>Recyclage</span></a><a href="/fr/genes/" data-sh="genes"><img src="/assets/items/64/clone.hemp.webp" alt="" width="22" height="22"><span>Gènes</span></a><a href="/fr/cctv/" data-sh="cctv"><img src="/assets/items/64/cctv.camera.webp" alt="" width="22" height="22"><span>Codes CCTV</span></a><a href="/fr/monuments/" data-sh="monuments" aria-current="page"><img src="/assets/items/64/keycard_blue.webp" alt="" width="22" height="22"><span>Monuments</span></a><a href="/fr/force-wipe/" data-sh="force-wipe"><img src="/assets/items/64/electric.digitalclock.webp" alt="" width="22" height="22"><span>Wipe global</span></a><a href="/fr/pricing/" data-sh="pricing"><img src="/assets/items/64/keycard_red.webp" alt="" width="22" height="22"><span>Tarifs</span></a></nav><script src="/assets/site-nav.js?v=51ba2fe78d" defer></script></header>
+<div class="wrap">
+
+  <section class="hero strip strip-monuments">
+    <h1>Monuments</h1>
+    <p class="lead">Quoi apporter au puzzle, ce que tu trouves, radiation, caisses et ce que débloque le réseau électrique.</p>
+  </section>
+  <section class="panel">
+    <h2>Aller à</h2>
+    <nav class="mon-jump"><a href="#harbor">Port</a><a href="#sewer_branch">Égouts</a><a href="#satellite_dish">Antenne satellite</a><a href="#airfield">Aérodrome</a><a href="#power_plant">Centrale électrique</a><a href="#train_yard">Gare de triage</a><a href="#water_treatment">Station d’épuration</a><a href="#arctic_base">Base arctique</a><a href="#military_tunnel">Tunnels militaires</a><a href="#launch_site">Site de lancement</a><a href="#missile_silo">Silo à missiles</a><a href="#small_oil_rig">Petite plateforme pétrolière</a><a href="#large_oil_rig">Grande plateforme pétrolière</a><a href="#underwater_lab">Laboratoire sous-marin</a><a href="#grid">Centrale et paliers</a></nav>
+  </section>
+  <section class="panel mon-card" id="harbor">
+    <h2>Port</h2>
+    <dl class="mon-grid"><dt>Apporter</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">carte verte</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">fusible</span></dd><dt>Tu trouveras</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">carte bleue</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">page de plan</span></dd><dt>Radiation</dt><dd>aucune</dd><dt>Caisses</dt><dd>15</dd><dt>Sur place</dt><dd>recycleur, raffinerie</dd><dt>Réseau électrique</dt><dd><ul><li>salle de butin — palier 1 (1+ fusibles lourds)</li></ul></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="sewer_branch">
+    <h2>Égouts</h2>
+    <dl class="mon-grid"><dt>Apporter</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">carte verte</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">fusible</span></dd><dt>Tu trouveras</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">carte bleue</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">page de plan</span></dd><dt>Radiation</dt><dd>11% — salle du puzzle et recycleur<br>3% — le reste</dd><dt>Caisses</dt><dd>17</dd><dt>Sur place</dt><dd>recycleur</dd><dt>Réseau électrique</dt><dd><ul><li>salle de butin — palier 2 (4+ fusibles lourds)</li></ul></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="satellite_dish">
+    <h2>Antenne satellite</h2>
+    <dl class="mon-grid"><dt>Apporter</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">carte verte</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">fusible</span></dd><dt>Tu trouveras</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">carte bleue</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">page de plan</span></dd><dt>Radiation</dt><dd>11% — puzzle, recycleur et antenne<br>3% — le reste</dd><dt>Caisses</dt><dd>14</dd><dt>Sur place</dt><dd>recycleur, table de recherche</dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="airfield">
+    <h2>Aérodrome</h2>
+    <dl class="mon-grid"><dt>Apporter</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">carte verte</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">carte bleue</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">2 × fusible</span></dd><dt>Tu trouveras</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">carte rouge</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">2 × page de plan</span></dd><dt>Radiation</dt><dd>11% — tout le monument</dd><dt>Caisses</dt><dd>38</dd><dt>Sur place</dt><dd>recycleur, établi de réparation, table de recherche</dd><dt>Réseau électrique</dt><dd><ul><li>salle de butin — palier 2 (4+ fusibles lourds)</li><li>palier 1 : largages deux fois plus fréquents (terminal de la tour de l’aérodrome)</li><li>palier 4 : appel d’un Chinook avec caisse verrouillée à l’aérodrome</li></ul></dd><dt>Codes des caméras</dt><dd><span class="mon-codes"><code>AIRFIELDHELIPAD</code></span> <a href="/fr/cctv/">→</a></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="power_plant">
+    <h2>Centrale électrique</h2>
+    <dl class="mon-grid"><dt>Apporter</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">carte verte</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">carte bleue</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">fusible</span></dd><dt>Tu trouveras</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">carte rouge</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">3 × page de plan</span></dd><dt>Radiation</dt><dd>26% — niveau de la carte bleue<br>aucune — salle de la carte verte et recycleur</dd><dt>Caisses</dt><dd>35</dd><dt>Sur place</dt><dd>recycleur, établi de réparation, table de recherche</dd><dt>Réseau électrique</dt><dd><ul><li>salle de butin — palier 1 (1+ fusibles lourds)</li><li>boîtiers à fusibles lourds — tout le réseau est alimenté d’ici</li><li>palier 4 : recycleur rouge 75 %</li></ul></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="train_yard">
+    <h2>Gare de triage</h2>
+    <dl class="mon-grid"><dt>Apporter</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">carte bleue</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">fusible</span></dd><dt>Tu trouveras</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">carte rouge</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">3 × page de plan</span></dd><dt>Radiation</dt><dd>26% — salle du puzzle et recycleur<br>11% — le reste</dd><dt>Caisses</dt><dd>31</dd><dt>Sur place</dt><dd>recycleur, établi de réparation, table de recherche</dd><dt>Réseau électrique</dt><dd><ul><li>salle de butin — palier 2 (4+ fusibles lourds)</li></ul></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="water_treatment">
+    <h2>Station d’épuration</h2>
+    <dl class="mon-grid"><dt>Apporter</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">carte bleue</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">fusible</span></dd><dt>Tu trouveras</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">carte rouge</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">3 × page de plan</span></dd><dt>Radiation</dt><dd>26% — salle de la carte rouge<br>aucune — le reste, puzzle compris</dd><dt>Caisses</dt><dd>24</dd><dt>Sur place</dt><dd>recycleur, établi de réparation, table de recherche</dd><dt>Réseau électrique</dt><dd><ul><li>salle de butin — palier 2 (4+ fusibles lourds)</li><li>palier 1 : points d’eau potable sur la carte (démarrage : un engrenage dans la vanne)</li></ul></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="arctic_base">
+    <h2>Base arctique</h2>
+    <dl class="mon-grid"><dt>Apporter</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">carte bleue</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">carte rouge</span></dd><dt>Tu trouveras</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">carte rouge</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">2 × page de plan</span></dd><dt>Radiation</dt><dd>11% — salle du puzzle et recycleur<br>3% — le reste</dd><dt>Caisses</dt><dd>23 · 24 barils</dd><dt>Scientifiques</dt><dd>10</dd><dt>Sur place</dt><dd>recycleur</dd></dl>
+    <p class="mon-note">Les exigences varient selon la variante du monument — vérifie sur place.</p>
+  </section>
+  <section class="panel mon-card" id="military_tunnel">
+    <h2>Tunnels militaires</h2>
+    <dl class="mon-grid"><dt>Apporter</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">carte verte</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">carte bleue</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">carte rouge</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">fusible</span></dd><dt>Tu trouveras</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintbook.webp" alt="" width="28" height="28" loading="lazy" decoding="async">livre de plans</span></dd><dt>Radiation</dt><dd>26% — dans les tunnels<br>11% — dehors</dd><dt>Caisses</dt><dd>28</dd><dt>Scientifiques</dt><dd>14–18</dd><dt>Réseau électrique</dt><dd><ul><li>salle de butin — palier 3 (10+ fusibles lourds)</li></ul></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="launch_site">
+    <h2>Site de lancement</h2>
+    <dl class="mon-grid"><dt>Apporter</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">carte verte</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">carte rouge</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">2 × fusible</span></dd><dt>Tu trouveras</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintbook.webp" alt="" width="28" height="28" loading="lazy" decoding="async">livre de plans</span></dd><dt>Radiation</dt><dd>50% — salle de la carte rouge<br>26% — grue jaune et fusée<br>11% — le reste</dd><dt>Caisses</dt><dd>74 · 3 élite</dd><dt></dt><dd>Bradley</dd><dt>Sur place</dt><dd>recycleur, établi de réparation, table de recherche, raffinerie, pompe à pétrole</dd><dt>Réseau électrique</dt><dd><ul><li>salle de butin — palier 3 (10+ fusibles lourds)</li><li>palier 4 : terminal de crash de satellite au Site de lancement</li></ul></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="missile_silo">
+    <h2>Silo à missiles</h2>
+    <dl class="mon-grid"><dt>Apporter</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">carte rouge</span></dd><dt>Tu trouveras</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintbook.webp" alt="" width="28" height="28" loading="lazy" decoding="async">livre de plans</span></dd><dt>Radiation</dt><dd>26% — tout le monument</dd><dt>Caisses</dt><dd>35 · 4 élite</dd><dt>Scientifiques</dt><dd>27</dd><dt>Codes des caméras</dt><dd><span class="mon-codes"><code>SILOTOWER</code><code>SILOEXIT1</code><code>SILOEXIT2</code><code>SILOMISSILE</code><code>SILOSHIPPING</code></span> <a href="/fr/cctv/">→</a></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="small_oil_rig">
+    <h2>Petite plateforme pétrolière</h2>
+    <dl class="mon-grid"><dt>Apporter</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">carte bleue</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">carte rouge</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">fusible</span></dd><dt>Tu trouveras</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">carte verte</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintbook.webp" alt="" width="28" height="28" loading="lazy" decoding="async">livre de plans</span></dd><dt>Radiation</dt><dd>aucune</dd><dt>Caisses</dt><dd>~11 · 1 élite · 1 verrouillée · 4 barils de diesel</dd><dt>Scientifiques</dt><dd>15 (6 lourds)</dd><dt>Sur place</dt><dd>station informatique</dd><dt>Radio (appel de renforts)</dt><dd>4765</dd><dt>Réseau électrique</dt><dd><ul><li>palier 3 : pompes à pétrole au Dôme (interrupteur sur la plateforme)</li></ul></dd><dt>Codes des caméras</dt><dd><span class="mon-codes"><code>OILRIG1HELI</code><code>OILRIG1DOCK</code><code>OILRIG1L1</code><code>OILRIG1L2</code><code>OILRIG1L3</code><code>OILRIG1L4</code></span> <a href="/fr/cctv/">→</a></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="large_oil_rig">
+    <h2>Grande plateforme pétrolière</h2>
+    <dl class="mon-grid"><dt>Apporter</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">carte verte</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">carte bleue</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">carte rouge</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">fusible</span></dd><dt>Tu trouveras</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">carte verte</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintbook.webp" alt="" width="28" height="28" loading="lazy" decoding="async">livre de plans</span></dd><dt>Radiation</dt><dd>aucune</dd><dt>Caisses</dt><dd>~21 · 2 élite · 1 verrouillée · 4 barils de diesel</dd><dt>Scientifiques</dt><dd>27 (12 lourds)</dd><dt>Sur place</dt><dd>table de recherche, station informatique</dd><dt>Radio (appel de renforts)</dt><dd>4768</dd><dt>Réseau électrique</dt><dd><ul><li>palier 3 : pompes à pétrole au Dôme (interrupteur sur la plateforme)</li></ul></dd><dt>Codes des caméras</dt><dd><span class="mon-codes"><code>OILRIG2HELI</code><code>OILRIG2DOCK</code><code>OILRIG2EXHAUST</code><code>OILRIG2L1</code><code>OILRIG2L2</code><code>OILRIG2L3A</code><code>OILRIG2L3B</code><code>OILRIG2L4</code><code>OILRIG2L5</code><code>OILRIG2L6A</code><code>OILRIG2L6B</code><code>OILRIG2L6C</code><code>OILRIG2L6D</code></span> <a href="/fr/cctv/">→</a></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="underwater_lab">
+    <h2>Laboratoire sous-marin</h2>
+    <dl class="mon-grid"><dt>Apporter</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">carte verte</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">carte bleue</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">carte rouge</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">fusible</span></dd><dt>Tu trouveras</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">4 × page de plan</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintbook.webp" alt="" width="28" height="28" loading="lazy" decoding="async">livre de plans</span></dd><dt>Radiation</dt><dd>aucune</dd><dt>Caisses</dt><dd>40+</dd><dt>Scientifiques</dt><dd>15–30</dd><dt>Sur place</dt><dd>recycleur</dd></dl>
+    <p class="mon-note">Les exigences varient selon la variante du monument — vérifie sur place.</p>
+  </section>
+  <section class="panel" id="grid">
+    <h2>Centrale et paliers</h2>
+    <ul class="mon-stages"><li>palier 1 — 1–3 fusibles lourds</li><li>palier 2 — 4–9 fusibles lourds</li><li>palier 3 — 10–17 fusibles lourds</li><li>palier 4 — 18+ fusibles lourds</li></ul>
+    <h3>Salles de butin ouvertes par le réseau électrique</h3>
+    <ul class="mon-stages"><li>palier 1 : Terminal de ferry, Port, Casse, Centrale électrique</li><li>palier 2 : Aérodrome, Radtown, Égouts, Gare de triage, Station d’épuration</li><li>palier 3 : Site de lancement, Tunnels militaires, Silo à missiles</li></ul>
+    <h3>Ce que le réseau électrique allume aussi</h3>
+    <ul class="mon-stages"><li>palier 1 : largages deux fois plus fréquents (terminal de la tour de l’aérodrome), congélateur avec de la nourriture dans les supermarchés, garage avec élévateur chez Oxum&#x27;s, points d’eau potable sur la carte (démarrage : un engrenage dans la vanne), transformateurs en bord de route (électricité pour ta base)</li><li>palier 2 : recycleurs verts — 60 %</li><li>palier 3 : pompes à pétrole au Dôme (interrupteur sur la plateforme)</li><li>palier 4 : recycleur rouge 75 %, appel d’un Chinook avec caisse verrouillée à l’aérodrome, terminal de crash de satellite au Site de lancement</li></ul>
+    <p class="mon-note">Les fusibles lourds se placent dans les boîtiers de la Centrale ; chacun dure environ 2 h 40 (4× plus sur les serveurs de 10 joueurs ou moins), puis le palier baisse.</p>
+  </section>
+  <section class="panel">
+    <p class="mon-note">Caisses, scientifiques et nombre de pages sont approximatifs.</p>
+    <p class="mon-note">Vérifié le 17.11.2026 : actus Facepunch (Power Trip, Livestock, Printed and Polished), Corrosion Hour, Rust Wiki.</p>
+  </section>
+  <section class="panel cta">
+    <h2>Le guide des monuments est aussi dans le bot</h2>
+    <p>Outils → Monuments dans le bot, ou !mon launch dans le chat du jeu — les mêmes fiches dans Rust.</p>
+    <div class="btns">
+      <a class="btn discord" id="btn-discord" href="/discord/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.6 1.3a18.3 18.3 0 0 0-5.6 0L8.6 3a19.7 19.7 0 0 0-4.9 1.4C.6 9 -.3 13.6.1 18.1A19.9 19.9 0 0 0 6.2 21l1.3-2a12.9 12.9 0 0 1-2-1l.5-.4a14.2 14.2 0 0 0 12 0l.5.4c-.6.4-1.3.7-2 1l1.3 2a19.8 19.8 0 0 0 6.1-2.9c.5-5.2-.8-9.7-3.6-13.7ZM8.3 15.3c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Zm7.4 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Z"/></svg><span data-t="btn_discord">Ajouter à Discord</span></a>
+      <a class="btn tg" id="btn-tg" href="https://t.me/RustTrackerBroBot"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.6 19.8c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.2-8.3c.4-.4-.1-.6-.6-.2L6 13.4 1.1 11.9c-1.1-.3-1.1-1.1.2-1.6L20.5 2.9c.9-.3 1.7.2 1.4 1.4Z"/></svg><span data-t="btn_tg">Ouvrir dans Telegram</span></a>
+    </div>
+  </section>
+  <footer>
+    <div class="data-note" id="data-note"></div>
+    <div class="legal-links" data-base="/legal/"></div>
+    <div class="legal" data-t="legal">Rust est une marque de Facepunch Studios. Ce projet n&#x27;est pas affilié à Facepunch.</div>
+  </footer>
+</div>
+<script src="/config.js"></script>
+<script src="/legal/texts.js"></script>
+<script src="/legal/legal.js"></script>
+<script src="/calc/page.js?v=36d25c017f"></script>
+</body>
+</html>

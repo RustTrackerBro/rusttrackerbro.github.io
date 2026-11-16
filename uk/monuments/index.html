@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="uk" data-lang="uk">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Монументи Rust — карти, запобіжники, радіація, електромережа (2026) | Rust Tracker Bro</title>
+<meta name="description" content="Що взяти на пазл кожного монумента Rust і що там знайдеш: карти, запобіжники, сторінки й книги креслень, радіація за зонами, ящики, вчені та кімнати з лутом, які відкриває Електростанція.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rust Tracker Bro">
+<meta property="og:title" content="Монументи Rust — карти, запобіжники, радіація, електромережа (2026) | Rust Tracker Bro">
+<meta property="og:description" content="Що взяти на пазл кожного монумента Rust і що там знайдеш: карти, запобіжники, сторінки й книги креслень, радіація за зонами, ящики, вчені та кімнати з лутом, які відкриває Електростанція.">
+<meta property="og:image" content="https://rusttrackerbro.com/assets/og/monuments-uk.jpg">
+<meta property="og:url" content="https://rusttrackerbro.com/uk/monuments/">
+<link rel="canonical" href="https://rusttrackerbro.com/uk/monuments/">
+<link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/monuments/">
+<link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/monuments/">
+<link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/monuments/">
+<link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/monuments/">
+<link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/monuments/">
+<link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/monuments/">
+<link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/monuments/">
+<link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/monuments/">
+<link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/monuments/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#15191e">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/avatar.png">
+<link rel="stylesheet" href="/calc/calc.css?v=48a9be103c">
+<link rel="stylesheet" href="/assets/site-header.css?v=00be21d123">
+<style>
+.cmd-table { width: 100%; border-collapse: collapse; }
+.cmd-table th { text-align: left; color: var(--muted); font-weight: 600; font-size: 13px; padding: 0 10px 8px 0; }
+.cmd-table td { vertical-align: top; padding: 10px 10px 10px 0; border-top: 1px solid var(--line); }
+.cmd-table code { color: var(--rust-hot); font: 700 14px ui-monospace, SFMono-Regular, Menlo, monospace; white-space: nowrap; }
+.cmd-table .ans { display: block; font: 13px/1.45 ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--bone);
+  background: #101418; border: 1px solid var(--line); border-left: 3px solid var(--neon); border-radius: 8px; padding: 6px 9px; margin-bottom: 6px; }
+.cmd-table .ans b { color: var(--rust-hot); font-weight: 400; }
+.cmd-table p { margin: 0; color: var(--muted); font-size: 14.5px; }
+.cmd-notes { margin: 0; padding-left: 20px; color: var(--muted); display: grid; gap: 8px; }
+.guide-link { display: inline-block; margin-top: 14px; color: var(--rust-hot); font-weight: 700; text-decoration: none; }
+@media (max-width: 620px) { .cmd-table thead { display: none; } .cmd-table td { display: block; border-top: 0; padding: 4px 0; }
+  .cmd-table tr { display: block; border-top: 1px solid var(--line); padding: 8px 0; } .cmd-table code { white-space: normal; } }
+.mon-jump { display: flex; flex-wrap: wrap; gap: 8px; }
+.mon-jump a { color: var(--bone); text-decoration: none; border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px;
+  font-size: 14px; background: rgba(255,255,255,.03); }
+.mon-jump a:hover { border-color: var(--rust-hot); color: var(--rust-hot); }
+.mon-card h2 { margin: 0 0 12px; scroll-margin-top: 90px; }
+.mon-grid { display: grid; grid-template-columns: 170px 1fr; gap: 10px 16px; margin: 0; }
+.mon-grid dt { color: var(--muted); font-weight: 600; font-size: 14px; }
+.mon-grid dd { margin: 0; }
+.mon-it { display: inline-flex; align-items: center; gap: 6px; margin: 0 10px 4px 0; }
+.mon-it img { width: 28px; height: 28px; }
+.mon-grid ul { margin: 0; padding-left: 18px; }
+.mon-codes code { display: inline-block; margin: 2px 6px 2px 0; padding: 2px 6px; border-radius: 6px; background: rgba(255,255,255,.06);
+  color: var(--rust-hot); font: 700 13px ui-monospace, SFMono-Regular, Menlo, monospace; user-select: all; }
+.mon-note { color: var(--muted); font-size: 14px; }
+.mon-stages { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
+@media (max-width: 620px) { .mon-grid { grid-template-columns: 1fr; gap: 2px; } .mon-grid dd { margin-bottom: 10px; } }
+</style>
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+<div class="grid-bg" aria-hidden="true"></div>
+<header class="sh"><div class="sh-in"><a class="sh-br" href="/uk/"><img src="/assets/home/av.webp" alt="" width="38" height="38">RUST TRACKER <span>BRO</span></a><nav class="sh-nav" aria-label="Rust Tracker Bro"><a href="/uk/rustplus/" data-sh="rustplus"><img src="/assets/items/64/smart.alarm.webp" alt="" width="22" height="22"><span>Rust+</span></a><a href="/uk/raid/" data-sh="raid"><img src="/assets/items/64/explosive.timed.webp" alt="" width="22" height="22"><span>Рейд</span></a><a href="/uk/craft/" data-sh="craft"><img src="/assets/items/64/workbench3.webp" alt="" width="22" height="22"><span>Крафт</span></a><a href="/uk/recycle/" data-sh="recycle"><img src="/assets/items/64/scrap.webp" alt="" width="22" height="22"><span>Переробка</span></a><a href="/uk/genes/" data-sh="genes"><img src="/assets/items/64/clone.hemp.webp" alt="" width="22" height="22"><span>Гени</span></a><a href="/uk/cctv/" data-sh="cctv"><img src="/assets/items/64/cctv.camera.webp" alt="" width="22" height="22"><span>Коди камер</span></a><a href="/uk/monuments/" data-sh="monuments" aria-current="page"><img src="/assets/items/64/keycard_blue.webp" alt="" width="22" height="22"><span>Монументи</span></a><a href="/uk/force-wipe/" data-sh="force-wipe"><img src="/assets/items/64/electric.digitalclock.webp" alt="" width="22" height="22"><span>Глобал вайп</span></a><a href="/uk/pricing/" data-sh="pricing"><img src="/assets/items/64/keycard_red.webp" alt="" width="22" height="22"><span>Тарифи</span></a></nav><details class="sh-lang"><summary><span id="sh-cur">Українська</span> ▾</summary><div class="sh-menu" id="langs"><a href="/monuments/" hreflang="en" lang="en" data-lang="en">English</a><a href="/ru/monuments/" hreflang="ru" lang="ru" data-lang="ru">Русский</a><a href="/es/monuments/" hreflang="es" lang="es" data-lang="es">Español</a><a href="/fr/monuments/" hreflang="fr" lang="fr" data-lang="fr">Français</a><a href="/uk/monuments/" hreflang="uk" lang="uk" data-lang="uk" aria-current="true">Українська</a><a href="/de/monuments/" hreflang="de" lang="de" data-lang="de">Deutsch</a><a href="/tr/monuments/" hreflang="tr" lang="tr" data-lang="tr">Türkçe</a><a href="/pt/monuments/" hreflang="pt" lang="pt" data-lang="pt">Português</a></div></details></div><nav class="sh-row" aria-label="Rust Tracker Bro"><a href="/uk/rustplus/" data-sh="rustplus"><img src="/assets/items/64/smart.alarm.webp" alt="" width="22" height="22"><span>Rust+</span></a><a href="/uk/raid/" data-sh="raid"><img src="/assets/items/64/explosive.timed.webp" alt="" width="22" height="22"><span>Рейд</span></a><a href="/uk/craft/" data-sh="craft"><img src="/assets/items/64/workbench3.webp" alt="" width="22" height="22"><span>Крафт</span></a><a href="/uk/recycle/" data-sh="recycle"><img src="/assets/items/64/scrap.webp" alt="" width="22" height="22"><span>Переробка</span></a><a href="/uk/genes/" data-sh="genes"><img src="/assets/items/64/clone.hemp.webp" alt="" width="22" height="22"><span>Гени</span></a><a href="/uk/cctv/" data-sh="cctv"><img src="/assets/items/64/cctv.camera.webp" alt="" width="22" height="22"><span>Коди камер</span></a><a href="/uk/monuments/" data-sh="monuments" aria-current="page"><img src="/assets/items/64/keycard_blue.webp" alt="" width="22" height="22"><span>Монументи</span></a><a href="/uk/force-wipe/" data-sh="force-wipe"><img src="/assets/items/64/electric.digitalclock.webp" alt="" width="22" height="22"><span>Глобал вайп</span></a><a href="/uk/pricing/" data-sh="pricing"><img src="/assets/items/64/keycard_red.webp" alt="" width="22" height="22"><span>Тарифи</span></a></nav><script src="/assets/site-nav.js?v=51ba2fe78d" defer></script></header>
+<div class="wrap">
+
+  <section class="hero strip strip-monuments">
+    <h1>Монументи</h1>
+    <p class="lead">Що взяти на пазл, що знайдеш, радіація, ящики і що відкриває електромережа.</p>
+  </section>
+  <section class="panel">
+    <h2>Перейти</h2>
+    <nav class="mon-jump"><a href="#harbor">Порт</a><a href="#sewer_branch">Каналізація</a><a href="#satellite_dish">Супутникова тарілка</a><a href="#airfield">Аеродром</a><a href="#power_plant">Електростанція</a><a href="#train_yard">Депо</a><a href="#water_treatment">Водоочистка</a><a href="#arctic_base">Арктична база</a><a href="#military_tunnel">Військові тунелі</a><a href="#launch_site">Космодром</a><a href="#missile_silo">Ракетна шахта</a><a href="#small_oil_rig">Мала нафтова вишка</a><a href="#large_oil_rig">Велика нафтова вишка</a><a href="#underwater_lab">Підводна лабораторія</a><a href="#grid">Електростанція і ступені</a></nav>
+  </section>
+  <section class="panel mon-card" id="harbor">
+    <h2>Порт</h2>
+    <dl class="mon-grid"><dt>Взяти</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">зелена карта</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">запобіжник</span></dd><dt>Знайдеш</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">синя карта</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">сторінка креслення</span></dd><dt>Радіація</dt><dd>немає</dd><dt>Ящики</dt><dd>15</dd><dt>Є на монументі</dt><dd>переробник, нафтопереробка</dd><dt>Електромережа</dt><dd><ul><li>кімната з лутом — ступінь 1 (1+ важких запобіжників)</li></ul></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="sewer_branch">
+    <h2>Каналізація</h2>
+    <dl class="mon-grid"><dt>Взяти</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">зелена карта</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">запобіжник</span></dd><dt>Знайдеш</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">синя карта</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">сторінка креслення</span></dd><dt>Радіація</dt><dd>11% — кімната пазла й переробник<br>3% — решта</dd><dt>Ящики</dt><dd>17</dd><dt>Є на монументі</dt><dd>переробник</dd><dt>Електромережа</dt><dd><ul><li>кімната з лутом — ступінь 2 (4+ важких запобіжників)</li></ul></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="satellite_dish">
+    <h2>Супутникова тарілка</h2>
+    <dl class="mon-grid"><dt>Взяти</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">зелена карта</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">запобіжник</span></dd><dt>Знайдеш</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">синя карта</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">сторінка креслення</span></dd><dt>Радіація</dt><dd>11% — пазл, переробник і тарілка<br>3% — решта</dd><dt>Ящики</dt><dd>14</dd><dt>Є на монументі</dt><dd>переробник, стіл дослідження</dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="airfield">
+    <h2>Аеродром</h2>
+    <dl class="mon-grid"><dt>Взяти</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">зелена карта</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">синя карта</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">2 × запобіжник</span></dd><dt>Знайдеш</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">червона карта</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">2 × сторінка креслення</span></dd><dt>Радіація</dt><dd>11% — весь монумент</dd><dt>Ящики</dt><dd>38</dd><dt>Є на монументі</dt><dd>переробник, верстат для ремонту, стіл дослідження</dd><dt>Електромережа</dt><dd><ul><li>кімната з лутом — ступінь 2 (4+ важких запобіжників)</li><li>ступінь 1: аірдропи падають удвічі частіше (термінал на вежі аеродрому)</li><li>ступінь 4: виклик Чинука із замкненим ящиком на аеродром</li></ul></dd><dt>Коди камер</dt><dd><span class="mon-codes"><code>AIRFIELDHELIPAD</code></span> <a href="/uk/cctv/">→</a></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="power_plant">
+    <h2>Електростанція</h2>
+    <dl class="mon-grid"><dt>Взяти</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">зелена карта</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">синя карта</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">запобіжник</span></dd><dt>Знайдеш</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">червона карта</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">3 × сторінка креслення</span></dd><dt>Радіація</dt><dd>26% — поверх синьої карти<br>немає — кімната зеленої карти й переробник</dd><dt>Ящики</dt><dd>35</dd><dt>Є на монументі</dt><dd>переробник, верстат для ремонту, стіл дослідження</dd><dt>Електромережа</dt><dd><ul><li>кімната з лутом — ступінь 1 (1+ важких запобіжників)</li><li>коробки для важких запобіжників — звідси живиться вся мережа</li><li>ступінь 4: червоний переробник 75%</li></ul></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="train_yard">
+    <h2>Депо</h2>
+    <dl class="mon-grid"><dt>Взяти</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">синя карта</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">запобіжник</span></dd><dt>Знайдеш</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">червона карта</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">3 × сторінка креслення</span></dd><dt>Радіація</dt><dd>26% — кімната пазла й переробник<br>11% — решта</dd><dt>Ящики</dt><dd>31</dd><dt>Є на монументі</dt><dd>переробник, верстат для ремонту, стіл дослідження</dd><dt>Електромережа</dt><dd><ul><li>кімната з лутом — ступінь 2 (4+ важких запобіжників)</li></ul></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="water_treatment">
+    <h2>Водоочистка</h2>
+    <dl class="mon-grid"><dt>Взяти</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">синя карта</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">запобіжник</span></dd><dt>Знайдеш</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">червона карта</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">3 × сторінка креслення</span></dd><dt>Радіація</dt><dd>26% — кімната червоної карти<br>немає — решта, разом із пазлом</dd><dt>Ящики</dt><dd>24</dd><dt>Є на монументі</dt><dd>переробник, верстат для ремонту, стіл дослідження</dd><dt>Електромережа</dt><dd><ul><li>кімната з лутом — ступінь 2 (4+ важких запобіжників)</li><li>ступінь 1: колонки з чистою водою по карті (запуск — шестерня у вентиль)</li></ul></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="arctic_base">
+    <h2>Арктична база</h2>
+    <dl class="mon-grid"><dt>Взяти</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">синя карта</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">червона карта</span></dd><dt>Знайдеш</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">червона карта</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">2 × сторінка креслення</span></dd><dt>Радіація</dt><dd>11% — кімната пазла й переробник<br>3% — решта</dd><dt>Ящики</dt><dd>23 · бочки 24</dd><dt>Вчені</dt><dd>10</dd><dt>Є на монументі</dt><dd>переробник</dd></dl>
+    <p class="mon-note">Вимоги відрізняються в різних варіантах монумента — звіртеся на місці.</p>
+  </section>
+  <section class="panel mon-card" id="military_tunnel">
+    <h2>Військові тунелі</h2>
+    <dl class="mon-grid"><dt>Взяти</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">зелена карта</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">синя карта</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">червона карта</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">запобіжник</span></dd><dt>Знайдеш</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintbook.webp" alt="" width="28" height="28" loading="lazy" decoding="async">книга креслень</span></dd><dt>Радіація</dt><dd>26% — усередині тунелів<br>11% — зовні</dd><dt>Ящики</dt><dd>28</dd><dt>Вчені</dt><dd>14–18</dd><dt>Електромережа</dt><dd><ul><li>кімната з лутом — ступінь 3 (10+ важких запобіжників)</li></ul></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="launch_site">
+    <h2>Космодром</h2>
+    <dl class="mon-grid"><dt>Взяти</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">зелена карта</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">червона карта</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">2 × запобіжник</span></dd><dt>Знайдеш</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintbook.webp" alt="" width="28" height="28" loading="lazy" decoding="async">книга креслень</span></dd><dt>Радіація</dt><dd>50% — кімната червоної карти<br>26% — жовтий кран і ракета<br>11% — решта</dd><dt>Ящики</dt><dd>74 · елітних 3</dd><dt></dt><dd>Бредлі</dd><dt>Є на монументі</dt><dd>переробник, верстат для ремонту, стіл дослідження, нафтопереробка, качалка</dd><dt>Електромережа</dt><dd><ul><li>кімната з лутом — ступінь 3 (10+ важких запобіжників)</li><li>ступінь 4: термінал падіння супутника на Космодромі</li></ul></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="missile_silo">
+    <h2>Ракетна шахта</h2>
+    <dl class="mon-grid"><dt>Взяти</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">червона карта</span></dd><dt>Знайдеш</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintbook.webp" alt="" width="28" height="28" loading="lazy" decoding="async">книга креслень</span></dd><dt>Радіація</dt><dd>26% — весь монумент</dd><dt>Ящики</dt><dd>35 · елітних 4</dd><dt>Вчені</dt><dd>27</dd><dt>Коди камер</dt><dd><span class="mon-codes"><code>SILOTOWER</code><code>SILOEXIT1</code><code>SILOEXIT2</code><code>SILOMISSILE</code><code>SILOSHIPPING</code></span> <a href="/uk/cctv/">→</a></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="small_oil_rig">
+    <h2>Мала нафтова вишка</h2>
+    <dl class="mon-grid"><dt>Взяти</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">синя карта</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">червона карта</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">запобіжник</span></dd><dt>Знайдеш</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">зелена карта</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintbook.webp" alt="" width="28" height="28" loading="lazy" decoding="async">книга креслень</span></dd><dt>Радіація</dt><dd>немає</dd><dt>Ящики</dt><dd>~11 · елітних 1 · замкнений 1 · бочки з дизелем 4</dd><dt>Вчені</dt><dd>15 (важких 6)</dd><dt>Є на монументі</dt><dd>комп’ютерна станція</dd><dt>Рація (виклик підмоги)</dt><dd>4765</dd><dt>Електромережа</dt><dd><ul><li>ступінь 3: насоси нафти на Сфері (рубильник на вишці)</li></ul></dd><dt>Коди камер</dt><dd><span class="mon-codes"><code>OILRIG1HELI</code><code>OILRIG1DOCK</code><code>OILRIG1L1</code><code>OILRIG1L2</code><code>OILRIG1L3</code><code>OILRIG1L4</code></span> <a href="/uk/cctv/">→</a></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="large_oil_rig">
+    <h2>Велика нафтова вишка</h2>
+    <dl class="mon-grid"><dt>Взяти</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">зелена карта</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">синя карта</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">червона карта</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">запобіжник</span></dd><dt>Знайдеш</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">зелена карта</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintbook.webp" alt="" width="28" height="28" loading="lazy" decoding="async">книга креслень</span></dd><dt>Радіація</dt><dd>немає</dd><dt>Ящики</dt><dd>~21 · елітних 2 · замкнений 1 · бочки з дизелем 4</dd><dt>Вчені</dt><dd>27 (важких 12)</dd><dt>Є на монументі</dt><dd>стіл дослідження, комп’ютерна станція</dd><dt>Рація (виклик підмоги)</dt><dd>4768</dd><dt>Електромережа</dt><dd><ul><li>ступінь 3: насоси нафти на Сфері (рубильник на вишці)</li></ul></dd><dt>Коди камер</dt><dd><span class="mon-codes"><code>OILRIG2HELI</code><code>OILRIG2DOCK</code><code>OILRIG2EXHAUST</code><code>OILRIG2L1</code><code>OILRIG2L2</code><code>OILRIG2L3A</code><code>OILRIG2L3B</code><code>OILRIG2L4</code><code>OILRIG2L5</code><code>OILRIG2L6A</code><code>OILRIG2L6B</code><code>OILRIG2L6C</code><code>OILRIG2L6D</code></span> <a href="/uk/cctv/">→</a></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="underwater_lab">
+    <h2>Підводна лабораторія</h2>
+    <dl class="mon-grid"><dt>Взяти</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">зелена карта</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">синя карта</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">червона карта</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">запобіжник</span></dd><dt>Знайдеш</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">4 × сторінка креслення</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintbook.webp" alt="" width="28" height="28" loading="lazy" decoding="async">книга креслень</span></dd><dt>Радіація</dt><dd>немає</dd><dt>Ящики</dt><dd>40+</dd><dt>Вчені</dt><dd>15–30</dd><dt>Є на монументі</dt><dd>переробник</dd></dl>
+    <p class="mon-note">Вимоги відрізняються в різних варіантах монумента — звіртеся на місці.</p>
+  </section>
+  <section class="panel" id="grid">
+    <h2>Електростанція і ступені</h2>
+    <ul class="mon-stages"><li>ступінь 1 — 1–3 важких запобіжників</li><li>ступінь 2 — 4–9 важких запобіжників</li><li>ступінь 3 — 10–17 важких запобіжників</li><li>ступінь 4 — 18+ важких запобіжників</li></ul>
+    <h3>Кімнати з лутом, які відкриває електромережа</h3>
+    <ul class="mon-stages"><li>ступінь 1: Поромний термінал, Порт, Звалище, Електростанція</li><li>ступінь 2: Аеродром, Радтаун, Каналізація, Депо, Водоочистка</li><li>ступінь 3: Космодром, Військові тунелі, Ракетна шахта</li></ul>
+    <h3>Що ще вмикає електромережа</h3>
+    <ul class="mon-stages"><li>ступінь 1: аірдропи падають удвічі частіше (термінал на вежі аеродрому), морозилка з їжею в супермаркетах, гараж із підйомником на Oxum&#x27;s, колонки з чистою водою по карті (запуск — шестерня у вентиль), трансформатори біля доріг (електрика для бази)</li><li>ступінь 2: зелені переробники — 60%</li><li>ступінь 3: насоси нафти на Сфері (рубильник на вишці)</li><li>ступінь 4: червоний переробник 75%, виклик Чинука із замкненим ящиком на аеродром, термінал падіння супутника на Космодромі</li></ul>
+    <p class="mon-note">Важкі запобіжники вставляють у коробки на Електростанції; кожен працює близько 2 год 40 хв (на серверах до 10 гравців — у 4 рази довше), потім ступінь падає.</p>
+  </section>
+  <section class="panel">
+    <p class="mon-note">Ящики, вчені й кількість сторінок — приблизно.</p>
+    <p class="mon-note">Звірено 17.11.2026: новини Facepunch (Power Trip, Livestock, Printed and Polished), Corrosion Hour, Rust Wiki.</p>
+  </section>
+  <section class="panel cta">
+    <h2>Довідник монументів є і в боті</h2>
+    <p>«🧰 Інструменти → 🏛 Монументи» в боті або !mon космодром в ігровому чаті — ті самі картки просто в Rust.</p>
+    <div class="btns">
+      <a class="btn discord" id="btn-discord" href="/discord/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.6 1.3a18.3 18.3 0 0 0-5.6 0L8.6 3a19.7 19.7 0 0 0-4.9 1.4C.6 9 -.3 13.6.1 18.1A19.9 19.9 0 0 0 6.2 21l1.3-2a12.9 12.9 0 0 1-2-1l.5-.4a14.2 14.2 0 0 0 12 0l.5.4c-.6.4-1.3.7-2 1l1.3 2a19.8 19.8 0 0 0 6.1-2.9c.5-5.2-.8-9.7-3.6-13.7ZM8.3 15.3c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Zm7.4 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Z"/></svg><span data-t="btn_discord">Додати в Discord</span></a>
+      <a class="btn tg" id="btn-tg" href="https://t.me/RustTrackerBroBot"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.6 19.8c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.2-8.3c.4-.4-.1-.6-.6-.2L6 13.4 1.1 11.9c-1.1-.3-1.1-1.1.2-1.6L20.5 2.9c.9-.3 1.7.2 1.4 1.4Z"/></svg><span data-t="btn_tg">Відкрити в Telegram</span></a>
+    </div>
+  </section>
+  <footer>
+    <div class="data-note" id="data-note"></div>
+    <div class="legal-links" data-base="/legal/"></div>
+    <div class="legal" data-t="legal">Rust — товарний знак Facepunch Studios. Проєкт не пов&#x27;язаний із Facepunch.</div>
+  </footer>
+</div>
+<script src="/config.js"></script>
+<script src="/legal/texts.js"></script>
+<script src="/legal/legal.js"></script>
+<script src="/calc/page.js?v=36d25c017f"></script>
+</body>
+</html>

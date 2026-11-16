@@ -125,6 +125,22 @@
     if (m < 120) return t("min", { n: m });
     return t("hm", { h: Math.floor(m / 60), m: m % 60 });
   }
+  // «Разобрать до сырья» — как craft.recycle_raw в боте: всё полученное, что перерабатывается, перерабатываем ещё раз.
+  function recycleRaw(sn, qty, eff) {
+    var out = {}, depth0 = D.rawDepth || 6;
+    function add(s, amount, depth) {
+      var it = item(s);
+      if (depth > 0 && it && it.r && amount > 1e-9) {
+        it.r.forEach(function (p) { add(p[0], p[1] * eff * amount, depth - 1); });
+        return;
+      }
+      out[s] = (out[s] || 0) + amount;
+    }
+    item(sn).r.forEach(function (p) { add(p[0], p[1] * eff * qty, depth0); });
+    Object.keys(out).forEach(function (s) { if (out[s] <= 1e-9) delete out[s]; });
+    return out;
+  }
+
   function listBox(title, note, rows) {
     var box = el("div", "box"), h = el("h3", null, title);
     if (note) { h.appendChild(document.createTextNode(" ")); h.appendChild(el("small", null, "· " + note)); }
@@ -150,10 +166,17 @@
     qtyIn.value = state.qty;
 
     function clampQty(v) { var n = parseInt(v, 10); return isNaN(n) ? 1 : Math.max(1, Math.min(MAX_QTY, n)); }
+    // Переработчик (40 / 50 / 60 / 75%) и «до сырья» — в адресе: ?rec=plant&raw=1 (как в боте, craft.RECYCLERS)
+    var RECS = D.recyclers || [["normal", D.recycle.normal], ["safe", D.recycle.safe]];
+    state.rec = D.defaultRecycler || 0;
+    RECS.forEach(function (r, i) { if (params.get("rec") === r[0]) state.rec = i; });
+    state.raw = params.get("raw") === "1";
     function saveUrl() {
       var p = new URLSearchParams(location.search);
       if (state.sn) p.set("item", state.sn); else p.delete("item");
       if (state.qty > 1) p.set("qty", state.qty); else p.delete("qty");
+      if (mode === "r" && state.rec !== (D.defaultRecycler || 0)) p.set("rec", RECS[state.rec][0]); else p.delete("rec");
+      if (mode === "r" && state.raw) p.set("raw", "1"); else p.delete("raw");
       var s = p.toString();
       history.replaceState(null, "", location.pathname + (s ? "?" + s : ""));
     }
@@ -230,15 +253,31 @@
         }
         out.appendChild(cols);
       } else {
-        var cols2 = el("div", "cols"), fractional = false;
-        [["rec_normal", D.recycle.normal], ["rec_safe", D.recycle.safe]].forEach(function (pair) {
-          var rows = item(state.sn).r.map(function (p) {
-            var v = p[1] * pair[1] * state.qty;
-            if (Math.abs(v - Math.round(v)) >= 0.05) fractional = true;
-            return [label(p[0]), fmt(v), null, p[0]];
-          });
-          cols2.appendChild(listBox(t(pair[0]), null, rows));
+        var pick = el("div", "chips rec-pick"), cols2 = el("div", "cols"), fractional = false;
+        RECS.forEach(function (r, i) {
+          var b = el("button", "chip", t("rec_btn_" + r[0])); b.type = "button";
+          b.setAttribute("aria-pressed", String(i === state.rec));
+          b.addEventListener("click", function () { state.rec = i; draw(); saveUrl(); });
+          pick.appendChild(b);
         });
+        var rawBtn = el("button", "chip", t("rec_raw")); rawBtn.type = "button";
+        rawBtn.setAttribute("aria-pressed", String(state.raw));
+        rawBtn.addEventListener("click", function () { state.raw = !state.raw; draw(); saveUrl(); });
+        pick.appendChild(rawBtn);
+        out.appendChild(pick);
+        var rec = RECS[state.rec], eff = rec[1];
+        function recRow(sn, v) {
+          if (Math.abs(v - Math.round(v)) >= 0.05) fractional = true;
+          var pct = v > 0 && v < 0.995 ? Math.round(v * 100) : null;
+          return [label(sn), pct === null ? fmt(v) : t("chance", { p: pct }), null, sn];
+        }
+        cols2.appendChild(listBox(t("rec_" + rec[0]), t("rec_sub_" + rec[0]), item(state.sn).r.map(function (p) {
+          return recRow(p[0], p[1] * eff * state.qty);
+        })));
+        if (state.raw) {
+          var raw = recycleRaw(state.sn, state.qty, eff);
+          cols2.appendChild(listBox(t("rec_raw_title"), t("rec_raw_sub"), Object.keys(raw).map(function (s) { return recRow(s, raw[s]); })));
+        }
         out.appendChild(cols2);
         if (fractional) out.appendChild(el("p", "note", t("rec_note")));
       }

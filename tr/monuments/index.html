@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="tr" data-lang="tr">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rust anıt rehberi — kartlar, sigortalar, radyasyon, elektrik şebekesi (2026) | Rust Tracker Bro</title>
+<meta name="description" content="Her Rust anıtının bulmacası için ne götürmeli ve ne bulacaksın: kartlar, sigortalar, plan sayfaları ve kitapları, bölgelere göre radyasyon, sandıklar, bilim insanları ve santralin açtığı ganimet odaları.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rust Tracker Bro">
+<meta property="og:title" content="Rust anıt rehberi — kartlar, sigortalar, radyasyon, elektrik şebekesi (2026) | Rust Tracker Bro">
+<meta property="og:description" content="Her Rust anıtının bulmacası için ne götürmeli ve ne bulacaksın: kartlar, sigortalar, plan sayfaları ve kitapları, bölgelere göre radyasyon, sandıklar, bilim insanları ve santralin açtığı ganimet odaları.">
+<meta property="og:image" content="https://rusttrackerbro.com/assets/og/monuments-tr.jpg">
+<meta property="og:url" content="https://rusttrackerbro.com/tr/monuments/">
+<link rel="canonical" href="https://rusttrackerbro.com/tr/monuments/">
+<link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/monuments/">
+<link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/monuments/">
+<link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/monuments/">
+<link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/monuments/">
+<link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/monuments/">
+<link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/monuments/">
+<link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/monuments/">
+<link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/monuments/">
+<link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/monuments/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#15191e">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/avatar.png">
+<link rel="stylesheet" href="/calc/calc.css?v=48a9be103c">
+<link rel="stylesheet" href="/assets/site-header.css?v=00be21d123">
+<style>
+.cmd-table { width: 100%; border-collapse: collapse; }
+.cmd-table th { text-align: left; color: var(--muted); font-weight: 600; font-size: 13px; padding: 0 10px 8px 0; }
+.cmd-table td { vertical-align: top; padding: 10px 10px 10px 0; border-top: 1px solid var(--line); }
+.cmd-table code { color: var(--rust-hot); font: 700 14px ui-monospace, SFMono-Regular, Menlo, monospace; white-space: nowrap; }
+.cmd-table .ans { display: block; font: 13px/1.45 ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--bone);
+  background: #101418; border: 1px solid var(--line); border-left: 3px solid var(--neon); border-radius: 8px; padding: 6px 9px; margin-bottom: 6px; }
+.cmd-table .ans b { color: var(--rust-hot); font-weight: 400; }
+.cmd-table p { margin: 0; color: var(--muted); font-size: 14.5px; }
+.cmd-notes { margin: 0; padding-left: 20px; color: var(--muted); display: grid; gap: 8px; }
+.guide-link { display: inline-block; margin-top: 14px; color: var(--rust-hot); font-weight: 700; text-decoration: none; }
+@media (max-width: 620px) { .cmd-table thead { display: none; } .cmd-table td { display: block; border-top: 0; padding: 4px 0; }
+  .cmd-table tr { display: block; border-top: 1px solid var(--line); padding: 8px 0; } .cmd-table code { white-space: normal; } }
+.mon-jump { display: flex; flex-wrap: wrap; gap: 8px; }
+.mon-jump a { color: var(--bone); text-decoration: none; border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px;
+  font-size: 14px; background: rgba(255,255,255,.03); }
+.mon-jump a:hover { border-color: var(--rust-hot); color: var(--rust-hot); }
+.mon-card h2 { margin: 0 0 12px; scroll-margin-top: 90px; }
+.mon-grid { display: grid; grid-template-columns: 170px 1fr; gap: 10px 16px; margin: 0; }
+.mon-grid dt { color: var(--muted); font-weight: 600; font-size: 14px; }
+.mon-grid dd { margin: 0; }
+.mon-it { display: inline-flex; align-items: center; gap: 6px; margin: 0 10px 4px 0; }
+.mon-it img { width: 28px; height: 28px; }
+.mon-grid ul { margin: 0; padding-left: 18px; }
+.mon-codes code { display: inline-block; margin: 2px 6px 2px 0; padding: 2px 6px; border-radius: 6px; background: rgba(255,255,255,.06);
+  color: var(--rust-hot); font: 700 13px ui-monospace, SFMono-Regular, Menlo, monospace; user-select: all; }
+.mon-note { color: var(--muted); font-size: 14px; }
+.mon-stages { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
+@media (max-width: 620px) { .mon-grid { grid-template-columns: 1fr; gap: 2px; } .mon-grid dd { margin-bottom: 10px; } }
+</style>
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+<div class="grid-bg" aria-hidden="true"></div>
+<header class="sh"><div class="sh-in"><a class="sh-br" href="/tr/"><img src="/assets/home/av.webp" alt="" width="38" height="38">RUST TRACKER <span>BRO</span></a><nav class="sh-nav" aria-label="Rust Tracker Bro"><a href="/tr/rustplus/" data-sh="rustplus"><img src="/assets/items/64/smart.alarm.webp" alt="" width="22" height="22"><span>Rust+</span></a><a href="/tr/raid/" data-sh="raid"><img src="/assets/items/64/explosive.timed.webp" alt="" width="22" height="22"><span>Raid</span></a><a href="/tr/craft/" data-sh="craft"><img src="/assets/items/64/workbench3.webp" alt="" width="22" height="22"><span>Üretim</span></a><a href="/tr/recycle/" data-sh="recycle"><img src="/assets/items/64/scrap.webp" alt="" width="22" height="22"><span>Geri dönüşüm</span></a><a href="/tr/genes/" data-sh="genes"><img src="/assets/items/64/clone.hemp.webp" alt="" width="22" height="22"><span>Genler</span></a><a href="/tr/cctv/" data-sh="cctv"><img src="/assets/items/64/cctv.camera.webp" alt="" width="22" height="22"><span>CCTV kodları</span></a><a href="/tr/monuments/" data-sh="monuments" aria-current="page"><img src="/assets/items/64/keycard_blue.webp" alt="" width="22" height="22"><span>Anıtlar</span></a><a href="/tr/force-wipe/" data-sh="force-wipe"><img src="/assets/items/64/electric.digitalclock.webp" alt="" width="22" height="22"><span>Global wipe</span></a><a href="/tr/pricing/" data-sh="pricing"><img src="/assets/items/64/keycard_red.webp" alt="" width="22" height="22"><span>Fiyatlar</span></a></nav><details class="sh-lang"><summary><span id="sh-cur">Türkçe</span> ▾</summary><div class="sh-menu" id="langs"><a href="/monuments/" hreflang="en" lang="en" data-lang="en">English</a><a href="/ru/monuments/" hreflang="ru" lang="ru" data-lang="ru">Русский</a><a href="/es/monuments/" hreflang="es" lang="es" data-lang="es">Español</a><a href="/fr/monuments/" hreflang="fr" lang="fr" data-lang="fr">Français</a><a href="/uk/monuments/" hreflang="uk" lang="uk" data-lang="uk">Українська</a><a href="/de/monuments/" hreflang="de" lang="de" data-lang="de">Deutsch</a><a href="/tr/monuments/" hreflang="tr" lang="tr" data-lang="tr" aria-current="true">Türkçe</a><a href="/pt/monuments/" hreflang="pt" lang="pt" data-lang="pt">Português</a></div></details></div><nav class="sh-row" aria-label="Rust Tracker Bro"><a href="/tr/rustplus/" data-sh="rustplus"><img src="/assets/items/64/smart.alarm.webp" alt="" width="22" height="22"><span>Rust+</span></a><a href="/tr/raid/" data-sh="raid"><img src="/assets/items/64/explosive.timed.webp" alt="" width="22" height="22"><span>Raid</span></a><a href="/tr/craft/" data-sh="craft"><img src="/assets/items/64/workbench3.webp" alt="" width="22" height="22"><span>Üretim</span></a><a href="/tr/recycle/" data-sh="recycle"><img src="/assets/items/64/scrap.webp" alt="" width="22" height="22"><span>Geri dönüşüm</span></a><a href="/tr/genes/" data-sh="genes"><img src="/assets/items/64/clone.hemp.webp" alt="" width="22" height="22"><span>Genler</span></a><a href="/tr/cctv/" data-sh="cctv"><img src="/assets/items/64/cctv.camera.webp" alt="" width="22" height="22"><span>CCTV kodları</span></a><a href="/tr/monuments/" data-sh="monuments" aria-current="page"><img src="/assets/items/64/keycard_blue.webp" alt="" width="22" height="22"><span>Anıtlar</span></a><a href="/tr/force-wipe/" data-sh="force-wipe"><img src="/assets/items/64/electric.digitalclock.webp" alt="" width="22" height="22"><span>Global wipe</span></a><a href="/tr/pricing/" data-sh="pricing"><img src="/assets/items/64/keycard_red.webp" alt="" width="22" height="22"><span>Fiyatlar</span></a></nav><script src="/assets/site-nav.js?v=51ba2fe78d" defer></script></header>
+<div class="wrap">
+
+  <section class="hero strip strip-monuments">
+    <h1>Anıtlar</h1>
+    <p class="lead">Bulmaca için ne götürmeli, ne bulacaksın, radyasyon, sandıklar ve elektrik şebekesinin açtıkları.</p>
+  </section>
+  <section class="panel">
+    <h2>Git</h2>
+    <nav class="mon-jump"><a href="#harbor">Liman</a><a href="#sewer_branch">Kanalizasyon</a><a href="#satellite_dish">Uydu çanağı</a><a href="#airfield">Havaalanı</a><a href="#power_plant">Elektrik santrali</a><a href="#train_yard">Tren deposu</a><a href="#water_treatment">Su arıtma tesisi</a><a href="#arctic_base">Arktik araştırma üssü</a><a href="#military_tunnel">Askeri tüneller</a><a href="#launch_site">Fırlatma alanı</a><a href="#missile_silo">Füze silosu</a><a href="#small_oil_rig">Küçük petrol platformu</a><a href="#large_oil_rig">Büyük petrol platformu</a><a href="#underwater_lab">Su altı laboratuvarı</a><a href="#grid">Elektrik santrali ve aşamalar</a></nav>
+  </section>
+  <section class="panel mon-card" id="harbor">
+    <h2>Liman</h2>
+    <dl class="mon-grid"><dt>Götür</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">yeşil kart</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">sigorta</span></dd><dt>Bulacakların</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">mavi kart</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">plan sayfası</span></dd><dt>Radyasyon</dt><dd>yok</dd><dt>Sandıklar</dt><dd>15</dd><dt>Anıtta</dt><dd>geri dönüştürücü, petrol rafinerisi</dd><dt>Elektrik şebekesi</dt><dd><ul><li>ganimet odası — aşama 1 (1+ ağır sigorta)</li></ul></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="sewer_branch">
+    <h2>Kanalizasyon</h2>
+    <dl class="mon-grid"><dt>Götür</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">yeşil kart</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">sigorta</span></dd><dt>Bulacakların</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">mavi kart</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">plan sayfası</span></dd><dt>Radyasyon</dt><dd>11% — bulmaca odası ve geri dönüştürücü<br>3% — geri kalan</dd><dt>Sandıklar</dt><dd>17</dd><dt>Anıtta</dt><dd>geri dönüştürücü</dd><dt>Elektrik şebekesi</dt><dd><ul><li>ganimet odası — aşama 2 (4+ ağır sigorta)</li></ul></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="satellite_dish">
+    <h2>Uydu çanağı</h2>
+    <dl class="mon-grid"><dt>Götür</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">yeşil kart</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">sigorta</span></dd><dt>Bulacakların</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">mavi kart</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">plan sayfası</span></dd><dt>Radyasyon</dt><dd>11% — bulmaca, geri dönüştürücü ve çanak<br>3% — geri kalan</dd><dt>Sandıklar</dt><dd>14</dd><dt>Anıtta</dt><dd>geri dönüştürücü, araştırma masası</dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="airfield">
+    <h2>Havaalanı</h2>
+    <dl class="mon-grid"><dt>Götür</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">yeşil kart</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">mavi kart</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">2 × sigorta</span></dd><dt>Bulacakların</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">kırmızı kart</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">2 × plan sayfası</span></dd><dt>Radyasyon</dt><dd>11% — anıtın tamamı</dd><dt>Sandıklar</dt><dd>38</dd><dt>Anıtta</dt><dd>geri dönüştürücü, tamir tezgâhı, araştırma masası</dd><dt>Elektrik şebekesi</dt><dd><ul><li>ganimet odası — aşama 2 (4+ ağır sigorta)</li><li>aşama 1: hava indirmeleri iki kat sık (havaalanı kulesindeki terminal)</li><li>aşama 4: havaalanına kilitli sandıklı Chinook çağırma</li></ul></dd><dt>Kamera kodları</dt><dd><span class="mon-codes"><code>AIRFIELDHELIPAD</code></span> <a href="/tr/cctv/">→</a></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="power_plant">
+    <h2>Elektrik santrali</h2>
+    <dl class="mon-grid"><dt>Götür</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">yeşil kart</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">mavi kart</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">sigorta</span></dd><dt>Bulacakların</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">kırmızı kart</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">3 × plan sayfası</span></dd><dt>Radyasyon</dt><dd>26% — mavi kart katı<br>yok — yeşil kart odası ve geri dönüştürücü</dd><dt>Sandıklar</dt><dd>35</dd><dt>Anıtta</dt><dd>geri dönüştürücü, tamir tezgâhı, araştırma masası</dd><dt>Elektrik şebekesi</dt><dd><ul><li>ganimet odası — aşama 1 (1+ ağır sigorta)</li><li>ağır sigorta kutuları — tüm şebeke buradan beslenir</li><li>aşama 4: kırmızı geri dönüştürücü %75</li></ul></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="train_yard">
+    <h2>Tren deposu</h2>
+    <dl class="mon-grid"><dt>Götür</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">mavi kart</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">sigorta</span></dd><dt>Bulacakların</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">kırmızı kart</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">3 × plan sayfası</span></dd><dt>Radyasyon</dt><dd>26% — bulmaca odası ve geri dönüştürücü<br>11% — geri kalan</dd><dt>Sandıklar</dt><dd>31</dd><dt>Anıtta</dt><dd>geri dönüştürücü, tamir tezgâhı, araştırma masası</dd><dt>Elektrik şebekesi</dt><dd><ul><li>ganimet odası — aşama 2 (4+ ağır sigorta)</li></ul></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="water_treatment">
+    <h2>Su arıtma tesisi</h2>
+    <dl class="mon-grid"><dt>Götür</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">mavi kart</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">sigorta</span></dd><dt>Bulacakların</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">kırmızı kart</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">3 × plan sayfası</span></dd><dt>Radyasyon</dt><dd>26% — kırmızı kart odası<br>yok — geri kalan, bulmaca dahil</dd><dt>Sandıklar</dt><dd>24</dd><dt>Anıtta</dt><dd>geri dönüştürücü, tamir tezgâhı, araştırma masası</dd><dt>Elektrik şebekesi</dt><dd><ul><li>ganimet odası — aşama 2 (4+ ağır sigorta)</li><li>aşama 1: harita genelinde temiz su noktaları (başlatma: vanaya bir dişli)</li></ul></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="arctic_base">
+    <h2>Arktik araştırma üssü</h2>
+    <dl class="mon-grid"><dt>Götür</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">mavi kart</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">kırmızı kart</span></dd><dt>Bulacakların</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">kırmızı kart</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">2 × plan sayfası</span></dd><dt>Radyasyon</dt><dd>11% — bulmaca odası ve geri dönüştürücü<br>3% — geri kalan</dd><dt>Sandıklar</dt><dd>23 · 24 varil</dd><dt>Bilim insanları</dt><dd>10</dd><dt>Anıtta</dt><dd>geri dönüştürücü</dd></dl>
+    <p class="mon-note">Gereksinimler anıtın türüne göre değişir — yerinde kontrol et.</p>
+  </section>
+  <section class="panel mon-card" id="military_tunnel">
+    <h2>Askeri tüneller</h2>
+    <dl class="mon-grid"><dt>Götür</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">yeşil kart</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">mavi kart</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">kırmızı kart</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">sigorta</span></dd><dt>Bulacakların</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintbook.webp" alt="" width="28" height="28" loading="lazy" decoding="async">plan kitabı</span></dd><dt>Radyasyon</dt><dd>26% — tünellerin içi<br>11% — dışarısı</dd><dt>Sandıklar</dt><dd>28</dd><dt>Bilim insanları</dt><dd>14–18</dd><dt>Elektrik şebekesi</dt><dd><ul><li>ganimet odası — aşama 3 (10+ ağır sigorta)</li></ul></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="launch_site">
+    <h2>Fırlatma alanı</h2>
+    <dl class="mon-grid"><dt>Götür</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">yeşil kart</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">kırmızı kart</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">2 × sigorta</span></dd><dt>Bulacakların</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintbook.webp" alt="" width="28" height="28" loading="lazy" decoding="async">plan kitabı</span></dd><dt>Radyasyon</dt><dd>50% — kırmızı kart odası<br>26% — sarı vinç ve roket<br>11% — geri kalan</dd><dt>Sandıklar</dt><dd>74 · 3 elit</dd><dt></dt><dd>Bradley</dd><dt>Anıtta</dt><dd>geri dönüştürücü, tamir tezgâhı, araştırma masası, petrol rafinerisi, petrol pompası</dd><dt>Elektrik şebekesi</dt><dd><ul><li>ganimet odası — aşama 3 (10+ ağır sigorta)</li><li>aşama 4: Fırlatma alanında uydu düşürme terminali</li></ul></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="missile_silo">
+    <h2>Füze silosu</h2>
+    <dl class="mon-grid"><dt>Götür</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">kırmızı kart</span></dd><dt>Bulacakların</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintbook.webp" alt="" width="28" height="28" loading="lazy" decoding="async">plan kitabı</span></dd><dt>Radyasyon</dt><dd>26% — anıtın tamamı</dd><dt>Sandıklar</dt><dd>35 · 4 elit</dd><dt>Bilim insanları</dt><dd>27</dd><dt>Kamera kodları</dt><dd><span class="mon-codes"><code>SILOTOWER</code><code>SILOEXIT1</code><code>SILOEXIT2</code><code>SILOMISSILE</code><code>SILOSHIPPING</code></span> <a href="/tr/cctv/">→</a></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="small_oil_rig">
+    <h2>Küçük petrol platformu</h2>
+    <dl class="mon-grid"><dt>Götür</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">mavi kart</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">kırmızı kart</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">sigorta</span></dd><dt>Bulacakların</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">yeşil kart</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintbook.webp" alt="" width="28" height="28" loading="lazy" decoding="async">plan kitabı</span></dd><dt>Radyasyon</dt><dd>yok</dd><dt>Sandıklar</dt><dd>~11 · 1 elit · 1 kilitli · 4 dizel varili</dd><dt>Bilim insanları</dt><dd>15 (6 ağır)</dd><dt>Anıtta</dt><dd>bilgisayar istasyonu</dd><dt>Telsiz (destek çağırma)</dt><dd>4765</dd><dt>Elektrik şebekesi</dt><dd><ul><li>aşama 3: Kubbe&#x27;de ham petrol pompaları (platformdaki şalter)</li></ul></dd><dt>Kamera kodları</dt><dd><span class="mon-codes"><code>OILRIG1HELI</code><code>OILRIG1DOCK</code><code>OILRIG1L1</code><code>OILRIG1L2</code><code>OILRIG1L3</code><code>OILRIG1L4</code></span> <a href="/tr/cctv/">→</a></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="large_oil_rig">
+    <h2>Büyük petrol platformu</h2>
+    <dl class="mon-grid"><dt>Götür</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">yeşil kart</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">mavi kart</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">kırmızı kart</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">sigorta</span></dd><dt>Bulacakların</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">yeşil kart</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintbook.webp" alt="" width="28" height="28" loading="lazy" decoding="async">plan kitabı</span></dd><dt>Radyasyon</dt><dd>yok</dd><dt>Sandıklar</dt><dd>~21 · 2 elit · 1 kilitli · 4 dizel varili</dd><dt>Bilim insanları</dt><dd>27 (12 ağır)</dd><dt>Anıtta</dt><dd>araştırma masası, bilgisayar istasyonu</dd><dt>Telsiz (destek çağırma)</dt><dd>4768</dd><dt>Elektrik şebekesi</dt><dd><ul><li>aşama 3: Kubbe&#x27;de ham petrol pompaları (platformdaki şalter)</li></ul></dd><dt>Kamera kodları</dt><dd><span class="mon-codes"><code>OILRIG2HELI</code><code>OILRIG2DOCK</code><code>OILRIG2EXHAUST</code><code>OILRIG2L1</code><code>OILRIG2L2</code><code>OILRIG2L3A</code><code>OILRIG2L3B</code><code>OILRIG2L4</code><code>OILRIG2L5</code><code>OILRIG2L6A</code><code>OILRIG2L6B</code><code>OILRIG2L6C</code><code>OILRIG2L6D</code></span> <a href="/tr/cctv/">→</a></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="underwater_lab">
+    <h2>Su altı laboratuvarı</h2>
+    <dl class="mon-grid"><dt>Götür</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">yeşil kart</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">mavi kart</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">kırmızı kart</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">sigorta</span></dd><dt>Bulacakların</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">4 × plan sayfası</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintbook.webp" alt="" width="28" height="28" loading="lazy" decoding="async">plan kitabı</span></dd><dt>Radyasyon</dt><dd>yok</dd><dt>Sandıklar</dt><dd>40+</dd><dt>Bilim insanları</dt><dd>15–30</dd><dt>Anıtta</dt><dd>geri dönüştürücü</dd></dl>
+    <p class="mon-note">Gereksinimler anıtın türüne göre değişir — yerinde kontrol et.</p>
+  </section>
+  <section class="panel" id="grid">
+    <h2>Elektrik santrali ve aşamalar</h2>
+    <ul class="mon-stages"><li>aşama 1 — 1–3 ağır sigorta</li><li>aşama 2 — 4–9 ağır sigorta</li><li>aşama 3 — 10–17 ağır sigorta</li><li>aşama 4 — 18+ ağır sigorta</li></ul>
+    <h3>Şebekenin açtığı ganimet odaları</h3>
+    <ul class="mon-stages"><li>aşama 1: Feribot terminali, Liman, Hurdalık, Elektrik santrali</li><li>aşama 2: Havaalanı, Radtown, Kanalizasyon, Tren deposu, Su arıtma tesisi</li><li>aşama 3: Fırlatma alanı, Askeri tüneller, Füze silosu</li></ul>
+    <h3>Şebekenin ayrıca çalıştırdıkları</h3>
+    <ul class="mon-stages"><li>aşama 1: hava indirmeleri iki kat sık (havaalanı kulesindeki terminal), süpermarketlerde yiyecekli dondurucu, Oxum&#x27;s&#x27;ta araç liftli garaj, harita genelinde temiz su noktaları (başlatma: vanaya bir dişli), yol kenarındaki trafolar (üssün için elektrik)</li><li>aşama 2: yeşil geri dönüştürücüler — %60</li><li>aşama 3: Kubbe&#x27;de ham petrol pompaları (platformdaki şalter)</li><li>aşama 4: kırmızı geri dönüştürücü %75, havaalanına kilitli sandıklı Chinook çağırma, Fırlatma alanında uydu düşürme terminali</li></ul>
+    <p class="mon-note">Ağır sigortalar Elektrik santralindeki kutulara takılır; her biri yaklaşık 2 sa 40 dk dayanır (10 veya daha az oyunculu sunucularda 4 kat uzun), sonra aşama düşer.</p>
+  </section>
+  <section class="panel">
+    <p class="mon-note">Sandık, bilim insanı ve sayfa sayıları yaklaşıktır.</p>
+    <p class="mon-note">17.11.2026 kontrol edildi: Facepunch haberleri (Power Trip, Livestock, Printed and Polished), Corrosion Hour, Rust Wiki.</p>
+  </section>
+  <section class="panel cta">
+    <h2>Anıt rehberi botta da var</h2>
+    <p>Botta Araçlar → Anıtlar ya da oyun sohbetinde !mon launch — aynı kartlar doğrudan Rust&#x27;ta.</p>
+    <div class="btns">
+      <a class="btn discord" id="btn-discord" href="/discord/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.6 1.3a18.3 18.3 0 0 0-5.6 0L8.6 3a19.7 19.7 0 0 0-4.9 1.4C.6 9 -.3 13.6.1 18.1A19.9 19.9 0 0 0 6.2 21l1.3-2a12.9 12.9 0 0 1-2-1l.5-.4a14.2 14.2 0 0 0 12 0l.5.4c-.6.4-1.3.7-2 1l1.3 2a19.8 19.8 0 0 0 6.1-2.9c.5-5.2-.8-9.7-3.6-13.7ZM8.3 15.3c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Zm7.4 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Z"/></svg><span data-t="btn_discord">Discord&#x27;a ekle</span></a>
+      <a class="btn tg" id="btn-tg" href="https://t.me/RustTrackerBroBot"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.6 19.8c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.2-8.3c.4-.4-.1-.6-.6-.2L6 13.4 1.1 11.9c-1.1-.3-1.1-1.1.2-1.6L20.5 2.9c.9-.3 1.7.2 1.4 1.4Z"/></svg><span data-t="btn_tg">Telegram&#x27;da aç</span></a>
+    </div>
+  </section>
+  <footer>
+    <div class="data-note" id="data-note"></div>
+    <div class="legal-links" data-base="/legal/"></div>
+    <div class="legal" data-t="legal">Rust, Facepunch Studios&#x27;un ticari markasıdır. Bu proje Facepunch ile bağlantılı değildir.</div>
+  </footer>
+</div>
+<script src="/config.js"></script>
+<script src="/legal/texts.js"></script>
+<script src="/legal/legal.js"></script>
+<script src="/calc/page.js?v=36d25c017f"></script>
+</body>
+</html>

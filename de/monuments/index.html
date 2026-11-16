@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="de" data-lang="de">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rust-Monumente — Karten, Sicherungen, Strahlung, Stromnetz (2026) | Rust Tracker Bro</title>
+<meta name="description" content="Was du zu jedem Rust-Monument-Puzzle mitbringst und was du findest: Karten, Sicherungen, Bauplanseiten und -bücher, Strahlung nach Bereichen, Kisten, Wissenschaftler und Beuteräume des Kraftwerks.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rust Tracker Bro">
+<meta property="og:title" content="Rust-Monumente — Karten, Sicherungen, Strahlung, Stromnetz (2026) | Rust Tracker Bro">
+<meta property="og:description" content="Was du zu jedem Rust-Monument-Puzzle mitbringst und was du findest: Karten, Sicherungen, Bauplanseiten und -bücher, Strahlung nach Bereichen, Kisten, Wissenschaftler und Beuteräume des Kraftwerks.">
+<meta property="og:image" content="https://rusttrackerbro.com/assets/og/monuments-de.jpg">
+<meta property="og:url" content="https://rusttrackerbro.com/de/monuments/">
+<link rel="canonical" href="https://rusttrackerbro.com/de/monuments/">
+<link rel="alternate" hreflang="en" href="https://rusttrackerbro.com/monuments/">
+<link rel="alternate" hreflang="ru" href="https://rusttrackerbro.com/ru/monuments/">
+<link rel="alternate" hreflang="es" href="https://rusttrackerbro.com/es/monuments/">
+<link rel="alternate" hreflang="fr" href="https://rusttrackerbro.com/fr/monuments/">
+<link rel="alternate" hreflang="uk" href="https://rusttrackerbro.com/uk/monuments/">
+<link rel="alternate" hreflang="de" href="https://rusttrackerbro.com/de/monuments/">
+<link rel="alternate" hreflang="tr" href="https://rusttrackerbro.com/tr/monuments/">
+<link rel="alternate" hreflang="pt" href="https://rusttrackerbro.com/pt/monuments/">
+<link rel="alternate" hreflang="x-default" href="https://rusttrackerbro.com/monuments/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#15191e">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/avatar.png">
+<link rel="stylesheet" href="/calc/calc.css?v=48a9be103c">
+<link rel="stylesheet" href="/assets/site-header.css?v=00be21d123">
+<style>
+.cmd-table { width: 100%; border-collapse: collapse; }
+.cmd-table th { text-align: left; color: var(--muted); font-weight: 600; font-size: 13px; padding: 0 10px 8px 0; }
+.cmd-table td { vertical-align: top; padding: 10px 10px 10px 0; border-top: 1px solid var(--line); }
+.cmd-table code { color: var(--rust-hot); font: 700 14px ui-monospace, SFMono-Regular, Menlo, monospace; white-space: nowrap; }
+.cmd-table .ans { display: block; font: 13px/1.45 ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--bone);
+  background: #101418; border: 1px solid var(--line); border-left: 3px solid var(--neon); border-radius: 8px; padding: 6px 9px; margin-bottom: 6px; }
+.cmd-table .ans b { color: var(--rust-hot); font-weight: 400; }
+.cmd-table p { margin: 0; color: var(--muted); font-size: 14.5px; }
+.cmd-notes { margin: 0; padding-left: 20px; color: var(--muted); display: grid; gap: 8px; }
+.guide-link { display: inline-block; margin-top: 14px; color: var(--rust-hot); font-weight: 700; text-decoration: none; }
+@media (max-width: 620px) { .cmd-table thead { display: none; } .cmd-table td { display: block; border-top: 0; padding: 4px 0; }
+  .cmd-table tr { display: block; border-top: 1px solid var(--line); padding: 8px 0; } .cmd-table code { white-space: normal; } }
+.mon-jump { display: flex; flex-wrap: wrap; gap: 8px; }
+.mon-jump a { color: var(--bone); text-decoration: none; border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px;
+  font-size: 14px; background: rgba(255,255,255,.03); }
+.mon-jump a:hover { border-color: var(--rust-hot); color: var(--rust-hot); }
+.mon-card h2 { margin: 0 0 12px; scroll-margin-top: 90px; }
+.mon-grid { display: grid; grid-template-columns: 170px 1fr; gap: 10px 16px; margin: 0; }
+.mon-grid dt { color: var(--muted); font-weight: 600; font-size: 14px; }
+.mon-grid dd { margin: 0; }
+.mon-it { display: inline-flex; align-items: center; gap: 6px; margin: 0 10px 4px 0; }
+.mon-it img { width: 28px; height: 28px; }
+.mon-grid ul { margin: 0; padding-left: 18px; }
+.mon-codes code { display: inline-block; margin: 2px 6px 2px 0; padding: 2px 6px; border-radius: 6px; background: rgba(255,255,255,.06);
+  color: var(--rust-hot); font: 700 13px ui-monospace, SFMono-Regular, Menlo, monospace; user-select: all; }
+.mon-note { color: var(--muted); font-size: 14px; }
+.mon-stages { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
+@media (max-width: 620px) { .mon-grid { grid-template-columns: 1fr; gap: 2px; } .mon-grid dd { margin-bottom: 10px; } }
+</style>
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+<div class="grid-bg" aria-hidden="true"></div>
+<header class="sh"><div class="sh-in"><a class="sh-br" href="/de/"><img src="/assets/home/av.webp" alt="" width="38" height="38">RUST TRACKER <span>BRO</span></a><nav class="sh-nav" aria-label="Rust Tracker Bro"><a href="/de/rustplus/" data-sh="rustplus"><img src="/assets/items/64/smart.alarm.webp" alt="" width="22" height="22"><span>Rust+</span></a><a href="/de/raid/" data-sh="raid"><img src="/assets/items/64/explosive.timed.webp" alt="" width="22" height="22"><span>Raid</span></a><a href="/de/craft/" data-sh="craft"><img src="/assets/items/64/workbench3.webp" alt="" width="22" height="22"><span>Craften</span></a><a href="/de/recycle/" data-sh="recycle"><img src="/assets/items/64/scrap.webp" alt="" width="22" height="22"><span>Recyceln</span></a><a href="/de/genes/" data-sh="genes"><img src="/assets/items/64/clone.hemp.webp" alt="" width="22" height="22"><span>Gene</span></a><a href="/de/cctv/" data-sh="cctv"><img src="/assets/items/64/cctv.camera.webp" alt="" width="22" height="22"><span>CCTV-Codes</span></a><a href="/de/monuments/" data-sh="monuments" aria-current="page"><img src="/assets/items/64/keycard_blue.webp" alt="" width="22" height="22"><span>Monumente</span></a><a href="/de/force-wipe/" data-sh="force-wipe"><img src="/assets/items/64/electric.digitalclock.webp" alt="" width="22" height="22"><span>Globaler Wipe</span></a><a href="/de/pricing/" data-sh="pricing"><img src="/assets/items/64/keycard_red.webp" alt="" width="22" height="22"><span>Preise</span></a></nav><details class="sh-lang"><summary><span id="sh-cur">Deutsch</span> ▾</summary><div class="sh-menu" id="langs"><a href="/monuments/" hreflang="en" lang="en" data-lang="en">English</a><a href="/ru/monuments/" hreflang="ru" lang="ru" data-lang="ru">Русский</a><a href="/es/monuments/" hreflang="es" lang="es" data-lang="es">Español</a><a href="/fr/monuments/" hreflang="fr" lang="fr" data-lang="fr">Français</a><a href="/uk/monuments/" hreflang="uk" lang="uk" data-lang="uk">Українська</a><a href="/de/monuments/" hreflang="de" lang="de" data-lang="de" aria-current="true">Deutsch</a><a href="/tr/monuments/" hreflang="tr" lang="tr" data-lang="tr">Türkçe</a><a href="/pt/monuments/" hreflang="pt" lang="pt" data-lang="pt">Português</a></div></details></div><nav class="sh-row" aria-label="Rust Tracker Bro"><a href="/de/rustplus/" data-sh="rustplus"><img src="/assets/items/64/smart.alarm.webp" alt="" width="22" height="22"><span>Rust+</span></a><a href="/de/raid/" data-sh="raid"><img src="/assets/items/64/explosive.timed.webp" alt="" width="22" height="22"><span>Raid</span></a><a href="/de/craft/" data-sh="craft"><img src="/assets/items/64/workbench3.webp" alt="" width="22" height="22"><span>Craften</span></a><a href="/de/recycle/" data-sh="recycle"><img src="/assets/items/64/scrap.webp" alt="" width="22" height="22"><span>Recyceln</span></a><a href="/de/genes/" data-sh="genes"><img src="/assets/items/64/clone.hemp.webp" alt="" width="22" height="22"><span>Gene</span></a><a href="/de/cctv/" data-sh="cctv"><img src="/assets/items/64/cctv.camera.webp" alt="" width="22" height="22"><span>CCTV-Codes</span></a><a href="/de/monuments/" data-sh="monuments" aria-current="page"><img src="/assets/items/64/keycard_blue.webp" alt="" width="22" height="22"><span>Monumente</span></a><a href="/de/force-wipe/" data-sh="force-wipe"><img src="/assets/items/64/electric.digitalclock.webp" alt="" width="22" height="22"><span>Globaler Wipe</span></a><a href="/de/pricing/" data-sh="pricing"><img src="/assets/items/64/keycard_red.webp" alt="" width="22" height="22"><span>Preise</span></a></nav><script src="/assets/site-nav.js?v=51ba2fe78d" defer></script></header>
+<div class="wrap">
+
+  <section class="hero strip strip-monuments">
+    <h1>Monumente</h1>
+    <p class="lead">Was du zum Puzzle mitbringst, was du findest, Strahlung, Kisten und was das Stromnetz freischaltet.</p>
+  </section>
+  <section class="panel">
+    <h2>Springe zu</h2>
+    <nav class="mon-jump"><a href="#harbor">Hafen</a><a href="#sewer_branch">Kanalisation</a><a href="#satellite_dish">Satellitenschüssel</a><a href="#airfield">Flugplatz</a><a href="#power_plant">Kraftwerk</a><a href="#train_yard">Rangierbahnhof</a><a href="#water_treatment">Kläranlage</a><a href="#arctic_base">Arktis-Forschungsbasis</a><a href="#military_tunnel">Militärtunnel</a><a href="#launch_site">Startplatz</a><a href="#missile_silo">Raketensilo</a><a href="#small_oil_rig">Kleine Ölplattform</a><a href="#large_oil_rig">Große Ölplattform</a><a href="#underwater_lab">Unterwasserlabor</a><a href="#grid">Kraftwerk und Stufen</a></nav>
+  </section>
+  <section class="panel mon-card" id="harbor">
+    <h2>Hafen</h2>
+    <dl class="mon-grid"><dt>Mitbringen</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">grüne Karte</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">Sicherung</span></dd><dt>Du findest</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">blaue Karte</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">Bauplanseite</span></dd><dt>Strahlung</dt><dd>keine</dd><dt>Kisten</dt><dd>15</dd><dt>Vor Ort</dt><dd>Recycler, Ölraffinerie</dd><dt>Stromnetz</dt><dd><ul><li>Beuteraum — Stufe 1 (1+ schwere Sicherungen)</li></ul></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="sewer_branch">
+    <h2>Kanalisation</h2>
+    <dl class="mon-grid"><dt>Mitbringen</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">grüne Karte</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">Sicherung</span></dd><dt>Du findest</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">blaue Karte</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">Bauplanseite</span></dd><dt>Strahlung</dt><dd>11% — Puzzleraum und Recycler<br>3% — der Rest</dd><dt>Kisten</dt><dd>17</dd><dt>Vor Ort</dt><dd>Recycler</dd><dt>Stromnetz</dt><dd><ul><li>Beuteraum — Stufe 2 (4+ schwere Sicherungen)</li></ul></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="satellite_dish">
+    <h2>Satellitenschüssel</h2>
+    <dl class="mon-grid"><dt>Mitbringen</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">grüne Karte</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">Sicherung</span></dd><dt>Du findest</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">blaue Karte</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">Bauplanseite</span></dd><dt>Strahlung</dt><dd>11% — Puzzle, Recycler und Schüssel<br>3% — der Rest</dd><dt>Kisten</dt><dd>14</dd><dt>Vor Ort</dt><dd>Recycler, Forschungstisch</dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="airfield">
+    <h2>Flugplatz</h2>
+    <dl class="mon-grid"><dt>Mitbringen</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">grüne Karte</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">blaue Karte</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">2 × Sicherung</span></dd><dt>Du findest</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">rote Karte</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">2 × Bauplanseite</span></dd><dt>Strahlung</dt><dd>11% — das ganze Monument</dd><dt>Kisten</dt><dd>38</dd><dt>Vor Ort</dt><dd>Recycler, Reparaturbank, Forschungstisch</dd><dt>Stromnetz</dt><dd><ul><li>Beuteraum — Stufe 2 (4+ schwere Sicherungen)</li><li>Stufe 1: Airdrops doppelt so oft (Terminal im Flugplatzturm)</li><li>Stufe 4: einen Chinook mit verschlossener Kiste zum Flugplatz rufen</li></ul></dd><dt>Kamera-Codes</dt><dd><span class="mon-codes"><code>AIRFIELDHELIPAD</code></span> <a href="/de/cctv/">→</a></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="power_plant">
+    <h2>Kraftwerk</h2>
+    <dl class="mon-grid"><dt>Mitbringen</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">grüne Karte</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">blaue Karte</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">Sicherung</span></dd><dt>Du findest</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">rote Karte</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">3 × Bauplanseite</span></dd><dt>Strahlung</dt><dd>26% — Ebene der blauen Karte<br>keine — Raum der grünen Karte und Recycler</dd><dt>Kisten</dt><dd>35</dd><dt>Vor Ort</dt><dd>Recycler, Reparaturbank, Forschungstisch</dd><dt>Stromnetz</dt><dd><ul><li>Beuteraum — Stufe 1 (1+ schwere Sicherungen)</li><li>Kästen für schwere Sicherungen — hier wird das ganze Netz gespeist</li><li>Stufe 4: roter Recycler 75 %</li></ul></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="train_yard">
+    <h2>Rangierbahnhof</h2>
+    <dl class="mon-grid"><dt>Mitbringen</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">blaue Karte</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">Sicherung</span></dd><dt>Du findest</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">rote Karte</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">3 × Bauplanseite</span></dd><dt>Strahlung</dt><dd>26% — Puzzleraum und Recycler<br>11% — der Rest</dd><dt>Kisten</dt><dd>31</dd><dt>Vor Ort</dt><dd>Recycler, Reparaturbank, Forschungstisch</dd><dt>Stromnetz</dt><dd><ul><li>Beuteraum — Stufe 2 (4+ schwere Sicherungen)</li></ul></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="water_treatment">
+    <h2>Kläranlage</h2>
+    <dl class="mon-grid"><dt>Mitbringen</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">blaue Karte</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">Sicherung</span></dd><dt>Du findest</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">rote Karte</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">3 × Bauplanseite</span></dd><dt>Strahlung</dt><dd>26% — Raum der roten Karte<br>keine — der Rest, Puzzle inklusive</dd><dt>Kisten</dt><dd>24</dd><dt>Vor Ort</dt><dd>Recycler, Reparaturbank, Forschungstisch</dd><dt>Stromnetz</dt><dd><ul><li>Beuteraum — Stufe 2 (4+ schwere Sicherungen)</li><li>Stufe 1: Wasserstellen mit sauberem Wasser auf der Karte (Start: ein Zahnrad ins Ventil)</li></ul></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="arctic_base">
+    <h2>Arktis-Forschungsbasis</h2>
+    <dl class="mon-grid"><dt>Mitbringen</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">blaue Karte</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">rote Karte</span></dd><dt>Du findest</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">rote Karte</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">2 × Bauplanseite</span></dd><dt>Strahlung</dt><dd>11% — Puzzleraum und Recycler<br>3% — der Rest</dd><dt>Kisten</dt><dd>23 · 24 Fässer</dd><dt>Wissenschaftler</dt><dd>10</dd><dt>Vor Ort</dt><dd>Recycler</dd></dl>
+    <p class="mon-note">Die Anforderungen unterscheiden sich je nach Variante des Monuments — prüfe es vor Ort.</p>
+  </section>
+  <section class="panel mon-card" id="military_tunnel">
+    <h2>Militärtunnel</h2>
+    <dl class="mon-grid"><dt>Mitbringen</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">grüne Karte</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">blaue Karte</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">rote Karte</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">Sicherung</span></dd><dt>Du findest</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintbook.webp" alt="" width="28" height="28" loading="lazy" decoding="async">Bauplanbuch</span></dd><dt>Strahlung</dt><dd>26% — in den Tunneln<br>11% — draußen</dd><dt>Kisten</dt><dd>28</dd><dt>Wissenschaftler</dt><dd>14–18</dd><dt>Stromnetz</dt><dd><ul><li>Beuteraum — Stufe 3 (10+ schwere Sicherungen)</li></ul></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="launch_site">
+    <h2>Startplatz</h2>
+    <dl class="mon-grid"><dt>Mitbringen</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">grüne Karte</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">rote Karte</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">2 × Sicherung</span></dd><dt>Du findest</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintbook.webp" alt="" width="28" height="28" loading="lazy" decoding="async">Bauplanbuch</span></dd><dt>Strahlung</dt><dd>50% — Raum der roten Karte<br>26% — gelber Kran und Rakete<br>11% — der Rest</dd><dt>Kisten</dt><dd>74 · 3 Elite</dd><dt></dt><dd>Bradley</dd><dt>Vor Ort</dt><dd>Recycler, Reparaturbank, Forschungstisch, Ölraffinerie, Pumpe</dd><dt>Stromnetz</dt><dd><ul><li>Beuteraum — Stufe 3 (10+ schwere Sicherungen)</li><li>Stufe 4: Satellitenabsturz-Terminal am Startplatz</li></ul></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="missile_silo">
+    <h2>Raketensilo</h2>
+    <dl class="mon-grid"><dt>Mitbringen</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">rote Karte</span></dd><dt>Du findest</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintbook.webp" alt="" width="28" height="28" loading="lazy" decoding="async">Bauplanbuch</span></dd><dt>Strahlung</dt><dd>26% — das ganze Monument</dd><dt>Kisten</dt><dd>35 · 4 Elite</dd><dt>Wissenschaftler</dt><dd>27</dd><dt>Kamera-Codes</dt><dd><span class="mon-codes"><code>SILOTOWER</code><code>SILOEXIT1</code><code>SILOEXIT2</code><code>SILOMISSILE</code><code>SILOSHIPPING</code></span> <a href="/de/cctv/">→</a></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="small_oil_rig">
+    <h2>Kleine Ölplattform</h2>
+    <dl class="mon-grid"><dt>Mitbringen</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">blaue Karte</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">rote Karte</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">Sicherung</span></dd><dt>Du findest</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">grüne Karte</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintbook.webp" alt="" width="28" height="28" loading="lazy" decoding="async">Bauplanbuch</span></dd><dt>Strahlung</dt><dd>keine</dd><dt>Kisten</dt><dd>~11 · 1 Elite · 1 verschlossen · 4 Dieselfässer</dd><dt>Wissenschaftler</dt><dd>15 (6 schwere)</dd><dt>Vor Ort</dt><dd>Computerstation</dd><dt>Funk (Verstärkung rufen)</dt><dd>4765</dd><dt>Stromnetz</dt><dd><ul><li>Stufe 3: Rohölpumpen an der Kuppel (Schalter auf der Plattform)</li></ul></dd><dt>Kamera-Codes</dt><dd><span class="mon-codes"><code>OILRIG1HELI</code><code>OILRIG1DOCK</code><code>OILRIG1L1</code><code>OILRIG1L2</code><code>OILRIG1L3</code><code>OILRIG1L4</code></span> <a href="/de/cctv/">→</a></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="large_oil_rig">
+    <h2>Große Ölplattform</h2>
+    <dl class="mon-grid"><dt>Mitbringen</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">grüne Karte</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">blaue Karte</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">rote Karte</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">Sicherung</span></dd><dt>Du findest</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">grüne Karte</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintbook.webp" alt="" width="28" height="28" loading="lazy" decoding="async">Bauplanbuch</span></dd><dt>Strahlung</dt><dd>keine</dd><dt>Kisten</dt><dd>~21 · 2 Elite · 1 verschlossen · 4 Dieselfässer</dd><dt>Wissenschaftler</dt><dd>27 (12 schwere)</dd><dt>Vor Ort</dt><dd>Forschungstisch, Computerstation</dd><dt>Funk (Verstärkung rufen)</dt><dd>4768</dd><dt>Stromnetz</dt><dd><ul><li>Stufe 3: Rohölpumpen an der Kuppel (Schalter auf der Plattform)</li></ul></dd><dt>Kamera-Codes</dt><dd><span class="mon-codes"><code>OILRIG2HELI</code><code>OILRIG2DOCK</code><code>OILRIG2EXHAUST</code><code>OILRIG2L1</code><code>OILRIG2L2</code><code>OILRIG2L3A</code><code>OILRIG2L3B</code><code>OILRIG2L4</code><code>OILRIG2L5</code><code>OILRIG2L6A</code><code>OILRIG2L6B</code><code>OILRIG2L6C</code><code>OILRIG2L6D</code></span> <a href="/de/cctv/">→</a></dd></dl>
+    
+  </section>
+  <section class="panel mon-card" id="underwater_lab">
+    <h2>Unterwasserlabor</h2>
+    <dl class="mon-grid"><dt>Mitbringen</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_green.webp" alt="" width="28" height="28" loading="lazy" decoding="async">grüne Karte</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_blue.webp" alt="" width="28" height="28" loading="lazy" decoding="async">blaue Karte</span><span class="mon-it"><img class="ico" src="/assets/items/64/keycard_red.webp" alt="" width="28" height="28" loading="lazy" decoding="async">rote Karte</span><span class="mon-it"><img class="ico" src="/assets/items/64/fuse.webp" alt="" width="28" height="28" loading="lazy" decoding="async">Sicherung</span></dd><dt>Du findest</dt><dd><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintpage.webp" alt="" width="28" height="28" loading="lazy" decoding="async">4 × Bauplanseite</span><span class="mon-it"><img class="ico" src="/assets/items/64/blueprintbook.webp" alt="" width="28" height="28" loading="lazy" decoding="async">Bauplanbuch</span></dd><dt>Strahlung</dt><dd>keine</dd><dt>Kisten</dt><dd>40+</dd><dt>Wissenschaftler</dt><dd>15–30</dd><dt>Vor Ort</dt><dd>Recycler</dd></dl>
+    <p class="mon-note">Die Anforderungen unterscheiden sich je nach Variante des Monuments — prüfe es vor Ort.</p>
+  </section>
+  <section class="panel" id="grid">
+    <h2>Kraftwerk und Stufen</h2>
+    <ul class="mon-stages"><li>Stufe 1 — 1–3 schwere Sicherungen</li><li>Stufe 2 — 4–9 schwere Sicherungen</li><li>Stufe 3 — 10–17 schwere Sicherungen</li><li>Stufe 4 — 18+ schwere Sicherungen</li></ul>
+    <h3>Beuteräume, die das Stromnetz öffnet</h3>
+    <ul class="mon-stages"><li>Stufe 1: Fährterminal, Hafen, Schrottplatz, Kraftwerk</li><li>Stufe 2: Flugplatz, Radtown, Kanalisation, Rangierbahnhof, Kläranlage</li><li>Stufe 3: Startplatz, Militärtunnel, Raketensilo</li></ul>
+    <h3>Was das Stromnetz noch einschaltet</h3>
+    <ul class="mon-stages"><li>Stufe 1: Airdrops doppelt so oft (Terminal im Flugplatzturm), Gefriertruhe mit Essen in Supermärkten, Garage mit Hebebühne bei Oxum&#x27;s, Wasserstellen mit sauberem Wasser auf der Karte (Start: ein Zahnrad ins Ventil), Transformatoren an Straßen (Strom für deine Basis)</li><li>Stufe 2: grüne Recycler — 60 %</li><li>Stufe 3: Rohölpumpen an der Kuppel (Schalter auf der Plattform)</li><li>Stufe 4: roter Recycler 75 %, einen Chinook mit verschlossener Kiste zum Flugplatz rufen, Satellitenabsturz-Terminal am Startplatz</li></ul>
+    <p class="mon-note">Schwere Sicherungen kommen in die Kästen im Kraftwerk; jede hält etwa 2 Std. 40 Min. (auf Servern mit bis zu 10 Spielern 4× länger), danach sinkt die Stufe.</p>
+  </section>
+  <section class="panel">
+    <p class="mon-note">Kisten, Wissenschaftler und Seitenzahl sind ungefähr.</p>
+    <p class="mon-note">Geprüft am 17.11.2026: Facepunch-News (Power Trip, Livestock, Printed and Polished), Corrosion Hour, Rust Wiki.</p>
+  </section>
+  <section class="panel cta">
+    <h2>Der Monument-Guide ist auch im Bot</h2>
+    <p>Werkzeuge → Monumente im Bot oder !mon launch im Spielchat — dieselben Karten direkt in Rust.</p>
+    <div class="btns">
+      <a class="btn discord" id="btn-discord" href="/discord/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.6 1.3a18.3 18.3 0 0 0-5.6 0L8.6 3a19.7 19.7 0 0 0-4.9 1.4C.6 9 -.3 13.6.1 18.1A19.9 19.9 0 0 0 6.2 21l1.3-2a12.9 12.9 0 0 1-2-1l.5-.4a14.2 14.2 0 0 0 12 0l.5.4c-.6.4-1.3.7-2 1l1.3 2a19.8 19.8 0 0 0 6.1-2.9c.5-5.2-.8-9.7-3.6-13.7ZM8.3 15.3c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Zm7.4 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Z"/></svg><span data-t="btn_discord">Zu Discord hinzufügen</span></a>
+      <a class="btn tg" id="btn-tg" href="https://t.me/RustTrackerBroBot"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.6 19.8c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.2-8.3c.4-.4-.1-.6-.6-.2L6 13.4 1.1 11.9c-1.1-.3-1.1-1.1.2-1.6L20.5 2.9c.9-.3 1.7.2 1.4 1.4Z"/></svg><span data-t="btn_tg">In Telegram öffnen</span></a>
+    </div>
+  </section>
+  <footer>
+    <div class="data-note" id="data-note"></div>
+    <div class="legal-links" data-base="/legal/"></div>
+    <div class="legal" data-t="legal">Rust ist eine Marke von Facepunch Studios. Dieses Projekt steht in keiner Verbindung zu Facepunch.</div>
+  </footer>
+</div>
+<script src="/config.js"></script>
+<script src="/legal/texts.js"></script>
+<script src="/legal/legal.js"></script>
+<script src="/calc/page.js?v=36d25c017f"></script>
+</body>
+</html>

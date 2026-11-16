@@ -309,3 +309,7 @@ ul.parts.cheap li b { color: #dff5bd; }
 .key.g-G, .key.g-Y, .key.g-H { background: rgba(120, 200, 60, .2); border-color: rgba(140, 220, 70, .55); color: #c6f58f; }
 .key.g-W, .key.g-X { background: rgba(230, 70, 60, .2); border-color: rgba(240, 90, 80, .6); color: #ffb0a6; }
 @media (max-width: 420px) { .keys { gap: 6px; } .key { width: 44px; height: 46px; } }
+
+.rec-pick { margin: 2px 0 14px; }
+.strip-monuments { --strip: url(/assets/home/m_airfield.webp); }
+.box h3, .box h3 small, .list li > span { overflow-wrap: anywhere; min-width: 0; }
