@@ -311,5 +311,8 @@ ul.parts.cheap li b { color: #dff5bd; }
 @media (max-width: 420px) { .keys { gap: 6px; } .key { width: 44px; height: 46px; } }
 
 .rec-pick { margin: 2px 0 14px; }
+.gene-target { margin: 4px 0 12px; }
+.prow:has(.unused) { flex-wrap: wrap; row-gap: 2px; }
+.prow .unused { order: 3; flex-basis: 100%; font-style: italic; }
 .strip-monuments { --strip: url(/assets/home/m_airfield.webp); }
 .box h3, .box h3 small, .list li > span { overflow-wrap: anywhere; min-width: 0; }

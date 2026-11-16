@@ -595,9 +595,12 @@
     var G = window.RTB_GENES, pad = document.getElementById("keypad"), input = document.getElementById("gq");
     var list = document.getElementById("plants"), out = document.getElementById("gout"), msg = document.getElementById("gmsg");
     var plants = [], typed = "", lastAdvice = null;
-    // ?p=GGYYXH:2,GYGYHH — чтобы делиться набором
+    // ?p=GGYYXH:2,GYGYHH&t=4g2y — чтобы делиться набором; такую ссылку присылает и бот («🧮 Рассчитать на сайте»)
     var fromUrl = G.parse((params.get("p") || "").replace(/:/g, " x").replace(/,/g, "\n"));
     plants = fromUrl.plants;
+    var targetKey = G.TARGET_KEYS.indexOf(params.get("t")) >= 0 ? params.get("t") : G.DEFAULT_TARGET;
+    var picker = el("div", "chips gene-target");
+    list.parentNode.insertBefore(picker, list);
     // Первое открытие без своего набора — пример с готовым расчётом (16.11.2026); «Очистить» убирает его.
     var example = false, seen = null;
     try { seen = localStorage.getItem("rtb_genes_seen"); localStorage.setItem("rtb_genes_seen", "1"); } catch (e) {}
@@ -613,6 +616,7 @@
     function saveUrl() {
       var p = new URLSearchParams(location.search);
       if (plants.length) p.set("p", plants.map(function (x) { return x.genes + (x.count > 1 ? ":" + x.count : ""); }).join(",")); else p.delete("p");
+      if (targetKey !== G.DEFAULT_TARGET) p.set("t", targetKey); else p.delete("t");
       var s = p.toString();
       history.replaceState(null, "", location.pathname + (s ? "?" + s : ""));
     }
@@ -650,12 +654,23 @@
       keys.appendChild(back);
       pad.appendChild(keys);
     }
+    function drawTargets() {
+      clear(picker);
+      picker.appendChild(el("span", "lbl", t("g_target") + ":"));
+      G.TARGET_KEYS.forEach(function (k) {
+        var b = el("button", "chip", G.targetName(k)); b.type = "button";
+        b.setAttribute("aria-pressed", String(k === targetKey));
+        b.addEventListener("click", function () { if (k !== targetKey) { targetKey = k; drawTargets(); changed(); } });
+        picker.appendChild(b);
+      });
+    }
     function drawList() {
       clear(list);
       if (!plants.length) { list.appendChild(el("p", "muted small", t("g_empty"))); return; }
       plants.forEach(function (p, i) {
         var row = el("div", "prow");
         row.appendChild(geneSpan(p.genes));
+        if (lastAdvice && lastAdvice.unused.indexOf(p.genes) >= 0) row.appendChild(el("span", "muted small unused", t("g_unused")));
         var step = el("div", "step on"), minus = el("button", null, "−"), plus = el("button", null, "+");
         minus.type = plus.type = "button";
         minus.addEventListener("click", function () { if (p.count > 1) p.count--; else plants.splice(i, 1); changed(); });
@@ -681,14 +696,21 @@
       return box;
     }
     function pct(p) { var v = p * 100; return v >= 10 ? String(Math.round(v)) : String(Math.round(v * 10) / 10); }
+    function missingNote(adv) {  // в каких ячейках не хватает нужных цели генов
+      if (!adv.missing.length) return;
+      var genes = G.wanted(G.targetOf(targetKey)).split("");
+      var list2 = genes.length > 1 ? genes.slice(0, -1).join(", ") + t("g_or") + genes[genes.length - 1] : genes[0];
+      out.appendChild(el("p", "note", t("g_missing", { genes: list2, slots: adv.missing.join(", ") })));
+    }
     function drawAdvice(adv) {
       clear(out); out.hidden = false;
       if (adv.haveGod) {
-        var p = el("p", "big-note"); p.textContent = t("g_have_god", { g: adv.haveGod }); out.appendChild(p); return;
+        var p = el("p", "big-note"); p.textContent = t("g_have_god", { g: adv.haveGod, t: G.targetName(targetKey) }); out.appendChild(p); return;
       }
       if (!adv.steps.length) { out.appendChild(el("p", "muted", t("g_need_two"))); return; }
       if (!adv.gain) {
         out.appendChild(el("p", "big-note", t("g_no_gain", { g: adv.bestNow })));
+        missingNote(adv);
         out.appendChild(el("p", "note", t("g_tips")));
         return;
       }
@@ -708,8 +730,9 @@
             info.appendChild(el("p", "note", t("g_slot", { n: s + 1, list: opts.map(function (g) { return g + " " + share + "%"; }).join(" / ") })));
           }
         });
-        if (o.pGod >= 1 - 1e-9) info.appendChild(el("p", "badge-ok", t("g_god_sure")));
-        else if (o.pGod > 0) info.appendChild(el("p", "badge-chance", t("g_god_chance", { p: pct(o.pGod) })));
+        var tn = G.targetName(targetKey);
+        if (o.pGod >= 1 - 1e-9) info.appendChild(el("p", "badge-ok", t("g_god_sure", { t: tn })));
+        else if (o.pGod > 0) info.appendChild(el("p", "badge-chance", t("g_god_chance", { p: pct(o.pGod), t: tn })));
         var donors = plan.donors.map(function (d) { return d[0] + (d[1] > 1 ? " ×" + d[1] : ""); }).join(", ");
         info.appendChild(el("p", "small", t("g_center") + ": " + plan.center + " · " + t("g_around") + ": " + donors));
         row.appendChild(info);
@@ -717,7 +740,10 @@
         out.appendChild(card);
       });
       var last = adv.steps[adv.steps.length - 1].result;
-      if (last.pGod === 0) out.appendChild(el("p", "note warn", t("g_no_god")));
+      if (last.pGod === 0) {
+        out.appendChild(el("p", "note warn", t("g_no_god", { t: G.targetName(targetKey) })));
+        missingNote(adv);
+      }
       out.appendChild(el("p", "note", t("g_tips")));
     }
     function addFromInput() {
@@ -730,18 +756,24 @@
     document.getElementById("gadd").addEventListener("click", addFromInput);
     input.addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); addFromInput(); } });
     document.getElementById("gclear").addEventListener("click", function () { plants = []; typed = ""; example = false; note(""); drawPad(); changed(); });
-    document.getElementById("gcalc").addEventListener("click", function () {
+    var calcBtn = document.getElementById("gcalc");
+    calcBtn.addEventListener("click", function () {
       if (total() < 2) { note(t("g_need_two")); return; }
-      note("");
-      lastAdvice = G.advise(plants);
-      drawAdvice(lastAdvice);
-      out.scrollIntoView({ behavior: "smooth", block: "start" });
+      note(t("g_calcing")); calcBtn.disabled = true;
+      setTimeout(function () {  // сначала показать «Считаю…»: на телефоне с большим списком расчёт — до секунды
+        try {
+          lastAdvice = G.advise(plants, targetKey);
+          note(""); drawList(); drawAdvice(lastAdvice);
+          out.scrollIntoView({ behavior: "smooth", block: "start" });
+        } finally { calcBtn.disabled = false; }
+      }, 30);
     });
 
     return function render() {
       input.placeholder = t("g_paste");
-      drawPad(); drawList();
-      if (example && !lastAdvice && total() >= 2) lastAdvice = G.advise(plants);
+      drawTargets(); drawPad();
+      if (example && !lastAdvice && total() >= 2) lastAdvice = G.advise(plants, targetKey);
+      drawList();
       if (example) note(t("g_example"));
       if (lastAdvice) drawAdvice(lastAdvice);
     };
